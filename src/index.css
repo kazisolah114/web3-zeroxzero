@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --secondary-color: #0fcfcf;
+    --secondary-color-hover: #12AFAF;
+    --color-white: #FFFFFF;
+    --color-light: #ededed;
+    --color-dark: #0e0e0e;
+    --color-gray: #b4b4b4;
+    --border-color: rgb(193 193 193 / 30%);
+    --bluish-div-bg: #122036;
+    --darkish-div-bg: #111827;
+}
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.primary-button {
+    background: var(--secondary-color);
+    padding: 13px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--color-white);
+}
+
+.primary-button-outline {
+    background: transparent;
+    border: 1px solid var(--secondary-color);
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--color-white);
+}
+.primary-button-outline:hover{
+    transition: .2s;
+    background: var(--secondary-color);
+    
+}
+
+

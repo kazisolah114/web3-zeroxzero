@@ -1,0 +1,8 @@
+.navs .active, .navs .active span{
+    color: var(--secondary-color);
+    background: #122036;
+}
+.submenu .active, .submenu .active span{
+    color: var(--secondary-color);
+    background: #1F2937;
+}

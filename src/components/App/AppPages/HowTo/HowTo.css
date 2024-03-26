@@ -1,0 +1,92 @@
+.howto-content{}
+.howto-content .tablist {
+    border-bottom: 1px solid #0fcfcfb7;
+}
+.howto-content .tablist li {
+    border-top: 1px solid #0fcfcfb7;
+    border-right: 1px solid #0fcfcfb7;
+    border-left: 1px solid #0fcfcfb7;
+    width: 170px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    outline: none;
+}
+.howto-content .tablist li:hover{
+    background: var(--secondary-color)
+}
+
+/* AI Alert Subscription */
+.howto-content{
+    
+}
+.howto-content .trade-alert{
+    /* padding: 20px 200px; */
+}
+.howto-content .main-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+
+}
+.howto-content .sub-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: var(--color-light);
+
+}
+.howto-content p{
+    color: var(--color-gray);
+    font-size: 17px;
+    text-align: left;
+    line-height: 28px;
+}
+.howto-content .trade-alert ul{
+    
+}
+.howto-content .trade-alert ul li{
+    position: relative;
+    z-index: 1;
+}
+
+.howto-content .trade-alert ul li span{
+    font-weight: bold;
+    background: var(--secondary-color);
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 30px;
+    
+}
+.howto-content .trade-alert ul li::after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    width: 1px;
+    height: 100%;
+    border: 1px dashed gray;
+    z-index: -1;
+}
+.howto-content .trade-alert ul li:last-child::after {
+    content: none; /* This will hide the border for the last li */
+}
+
+/* FAQ */
+.faq {
+    overflow: hidden;
+    transition: max-height 1s ease-in-out;
+    max-height: 60px; /* Set a default max-height */
+
+}
+
+.faq.open {
+    max-height: 500px; /* Set an appropriate max-height when the FAQ is open */
+}

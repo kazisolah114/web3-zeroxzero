@@ -1,0 +1,16 @@
+.user-profile-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.tracking-list .search-table-head {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    gap: 20px;
+}
+.tracking-list .search-table-content{
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    gap: 20px;
+}

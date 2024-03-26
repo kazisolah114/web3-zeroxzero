@@ -1,0 +1,16 @@
+.leaderboard-table-head {
+    display: grid;
+    grid-template-columns: 50px 175px 150px 85px;
+    gap: 5px;
+}
+.leaderboard-table-content{
+    display: grid;
+    grid-template-columns: 50px 175px 150px 85px;
+    gap: 5px;
+}
+.leaderboard-table-content:last-child{
+    border-bottom: none;
+  }
+  .leaderboard{
+    gap: 50px 0;
+  }

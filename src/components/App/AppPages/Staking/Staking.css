@@ -1,0 +1,68 @@
+.staking-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+.staking-items .staking-item{
+    border: 1px solid #0fcfcf8b;
+}
+.staking-items .staking-item.top::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0px;
+    border-top: 60px solid transparent;
+    border-right: 60px solid var(--secondary-color);
+    border-radius: 0 0 5px 0;
+    transform: rotate(-90deg);
+}
+.staking-items .staking-item.top::before {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--secondary-color)"><path d="M12 2l2.29 7.45L22 9.24l-6.42 4.82L17.71 22 12 17.31 6.29 22l1.13-7.94L2 9.24l7.71.21L12 2zm0 2.06L9.76 9.38l-6.11.17 4.66 3.5-1.72 6.1 5.41-4.07 5.41 4.07-1.72-6.1 4.66-3.5-6.11-.17L12 4.06z"/></svg>');
+    position: absolute;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+    width: 25px;
+    height: 25px;
+}
+.staking-items-list{
+    
+}
+.staking-items-list .staking-item {
+    border: 1px solid #0fcfcf8b;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 182px auto;
+    /* justify-content: space-between; */
+    gap: 40px;
+}
+
+
+
+/* Staking Details */
+.staking-details-content{}
+.staking-details-content .staking-info {
+    /* margin-top: 50px; */
+    display: grid;
+    grid-template-columns: 30% 37% 30%;
+    gap: 20px;
+    align-items: start;
+    justify-content: space-between;
+}
+.staking-details-content .staking-info .item {
+    border: 1px solid #0fcfcf91;
+    border-radius: 6px;
+    padding: 25px 20px;
+}
+.staking-details-content .staking-info .staking-input {
+    background: none;
+    color: var(--color-light);
+    font-weight: bold;
+    font-size: 21px;
+}
+.staking-details-content .staking-info .staking-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }

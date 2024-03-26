@@ -1,0 +1,37 @@
+
+.navbar ul li a{
+    color: #dfdfdf;
+}
+.navbar ul li a:hover{
+    transition: .2s ease-in-out;
+    color: var(--color-white);
+}
+.nav-item {
+    position: relative;
+    list-style: none;
+}
+
+.dropdown-icon {
+    margin-left: 0.5rem;
+}
+
+.dropdown {
+    display: none;
+}
+.dropdown::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    background: red;
+    height: 20px;
+    width: 120px;
+    opacity: 0;
+}
+.nav-item:hover .dropdown {
+    display: block;
+}
+.dropdown li:hover span{
+    color: #0fcfcf;
+    transition: .2s;
+}

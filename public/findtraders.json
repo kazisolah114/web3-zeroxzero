@@ -1,0 +1,26 @@
+{
+    "base_currency": [
+        { "currency": "US Dollar", "abr": "USD", "flag": "https://www.pngall.com/wp-content/uploads/12/USD-PNG-Images.png" },
+        { "currency": "USD Coin", "abr": "USDC", "flag": "https://seeklogo.com/images/U/usd-coin-usdc-logo-CB4C5B1C51-seeklogo.com.png" },
+        { "currency": "Ethereum", "abr": "ETH", "flag": "/public/images/logo-eth.png" },
+        { "currency": "Bitcoin", "abr": "BTC", "flag": "/public/images/logo-btc.png" },
+        { "currency": "Swiss Franc", "abr": "CHF", "flag": "https://cdn.coinranking.com/lJBdOdg9C/chf.svg?size=34x34" },
+        { "currency": "The Euro", "abr": "EU", "flag": "https://iconape.com/wp-content/png_logo_vector/eur.png" }
+    ],
+    "target_currency": [
+        { "currency": "Ethereum", "abr": "ETH", "flag": "/public/images/logo-eth.png" },
+        { "currency": "US Dollar", "abr": "USD", "flag": "https://www.pngall.com/wp-content/uploads/12/USD-PNG-Images.png" },
+        { "currency": "USD Coin", "abr": "USDC", "flag": "https://seeklogo.com/images/U/usd-coin-usdc-logo-CB4C5B1C51-seeklogo.com.png" },
+        { "currency": "Bitcoin", "abr": "BTC", "flag": "/public/images/logo-btc.png" },
+        { "currency": "Swiss Franc", "abr": "CHF", "flag": "https://cdn.coinranking.com/lJBdOdg9C/chf.svg?size=34x34" },
+        { "currency": "The Euro", "abr": "EU", "flag": "https://iconape.com/wp-content/png_logo_vector/eur.png" }
+    ],
+    "time_period": [
+        { "time": "Last day" },
+        { "time": "Last week" },
+        { "time": "Last month" },
+        { "time": "Last 3 months" },
+        { "time": "Last 6 months" },
+        { "time": "Last year" }
+    ]
+}

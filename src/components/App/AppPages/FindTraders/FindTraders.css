@@ -1,0 +1,45 @@
+
+.find-traders-content{
+}
+.find-traders-content .search-content{
+    padding: 60px 30px;
+    border-radius: 0 0 6px 6px;
+    background: #122036;
+}
+.find-traders-content .search-content .search{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1fr;
+    /* align-items: end; */
+    gap: 30px;
+}
+
+
+
+.search-result{}
+.search-result .search-table-head {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 2fr 1fr;
+    gap: 20px;
+}
+.search-result .search-table-content{
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 2fr 1fr;
+    gap: 20px;
+}
+.search-result .search-table-content:last-child{
+    border: none;
+}
+
+
+
+/* Topup modal */
+.topup-modal .topup-input {
+    background: none;
+    color: var(--color-light);
+    font-weight: bold;
+    font-size: 21px;
+}
+.topup-modal .topup-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }

@@ -1,0 +1,136 @@
+/* Home Page */
+@media screen and (max-width: 1128px) {
+    .main-header{
+        display: none;
+    }
+    .hero-container{
+        flex-direction: column;
+        gap: 100px;
+    }
+    .hero-texts{
+        width: 100%;
+        text-align: center;
+    }
+    .hero-header{
+        width: 100%;
+    }
+    .hero-buttons{
+        justify-content: center;
+    }
+    .hero-animations{
+        width: 100%;
+        justify-content: center;
+    }
+    .whyus-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+        gap: 100px;
+    }
+    .image-cont{
+        width: unset;
+    }
+    .image-cont .countries{
+
+    }
+    .reasons-list{
+        text-align: left;
+    }
+    .aboutus-content{
+        flex-direction: column;
+        gap: 100px;
+    }
+    .aboutus-info{
+        width: 100%;
+        text-align: center;
+    }
+    .aboutus-info p{
+        text-align: center;
+    }
+    .aboutus-info .buttons{
+        justify-content: center;
+    }
+    .aboutus-image{
+        width: 100%;
+    }
+    .features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .flyers-content{
+        flex-direction: column;
+        gap: 50px;
+    }
+    .flyers-content .flyers-info{
+        width: unset;
+        text-align: center;
+    }
+    .ourvision-content{
+        flex-direction: column;
+        gap: 100px;
+    }
+    .ourvision-content .vision-info{
+        text-align: center;
+        width: unset
+    }
+    .ourvision-content .vision-info div{
+        justify-content: center;
+        gap: 15px;
+    }
+    .testimonials-content{
+        flex-direction: column;
+        gap: 100px;
+    }
+    .testimonials-content .testimonials-info{
+        width: unset;
+    }
+}
+@media screen and (max-width: 868px) {
+    .howitworks-content {
+        flex-direction: column;
+    }
+    .howitworks-content div:not(:last-child)::after {
+        display: none;
+    }
+    .footer-main {
+        grid-template-columns: 1fr 1fr 1fr!important;
+    }
+    .footer-bottom{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .newsletter{
+        width: 300px;
+    }
+    .section-header p{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 668px) {
+    .hero-container{
+        height: unset!important;
+    }
+    .aboutus-info .buttons{
+    
+    }
+    .aboutus-info .buttons button{
+        padding: 12px 12px;
+        margin-left: 2px;
+    }
+    .image-cont .countries{
+        left: 10rem;
+        /* top: 13rem; */
+    }
+    .features {
+        grid-template-columns: 1fr;
+    }
+    .testimonials{
+        width: 100%;
+    }
+    .footer-main {
+        grid-template-columns: 1fr!important;
+    }
+    .footer-bottom p{
+        text-align: center;
+    }
+}

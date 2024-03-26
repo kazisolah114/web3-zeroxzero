@@ -1,0 +1,25 @@
+.newsletter{}
+.newsletter form{}
+.newsletter form .subs-input {
+    padding: 10px;
+    outline: none;
+    border-radius: 7px 0 0 7px;
+}
+.newsletter form button {
+    color: #fff;
+    /* background: linear-gradient(227deg, rgba(38,52,203,1) 19%, rgba(15,207,207,1) 85%); */
+    background: var(--secondary-color);
+    height: 44px;
+    padding: 10px;
+    font-weight: 500;
+    border-radius: 0 7px 7px 0;
+    transition: .3s;
+}
+.newsletter form button:hover{
+    background: #0d9a9afe;
+}
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr auto;
+    gap: 20px;
+}

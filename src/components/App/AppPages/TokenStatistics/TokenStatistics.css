@@ -1,0 +1,24 @@
+.canvasjs-chart-credit{
+    display: none;
+}
+.token-details {
+    display: grid;
+    grid-template-columns: 70% 28%;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.compare-currency{}
+.compare-currency .compare{}
+.compare-currency .compare div{}
+.compare-currency .compare div input{
+    background: transparent;
+    outline: none;
+    text-align: right;
+    
+}
+.compare-currency .compare div input::-webkit-outer-spin-button,
+.compare-currency .compare div input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

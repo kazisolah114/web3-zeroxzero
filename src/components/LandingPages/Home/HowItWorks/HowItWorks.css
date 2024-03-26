@@ -1,0 +1,33 @@
+.howitworks-content{}
+.howitworks-content div{
+    position: relative;
+}
+.howitworks-content div:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    right: -78px;
+    width: 100px;
+    height: 1px;
+    background: repeating-linear-gradient(90deg, #6b6b6b, #6b6b6b 2px, transparent 2px, transparent 4px);
+    border-radius: 100px;
+}
+
+.how-image {
+    position: relative;
+    animation: moveHowImage 10s ease-in-out infinite;
+  }
+  
+
+  @keyframes moveHowImage {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, -20px); 
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  

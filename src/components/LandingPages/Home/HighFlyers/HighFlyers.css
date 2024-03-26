@@ -1,0 +1,19 @@
+
+.flyers-image {
+    position: relative;
+    animation: moveImage 10s ease-in-out infinite;
+  }
+  
+
+  /* @keyframes moveImage {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(30px, -60px); 
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+   */
