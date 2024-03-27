@@ -7,9 +7,9 @@ import BackgroundShadow from '../../../CommonComponents/BackgroundShadow/Backgro
 const HeroSection = () => {
     return (
         <div className='hero-section'>
-            {/* <video autoplay="true" muted  loop className="hero-video">
+            <video autoplay="true" muted  loop className="hero-video">
                 <source src="https://tectum.io/wp-content/uploads/2023/10/tectum-site_hero-screen-1.mp4" type="video/mp4" />
-            </video> */}
+            </video>
             <div className="hero-container container flex items-center justify-between">
                 <div className="hero-texts  w-[50%]" data-aos="flip-left" data-aos-duration="1000">
 
