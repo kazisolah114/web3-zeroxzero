@@ -1,9 +1,7 @@
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import VitePluginRequire from './vite-plugin-require';
 
-export default {
-  plugins: [react()],
-  esbuild: {
-    jsxFactory: 'React.createElement',
-    jsxFragment: 'React.Fragment',
-  },
-};
+export default defineConfig({
+  plugins: [react(), VitePluginRequire()],
+});
