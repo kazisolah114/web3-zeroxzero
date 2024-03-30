@@ -2,10 +2,35 @@
     position: sticky;
     z-index: 9;
 }
-.header-button{}
+.main-header .header-content {
+    display: grid;
+    grid-template-columns: max-content auto max-content;
+    gap: 40px;
+    align-items: center;
+
+}
+.header-menu .menu-logo{
+    display: none;
+}
+.header-menu-main button{
+    display: none;
+}
 .header-button button{
-    /* color: var(--text-light); */
+    background: transparent;
+    border: 1px solid var(--secondary-color);
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    display: block;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--color-white);
     position: relative;
+    transition: .2s ease-in;
+}
+.header-button button:hover{
+    background: var(--secondary-color);
 }
 .header-button button::before {
     content: '';

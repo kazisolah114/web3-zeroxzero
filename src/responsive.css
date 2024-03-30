@@ -1,136 +1,270 @@
 /* Home Page */
 @media screen and (max-width: 1128px) {
     .main-header{
+        /* padding-bottom: 0; */
+    }
+    .main-header .header-content {
+        display: flex!important;
+        align-items: center!important;
+        justify-content: space-between;
+        /* padding-bottom: 50px; */
+    }
+    .header-logo{
+        order: 2;
+        flex-basis: 33%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .header-menu {
+        flex-direction: column;
+        align-items: unset;
+        gap: 30px;
+        background: rgb(15, 15, 15);
+        padding: 15px;
+        width: 75%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        overflow: auto;
+    }
+    .header-menu.hide{
+        /* display: none; */
+        opacity: 0;
+        visibility: hidden;
+        left: -100%;
+        transition: all .4s;
+    }
+    .header-menu.show{
+        /* display: flex; */
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        transition: all .4s;
+    }
+    .header-menu .menu-logo{
+        display: block!important;
+    }
+    .header-menu-main{
+        order: 1;
+        flex-basis: 33%;
+        display: flex;
+    }
+    .header-menu-main .close-menu {
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.649);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        /* opacity: 0; */
+    }
+    .header-menu-main button{
+        display: unset!important;
+    }
+    .header-menu .navbar ul{
+        flex-direction: column;
+    }
+    .navbar ul li a {
+        justify-content: space-between!important;
+    }
+    .nav-item:hover .dropdown {
+        position: unset;
+        margin-top: 15px;
+        background: transparent;
+        max-width: 100%;
+    }
+    .nav-item:hover .dropdown li{
+
+    }
+    .nav-item:hover .dropdown li a {
+        justify-content: unset!important;
+    }
+    .nav-item:hover .dropdown li a span{
+        color: var(--secondary-color)
+    }
+    .header-button{
+        order: 3;
+        flex-basis: 33%.3;
+    }
+    .header-button button {
+        width: 115px!important;
+        height: 40px!important;
+        font-weight: 500!important;
+    }
+    .header-button button::before {
         display: none;
     }
-    .hero-container{
+    .hero-container {
         flex-direction: column;
         gap: 100px;
     }
-    .hero-texts{
+
+    .hero-texts {
         width: 100%;
         text-align: center;
+        margin-top: 50px;
     }
-    .hero-header{
+
+    .hero-header {
         width: 100%;
     }
-    .hero-buttons{
+
+    .hero-buttons {
         justify-content: center;
     }
-    .hero-animations{
+
+    .hero-animations {
         width: 100%;
         justify-content: center;
     }
+
     .whyus-content {
         flex-direction: column-reverse;
         text-align: center;
         justify-content: center;
         gap: 100px;
     }
-    .image-cont{
+
+    .image-cont {
         width: unset;
     }
-    .image-cont .countries{
 
-    }
-    .reasons-list{
+    .image-cont .countries {}
+
+    .reasons-list {
         text-align: left;
     }
-    .aboutus-content{
+
+    .aboutus-content {
         flex-direction: column;
         gap: 100px;
     }
-    .aboutus-info{
+
+    .aboutus-info {
         width: 100%;
         text-align: center;
     }
-    .aboutus-info p{
+
+    .aboutus-info p {
         text-align: center;
     }
-    .aboutus-info .buttons{
+
+    .aboutus-info .buttons {
         justify-content: center;
     }
-    .aboutus-image{
+
+    .aboutus-image {
         width: 100%;
     }
+
     .features {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    .flyers-content{
+
+    .flyers-content {
         flex-direction: column;
         gap: 50px;
     }
-    .flyers-content .flyers-info{
+
+    .flyers-content .flyers-info {
         width: unset;
         text-align: center;
     }
-    .ourvision-content{
+
+    .ourvision-content {
         flex-direction: column;
         gap: 100px;
     }
-    .ourvision-content .vision-info{
+
+    .ourvision-content .vision-info {
         text-align: center;
         width: unset
     }
-    .ourvision-content .vision-info div{
+
+    .ourvision-content .vision-info div {
         justify-content: center;
         gap: 15px;
     }
-    .testimonials-content{
+
+    .testimonials-content {
         flex-direction: column;
         gap: 100px;
     }
-    .testimonials-content .testimonials-info{
+
+    .testimonials-content .testimonials-info {
         width: unset;
     }
 }
+
 @media screen and (max-width: 868px) {
     .howitworks-content {
         flex-direction: column;
     }
+
     .howitworks-content div:not(:last-child)::after {
         display: none;
     }
+
     .footer-main {
-        grid-template-columns: 1fr 1fr 1fr!important;
+        grid-template-columns: 1fr 1fr 1fr !important;
     }
-    .footer-bottom{
+
+    .footer-bottom {
         flex-direction: column;
         gap: 10px;
     }
-    .newsletter{
+
+    .newsletter {
         width: 300px;
     }
-    .section-header p{
+
+    .section-header p {
         width: 100%;
     }
 }
+
 @media screen and (max-width: 668px) {
-    .hero-container{
-        height: unset!important;
+    .header-logo img{
+        width: 6rem;
     }
-    .aboutus-info .buttons{
-    
+    .hero-container {
+        height: unset !important;
     }
-    .aboutus-info .buttons button{
+
+    .aboutus-info .buttons {}
+
+    .aboutus-info .buttons button {
         padding: 12px 12px;
         margin-left: 2px;
     }
-    .image-cont .countries{
+
+    .image-cont .countries {
         left: 10rem;
         /* top: 13rem; */
     }
+
     .features {
         grid-template-columns: 1fr;
     }
-    .testimonials{
+
+    .testimonials {
         width: 100%;
     }
-    .footer-main {
-        grid-template-columns: 1fr!important;
+    .socials img{
+        width: 30px!important;
     }
-    .footer-bottom p{
+    .footer-main {
+        grid-template-columns: 1fr !important;
+    }
+    .footer-content .footer-top a img{
+        width: 7rem;
+    }
+    .footer-bottom p {
         text-align: center;
     }
 }

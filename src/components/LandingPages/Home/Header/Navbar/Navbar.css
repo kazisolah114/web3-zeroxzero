@@ -1,6 +1,7 @@
 
 .navbar ul li a{
     color: #dfdfdf;
+    justify-content: unset;
 }
 .navbar ul li a:hover{
     transition: .2s ease-in-out;

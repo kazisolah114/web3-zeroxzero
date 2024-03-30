@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className='footer-section pt-10 mt-10 pb-5 border-t border-gray-700 border-opacity-80 '>
             <div className="footer-content container">
                 <div className="footer-top flex items-center justify-between pb-7 mb-7 ">
-                    <img className='w-36' src="/public/images/0x0-logo-2.png" alt="" />
+                    <Link to="/"><img className='w-36' src="/public/images/0x0-logo-2.png" alt="" /></Link>
                     <div className="socials">
                         <ul className='flex items-center gap-4'>
                             <li className='border border-gray-600 hover:border-gray-200 duration-150  inline-block rounded-full'><Link  to="https://twitter.com/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/twitter.svg" alt="" /></Link></li>

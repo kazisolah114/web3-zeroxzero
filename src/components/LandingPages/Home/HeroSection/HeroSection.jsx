@@ -7,7 +7,9 @@ import BackgroundShadow from '../../../CommonComponents/BackgroundShadow/Backgro
 const HeroSection = () => {
     return (
         <div className='hero-section'>
-            <video autoplay="true" muted  loop className="hero-video">
+            <video playsInline autoplay="true" muted  loop className="hero-video">
+                {/* <source src="/public/images/blac-dance.mp4" type="video/mp4" /> */}
+                {/* <source src="https://static.videezy.com/system/resources/previews/000/040/199/original/bg_0005.mp4" type="video/mp4" /> */}
                 <source src="https://tectum.io/wp-content/uploads/2023/10/tectum-site_hero-screen-1.mp4" type="video/mp4" />
             </video>
             <div className="hero-container container flex items-center justify-between">
@@ -18,12 +20,13 @@ const HeroSection = () => {
                     <div className='hero-buttons flex items-center  relative' data-aos="fade-up">
                         <BackgroundShadow customShadow="0px 0px 150px 40px #10B8B9" />
                         <button className='primary-button mr-2 hover:bg-[#12afaf] duration-200'>CONNECT WALLET</button>
-                        <button className='hero-find-more flex items-center gap-2 '>FIND OUT MORE <HiOutlineArrowRight /></button>
+                        <button className='hero-find-more flex items-center gap-2 '>TRADE 0X0COM <HiOutlineArrowRight /></button>
                     </div>
 
                 </div>
                 <Animations />
             </div>
+            {/* <img src="https://www.programming-hero.com/_next/image?url=%2Fbanner%2Fcity.png&w=1920&q=75" alt="" /> */}
         </div>
     );
 };
