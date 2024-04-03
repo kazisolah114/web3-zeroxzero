@@ -51,7 +51,7 @@ const Staking = () => {
                 <div>
                     <h3 onClick={handleDefaultSort} className='cursor-pointer text-md flex items-center text-secondary gap-1'><span className='text-secondary text-xl font-bold'><HiChevronUpDown /></span>{isDefault ? "Default" : "Highest APR"}</h3>
                 </div>
-                <div className='flex items-center gap-10 '>
+                <div className='view flex items-center gap-5 '>
                     <h3 onClick={() => handleViewMode("block")} className={`cursor-pointer ${viewMode == 'block' && 'text-secondary'} text-md flex items-center  gap-2`}><span><HiOutlineSquares2X2 className='text-secondary text-xl font-bold' /></span> Block View</h3>
                     <h3 onClick={() => handleViewMode("list")} className={`cursor-pointer text-md ${viewMode == 'list' && 'text-secondary'} flex items-center gap-2`}><span><HiMiniListBullet className='text-secondary text-xl font-bold' /></span> List View</h3>
                 </div>
@@ -87,12 +87,12 @@ const Staking = () => {
                                     <img className='w-12' src={item.staking_with_logo} alt="" />
                                     <h2 className=' font-semibold text-lg text-light uppercase'>{item.staking_with_abr} to {item.staking_for_abr}</h2>
                                 </div>
-                                <div className=' flex items-center justify-between gap-10'>
-                                    <div className='flex justify-start items-center gap-4'>
+                                <div className='lists-btn flex items-center justify-between gap-10'>
+                                    <div className='lists flex justify-start items-center gap-4'>
                                         <h3 className='flex gap-2 text-light'>Stake With: <span className=' text-secondary font-semibold text-md'>{item.staking_with}</span></h3>
                                         <h3 className='flex  gap-2 text-light'>Stake For: <span className=' text-secondary font-semibold text-md'>{item.staking_for}</span></h3>
-                                        <h3 className='flex  gap-2 text-light'>Staking APR: <span className=' text-secondary font-semibold text-md'>{item.apr_percentage}%</span></h3>
-                                        <h3 className='flex  gap-2 text-light'>Pool Value: <span className=' text-secondary font-semibold text-md'>{item.pool_value} {item.staking_with_abr}</span></h3>
+                                        <h3 className='temp flex  gap-2 text-light'>Staking APR: <span className=' text-secondary font-semibold text-md'>{item.apr_percentage}%</span></h3>
+                                        <h3 className='temp flex  gap-2 text-light'>Pool Value: <span className=' text-secondary font-semibold text-md'>{item.pool_value} {item.staking_with_abr}</span></h3>
                                     </div>
                                     <div>
                                         <Link to={`${item.id}`} className='bg-secondary text-center hover:bg-secondaryHover  w-40 p-3 rounded-lg font-semibold mx-auto duration-200'>View Details</Link>

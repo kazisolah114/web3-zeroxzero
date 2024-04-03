@@ -5,7 +5,7 @@ import React from 'react';
 const MarketCarousel = ({ marketUpdate }) => {
     console.log(marketUpdate)
     return (
-        <div className='carousel p-7 bg-[#122036] rounded-md mt-20 flex flex-wrap justify-between gap-5'>
+        <div className='carousel p-5 bg-[#122036] rounded-md mt-20'>
             {
                 marketUpdate.map((item, index) => <div className='carousel-item w-[338px] text-light bg-gray-900 px-5 py-7 flex  flex-col gap-3 rounded-md' key={index}>
                     <div className='flex items-center gap-3'>

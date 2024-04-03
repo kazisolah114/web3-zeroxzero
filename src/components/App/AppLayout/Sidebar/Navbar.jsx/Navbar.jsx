@@ -4,7 +4,7 @@ import { HiOutlineBanknotes, HiOutlineChartBar, HiOutlineCpuChip, HiOutlineCurre
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({setShowResponsiveMenu}) => {
     const [AITradeAlertsLink, setAITradeAlertsLink] = useState("dashboard");
     const [earnLink, setEarnLink] = useState("staking");
 
@@ -40,7 +40,7 @@ const Navbar = () => {
                 <ul className="navs">
                     {
                         navs.map((nav, index) => (
-                            <li key={index}>
+                            <li key={index} onClick={() => setShowResponsiveMenu(false)}>
                                 <NavLink to={nav.link} className={`group flex items-center gap-3 py-3 px-2 mb-2 text-[#dfdfdf] hover:text-secondary duration-200 hover:bg-[#122036] rounded-md`}>
                                     <span className='text-[#dfdfdf] text-[22px] group-hover:text-secondary'>{nav.icon}</span> {nav.title}
                                 </NavLink>

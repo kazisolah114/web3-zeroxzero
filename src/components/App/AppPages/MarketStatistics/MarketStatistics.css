@@ -12,6 +12,12 @@
 }
 
 
+.carousel{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 10px;
+    justify-content: space-between;
+}
 .carousel-item{
     transition: .2s ease-in-out;
 

@@ -106,7 +106,7 @@ const SearchResult = () => {
                     <p className='mr-12'>Wallet Address</p>
                     <p>Target Coin Volume</p>
                     <p>Profit Percentage</p>
-                    <p className='mx-auto'>Track Wallet</p>
+                    <p className='mx-auto text-center'>Track Wallet</p>
                 </div>
                 {
                     leaderboard.map((item, index) => <div className='search-table-content  border-b border-slate-800   text-light  px-[30px] py-5'>

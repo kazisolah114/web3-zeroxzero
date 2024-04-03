@@ -129,7 +129,7 @@ const DoughnutChart = ({ transections }) => {
                 { y: 10000, label: "Airdrop Goal" },
             ],
             // Setting data labels text color to white
-            indexLabelFontColor: "white"
+            indexLabelFontColor: "white",
         }]
     }
     return (

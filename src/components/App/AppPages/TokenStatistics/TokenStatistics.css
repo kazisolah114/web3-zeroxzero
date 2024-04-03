@@ -15,7 +15,7 @@
     background: transparent;
     outline: none;
     text-align: right;
-    
+    width: 100%;
 }
 .compare-currency .compare div input::-webkit-outer-spin-button,
 .compare-currency .compare div input::-webkit-inner-spin-button {

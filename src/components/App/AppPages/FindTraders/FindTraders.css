@@ -18,13 +18,15 @@
 .search-result{}
 .search-result .search-table-head {
     display: grid;
-    grid-template-columns: 1fr 3fr 2fr 2fr 1fr;
+    grid-template-columns: 30px 2fr 2fr 2fr 1fr;
     gap: 20px;
+    justify-content: space-between;
 }
 .search-result .search-table-content{
     display: grid;
-    grid-template-columns: 1fr 3fr 2fr 2fr 1fr;
+    grid-template-columns: 30px 2fr 2fr 2fr 1fr;
     gap: 20px;
+    justify-content: space-between;
 }
 .search-result .search-table-content:last-child{
     border: none;
@@ -33,11 +35,16 @@
 
 
 /* Topup modal */
+.topup-modal{
+    width: 350px;
+}
 .topup-modal .topup-input {
     background: none;
     color: var(--color-light);
     font-weight: bold;
     font-size: 21px;
+    width: 100%;
+    padding: 0 20px;
 }
 .topup-modal .topup-input::-webkit-inner-spin-button {
     -webkit-appearance: none;

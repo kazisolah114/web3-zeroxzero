@@ -11,14 +11,14 @@ const TopupModal = ({ showModal, setShowModal }) => {
             }
             {showModal &&
                 <div className={`${showModal ? 'flex' : 'hidden'} fixed inset-0 justify-center items-center z-10 `}>
-                    <div className='topup-modal w-3/12 bg-[#122036] p-5 rounded-md'>
+                    <div className='topup-modal bg-[#122036] p-5 rounded-md'>
                         <div className='flex items-center justify-between'>
                             <h2 className='font-semibold text-lg'>Top-up Search Days</h2>
                             <HiOutlineXCircle className='text-4xl  cursor-pointer hover:text-red-400 duration-200' onClick={() => setShowModal(false)} />
                         </div>
                         <p className='text-sm text-gray text-center my-10'>Purchase 1 Search Day with 1 0x0COM</p>
                         <div className=''>
-                            <div className='mt-10 pb-3 flex items-center justify-between border-b border-gray-700 border-opacity-80'>
+                            <div className='mt-10 pb-3  flex items-center justify-between border-b border-gray-700 border-opacity-80'>
                                 <img className='w-6' src="/public/images/0x0-logo-head.png" alt="" />
                                 <input className='topup-input  outline-none text-center' type="number" placeholder="0.00" />
                                 <span className='cursor-pointer'><FaSort /></span>

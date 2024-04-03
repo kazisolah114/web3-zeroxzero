@@ -1,0 +1,280 @@
+@media screen and (max-width: 1128px) {
+    .app-main .socials ul li{
+        width: 1.75rem;
+    }
+    .app-main .socials ul h2{
+        font-weight: 500;
+        font-size: 17px;
+    }
+    .leaderboard{
+        justify-content: center;
+    }
+    .find-traders-content .search-content .search{
+        grid-template-columns: 1fr 1fr 1fr!important;
+    }
+    .search-result .search-table-head {
+        grid-template-columns: 20px 130px 150px 140px 130px !important;
+        gap: 10px!important;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .search-result .search-table-head p{
+        margin: 0;
+    }
+    .search-result .search-table-content{
+        grid-template-columns: 20px 130px 150px 140px 130px !important;
+        gap: 10px!important;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .staking-items-list .lists .temp{
+        display: none;
+    }
+    .token-stats-charts{
+        flex-direction: column;
+    }
+    .token-details{
+        grid-template-columns: 1fr!important;
+        gap: 20px;
+    }
+    .token-details-header{
+        flex-direction: column;
+        align-items: unset;
+        gap: 20px;
+    }
+    .market-update-header{
+        grid-template-columns: 30px 140px 110px 100px 150px 110px!important;
+        width: fit-content;
+    }
+    .market-update-table .table-content{
+        grid-template-columns: 30px 140px 110px 100px 150px 110px!important;
+        width: fit-content;
+    }
+    .carousel{
+        justify-content: center!important;
+    }
+    .tracking-list .search-table-head{
+        grid-template-columns: 30px 225px 90px 120px!important;
+    }
+    .tracking-list .search-table-content{
+        grid-template-columns: 30px 225px 90px 120px!important;
+    }
+}
+@media screen and (max-width: 956px) {
+    .outlet-scrollbar::-webkit-scrollbar {
+        scrollbar-width: none!important; 
+      }
+    
+
+    
+
+    .app-main .socials ul h2{
+        display: none;
+    }
+    .find-traders-content .search-content .search {
+        gap: 30px 12px!important;
+    }
+    .staking-items{
+        grid-template-columns: 1fr 1fr!important;
+    }
+    .staking-items-list .lists{
+        display: none;
+    }
+    .staking-items-list .staking-item .lists-btn{
+        justify-content: flex-end;
+    }
+    .user-profile-content {
+        grid-template-columns: 1fr!important;
+    }
+    .tracking-list .search-table-head{
+
+    }
+}
+@media screen and (max-width: 868px) {
+    .app-main .socials{
+        display: none;
+    }
+    .app-main .menu{
+        display: block;
+    }
+    .leaderboard-header p{
+        width: 100%;
+    }
+    .main-sidebar{
+        position: absolute;
+        background: #131313;
+        border: none;
+        z-index: 10;
+        height: 100vh;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px 10px;
+    }
+    .main-sidebar.show{
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        transition: all .4s;
+        
+    }
+    .main-sidebar.hide{
+        opacity: 0;
+        visibility: hidden;
+        left: -100%;
+        transition: all .4s;
+        
+    }
+    .app-header .menu .close {
+        background: rgba(0, 0, 0, 0.649);
+        width: 100%;
+        height: 100vh;
+        z-index: 5;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .user-profile{
+        z-index: 4;
+    }
+    .staking-details-content .staking-info {
+        grid-template-columns: 1fr!important;
+    }
+    .staking-details-content .staking-info .details{
+        order: 2;
+    }
+    .staking-details-content .staking-info .staking-unstaking{
+        order: 1;
+    }
+    .staking-details-content .staking-info .total{
+        order: 3;
+    }
+    .faqs-page{
+        width: 100%;
+    }
+    .howto-content .trade-alert ul li::after{}
+}
+@media screen and (max-width: 728px) {
+    .app-main .socials ul h2{
+        display: none;
+    }
+    .find-traders-content .search-content {
+        padding: 60px 15px!important;
+    }
+    .market-update-table{
+        width: 100%;
+        overflow: auto;
+    }
+}
+@media screen and (max-width: 672px) {
+    .search-result .search-table-head {
+        grid-template-columns: 20px 130px 140px 125px 105px !important;
+        gap: 5px!important;
+    }
+    .search-result .search-table-content {
+        grid-template-columns: 20px 130px 140px 125px 105px !important;
+        gap: 5px!important;
+    }
+    .tracking-list .search-table-head{
+        grid-template-columns: 30px 225px 90px 120px!important;
+    }
+    .tracking-list .search-table-content{
+        grid-template-columns: 30px 225px 90px 120px!important;
+    }
+}
+@media screen and (max-width: 636px) {
+    .app-header {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .outlet{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .leaderboard-table-head {
+        grid-template-columns: 20px 155px 122px 85px!important;
+    }
+    .leaderboard-table-content {
+        grid-template-columns: 20px 155px 122px 85px!important;
+    }
+    
+}
+@media screen and (max-width: 578px) {
+    .search-result {
+        width: 100%;
+        overflow: auto;
+    }
+    .search-result .search-table-head {
+        width: max-content;
+    }
+    .search-result .search-table-content {
+        width: max-content;
+    }
+    .staking-items{
+        grid-template-columns: auto!important;
+    }
+}
+@media screen and (max-width: 538px) {
+    .outlet {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        /* display: flex; */
+    }
+    .find-traders-content .search-content .search {
+        grid-template-columns: 1fr 1fr!important;
+    }
+    .free-coins-items{
+        grid-template-columns: 1fr!important;
+    }
+    .tracking-list .search-table-head{
+        grid-template-columns: 20px 180px 90px 120px!important
+    }
+    .tracking-list .search-table-content{
+        grid-template-columns: 20px 180px 90px 120px!important
+    }
+}
+@media screen and (max-width: 492px) {
+    .app-header .user-details{
+        gap: 8px;
+    }
+    .leaderboard .item{
+        /* padding: 10px; */
+    }
+    .leaderboard-table-head {
+        grid-template-columns: 22px 125px 100px 50px !important;
+    }
+    .leaderboard-table-head p{
+        margin: 0;
+    }
+    .leaderboard-table-content {
+        grid-template-columns: 22px 125px 100px 50px !important;
+    }
+    
+    .searchday-count{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .find-traders-content .search-content .search {
+        grid-template-columns: 1fr!important;
+    }
+    .staking-items-list .staking-item{
+        gap: 20px!important;
+    }
+    .market-update-top h2{
+        font-size: 20px!important;
+    }
+    .market-update .modal{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 396px) {
+    .leaderboard-table-head {
+        grid-template-columns: 20px 120px 80px 50px !important;
+    }
+    .leaderboard-table-content {
+        grid-template-columns: 20px 120px 80px 50px !important;
+    }
+}

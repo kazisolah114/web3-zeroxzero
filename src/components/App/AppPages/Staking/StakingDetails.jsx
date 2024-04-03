@@ -38,7 +38,7 @@ const StakingDetails = () => {
                     </button>
                 </div>
                 <div className="staking-info">
-                    <div className="item relative">
+                    <div className="details item relative">
                         <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
                         <div className=' pb-5 mb-[60px]'>
                             <h4 className='text-gray text-lg'>{filteredStaking.staking_with_abr}</h4>
@@ -54,7 +54,7 @@ const StakingDetails = () => {
                             <p className='text-gray flex items-center justify-between ' >Yearly <span className='text-light'>0.00 {filteredStaking.staking_for_abr}</span></p>
                         </div>
                     </div>
-                    <div className="item relative">
+                    <div className="staking-unstaking item relative">
                         <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
                         <div className=' border-b border-gray-700 border-opacity-80 '>
                             <button onClick={() => handleStakeToggle("stake")} className={`${stakeToggle === "stake" && 'border-b border-[#0FCFCF] text-secondary'}  pb-2 w-3/6 font-semibold uppercase text-lg tracking-[2px] text-text`}>Stake</button>
@@ -80,7 +80,7 @@ const StakingDetails = () => {
                                 <buton className="bg-secondaryHover flex justify-center  py-3 rounded-md font-bold cursor-pointer hover:bg-secondary duration-200 ">Unstake Now</buton>}
                         </div>
                     </div>
-                    <div className="item ">
+                    <div className="total item ">
                         <div className='mb-48'>
                             <h2 className='text-lg font-semibold text-light mb-6'>YOUR BALANCE</h2>
                             <p className='text-gray flex items-center justify-between mb-4 pb-4 border-b border-gray-700 border-opacity-80' >Staked Amount <span className='text-light'>0.00 {filteredStaking.staking_with_abr}</span></p>

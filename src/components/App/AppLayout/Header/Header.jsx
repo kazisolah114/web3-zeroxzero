@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { HiOutlineLogout } from 'react-icons/hi';
+import { HiMenu, HiOutlineLogout, HiX } from 'react-icons/hi';
 import { HiOutlineCog6Tooth, HiOutlineUser } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 import Web3 from 'web3';
 import './Header.css';
 
-const Header = () => {
+const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
     const [userProfileClicked, setUserProfileClicked] = useState(false);
 
     const web3 = new Web3(window.ethereum);
@@ -61,20 +61,31 @@ const Header = () => {
 
         updateBalance();
     }, [wallet]);
-
+    console.log(showResponsiveMenu)
     return (
-        <div className='py-5 justify-between flex  px-5'>
-
-            <div className="socials">
-                <ul className='flex items-center gap-4'>
-                    <h2 className='text-[20px] font-semibold text-light'>Follow us at</h2>
-                    <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://twitter.com/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/twitter.svg" alt="" /></Link></li>
-                    <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://www.facebook.com/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/facebook.svg" alt="" /></Link></li>
-                    <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://www.instagram.com/0x0_official/?hl=en" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/instagram.svg" alt="" /></Link></li>
-                    <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://www.facebook.com/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/discord.svg" alt="" /></Link></li>
-                    <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9  inline-block rounded-full'><Link to="https://t.me/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/telegram.svg" alt="" /></Link></li>
-                </ul>
+        <div className='app-header w-full py-5 justify-between flex items-center px-5'>
+            <div className="menu-vs-socials">
+                <div className='menu hidden'>
+                    {showResponsiveMenu ?
+                        <div className='close' onClick={() => setShowResponsiveMenu(false)}>
+                            <HiX className='text-2xl opacity-0 ' />
+                        </div>
+                        :
+                        <HiMenu onClick={() => setShowResponsiveMenu(true)} className='text-2xl text-secondary' />
+                    }
+                </div>
+                <div className="socials">
+                    <ul className='flex items-center gap-4'>
+                        <h2 className='text-[20px] font-semibold text-light'>Follow us at</h2>
+                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://twitter.com/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/twitter.svg" alt="" /></Link></li>
+                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://www.facebook.com/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/facebook.svg" alt="" /></Link></li>
+                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://www.instagram.com/0x0_official/?hl=en" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/instagram.svg" alt="" /></Link></li>
+                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://www.facebook.com/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/discord.svg" alt="" /></Link></li>
+                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9  inline-block rounded-full'><Link to="https://t.me/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/telegram.svg" alt="" /></Link></li>
+                    </ul>
+                </div>
             </div>
+
             {wallet ?
                 <div className="user-details flex items-center  gap-4">
                     <div className="balance flex items-center gap-2  py-[6px] px-3 rounded-md border border-[#0fcfcfb7]">
@@ -88,7 +99,7 @@ const Header = () => {
                     <div onClick={() => setUserProfileClicked(!userProfileClicked)} className={`user-profile z-10 relative border  border-[#0fcfcfb7] p-2 rounded-full cursor-pointer hover:border-[#0fcfcf] ${userProfileClicked && 'border-[#0fcfcf]'} duration-200`}>
                         <HiOutlineUser className='text-light text-[22px]' />
                         {userProfileClicked &&
-                            <div className="user-options absolute w-52 top-[56px] -right-[2px] bg-[#383840] shadow-md shadow-slate-800 rounded-md">
+                            <div className="user-options absolute w-52 top-[56px] -right-[2px] bg-[#383840]  rounded-md">
                                 <div className="ractangle w-8 h-8  absolute -top-[17px] right-0">
 
                                 </div>

@@ -56,15 +56,15 @@ const Leaderboard = () => {
             <AppSectionHeader header={"Some of our top performers"} details={"Find out the top performers at 0x0 from last one month or 15 days and track any desired wallet"} defaultBtn={"Monthly"} secondBtn={"Quarterly"} />
             <div className="leaderboard relative flex items-center justify-between flex-wrap">
                 {
-                    leaderboardData.map((leaderboard, index) => <div key={index} className=' border border-[#0fcfcfb7]  py-4 px-4 rounded-md'>
+                    leaderboardData.map((leaderboard, index) => <div key={index} className='item border border-[#0fcfcfb7]  py-4 px-4 rounded-md'>
                         <h4 className='bg-[#122036] text-light font-bold p-3 w-36 text-center rounded-md'><Link to={leaderboard.exchange_against}>{leaderboard.exchange_against}</Link> / <Link to={leaderboard.exchange_with}>{leaderboard.exchange_with}</Link></h4>
                         <div className='mt-5 flex flex-col justify-center'>
                             <div className='leaderboard-table-head text-light bg-[#122036] rounded-md py-3 px-4'>
                             {/* <BackgroundShadow customShadow="0px 0px 500px 40px #10B8B9" /> */}
                                 <p>#</p>
                                 <p className='mr-12'>Wallet Address</p>
-                                <p>Profit Percentage</p>
-                                <p>Track Wallet</p>
+                                <p>Profit</p>
+                                <p className='mx-auto'>Track</p>
                             </div>
                             {
                                 leaderboard.data.map((item, index) => <div className='leaderboard-table-content border-b border-slate-800   text-light  py-4 px-4'>

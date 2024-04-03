@@ -1,4 +1,4 @@
-/* Home Page */
+
 @media screen and (max-width: 1128px) {
     .main-header{
         /* padding-bottom: 0; */
@@ -199,6 +199,11 @@
     .testimonials-content .testimonials-info {
         width: unset;
     }
+
+
+
+    /* Main 0x0 App */
+
 }
 
 @media screen and (max-width: 868px) {

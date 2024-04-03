@@ -93,7 +93,7 @@ const FindTraders = () => {
                                 </p>
                             </div>
                             {clickedBase &&
-                                <div className='absolute top-full w-full bg-gray-800'>
+                                <div className='z-[3] absolute top-full w-full bg-gray-800'>
                                     <ul className=''>
                                         {
                                             baseCurrency.map((currency, index) => <li
@@ -113,7 +113,7 @@ const FindTraders = () => {
                             }
                         </div>
 
-                        <div className='item relative'>
+                        <div className='item relative z-[2]'>
                             <h2 className='font-semibold uppercase text-light mb-3'>Target Currency</h2>
                             <div onClick={() => setClickedTarget(!clickedTarget)} className='flex items-center gap-3  cursor-pointer bg-slate-900 px-5 py-3 rounded-t-md '>
                                 <img className='w-6' src={selectedTarget?.flag} alt="" />
@@ -167,8 +167,8 @@ const FindTraders = () => {
                                 </div>
                             }
                         </div>
-                        <div className="item">
-                            <h2 className='font-semibold uppercase text-light mb-3 opacity-0 invisible'>Search Now</h2>
+                        <div className="item flex items-end">
+                            {/* <h2 className='font-semibold uppercase text-light mb-3 opacity-0 invisible'>Search Now</h2> */}
                             <button onClick={handleShowSearchResult} className='bg-secondaryHover hover:bg-secondary duration-200 w-full font-semibold py-[13px] rounded-md'>Search Now</button>
                         </div>
                     </div>
