@@ -9,7 +9,7 @@ import Lottie from 'react-lottie';
 
 
 const AboutUs = () => {
-    const animationDataUrl = 'https://lottie.host/3d6be601-bfbd-42e7-ab48-374b97ad2534/F5hV8tWsbd.json';
+    const animationDataUrl = 'https://lottie.host/f7d73fa5-8827-402e-a710-053cb3873d97/MhjJdXMBat.json';
     const [animationData, setAnimationData] = React.useState(null);
 
     React.useEffect(() => {
@@ -37,7 +37,7 @@ const AboutUs = () => {
             <SectionHeader sectionTitle={"About Us"} sectionDesc={"Lorem ipsum dolor semet is a world class game ipsum leto Lorem ipsum dolor semet is a world class game ipsum leto lorem"} />
             <div className="aboutus-content relative  flex items-center gap-10 justify-between" >
                 <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
-                <div className="aboutus-info relative w-[50%]">
+                <div className="aboutus-info relative w-3/4">
                     <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
                     <h2 className='text-light text-5xl font-bold mb-6 leading-[60px]'>
                         We are a leading <span className='text-secondary'>AI-driven</span> alerts platform
@@ -50,7 +50,7 @@ const AboutUs = () => {
                     </div>
                 </div>
                 <div className='relative aboutus-image  flex justify-end text-right ' data-aos="fade-up" data-aos-duration="1000">
-                <Lottie options={defaultOptions} height={550} width={600} style={{  }} />
+                <Lottie options={defaultOptions} height={500} width={500} style={{  }} />
                 </div>
             </div>
         </div>

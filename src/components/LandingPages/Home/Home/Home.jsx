@@ -14,7 +14,7 @@ const Home = () => {
         <div>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Home | 0x0</title>
+                <title>0x0 - AI Powered Trade Alerts</title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
             <HeroSection />

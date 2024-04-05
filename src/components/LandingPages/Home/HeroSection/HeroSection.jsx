@@ -7,11 +7,9 @@ import BackgroundShadow from '../../../CommonComponents/BackgroundShadow/Backgro
 const HeroSection = () => {
     return (
         <div className='hero-section'>
-            <video playsInline autoplay="true" muted  loop className="hero-video">
-                {/* <source src="/public/images/blac-dance.mp4" type="video/mp4" /> */}
-                {/* <source src="https://static.videezy.com/system/resources/previews/000/040/199/original/bg_0005.mp4" type="video/mp4" /> */}
+            {/* <video playsInline autoplay="true" muted  loop className="hero-video">
                 <source src="https://tectum.io/wp-content/uploads/2023/10/tectum-site_hero-screen-1.mp4" type="video/mp4" />
-            </video>
+            </video> */}
             <div className="hero-container container flex items-center justify-between">
                 <div className="hero-texts  w-[50%]" data-aos="flip-left" data-aos-duration="1000">
 
@@ -26,7 +24,6 @@ const HeroSection = () => {
                 </div>
                 <Animations />
             </div>
-            {/* <img src="https://www.programming-hero.com/_next/image?url=%2Fbanner%2Fcity.png&w=1920&q=75" alt="" /> */}
         </div>
     );
 };

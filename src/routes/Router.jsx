@@ -12,6 +12,8 @@ import FindTraders from "../components/App/AppPages/FindTraders/FindTraders";
 import FreeCoins from "../components/App/AppPages/FreeCoins/FreeCoins";
 import StakingDetails from "../components/App/AppPages/Staking/StakingDetails";
 import UserProfile from "../components/App/AppPages/UserProfile/UserProfile";
+import Blogs from "../components/LandingPages/Blogs/Blogs";
+import BlogDetails from "../components/LandingPages/Blogs/BlogDetails";
 
 
 const router = createBrowserRouter([
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />
+      },
+      {
+        path: '/blogs',
+        element: <Blogs />
+      },
+      {
+        path: 'blogs/:id',
+        element: <BlogDetails />
       }
     ]
   },

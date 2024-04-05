@@ -1,13 +1,37 @@
 import React from 'react';
 import BackgroundShadow from '../../../CommonComponents/BackgroundShadow/BackgroundShadow';
-import './HighFlyers.css'
+import './HighFlyers.css';
+import Lottie from 'react-lottie';
 
 const HighFlyers = () => {
+    const animationDataUrl = 'https://lottie.host/f63bdba5-3982-433f-86bb-bcca97cffd6d/5jWSKw9bEo.json';
+    const [animationData, setAnimationData] = React.useState(null);
+
+    React.useEffect(() => {
+        fetch(animationDataUrl)
+            .then((response) => response.json())
+            .then((data) => setAnimationData(data))
+            .catch((error) => console.error('Error loading animation data:', error));
+    }, [animationDataUrl]);
+
+    if (!animationData) {
+        return null; // or render a loading indicator
+    }
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+        speed: 5000,
+    };
     return (
         <div className='flyers-section py-24 container' data-aos="zoom-in"
         data-aos-duration="1000">
             <div className="flyers-content relative flex  gap-5 items-center justify-between">
-                <div className="flyers-info relative w-[50%]">
+                <div className="flyers-info relative w-3/4">
                     {/* <BackgroundShadow customShadow="0px 0px 400px 50px #1181E8" /> */}
                     <span className='text-secondary text-lg font-semibold'>YOU WILL GET</span>
                     <h2 className='text-white text-4xl mt-3 mb-5 font-bold'>HIGH FLYERS NFTs</h2>
@@ -18,7 +42,8 @@ const HighFlyers = () => {
                     <button className='primary-button-outline mt-5'>Launch Our App Now</button>
                 </div>
                 <div className="flyers-image">
-                    <img className='w-[700px]' src="/public/images/hero-ilustration.png" alt="" />
+                    {/* <img className='w-[700px]' src="/public/images/hero-ilustration.png" alt="" /> */}
+                    <Lottie options={defaultOptions} height={450} width={600} style={{  }} />
                 </div>
             </div>
         </div>
