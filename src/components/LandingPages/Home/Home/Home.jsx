@@ -8,6 +8,7 @@ import AboutUs from '../AboutUs/AboutUs';
 import OurVision from '../OurVision/OurVision';
 import HighFlyers from '../HighFlyers/HighFlyers';
 import Testimonials from '../Testimonials/Testimonials';
+import RoadmapSection from '../RoadmapSection/RoadmapSection';
 
 const Home = () => {
     return (
@@ -24,6 +25,7 @@ const Home = () => {
             <Features />
             <HighFlyers />
             <OurVision />
+            <RoadmapSection />
             <Testimonials />
         </div>
     );
