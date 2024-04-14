@@ -12,18 +12,18 @@
 .roadmap-section .roadmap::-webkit-scrollbar {
     display: none;
   }
-  .roadmap-section .roadmap li{
-    position: relative;
+.roadmap-section .roadmap li{
+    position: relative!important;
   }
 .roadmap-section .roadmap li::before{
     content: '';
     position: absolute;
     top: 0;
     left: 16px;
-    height: 142px;
+    height: 140px;
     width: 1px;
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23616367FF' stroke-width='3' stroke-dasharray='5%2c 6' stroke-dashoffset='20' stroke-linecap='butt'/%3e%3c/svg%3e");
 }
-.roadmap-section .roadmap li:last-child{
-    position: static;
+.roadmap-section .roadmap li:last-child::before{
+    width: 0;
 }
