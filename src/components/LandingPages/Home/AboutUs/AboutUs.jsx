@@ -34,13 +34,13 @@ const AboutUs = () => {
     };
     return (
         <div className='aboutus-section py-24 container'  data-aos="fade-down-right" data-aos-duration="1000">
-            <SectionHeader sectionTitle={"About Us"} sectionDesc={"Lorem ipsum dolor semet is a world class game ipsum leto Lorem ipsum dolor semet is a world class game ipsum leto lorem"} />
+            <SectionHeader sectionTitle={"About Us_"} sectionDesc={"Lorem ipsum dolor semet is a world class game ipsum leto Lorem ipsum dolor semet is a world class game ipsum leto lorem"} />
             <div className="aboutus-content relative  flex items-center gap-10 justify-between" >
                 <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
                 <div className="aboutus-info relative w-3/4">
                     <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
                     <h2 className='text-light text-5xl font-bold mb-6 leading-[60px]'>
-                        We are a leading <span className='text-secondary'>AI-driven</span> alerts platform
+                        We are_ a leading <span className='text-secondary'>AI-driven</span> alerts platform
                     </h2>
                     <h4 className='text-gray text-xl  mb-4 '>Have gained the trust of thousands of customers — and this number is keeps growing!</h4>
                     <p className='text-gray text-1xl text-justify mb-10'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, tempora illo debitis placeat optio nisi nulla necessitatibus excepturi soluta esse voluptas, maiores quaerat corrupti? Laboriosam reiciendis esse deserunt accusantium odio? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ab?</p>

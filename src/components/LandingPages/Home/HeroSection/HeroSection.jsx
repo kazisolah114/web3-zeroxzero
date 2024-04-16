@@ -13,7 +13,7 @@ const HeroSection = () => {
             <div className="hero-container container flex items-center justify-between">
                 <div className="hero-texts  w-[50%]" data-aos="flip-left" data-aos-duration="1000">
 
-                    <h1 className='hero-header text-white font-extrabold text-4xl mb-6 w-[85%]'>AI-driven <span className='text-secondary'>Alerts</span> for Trading Trends and Potential Successful Projects</h1>
+                    <h1 className='hero-header text-white font-extrabold text-4xl mb-6 w-[85%]'>AI-driven <span className='text-secondary'>Alerts_</span> for Trading Trends and Potential Successful Projects</h1>
                     <p className='text-gray mb-10'>Developing a privacy-centric infobiotics application to provide tailored recommendations for traders and fleets, enabling early identification of successful projects. The worlds first AI focused copy trading application.</p>
                     <div className='hero-buttons flex items-center  relative' data-aos="fade-up">
                         <BackgroundShadow customShadow="0px 0px 150px 40px #10B8B9" />

@@ -4,7 +4,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className='footer-section pt-10 mt-10 pb-5 border-t border-gray-700 border-opacity-80 '>
+        <footer className='footer-section pt-10 pb-5 border-t border-gray-700 border-opacity-80 '>
             <div className="footer-content container">
                 <div className="footer-top flex items-center justify-between pb-7 mb-7 ">
                     <Link to="/"><img className='w-36' src="/public/images/0x0-logo-2.png" alt="" /></Link>

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import Header from '../Home/Header/Header';
 import Footer from '../Home/Footer/Footer';
@@ -6,7 +7,7 @@ import './Main.css';
 
 const Main = () => {
     return (
-        <main  className='bg-[#16161F]'>
+        <main  className='bg-[#111621]'>
             <Header />
             <Outlet />
             <Footer />

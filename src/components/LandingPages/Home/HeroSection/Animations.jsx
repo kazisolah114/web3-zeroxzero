@@ -61,8 +61,6 @@ const Animations = () => {
         <div className="hero-animations relative w-[50%]  flex justify-end " data-aos="zoom-in" data-aos-duration="1000">
             <BackgroundShadow customShadow="0px 0px 150px 40px #10B8B9" />
             {/* <img src="https://assets-global.website-files.com/634054bf0f60201ce9b30604/651511fed6711f9008ce37a8_Hero-Dark.svg" alt="" /> */}
-            {/* <Lottie options={defaultOptions1} height={500} width={600} style={{ margin: "0 right", position: "relative", top: "80px" }} /> */}
-            {/* <Lottie options={defaultOptions2} height={500} width={600} style={{ margin: "0 right", position: "absolute", top: "-20px" }} /> */}
             <Lottie options={defaultOptions3} height={600} width={600} style={{}} />
         </div>
     );

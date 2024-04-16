@@ -24,7 +24,7 @@ const RoadmapSection = () => {
             {/* <SectionHeader sectionTitle={"0x0 Roadmap & Future Prospects"} sectionDesc={"Have a look at some of the exciting milestones that we have planned to reach in the near future"} /> */}
             <div className="roadmap-content">
                 <div className="text-element">
-                    <h1 className='text-3xl text-light font-bold mb-3'>0x0 Roadmap & Future Prospects</h1>
+                    <h1 className='text-3xl text-light font-bold mb-3'>0x0 Roadmap_ & Future Prospects</h1>
                     <p className='text-gray '>Have a look at some of the exciting milestones that we have planned to reach in the near future</p>
                     <button className='mt-10 bg-secondaryHover hover:bg-secondary duration-200 w-36 h-11 rounded '>Learn More</button>
                 </div>

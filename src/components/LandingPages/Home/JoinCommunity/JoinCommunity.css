@@ -1,0 +1,21 @@
+.join-community{
+    background-image: url('https://miro.medium.com/v2/resize:fit:1400/1*3r2auDWClRemzIV1xL9LLQ.jpeg');
+    padding: 100px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+}
+.join-community::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.611);
+    z-index: -1;
+    box-shadow: 1px 0 120px #07203f;
+}

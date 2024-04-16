@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import HeroSection from '../HeroSection/HeroSection';
 import { Helmet } from 'react-helmet';
@@ -9,6 +10,9 @@ import OurVision from '../OurVision/OurVision';
 import HighFlyers from '../HighFlyers/HighFlyers';
 import Testimonials from '../Testimonials/Testimonials';
 import RoadmapSection from '../RoadmapSection/RoadmapSection';
+import JoinCommunity from '../JoinCommunity/JoinCommunity';
+import TokenStats from '../TokenStats/TokenStats';
+import Documents from '../Documents/Documents';
 
 const Home = () => {
     return (
@@ -20,13 +24,16 @@ const Home = () => {
             </Helmet>
             <HeroSection />
             <HowItWorks  />
+            <TokenStats />
             <WhyUs />
             <AboutUs />
             <Features />
             <HighFlyers />
-            <OurVision />
             <RoadmapSection />
+            <OurVision />
+            <JoinCommunity />
             <Testimonials />
+            {/* <Documents /> */}
         </div>
     );
 };

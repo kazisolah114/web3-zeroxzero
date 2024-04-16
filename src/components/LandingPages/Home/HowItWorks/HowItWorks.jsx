@@ -11,7 +11,7 @@ const HowItWorks = () => {
     ]
     return (
         <div className='how-it-works py-24 container'  data-aos="fade-up" data-aos-duration="1000">
-            <SectionHeader sectionTitle={"How It Work"} sectionDesc={"Lorem ipsum dolor semet is a world class game ipsum leto Lorem ipsum dolor semet is a world class game ipsum leto lorem"} />
+            <SectionHeader sectionTitle={"How We_ Work"} sectionDesc={"Lorem ipsum dolor semet is a world class game ipsum leto Lorem ipsum dolor semet is a world class game ipsum leto lorem"} />
             <div className="howitworks-content flex gap-10 items-center justify-between" >
                 {
                     items.map((item, index) => <div key={index} className='howitworks-item text-center flex flex-col items-center'>

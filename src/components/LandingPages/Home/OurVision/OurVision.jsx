@@ -15,7 +15,7 @@ const OurVision = () => {
                 <div className="vision-info relative w-[50%]">
                     {/* <BackgroundShadow customShadow="0px 0px 400px 50px #1181E8"/> */}
                     <span className='text-secondary text-lg font-semibold'>OUR VISION</span>
-                    <h2 className='text-white text-4xl mt-3 mb-5 font-bold'>Users from all around the world</h2>
+                    <h2 className='text-white text-4xl mt-3 mb-5 font-bold'>Users from all around_ the world</h2>
                     <p className='text-gray '>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum quo libero cumque! Quod, molestias commodi? Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <div className="items flex items-center gap-16 mt-12">
                         {
