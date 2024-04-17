@@ -1,3 +1,9 @@
+.blogs-section .blogs-items{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    
+}
 .blogs-items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

@@ -13,6 +13,7 @@ import RoadmapSection from '../RoadmapSection/RoadmapSection';
 import JoinCommunity from '../JoinCommunity/JoinCommunity';
 import TokenStats from '../TokenStats/TokenStats';
 import Documents from '../Documents/Documents';
+import BlogsSection from '../BlogsSection/BlogsSection';
 
 const Home = () => {
     return (
@@ -25,15 +26,15 @@ const Home = () => {
             <HeroSection />
             <HowItWorks  />
             <TokenStats />
-            <WhyUs />
-            <AboutUs />
             <Features />
+            <AboutUs />
+            <WhyUs />
             <HighFlyers />
             <RoadmapSection />
             <OurVision />
             <JoinCommunity />
             <Testimonials />
-            {/* <Documents /> */}
+            <BlogsSection />
         </div>
     );
 };

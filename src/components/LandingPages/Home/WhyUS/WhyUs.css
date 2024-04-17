@@ -11,7 +11,9 @@
     justify-content: center;
     flex-direction: column;
     border-radius: 6px;
-    padding: 30px 40px;
+    width: 306px;
+    height: 275px;
+    padding: 0px 30px;
     position: relative;
     overflow: hidden;
 }

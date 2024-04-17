@@ -16,7 +16,7 @@ const Features = () => {
             <SectionHeader sectionTitle={"Our Amazing Features_"} sectionDesc={"Lorem ipsum dolor semet is a world class game ipsum leto Lorem ipsum dolor semet is a world class game ipsum leto lorem"} />
             <div className="features flex items-center justify-between gap-8 " >
                 {
-                    features.map((feature, index) => <div key={index} className='bg-[#1d212f87] py-10 px-7 rounded-md'>
+                    features.map((feature, index) => <div key={index} className='bg-[#1d212f87] py-10 px-7 rounded-md '>
                         <span className='text-3xl w-12 h-12 rounded-full text-light flex items-center justify-center bg-[#0fcfcf73]'>{feature.icon}</span>
                         <h3 className='mt-5 mb-3 text-light font-semibold text-xl'>{feature.title}</h3>
                         <p className='text-gray mb-8 w-[80%]'>{feature.desc}</p>
