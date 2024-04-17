@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import './HowTo.css'
 import FAQ from './FAQ';
-import { Link } from 'lucide-react';
 
 const HowTo = () => {
     const [activeTab, setActiveTab] = useState("trade");
