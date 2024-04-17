@@ -1,7 +1,7 @@
 {
   "name": "0x0-frontend-new",
   "private": true,
-  "homepage": "https://0x0-frontend.vercel.app/",
+  "homepage": "https://0x0-frontend.vercel.app",
   "version": "0.1.0",
   "type": "module",
   "scripts": {
