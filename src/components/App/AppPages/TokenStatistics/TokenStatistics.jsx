@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import AppSectionHeader from '../../../CommonComponents/AppSectionHeader/AppSectionHeader';
 import { Helmet } from 'react-helmet';
-// import PieChart from './PieChart';
-// import DoughnutChart from './DoughnutChart';
-// import PriceChart from './0x0PriceChart';
+import PieChart from './PieChart';
+import DoughnutChart from './DoughnutChart';
+import PriceChart from './0x0PriceChart';
 import { Link } from 'react-router-dom';
 import { HiOutlineDocumentDuplicate } from 'react-icons/hi2';
 import TokenConvert from './TokenConvert';
@@ -66,8 +66,8 @@ const TokenStatistics = () => {
             <AppSectionHeader header={"0x0 Token Statistics"} />
             <div className='token-stats-content'>
                 <div className="token-stats-charts flex justify-between gap-10 ">
-                    {/* <PieChart tokenStats={tokenStats} /> */}
-                    {/* <DoughnutChart transections={transections} /> */}
+                    <PieChart tokenStats={tokenStats} />
+                    <DoughnutChart transections={transections} />
                 </div>
                 <div className="token-details mt-20 ">
                     <div>
@@ -92,7 +92,7 @@ const TokenStatistics = () => {
                                 </div>
                             </div>
                             <div className="price-chart mt-12">
-                                {/* <PriceChart tokenStats={tokenStats} /> */}
+                                <PriceChart tokenStats={tokenStats} />
                             </div>
                         </div>
                         <div className="compare-0x0 mt-5 bg-[#122036] rounded-md py-5 px-5">

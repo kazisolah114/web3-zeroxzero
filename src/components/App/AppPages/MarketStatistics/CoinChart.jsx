@@ -1,6 +1,7 @@
 import React from 'react';
 import { HiOutlineXCircle } from 'react-icons/hi2';
 import CanvasJSReact from '@canvasjs/react-charts';
+//var CanvasJSReact = require('@canvasjs/react-charts');
 
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;

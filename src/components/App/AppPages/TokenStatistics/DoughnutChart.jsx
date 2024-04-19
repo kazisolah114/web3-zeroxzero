@@ -1,9 +1,11 @@
 import React from 'react';
-import CanvasJSReact from '@canvasjs/react-charts';
 import './TokenStatistics.css';
+import CanvasJSReact from '@canvasjs/react-charts';
+//var CanvasJSReact = require('@canvasjs/react-charts');
 
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
 const DoughnutChart = ({ transections }) => {
     console.log("Transections:", transections);
     const data = [
