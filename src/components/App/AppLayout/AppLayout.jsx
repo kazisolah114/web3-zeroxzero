@@ -18,7 +18,7 @@ const AppLayout = () => {
                 <Sidebar showResponsiveMenu={showResponsiveMenu} setShowResponsiveMenu={setShowResponsiveMenu} />
                 <div className='flex flex-col  w-full'>
                     <Header showResponsiveMenu={showResponsiveMenu} setShowResponsiveMenu={setShowResponsiveMenu} />
-                    <div className='outlet py-5 px-5 text-justify max-h-[88.7vh] overflow-auto outlet-scrollbar'>
+                    <div className='outlet py-5 px-5 text-justify h-[88.7vh] overflow-auto outlet-scrollbar'>
                         <Outlet />
                     </div>
                 </div>

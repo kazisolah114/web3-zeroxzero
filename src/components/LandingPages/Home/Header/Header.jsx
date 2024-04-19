@@ -9,7 +9,7 @@ const Header = () => {
     const [showResponsiveMenu, setShowResponsiveMenu] = useState(false);
     const navigate = useNavigate();
     const handleClickButton = () => {
-        navigate("/app/dashboard")
+        navigate(`/app/dashboard`)
     }
     return (
         <header className='main-header py-4'>

@@ -3,9 +3,9 @@ import BackgroundShadow from '../../../CommonComponents/BackgroundShadow/Backgro
 
 const OurVision = () => {
     const items = [
-        { name: "People Joined", number: "18K+" },
-        { name: "VIP Users", number: "1800+" },
-        { name: "Big Company", number: "148+" }
+        { name: "Token Holders", number: "180+" },
+        { name: "Unique Wallets", number: "1500" },
+        { name: "Staked Tokens", number: "1923K" }
     ]
     return (
         <div className='ourvision-section py-24 container' data-aos="fade-up"
