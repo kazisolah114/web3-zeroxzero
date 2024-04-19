@@ -12,7 +12,10 @@ export default defineConfig({
       }
     }
   },
-  plugins: [react(), VitePluginRequire()],
+  plugins: [
+    react(),
+    VitePluginRequire()
+  ],
   define: {
     'process.env': process.env,
   },
