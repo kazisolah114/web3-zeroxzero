@@ -30,7 +30,10 @@ const UserProfile = () => {
                             <h2 className='text-lg text-light font-semibold mb-2'>Wallet Address</h2>
                             <div className='address flex items-center  gap-3 bg-slate-700 p-3 rounded-md'>
                                 <img src="/public/images/metamask-logo.png" alt="" />
-                                <p onClick={handleWalletCopy} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer '>0xd2798238940382735775e5 <HiOutlineDocumentDuplicate className='' /></p>
+                                <p onClick={() => {
+                                    handleWalletCopy();
+                                    navigator.clipboard.writeText("user metamask address")
+                                }} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer '>0xd2798238940382735775e5 <HiOutlineDocumentDuplicate className='' /></p>
                             </div>
                             <ToastContainer />
                         </div>

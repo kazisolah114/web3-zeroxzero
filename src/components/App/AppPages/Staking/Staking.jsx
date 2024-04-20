@@ -87,7 +87,7 @@ const Staking = () => {
                                     <img className='w-12' src={item.staking_with_logo} alt="" />
                                     <h2 className=' font-semibold text-lg text-light uppercase'>{item.staking_with_abr} to {item.staking_for_abr}</h2>
                                 </div>
-                                <div className='lists-btn flex items-center justify-between gap-10'>
+                                <div className='lists-btn flex items-center justify-between gap-8'>
                                     <div className='lists flex justify-start items-center gap-4'>
                                         <h3 className='flex gap-2 text-light'>Stake With: <span className=' text-secondary font-semibold text-md'>{item.staking_with}</span></h3>
                                         <h3 className='flex  gap-2 text-light'>Stake For: <span className=' text-secondary font-semibold text-md'>{item.staking_for}</span></h3>

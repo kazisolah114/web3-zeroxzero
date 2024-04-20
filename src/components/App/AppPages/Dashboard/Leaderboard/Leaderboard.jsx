@@ -24,7 +24,7 @@ const Leaderboard = () => {
     // Handle Leaderboard
     const [leaderboardData, setLeaderboardData] = useState([]);
     useEffect(() => {
-        fetch('/api/leaderboards')
+        fetch(`/api/leaderboards`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -46,28 +46,14 @@ const Leaderboard = () => {
 
     }
 
-    // useEffect(() => {
-    //     fetch('/api/leaderboards', {
-    //         method: 'GET'
-    //     })
-    //     .then(res => {
-    //         if (!res.ok) {
-    //             throw new Error(`HTTP error! Status: ${res.status}`);
-    //         }
-    //         return res.json();
-    //     })
-    //     .then(data => console.log(data))
-    //     .catch(error => console.log('Fetch error:', error));
-    // }, []);
+    // console.log(`${import.meta.env.VITE_APP_API_BASE_URL}/leaderboards`)
 
-
-    console.log(leaderboardData[0]?.data[0]?.profit_perc)
 
     return (
         <div className='leaderboard-main '>
 
             <ToastContainer />
-            <AppSectionHeader header={"Some of our top performers"} details={"Find out the top performers at 0x0 from last one month or 15 days and track any desired wallet"} defaultBtn={"Monthly"} secondBtn={"Quarterly"} />
+            <AppSectionHeader header={"Some of our top performers"} details={"Find out the top performers at 0x0 from last one month or 15 days and track any desired wallet"} defaultBtn={"Monthly"} secondBtn={"Weekly"} />
             <div className="leaderboard relative flex justify-between flex-wrap">
                 {
                     leaderboardData.map((leaderboard, index) => <div key={index} className='item border border-[#0fcfcfb7]  py-4 px-4 rounded-md'>

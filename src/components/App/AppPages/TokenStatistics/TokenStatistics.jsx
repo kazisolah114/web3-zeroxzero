@@ -63,7 +63,6 @@ const TokenStatistics = () => {
                 <title>0x0 Token Stats | 0x0.com</title>
                 <link rel="canonical" href="https://0x0.com" />
             </Helmet>
-            <AppSectionHeader header={"0x0 Token Statistics"} />
             <div className='token-stats-content'>
                 <div className="token-stats-charts flex justify-between gap-10 ">
                     <PieChart tokenStats={tokenStats} />
@@ -127,11 +126,17 @@ const TokenStatistics = () => {
                             </div>
                             <div className="address mt-7 flex items-center justify-between">
                                 <h2 className='text-md font-semibold text-gray flex items-center gap-2'><img className='w-6' src="/public/images/logo-eth.png" alt="" />Ethereum</h2>
-                                <h2 onClick={handleWalletCopy} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer '>0xE320...902J8 <HiOutlineDocumentDuplicate className='' /></h2>
+                                <h2 onClick={() => {
+                                    handleWalletCopy();
+                                    navigator.clipboard.writeText("wallet address")
+                                }} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer '>0xE320...902J8 <HiOutlineDocumentDuplicate /></h2>
                             </div>
                             <div className="address mt-5 flex items-center justify-between">
                                 <h2 className='text-md font-semibold text-gray '>Airdrop Address</h2>
-                                <h2 onClick={handleWalletCopy} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer '>0xT280...73J17 <HiOutlineDocumentDuplicate className='' /></h2>
+                                <h2 onClick={() => {
+                                    handleWalletCopy();
+                                    navigator.clipboard.writeText("airdrop wallet address")
+                                }} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer '>0xT280...73J17 <HiOutlineDocumentDuplicate /></h2>
                             </div>
                             <ToastContainer />
                         </div>
