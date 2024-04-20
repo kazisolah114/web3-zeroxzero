@@ -23,7 +23,7 @@ const MarketUpdate = ({ marketUpdate }) => {
 
     return (
         <div className='market-update relative'>
-            <CoinChart modalCoinData={modalCoinData} setModalCoinData={setModalCoinData} />
+            {/* <CoinChart modalCoinData={modalCoinData} setModalCoinData={setModalCoinData} /> */}
             <div className="market-update-top mb-10 flex items-center justify-between">
                 <h2 className='text-2xl text-white font-bold'>Market Statistics</h2>
                 <div className='flex items-center gap-3 rounded-full text-light py-3 px-4 bg-[#122036]'>
