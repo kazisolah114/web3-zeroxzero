@@ -1,4 +1,3 @@
-"use client";
 import React from 'react';
 import HeroSection from '../HeroSection/HeroSection';
 import { Helmet } from 'react-helmet';
