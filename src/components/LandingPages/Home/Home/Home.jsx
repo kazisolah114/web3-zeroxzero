@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import HeroSection from '../HeroSection/HeroSection';
 import { Helmet } from 'react-helmet';
 import HowItWorks from '../HowItWorks/HowItWorks';
@@ -13,8 +13,11 @@ import JoinCommunity from '../JoinCommunity/JoinCommunity';
 import TokenStats from '../TokenStats/TokenStats';
 import Documents from '../Documents/Documents';
 import BlogsSection from '../BlogsSection/BlogsSection';
+import { UserContext, useUserContext } from '../../../../ContextAPI/UserContext';
 
 const Home = () => {
+    const {developerName} = useContext(UserContext);
+    console.log(developerName);
     return (
         <div>
             <Helmet>
