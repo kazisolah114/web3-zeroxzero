@@ -2,66 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { HiMenu, HiOutlineLogout, HiX } from 'react-icons/hi';
 import { HiOutlineCog6Tooth, HiOutlineUser } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
-import Web3 from 'web3';
 import './Header.css';
+import { useUserContext } from '../../../../ContextAPI/UserContext';
 
 const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
     const [userProfileClicked, setUserProfileClicked] = useState(false);
 
-    const web3 = new Web3(window.ethereum);
-    const [wallet, setWallet] = useState(null);
-    const [balance, setBalance] = useState(0);
+    const {wallet, balance, handleConnectWallet, handleDisconnectWallet } = useUserContext();
 
-    const handleConnectWallet = async () => {
-        try {
-            if (window.ethereum !== undefined) {
-                const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
-                console.log("Address:", accounts[0]);
-                setWallet(accounts[0])
-            } else {
-                console.log("Type mismatched:", typeof window.ethereum);
-            }
-        } catch (error) {
-            console.log("Error with connecting wallet:", error)
-        }
-
-    }
-    const handleDisconnectWallet = async () => {
-        try {
-            if (window.ethereum !== undefined) {
-                const accounts = await window.ethereum.request({ method: 'eth_accounts' });
-                if (accounts.length > 0) {
-                    await window.ethereum.request({ method: 'eth_requestAccounts', params: [] });
-                    console.log("Wallet has been disconnected!")
-                    setWallet(null);
-                } else {
-                    console.log("There is no account to disconnect")
-                }
-            } else {
-                console.log("Type mismatched")
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    useEffect(() => {
-        const updateBalance = async () => {
-            try {
-                if (wallet) {
-                    const balanceWei = await web3.eth.getBalance(wallet);
-                    const balanceEther = web3.utils.fromWei(balanceWei, 'ether');
-                    console.log(balanceEther)
-                    setBalance(balanceEther);
-                }
-            } catch (error) {
-                console.error('Error fetching balance', error);
-            }
-        };
-
-        updateBalance();
-    }, [wallet]);
-    console.log(showResponsiveMenu)
     return (
         <div className='app-header w-full py-5 justify-between flex items-center px-5'>
             <div className="menu-vs-socials">

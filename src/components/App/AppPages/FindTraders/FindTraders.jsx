@@ -67,11 +67,6 @@ const FindTraders = () => {
     }
 
 
-
-    console.log(selectedBase);
-    console.log(selectedTarget);
-    console.log(selectedTime);
-
     return (
         <div className='find-traders'>
             <Helmet>

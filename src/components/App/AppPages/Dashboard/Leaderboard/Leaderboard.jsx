@@ -7,6 +7,7 @@ import AppSectionHeader from '../../../../CommonComponents/AppSectionHeader/AppS
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
+import useLeaderboard from '../../../../../states/hooks/useLeaderboard';
 
 const Leaderboard = () => {
     const notify = () => toast.success('Wallet added to the tracking list!', {
@@ -21,16 +22,7 @@ const Leaderboard = () => {
         transition: Bounce,
     });
 
-    // Handle Leaderboard
-    const [leaderboardData, setLeaderboardData] = useState([]);
-    useEffect(() => {
-        fetch(`/api/leaderboards`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setLeaderboardData(data);
-            })
-    }, [])
+    const leaderboardData = useLeaderboard();
 
     const [tracking, setTracking] = useState(false);
     const [trackingList, setTrackingList] = useState([]);
@@ -46,7 +38,6 @@ const Leaderboard = () => {
 
     }
 
-    // console.log(`${import.meta.env.VITE_APP_API_BASE_URL}/leaderboards`)
 
 
     return (

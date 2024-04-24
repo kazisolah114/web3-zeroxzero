@@ -11,13 +11,10 @@ import Testimonials from '../Testimonials/Testimonials';
 import RoadmapSection from '../RoadmapSection/RoadmapSection';
 import JoinCommunity from '../JoinCommunity/JoinCommunity';
 import TokenStats from '../TokenStats/TokenStats';
-import Documents from '../Documents/Documents';
 import BlogsSection from '../BlogsSection/BlogsSection';
-import { UserContext, useUserContext } from '../../../../ContextAPI/UserContext';
 
 const Home = () => {
-    const {developerName} = useContext(UserContext);
-    console.log(developerName);
+
     return (
         <div>
             <Helmet>

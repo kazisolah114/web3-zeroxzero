@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
 import TrackingList from './TrackingList';
+import { useUserContext } from '../../../../ContextAPI/UserContext';
 
 const UserProfile = () => {
     const notify = () => toast.success('Wallet has been copied!', {
@@ -18,6 +19,7 @@ const UserProfile = () => {
         theme: "light",
         transition: Bounce,
     });
+    const {wallet, balance} = useUserContext();
     const handleWalletCopy = () => {
         notify();
     }
@@ -32,8 +34,8 @@ const UserProfile = () => {
                                 <img src="/public/images/metamask-logo.png" alt="" />
                                 <p onClick={() => {
                                     handleWalletCopy();
-                                    navigator.clipboard.writeText("user metamask address")
-                                }} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer '>0xd2798238940382735775e5 <HiOutlineDocumentDuplicate className='' /></p>
+                                    navigator.clipboard.writeText(`${wallet}`)
+                                }} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer '>{wallet} <HiOutlineDocumentDuplicate className='' /></p>
                             </div>
                             <ToastContainer />
                         </div>
@@ -41,7 +43,7 @@ const UserProfile = () => {
                             <h2 className='text-lg text-light font-semibold mb-2'>Wallet Balance</h2>
                             <div className='address flex items-center gap-3 bg-slate-700 p-3 rounded-md'>
                                 <img className='w-6' src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="" />
-                                <p className='font-semibold'>0.00 ETH</p>
+                                <p className='font-semibold'>{balance}00 ETH</p>
                             </div>
                         </div>
                     </div>
