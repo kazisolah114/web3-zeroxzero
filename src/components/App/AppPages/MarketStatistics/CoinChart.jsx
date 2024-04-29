@@ -1,10 +1,8 @@
 import React from 'react';
 import { HiOutlineXCircle } from 'react-icons/hi2';
-import CanvasJSReact from '@canvasjs/react-charts';
-//var CanvasJSReact = require('@canvasjs/react-charts');
-
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+// import CanvasJSReact from '@canvasjs/react-charts';
+// var CanvasJS = CanvasJSReact.CanvasJS;
+// var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 const CoinChart = ({ modalCoinData, setModalCoinData }) => {
     const options = {
@@ -51,8 +49,7 @@ const CoinChart = ({ modalCoinData, setModalCoinData }) => {
                         <HiOutlineXCircle className='text-4xl  cursor-pointer hover:text-red-400 duration-200' onClick={() => setModalCoinData(null)} />
                     </div>
                     <div className="chart">
-                        <CanvasJSChart options={options} />
-                        {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+                        {/* <CanvasJSChart options={} /> */}
                     </div>
                 </div>
             </div>

@@ -1,11 +1,9 @@
 import React from 'react';
 import './TokenStatistics.css';
 import BackgroundShadow from '../../../CommonComponents/BackgroundShadow/BackgroundShadow';
-import CanvasJSReact from '@canvasjs/react-charts';
-//var CanvasJSReact = require('@canvasjs/react-charts');
- 
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+// import CanvasJSReact from '@canvasjs/react-charts';
+// var CanvasJS = CanvasJSReact.CanvasJS;
+// var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 const PieChart = ({ tokenStats }) => {
     console.log("Token Stats from char:", tokenStats);
@@ -65,10 +63,8 @@ const PieChart = ({ tokenStats }) => {
     return (
         <div className="flex flex-col items-center w-[100%] relative">
             <BackgroundShadow customShadow="0px 0px 400px 60px #10B8B9" />
-            <CanvasJSChart options={options}
-            // onRef={ref => this.chart = ref}
-            />
-            {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+            {/* <CanvasJSChart options={options}/> */}
+
         </div>
     );
 };

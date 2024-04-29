@@ -1,10 +1,8 @@
 import React from 'react';
 import './TokenStatistics.css';
-import CanvasJSReact from '@canvasjs/react-charts';
-//var CanvasJSReact = require('@canvasjs/react-charts');
-
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+// import CanvasJSReact from '@canvasjs/react-charts';
+// var CanvasJS = CanvasJSReact.CanvasJS;
+// var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 const DoughnutChart = ({ transections }) => {
     console.log("Transections:", transections);
@@ -136,11 +134,7 @@ const DoughnutChart = ({ transections }) => {
     }
     return (
         <div className="flex flex-col items-center w-[100%]">
-            {/* <h2 className='mb-10 font-bold text-2xl'>0x0 Stats</h2> */}
-            <CanvasJSChart options={options}
-            // onRef={ref => this.chart = ref}
-            />
-            {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+            {/* <CanvasJSChart options={options}/> */}
         </div>
     );
 };
