@@ -5,9 +5,12 @@ import './FindTraders.css';
 import SearchDayCount from './SearchDayCount';
 import SearchResult from './SearchResult';
 import { Helmet } from 'react-helmet';
+import useLeaderboard from '../../../../states/hooks/useLeaderboard';
 
 
 const FindTraders = () => {
+    const leaderboard = useLeaderboard();
+    const {leaderboardData, isLoading} = leaderboard;
     const [baseCurrency, setBaseCurrency] = useState([]);
     const [targetCurrency, setTargetCurrency] = useState([]);
     const [timePeriod, setTimePeriod] = useState("");
@@ -98,7 +101,7 @@ const FindTraders = () => {
                                             >
                                                 <img className='w-[17px]' src={currency.flag} alt="" />
                                                 <div className='flex items-center gap-2'>
-                                                    <p className='text-[#e2e2e2] flex items-center gap-1 underline'>{currency.currency}</p>
+                                                    <p className='text-[#e2e2e2] flex items-center gap-1 '>{currency.currency}</p>
                                                     <span className='text-gray'>{currency.abr}</span>
                                                 </div>
                                             </li>)
@@ -127,7 +130,7 @@ const FindTraders = () => {
                                             >
                                                 <img className='w-[17px]' src={currency.flag} alt="" />
                                                 <div className='flex items-center gap-2'>
-                                                    <p className='text-[#e2e2e2] flex items-center gap-1 underline'>{currency.currency}</p>
+                                                    <p className='text-[#e2e2e2] flex items-center gap-1 '>{currency.currency}</p>
                                                     <span className='text-gray'>{currency.abr}</span>
                                                 </div>
                                             </li>)
@@ -154,7 +157,8 @@ const FindTraders = () => {
                                                 className={`flex items-center gap-3 py-3 px-5 hover:bg-gray-700  cursor-pointer`}
                                             >
                                                 <div className='flex items-center gap-2'>
-                                                    <p className='text-[#e2e2e2] flex items-center gap-1 underline'>{time.time}</p>
+                                                    <p className='text-[#e2e2e2] flex items-center gap-1 '>{time.time}</p>
+                                                    <span className='text-gray'>{time.cost} Search Days</span>
                                                 </div>
                                             </li>)
                                         }
@@ -169,7 +173,7 @@ const FindTraders = () => {
                     </div>
                 </div>
                 {showSearchResult &&
-                    <SearchResult />
+                    <SearchResult leaderboardData={leaderboardData} isLoading={isLoading} />
                 }
             </div>
         </div>

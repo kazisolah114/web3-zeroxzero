@@ -3,9 +3,10 @@ import './TokenStatistics.css';
 import BackgroundShadow from '../../../CommonComponents/BackgroundShadow/BackgroundShadow';
 import CanvasJSReact from '@canvasjs/react-charts';
 //var CanvasJSReact = require('@canvasjs/react-charts');
-
+ 
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
 const PieChart = ({ tokenStats }) => {
     console.log("Token Stats from char:", tokenStats);
     const data = {

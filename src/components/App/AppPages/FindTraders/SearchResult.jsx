@@ -5,71 +5,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
 import BackgroundShadow from '../../../CommonComponents/BackgroundShadow/BackgroundShadow';
+import useLeaderboard from '../../../../states/hooks/useLeaderboard';
+import Loader from '../../../CommonComponents/Loader/Loader';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
-const SearchResult = () => {
-    const leaderboard = [
-        {
-            "id": 143753,
-            "address": "0xJBCD174564924234",
-            "target_coin_volume": "0.002818",
-            "profit_percentage": "+658.22"
-        },
-        {
-            "id": 29574634,
-            "address": "0xABCD456717444234",
-            "target_coin_volume": "0.002818",
-            "profit_percentage": "+828.22"
-        },
-        {
-            "id": 354064,
-            "address": "0xEFGH84455684378",
-            "target_coin_volume": "0.002818",
-            "profit_percentage": "+162.39"
-        },
-        {
-            "id": 4346653,
-            "address": "0xJBCD9239264454",
-            "target_coin_volume": "0.002818",
-            "profit_percentage": "+4.55"
-        },
-        {
-            "id": 5060434,
-            "address": "0xABCD15534563234",
-            "target_coin_volume": "0.002818",
-            "profit_percentage": "-8.22"
-        },
-        {
-            "id": 60454064,
-            "address": "0xEFGH67F45845678",
-            "target_coin_volume": "0.002818",
-            "profit_percentage": "+162.39"
-        },
-        {
-            "id": 754064,
-            "address": "0xEFGH524556236278",
-            "target_coin_volume": "0.002818",
-            "profit_percentage": "+192.39"
-        },
-        {
-            "id": 8060434,
-            "address": "0xABCD15423456234",
-            "target_coin_volume": "0.002818",
-            "profit_percentage": "-0.22"
-        },
-        {
-            "id": 90454064,
-            "address": "0xEFGH34566784178",
-            "target_coin_volume": "0.002818",
-            "profit_percentage": "+162.39"
-        },
-        {
-            "id": 1054064,
-            "address": "0xEFGH84455486SS8",
-            "target_coin_volume": "0.002818",
-            "profit_percentage": "-2.39"
-        }
-
-    ];
+const SearchResult = ({ leaderboardData, isLoading }) => {
 
     const notify = () => toast.success('Wallet added to the tracking list!', {
         position: "top-right",
@@ -96,37 +36,51 @@ const SearchResult = () => {
         }
 
     }
-    console.log(leaderboard);
     return (
-        <div className='search-result '>
-            <ToastContainer />
-            <div className='mt-5 flex flex-col justify-center '>
-                <div className='search-table-head text-light bg-[#122036] px-[30px] py-5 rounded-md '>
-                    <p>#</p>
-                    <p className='mr-12'>Wallet Address</p>
-                    <p>Target Coin Volume</p>
-                    <p>Profit Percentage</p>
-                    <p className='mx-auto text-center'>Track Wallet</p>
+        <div>
+            {isLoading ?
+                <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
+                    <div>
+                        <div className='mb-3 mt-8'>
+                            <Skeleton height={"40px"} />
+                        </div>
+                        <div className=''>
+                            <Skeleton className='mb-1' count={10} height={"40px"} />
+                        </div>
+                    </div>
+                </SkeletonTheme>
+                :
+                <div className='search-result '>
+                    <ToastContainer />
+                    <div className='mt-5 flex flex-col justify-center '>
+                        <div className='search-table-head text-light bg-[#122036] px-[30px] py-5 rounded-md '>
+                            <p>#</p>
+                            <p className='mr-12'>Wallet Address</p>
+                            <p>Target Coin Volume</p>
+                            <p>Profit Percentage</p>
+                            <p className='mx-auto text-center'>Track Wallet</p>
+                        </div>
+                        {
+                            leaderboardData[0]?.data.slice(0, 10).map((item, index) => <div className='search-table-content  border-b border-slate-800   text-light  px-[30px] py-5'>
+
+                                <p>{index + 1}</p>
+
+                                <Link to={item.wallet_address} target="_blank" className=''>{item.wallet_address.substring(0, 6)}...{item.wallet_address.substring(item.wallet_address.length - 6)}</Link>
+                                <p>{item.target_coin_volume}</p>
+                                <p className={`${item.profit_perc.toString().startsWith("-") ? 'text-red-400' : 'text-green-400'}`}>{item.profit_perc.toFixed(5)}%</p>
+                                <p onClick={() => handleTrackWallet(item.wallet_address)} className='mx-auto cursor-pointer'>
+                                    {trackingList.includes(item.wallet_address) ?
+                                        <HiOutlineEyeSlash className='text-2xl text-secondary' />
+                                        :
+                                        <HiOutlineEye className='text-2xl' />
+                                    }
+
+                                </p>
+                            </div>)
+                        }
+                    </div>
                 </div>
-                {
-                    leaderboard.map((item, index) => <div className='search-table-content  border-b border-slate-800   text-light  px-[30px] py-5'>
-
-                        <p>{index + 1}</p>
-
-                        <Link to={item.address} target="_blank" className=''>{item.address.substring(0, 6)}...{item.address.substring(item.address.length - 6)}</Link>
-                        <p>{item.target_coin_volume}</p>
-                        <p className={`${item.profit_percentage.startsWith("+") ? 'text-green-400' : 'text-red-400'}`}>{item.profit_percentage}%</p>
-                        <p onClick={() => handleTrackWallet(item.address)} className='mx-auto cursor-pointer'>
-                            {trackingList.includes(item.address) ?
-                                <HiOutlineEyeSlash className='text-2xl text-secondary' />
-                                :
-                                <HiOutlineEye className='text-2xl' />
-                            }
-
-                        </p>
-                    </div>)
-                }
-            </div>
+            }
         </div>
     );
 };
