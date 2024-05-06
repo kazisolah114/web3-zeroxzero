@@ -4,7 +4,7 @@ import { HiArrowsUpDown } from 'react-icons/hi2';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 
 const TokenConvert = () => {
-    const usdPrice = 0.00689;
+    const usdPrice = 0.0359340;
     const [usdPricePerToken, setUsdPricePerToken] = useState(usdPrice);
     const [numberOfTokens, setNumberOfTokens] = useState(1);
 
@@ -72,7 +72,7 @@ const TokenConvert = () => {
                 </div>
                 <div className='flex items-center justify-between border p-3'>
                     <h2>USD</h2>
-                    <input type="number" value={usdPricePerToken.toFixed(2)} />
+                    <input type="number" value={usdPricePerToken.toFixed(4)} />
                 </div>
             </div>
         </div >

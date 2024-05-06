@@ -1,8 +1,8 @@
 import React from 'react';
 import './TokenStatistics.css';
-// import CanvasJSReact from '@canvasjs/react-charts';
-// var CanvasJS = CanvasJSReact.CanvasJS;
-// var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import Highcharts from 'highcharts'
+import HighchartsReact from 'highcharts-react-official';
+import BackgroundShadow from '../../../CommonComponents/BackgroundShadow/BackgroundShadow';
 
 const DoughnutChart = ({ transections }) => {
     console.log("Transections:", transections);
@@ -115,26 +115,53 @@ const DoughnutChart = ({ transections }) => {
     ];
 
     const options = {
-        animationEnabled: true,
-        backgroundColor: [
-            'transparent',
-        ],
-        data: [{
-            type: "column",
-            indexLabel: "{label}: {y}",
-            startAngle: 0,
-            dataPoints: [
-                { y: 8284, label: "Airdrop Balance" },
-                { y: 7284, label: "Airdrop Distributed" },
-                { y: 10000, label: "Airdrop Goal" },
-            ],
-            // Setting data labels text color to white
-            indexLabelFontColor: "white",
-        }]
-    }
+      chart: {
+          type: 'bar',
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+
+      },
+      title: {
+          text: '' // No title
+      },
+      tooltip: {
+          pointFormat: '{series.name}: <b>{point.y}</b>'
+      },
+      xAxis: {
+        labels: {
+          style: {
+            color: '#EDEDED'
+          }
+        },
+          categories: ['Airdrop Balance', 'Distributed Airdrop', 'Airdrop Goal'] // Adding categories for the x-axis
+      },
+      yAxis: {
+          title: {
+              text: '' // Label for the y-axis
+          },
+          labels: {
+            style: {
+              color: '#EDEDED'
+            }
+          }
+      },
+      series: [{
+          name: 'Value',
+          colorByPoint: true,
+          data: [
+              { name: 'Airdrop Balance', y: 49390 },
+              { name: 'Distributed Airdrop', y: 39000 },
+              { name: 'Airdrop Goal', y: 100000 },
+          ]
+      }]
+  };
+  
     return (
-        <div className="flex flex-col items-center w-[100%]">
-            {/* <CanvasJSChart options={options}/> */}
+        <div className="flex flex-col items-center  relative">
+          <BackgroundShadow customShadow="0px 0px 400px 60px #10B8B9" />
+          <HighchartsReact className={"bg-transparent"}
+                highcharts={Highcharts}
+                options={options}
+            />
         </div>
     );
 };

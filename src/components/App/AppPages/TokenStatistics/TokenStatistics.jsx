@@ -64,11 +64,11 @@ const TokenStatistics = () => {
                 <link rel="canonical" href="https://0x0.com" />
             </Helmet>
             <div className='token-stats-content'>
-                <div className="token-stats-charts flex justify-between gap-10 ">
-                    {/* <PieChart tokenStats={tokenStats} /> */}
-                    {/* <DoughnutChart transections={transections} /> */}
+                <div className="token-stats-charts flex justify-between items-center">
+                    <PieChart tokenStats={tokenStats} />
+                    <DoughnutChart transections={transections} />
                 </div>
-                <div className="token-details mt-20 ">
+                <div className="token-details ">
                     <div>
                         <div className="token-details-main bg-[#122036] rounded-md py-3 px-5">
                             <div className="token-details-header flex justify-between items-end">
@@ -91,7 +91,7 @@ const TokenStatistics = () => {
                                 </div>
                             </div>
                             <div className="price-chart mt-12">
-                                {/* <PriceChart tokenStats={tokenStats} /> */}
+                                <PriceChart tokenStats={tokenStats} />
                             </div>
                         </div>
                         <div className="compare-0x0 mt-5 bg-[#122036] rounded-md py-5 px-5">
