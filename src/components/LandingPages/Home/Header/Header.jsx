@@ -15,7 +15,7 @@ const Header = () => {
         <header className='main-header py-4'>
             <div className='header-content container'>
                 <div className="header-logo">
-                    <Link to="/"><img className='w-28' src="/public/images/0x0-logo-2.png" alt="" /></Link>
+                    <Link to="/"><img className='w-28' src="https://i.ibb.co/hf991LQ/0x0-logo-2.png" alt="" /></Link>
                 </div>
                 <div className='header-menu-main'>
                     <button className='text-2xl text-secondary'>

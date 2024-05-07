@@ -9,7 +9,7 @@
         {
             "id": "ethereum", 
             "staking_with_logo": "/public/images/logo-eth.png",
-            "staking_for_logo": "https://seeklogo.com/images/U/usd-coin-usdc-logo-CB4C5B1C51-seeklogo.com.png",
+            "staking_for_logo": "https://i.ibb.co/7QqVbqh/logo-eth.png",
             "staking_with": "Ethereum",
             "staking_for": "USD Coin",
             "staking_with_abr": "ETH",
@@ -22,7 +22,7 @@
         },
         {
             "id": "bitcoin",
-            "staking_with_logo": "/public/images/logo-btc.png",
+            "staking_with_logo": "https://i.ibb.co/RjD7mqj/logo-btc.png",
             "staking_with": "Bitcoin",
             "staking_for": "Tether",
             "staking_with_abr": "BTC",
@@ -35,7 +35,7 @@
         },
         {
             "id": "litecoin", 
-            "staking_with_logo": "/public/images/logo-ltc.png",
+            "staking_with_logo": "https://i.ibb.co/q1GbJ4p/logo-ltc.png",
             "staking_with": "Litecoin",
             "staking_for": "0x0COM",
             "staking_with_abr": "LTC",
@@ -48,7 +48,7 @@
         },
         {
             "id": "0x0com", 
-            "staking_with_logo": "/public/images/0x0-logo-head.png",
+            "staking_with_logo": "https://i.ibb.co/MVbmMsv/0x0-logo-head.png",
             "staking_with": "0x0COM",
             "staking_for": "USD Coin",
             "staking_with_abr": "0x0",

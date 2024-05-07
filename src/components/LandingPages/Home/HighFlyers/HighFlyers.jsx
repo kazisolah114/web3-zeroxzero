@@ -42,7 +42,7 @@ const HighFlyers = () => {
                     <button className='primary-button-outline mt-5'>Launch Our App Now</button>
                 </div>
                 <div className="flyers-image">
-                    <img className='w-[700px]' src="/public/images/american_apes.png" alt="" />
+                    <img className='w-[700px]' src="https://i.ibb.co/PzPv1Sw/american-apes.png" alt="" />
                     {/* <Lottie options={defaultOptions} height={450} width={600} style={{  }} /> */}
                 </div>
             </div>

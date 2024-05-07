@@ -28,7 +28,7 @@ const OurVision = () => {
                 </div>
                 <div className="vision-image relative">
                     <BackgroundShadow customShadow="0px 0px 300px 50px #1181E8" />
-                    <img className='' src="/public/images/flat-map.png" alt="" />
+                    <img className='' src="https://i.ibb.co/WxLSWk3/flat-map.png" alt="" />
                 </div>
             </div>
         </div>
