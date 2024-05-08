@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 const MarketStatistics = () => {
     const [marketUpdate, setMarketUpdate] = useState([]);
     useEffect(() => {
-        fetch('/public/marketupdate.json')
+        fetch('/marketupdate.json')
         .then(res => res.json())
         .then(data => {
             setMarketUpdate(data);
