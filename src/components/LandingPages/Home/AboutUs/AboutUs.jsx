@@ -45,8 +45,8 @@ const AboutUs = () => {
                     <h4 className='text-gray text-xl  mb-4 '>Have gained the trust of thousands of customers — and this number is keeps growing!</h4>
                     <p className='text-gray text-1xl text-justify mb-10'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, tempora illo debitis placeat optio nisi nulla necessitatibus excepturi soluta esse voluptas, maiores quaerat corrupti? Laboriosam reiciendis esse deserunt accusantium odio? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ab?</p>
                     <div className='flex buttons'>
-                        <button className='primary-button-outline'>See More About Us</button>
-                        <button className='text-gray ml-6 text-xl hover:text-light duration-200 flex items-center gap-2'><HiOutlinePlayCircle className='relative top-[2px]' /> See how we work</button>
+                        <button className='primary-button-outline'>More About Us</button>
+                        <button className='text-gray ml-6 text-xl hover:text-light duration-200 flex items-center gap-2'><HiOutlinePlayCircle className='relative top-[2px]' />How we work</button>
                     </div>
                 </div>
                 <div className='relative aboutus-image  flex justify-end text-right ' data-aos="fade-up" data-aos-duration="1000">

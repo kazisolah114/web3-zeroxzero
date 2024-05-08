@@ -28,7 +28,7 @@ const Header = () => {
                     <div className={`header-menu flex items-center justify-between ${showResponsiveMenu ? 'show' : 'hide'}`}>
                         <div className=''>
                             <div className={`menu-logo mb-4 pb-4 border-b border-gray-700 border-opacity-50 ${showResponsiveMenu ? 'show' : 'hide'}`}>
-                                <img className='w-24 ' src="/public/images/0x0-logo-2.png" alt="" />
+                                <img className='w-24 ' src="https://i.ibb.co/hf991LQ/0x0-logo-2.png" alt="" />
                             </div>
                             <Navbar />
                         </div>

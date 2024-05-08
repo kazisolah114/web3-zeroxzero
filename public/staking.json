@@ -8,8 +8,8 @@
     "stakingData": [
         {
             "id": "ethereum", 
-            "staking_with_logo": "/public/images/logo-eth.png",
-            "staking_for_logo": "https://i.ibb.co/7QqVbqh/logo-eth.png",
+            "staking_with_logo": "https://i.ibb.co/7QqVbqh/logo-eth.png",
+            "staking_for_logo": "https://seeklogo.com/images/U/usd-coin-usdc-logo-CB4C5B1C51-seeklogo.com.png",
             "staking_with": "Ethereum",
             "staking_for": "USD Coin",
             "staking_with_abr": "ETH",
