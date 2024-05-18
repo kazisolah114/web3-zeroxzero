@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar/Navbar';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Header.css';
 import { HiMenu, HiMenuAlt1, HiX } from "react-icons/hi";
 import LanguageSelector from './LanguageSelector';
 
 const Header = () => {
     const [showResponsiveMenu, setShowResponsiveMenu] = useState(false);
-    const navigate = useNavigate();
-    const handleClickButton = () => {
-        navigate(`/app/dashboard`)
-    }
     return (
         <header className='main-header py-4'>
             <div className='header-content container'>
@@ -38,7 +34,7 @@ const Header = () => {
 
                 </div>
                 <div className="header-button">
-                    <button onClick={handleClickButton} className='flex items-center gap-2'>Launch App</button>
+                    <button  className='flex items-center gap-2'><Link to={`${import.meta.env.VITE_APP_BASE_URL}`}>Launch App</Link></button>
                 </div>
             </div>
 

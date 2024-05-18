@@ -33,24 +33,25 @@ const AboutUs = () => {
         speed: 5000,
     };
     return (
-        <div className='aboutus-section py-24 container'  data-aos="fade-down-right" data-aos-duration="1000">
-            <SectionHeader sectionTitle={"About Us_"} sectionDesc={"Lorem ipsum dolor semet is a world class game ipsum leto Lorem ipsum dolor semet is a world class game ipsum leto lorem"} />
+        <div className='aboutus-section py-24 container' data-aos="fade-down-right" data-aos-duration="1000">
+            <SectionHeader sectionTitle={"About Us_"} sectionDesc={"Learn more about who we are, our mission, and how we're making a difference"} />
             <div className="aboutus-content relative  flex items-center gap-10 justify-between" >
                 <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
-                <div className="aboutus-info relative w-3/4">
+                <div className="aboutus-info relative w-4/6">
                     <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
                     <h2 className='text-light text-5xl font-bold mb-6 leading-[60px]'>
-                        We are_ a leading <span className='text-secondary'>AI-driven</span> alerts platform
+                        We are dedicated to bring you the best <span className='text-secondary'>trading information</span>
                     </h2>
-                    <h4 className='text-gray text-xl  mb-4 '>Have gained the trust of thousands of customers — and this number is keeps growing!</h4>
-                    <p className='text-gray text-1xl text-justify mb-10'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, tempora illo debitis placeat optio nisi nulla necessitatibus excepturi soluta esse voluptas, maiores quaerat corrupti? Laboriosam reiciendis esse deserunt accusantium odio? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ab?</p>
+                    <h4 className='text-gray text-xl  mb-4 '>Our project is live all around the world, with different features available we are expanding everyday</h4>
+                    <p className='text-gray text-1xl text-justify mb-10'>
+                        We address a critical issue in copy trading. While copy trading is not a new concept, centralized copy trading platforms pose risks of market manipulation, particularly with low-volume tokens. At 0x0, traders are unaware they're being followed, ensuring trades are solely based on blockchain data, mitigating manipulation risks.</p>
                     <div className='flex buttons'>
                         <button className='primary-button-outline'>More About Us</button>
                         <button className='text-gray ml-6 text-xl hover:text-light duration-200 flex items-center gap-2'><HiOutlinePlayCircle className='relative top-[2px]' />How we work</button>
                     </div>
                 </div>
-                <div className='relative aboutus-image  flex justify-end text-right ' data-aos="fade-up" data-aos-duration="1000">
-                <Lottie options={defaultOptions} height={500} width={500} style={{  }} />
+                <div className=' aboutus-image  flex justify-end text-right ' data-aos="fade-up" data-aos-duration="1000">
+                    <Lottie options={defaultOptions} height={500} width={500}  />
                 </div>
             </div>
         </div>

@@ -56,7 +56,7 @@ const TokenStats = () => {
 
     return (
         <div className='token-stats py-24 container'>
-            <SectionHeader sectionTitle={"0x0 Token Stats_"} sectionDesc={"Lorem ipsum dolor semet is a world class game ipsum leto Lorem ipsum dolor semet is a world class game ipsum leto lorem"} />
+            <SectionHeader sectionTitle={"0x0 Token Stats_"} sectionDesc={"Explore the latest 0x0 Token Stats, revealing key metrics and trends to understand the token's performance and community engagement"} />
             <div className="toggler p-[5px] mt-10 mx-auto bg-[#122036] w-[fit-content] rounded-full flex justify-between items-center">
                 <button onClick={() => handleSelectedButton("coinstats")} className={`text-secondary ${selectedButton == "coinstats" && "bg-gray-700"} rounded-full w-40 px-2 py-3 font-semibold transition duration-300 ease-in-out`}>Coin Stats</button>
                 <button onClick={() => handleSelectedButton("airdrop")} className={`text-secondary ${selectedButton == "airdrop" && "bg-gray-700"} rounded-full w-40 px-2 py-3 font-semibold transition duration-300 ease-in-out`}>Airdrop</button>

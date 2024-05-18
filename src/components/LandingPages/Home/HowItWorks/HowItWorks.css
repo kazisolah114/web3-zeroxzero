@@ -1,16 +1,16 @@
 .howitworks-content{}
 .howitworks-content div{
-    position: relative;
+    /* position: relative; */
 }
 .howitworks-content div:not(:last-child)::after {
-    content: '';
+    /* content: '';
     position: absolute;
     top: 50px;
     right: -78px;
     width: 100px;
     height: 1px;
     background: repeating-linear-gradient(90deg, #6b6b6b, #6b6b6b 2px, transparent 2px, transparent 4px);
-    border-radius: 100px;
+    border-radius: 100px; */
 }
 
 .how-image {

@@ -13,7 +13,7 @@ const Features = () => {
     return (
         <div className='features-section py-24 container' data-aos="flip-left"
          data-aos-duration="1000">
-            <SectionHeader sectionTitle={"Our Amazing Features_"} sectionDesc={"Lorem ipsum dolor semet is a world class game ipsum leto Lorem ipsum dolor semet is a world class game ipsum leto lorem"} />
+            <SectionHeader sectionTitle={"Our Amazing Features_"} sectionDesc={"Discover our amazing features designed to simplify your experience and enhance your outcomes"} />
             <div className="features flex items-center justify-between gap-8 " >
                 {
                     features.map((feature, index) => <div key={index} className='bg-[#1d212f87] py-10 px-7 rounded-md '>

@@ -29,7 +29,7 @@ const Testimonials = () => {
                 <div className="testimonials-info relative w-[50%]">
                     <BackgroundShadow customShadow="0px 0px 400px  50px #1181E8" />
                     <h2 className='text-white text-4xl mt-3 mb-5 font-bold text-center'>What our valuable customers say</h2>
-                    <p className='text-gray text-center w-[70%] mx-auto'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
+                    <p className='text-gray text-center w-[70%] mx-auto'>Hear from our regular users and get to know more how blockchain based copy trading platform 0x0</p>
 
                     {/* CODE WITH ONLY DATA CHANGING */}
                     <div className="testimonials relative w-[600px] mx-auto mt-10">

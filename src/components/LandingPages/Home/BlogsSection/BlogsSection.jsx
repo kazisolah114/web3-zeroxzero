@@ -18,11 +18,10 @@ const BlogsSection = () => {
             <div className="blogs-section-header flex justify-between items-start container">
                 <div className='w-3/5'>
                     <h2 className='text-light text-3xl mb-3 font-bold'>0x0_ Blogs</h2>
-                    <p className='text-gray'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim neque consectetur ut ipsam</p>
                 </div>
                 <Link to="/blogs" className='text-secondary hover:text-white duration-200 text-lg flex items-center gap-3'>View All Blogs <HiArrowLongRight /></Link>
             </div>
-            <Marquee direction='left' className='mt-20' pauseOnHover='true' speed={30}>
+            <Marquee direction='left' className='flex gap-20 mt-10' pauseOnHover='true' speed={50}>
                 <div className="blogs-items ">
                     {
                         blogs.map(item => <div key={item.id} className='blog-item w-[400px]'>
