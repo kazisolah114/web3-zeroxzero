@@ -33,7 +33,7 @@ const AboutUs = () => {
         speed: 5000,
     };
     return (
-        <div className='aboutus-section py-24 container' data-aos="fade-down-right" data-aos-duration="1000">
+        <div className='aboutus-section py-24 container' data-aos="fade-up" data-aos-duration="1000">
             <SectionHeader sectionTitle={"About Us_"} sectionDesc={"Learn more about who we are, our mission, and how we're making a difference"} />
             <div className="aboutus-content relative  flex items-center gap-10 justify-between" >
                 <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
@@ -50,7 +50,7 @@ const AboutUs = () => {
                         <button className='text-gray ml-6 text-xl hover:text-light duration-200 flex items-center gap-2'><HiOutlinePlayCircle className='relative top-[2px]' />How we work</button>
                     </div>
                 </div>
-                <div className=' aboutus-image  flex justify-end text-right ' data-aos="fade-up" data-aos-duration="1000">
+                <div className=' aboutus-image  flex justify-end text-right '>
                     <Lottie options={defaultOptions} height={500} width={500}  />
                 </div>
             </div>

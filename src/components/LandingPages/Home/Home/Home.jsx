@@ -12,6 +12,7 @@ import RoadmapSection from '../RoadmapSection/RoadmapSection';
 import JoinCommunity from '../JoinCommunity/JoinCommunity';
 import TokenStats from '../TokenStats/TokenStats';
 import BlogsSection from '../BlogsSection/BlogsSection';
+import Publications from '../Publications/Publications';
 
 const Home = () => {
 
@@ -30,6 +31,7 @@ const Home = () => {
             <WhyUs />
             <HighFlyers />
             <RoadmapSection />
+            <Publications />
             <OurVision />
             <JoinCommunity />
             <Testimonials />

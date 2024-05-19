@@ -23,7 +23,7 @@ const Testimonials = () => {
     };
 
     return (
-        <div className='testimonials-section py-24 container' data-aos="zoom-in"
+        <div className='testimonials-section py-24 container' data-aos="fade-up"
          data-aos-duration="1000">
             <div className="testimonials-content flex gap-20 items-center justify-between">
                 <div className="testimonials-info relative w-[50%]">

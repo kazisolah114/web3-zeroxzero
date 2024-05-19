@@ -11,7 +11,7 @@ const Features = () => {
         { icon: <HiCheckBadge  />, title: "Learn Best Practice", desc: "Do transection with the highest security and chill out. Join 0x0 today to get the best AI-driven trading alerts", link: "/" },
     ]
     return (
-        <div className='features-section py-24 container' data-aos="flip-left"
+        <div className='features-section py-24 container' data-aos="fade-up"
          data-aos-duration="1000">
             <SectionHeader sectionTitle={"Our Amazing Features_"} sectionDesc={"Discover our amazing features designed to simplify your experience and enhance your outcomes"} />
             <div className="features flex items-center justify-between gap-8 " >

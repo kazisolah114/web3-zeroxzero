@@ -28,7 +28,7 @@ const HighFlyers = () => {
         speed: 5000,
     };
     return (
-        <div className='flyers-section py-24 container' data-aos="zoom-in"
+        <div className='flyers-section py-24 container' data-aos="fade-up"
         data-aos-duration="1000">
             <div className="flyers-content relative flex  gap-5 items-center justify-between">
                 <div className="flyers-info relative w-3/4">
