@@ -50,7 +50,7 @@ const Navbar = () => {
                                     <li key={dropdownIndex} className='py-3 cursor-pointer hover:bg-gray-700 rounded-md px-3'>
                                         <Link to={dropdown.link} className='flex gap-4 items-center'>
                                             <span className='text-3xl'>{dropdown.icon}</span>
-                                            <div>
+                                            <div className='w-full'>
                                             <h5 className='font-semibold'>{dropdown.name}</h5>
                                             <p className='font-extralight'>{dropdown.desc}</p>
                                             </div>

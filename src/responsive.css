@@ -24,7 +24,7 @@
         padding: 15px;
         width: 75%;
         height: 100vh;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         z-index: 9;

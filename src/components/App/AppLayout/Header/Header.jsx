@@ -16,10 +16,10 @@ const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
                 <div className='menu hidden'>
                     {showResponsiveMenu ?
                         <div className='close' onClick={() => setShowResponsiveMenu(false)}>
-                            <HiX className='text-2xl opacity-0 ' />
+                            <HiX className='text-3xl opacity-0 ' />
                         </div>
                         :
-                        <HiMenu onClick={() => setShowResponsiveMenu(true)} className='text-2xl text-secondary' />
+                        <HiMenu onClick={() => setShowResponsiveMenu(true)} className='text-3xl text-secondary' />
                     }
                 </div>
                 <div className="socials">

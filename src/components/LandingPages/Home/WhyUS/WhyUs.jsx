@@ -14,9 +14,9 @@ const WhyUs = () => {
                     <h2 className='text-light text-5xl font-bold mb-6 leading-[60px]'>
                         <TypeAnimation
                             sequence={[
-                                'AI-Powered Trade Alerts_',
+                                'AI-Powered Trade Alerts',
                                 1000,
-                                'Unlock Your Trading_ Potential',
+                                'Unlock Your Trading Potential',
                                 1000
                             ]}
                             wrapper="span"

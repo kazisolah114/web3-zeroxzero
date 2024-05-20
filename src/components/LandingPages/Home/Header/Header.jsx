@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import './Header.css';
-import { HiMenu, HiMenuAlt1, HiX } from "react-icons/hi";
+import { HiMenu, HiX, HiMenuAlt1} from "react-icons/hi";
 import LanguageSelector from './LanguageSelector';
 
 const Header = () => {
@@ -14,11 +14,11 @@ const Header = () => {
                     <Link to="/"><img className='w-28' src="https://i.ibb.co/hf991LQ/0x0-logo-2.png" alt="" /></Link>
                 </div>
                 <div className='header-menu-main'>
-                    <button className='text-2xl text-secondary'>
+                    <button className='text-3xl text-secondary'>
                         {showResponsiveMenu ?
                             <div className="close-menu" onClick={() => setShowResponsiveMenu(false)}><HiX className='opacity-0' /></div>
                             :
-                            <HiMenu onClick={() => setShowResponsiveMenu(true)} />
+                            <HiMenuAlt1 onClick={() => setShowResponsiveMenu(true)} />
                         }
                     </button>
                     <div className={`header-menu flex items-center justify-between ${showResponsiveMenu ? 'show' : 'hide'}`}>

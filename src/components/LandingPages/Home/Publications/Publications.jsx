@@ -28,7 +28,7 @@ const Publications = () => {
                     publications.map((item, index) => (
                         <div key={index} onClick={() => visitPublication(item.link)} className='publication group bg-[#FFFFFF]  flex flex-col  md:flex-row cursor-pointer overflow-hidden'>
                             <div className='md:w-2/4 overflow-hidden '>
-                                <img className='w-full transform transition-transform duration-500 group-hover:scale-110' src={item.banner} alt="" />
+                                <img className='w-full h-full transform transition-transform duration-500 group-hover:scale-110' src={item.banner} alt="" />
                             </div>
                             <div className='md:w-2/4 p-3'>
                                 <h3 className='font-bold mb-3 underline group-hover:text-blue-800 duration-200'>{item.title.slice(0, 72)}...</h3>

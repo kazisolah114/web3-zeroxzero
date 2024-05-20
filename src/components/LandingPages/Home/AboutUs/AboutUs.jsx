@@ -37,7 +37,7 @@ const AboutUs = () => {
             <SectionHeader sectionTitle={"About Us_"} sectionDesc={"Learn more about who we are, our mission, and how we're making a difference"} />
             <div className="aboutus-content relative  flex items-center gap-10 justify-between" >
                 <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
-                <div className="aboutus-info relative w-4/6">
+                <div className="aboutus-info relative w-3/5">
                     <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
                     <h2 className='text-light text-5xl font-bold mb-6 leading-[60px]'>
                         We are dedicated to bring you the best <span className='text-secondary'>trading information</span>
@@ -51,7 +51,7 @@ const AboutUs = () => {
                     </div>
                 </div>
                 <div className=' aboutus-image  flex justify-end text-right '>
-                    <Lottie options={defaultOptions} height={500} width={500}  />
+                    <Lottie options={defaultOptions} height={400} width={400}   />
                 </div>
             </div>
         </div>
