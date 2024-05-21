@@ -3,8 +3,18 @@ import SectionHeader from '../../../CommonComponents/SectionHeader/SectionHeader
 import './TokenStats.css';
 import { HiOutlineAcademicCap } from 'react-icons/hi2';
 import BackgroundShadow from '../../../CommonComponents/BackgroundShadow/BackgroundShadow';
+import useTokenStats from '../../../../states/hooks/useTokenStats';
 
 const TokenStats = () => {
+    const {tokenStats, isLoading} = useTokenStats();
+    console.log(tokenStats)
+    if(tokenStats !== false) {
+        fetch(`https://statboard.0x0.com/api/token/price`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+    }
     const [selectedButton, setSelectedButton] = useState("coinstats");
     const [flipLogo, setFlipLogo] = useState(false);
     const handleSelectedButton = (button) => {

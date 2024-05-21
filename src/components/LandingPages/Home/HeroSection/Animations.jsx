@@ -61,11 +61,9 @@ const Animations = () => {
   
 
     return (
-        <div className="hero-animations relative w-[50%]  flex justify-end " data-aos="zoom-in" data-aos-duration="1000">
+        <div className=" hero-animations relative w-[50%]  flex justify-end " data-aos="zoom-in" data-aos-duration="1000">
             <BackgroundShadow customShadow="0px 0px 150px 40px #10B8B9" />
-            <Lottie
-                options={defaultOptions3}
-            />
+            <Lottie options={defaultOptions3}/>
         </div>
     );
 };

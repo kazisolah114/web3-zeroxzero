@@ -11,7 +11,7 @@ const WhyUs = () => {
             <SectionHeader sectionTitle={"Why_ Us"} sectionDesc={"Choose us for our unparalleled expertise, dedication to quality, and commitment to exceeding your expectations"} />
             <div className="whyus-content gap-10 flex justify-between">
                 <div className="info-cont w-full" data-aos="fade-up" data-aos-duration="1000">
-                    <h2 className='text-light text-5xl font-bold mb-6 leading-[60px]'>
+                    <h2 className='text-light text-5xl font-bold mb-6 leading-[60px] sm:h-auto h-32'>
                         <TypeAnimation
                             sequence={[
                                 'AI-Powered trade alerts',
