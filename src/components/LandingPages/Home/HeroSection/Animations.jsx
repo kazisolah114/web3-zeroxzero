@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './HeroSection.css';
 import BackgroundShadow from '../../../CommonComponents/BackgroundShadow/BackgroundShadow';
 import Lottie from 'react-lottie';
@@ -57,11 +57,15 @@ const Animations = () => {
         }
     };
 
+
+  
+
     return (
         <div className="hero-animations relative w-[50%]  flex justify-end " data-aos="zoom-in" data-aos-duration="1000">
             <BackgroundShadow customShadow="0px 0px 150px 40px #10B8B9" />
-            {/* <img src="https://assets-global.website-files.com/634054bf0f60201ce9b30604/651511fed6711f9008ce37a8_Hero-Dark.svg" alt="" /> */}
-            <Lottie options={defaultOptions3} height={600} width={600} style={{}} />
+            <Lottie
+                options={defaultOptions3}
+            />
         </div>
     );
 };

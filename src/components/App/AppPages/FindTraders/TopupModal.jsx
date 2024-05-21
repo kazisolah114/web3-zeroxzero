@@ -19,7 +19,7 @@ const TopupModal = ({ showModal, setShowModal }) => {
                         <p className='text-sm text-gray text-center my-10'>Purchase 1 Search Day with 1 0x0COM</p>
                         <div className=''>
                             <div className='mt-10 pb-3  flex items-center justify-between border-b border-gray-700 border-opacity-80'>
-                                <img className='w-6' src="/public/images/0x0-logo-head.png" alt="" />
+                                <img className='w-6' src="/images/0x0-logo-head.png" alt="" />
                                 <input className='topup-input  outline-none text-center' type="number" placeholder="0.00" />
                                 <span className='cursor-pointer'><FaSort /></span>
                             </div>

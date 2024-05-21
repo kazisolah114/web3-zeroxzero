@@ -26,12 +26,12 @@ const Publications = () => {
             <div className="publications mt-10 grid lg:grid-cols-2 gap-10">
                 {
                     publications.map((item, index) => (
-                        <div key={index} onClick={() => visitPublication(item.link)} className='publication group bg-[#FFFFFF]  flex flex-col  md:flex-row cursor-pointer overflow-hidden'>
+                        <div key={index} onClick={() => visitPublication(item.link)} className='publication group bg-[#48ecec]  flex flex-col  md:flex-row cursor-pointer overflow-hidden'>
                             <div className='md:w-2/4 overflow-hidden '>
                                 <img className='w-full h-full transform transition-transform duration-500 group-hover:scale-110' src={item.banner} alt="" />
                             </div>
                             <div className='md:w-2/4 p-3'>
-                                <h3 className='font-bold mb-3 underline group-hover:text-blue-800 duration-200'>{item.title.slice(0, 72)}...</h3>
+                                <h3 className='font-bold mb-3 group-hover:underline duration-200'>{item.title.slice(0, 72)}...</h3>
                                 <div className='flex flex-col justify-between h-40'>
                                     <p className='text-justify'>{item.post.slice(0, 160)}...</p>
                                     <div className='flex justify-between items-center'>

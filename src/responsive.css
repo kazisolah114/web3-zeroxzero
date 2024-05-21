@@ -100,7 +100,7 @@
     }
     .hero-container {
         flex-direction: column;
-        gap: 100px;
+        gap: 50px;
     }
 
     .hero-texts {
@@ -229,7 +229,7 @@
     }
 
     .newsletter {
-        width: 300px;
+        width: 100%;
     }
 
     .section-header p {
