@@ -8,8 +8,7 @@
 - run `npm i` in root folder
 
 ## Local Dev
-- run `yarn start` in root folder or inside any `packages/<app>` folder.
-- the `proxy` field in `packages/app/package.json` connects the local FE dev server to the test BE running the Avalanche Fuji-C testnet. It can be modified to localhost if you wish to connect the dev server to a local running instance of [0x0-backend](https://github.com/0x0dotcom/0x0-backend)
+- run `npm run dev` in root folder.
 
 ## Deploying to environments:
 
