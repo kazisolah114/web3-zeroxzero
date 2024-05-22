@@ -2,7 +2,7 @@
 
 ## Require
 - Latest node v18 LTS (v18.12.1 tested)
-- Latest [yarn berry](https://yarnpkg.com/getting-started/install) (3.2.4 tested)
+- Latest [npm]([https://yarnpkg.com/getting-started/install](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm))
 
 ## Setup
 - run `yarn` in root folder
