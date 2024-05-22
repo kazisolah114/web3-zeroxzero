@@ -1,4 +1,4 @@
-# 0x0-frontend
+# 0x0-frontend-new
 
 ## Require
 - Latest node v18
