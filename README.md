@@ -1,11 +1,11 @@
 # 0x0-frontend
 
 ## Require
-- Latest node v18 LTS (v18.12.1 tested)
+- Latest node v18
 - Latest [npm]([https://yarnpkg.com/getting-started/install](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm))
 
 ## Setup
-- run `yarn` in root folder
+- run `npm i` in root folder
 
 ## Local Dev
 - run `yarn start` in root folder or inside any `packages/<app>` folder.
