@@ -1,19 +1,19 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../components/LandingPages/Main/Main";
-import Home from "../components/LandingPages/Home/Home/Home";
+import Main from "../pages/LandingPages/Main/Main";
+import Home from "../pages/LandingPages/Home/Home/Home";
 import PageNotFound from "../components/PageNotFound/PageNotFound";
-import AppLayout from "../components/App/AppLayout/AppLayout";
-import Dashboard from "../components/App/AppPages/Dashboard/Dashboard";
-import Staking from "../components/App/AppPages/Staking/Staking";
-import MarketStatistics from "../components/App/AppPages/MarketStatistics/MarketStatistics";
-import HowTo from "../components/App/AppPages/HowTo/HowTo";
-import TokenStatistics from "../components/App/AppPages/TokenStatistics/TokenStatistics";
-import FindTraders from "../components/App/AppPages/FindTraders/FindTraders";
-import FreeCoins from "../components/App/AppPages/FreeCoins/FreeCoins";
-import StakingDetails from "../components/App/AppPages/Staking/StakingDetails";
-import UserProfile from "../components/App/AppPages/UserProfile/UserProfile";
-import Blogs from "../components/LandingPages/Blogs/Blogs";
-import BlogDetails from "../components/LandingPages/Blogs/BlogDetails";
+import AppLayout from "../pages/App/AppLayout/AppLayout";
+import Dashboard from "../pages/App/AppPages/Dashboard/Dashboard";
+import Staking from "../pages/App/AppPages/Staking/Staking";
+import MarketStatistics from "../pages/App/AppPages/MarketStatistics/MarketStatistics";
+import HowTo from "../pages/App/AppPages/HowTo/HowTo";
+import TokenStatistics from "../pages/App/AppPages/TokenStatistics/TokenStatistics";
+import FindTraders from "../pages/App/AppPages/FindTraders/FindTraders";
+import FreeCoins from "../pages/App/AppPages/FreeCoins/FreeCoins";
+import StakingDetails from "../pages/App/AppPages/Staking/StakingDetails";
+import UserProfile from "../pages/App/AppPages/UserProfile/UserProfile";
+import Blogs from "../pages/LandingPages/Blogs/Blogs";
+import BlogDetails from "../pages/LandingPages/Blogs/BlogDetails";
 
 
 const router = createBrowserRouter([
