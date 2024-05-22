@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = ({setShowResponsiveMenu}) => {
-    const [AITradeAlertsLink, setAITradeAlertsLink] = useState("dashboard");
+    const [AITradeAlertsLink, setAITradeAlertsLink] = useState("leaderboard");
     const [earnLink, setEarnLink] = useState("staking");
 
     const handleAITradeAlertsLink = (link) => {
@@ -19,7 +19,7 @@ const Navbar = ({setShowResponsiveMenu}) => {
     const navs = [
         {
             icon: <HiOutlineCpuChip />, title: "AI Trade Alerts", link: AITradeAlertsLink, submenu: [
-                { icon: <HiOutlineTrophy />, title: "Hall of Fame", link: "dashboard" },
+                { icon: <HiOutlineTrophy />, title: "Hall of Fame", link: "leaderboard" },
                 { icon: <HiOutlineUsers />, title: "Find Traders", link: "find-traders" },
             ]
         },

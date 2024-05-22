@@ -11,7 +11,7 @@ const Sidebar = ({showResponsiveMenu, setShowResponsiveMenu}) => {
         <aside className={`main-sidebar py-5 pr-2 w-72 border-r border-gray-700 border-opacity-80 ${showResponsiveMenu ? 'show' : 'hide'}`}>
             <div>
                 <div className="app-logo pb-5">
-                    <Link to="/app/dashboard"><img className='w-28' src="/images/0x0-logo-2.png" alt="" /></Link>
+                    <Link to="/app/leaderboard"><img className='w-28' src="/images/0x0-logo-2.png" alt="" /></Link>
                 </div>
                 <div>
                     <Navbar setShowResponsiveMenu={setShowResponsiveMenu} />
