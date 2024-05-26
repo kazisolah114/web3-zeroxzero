@@ -1,15 +1,14 @@
-# 0x0-frontend
+# 0x0-frontend-new
 
 ## Require
-- Latest node v18 LTS (v18.12.1 tested)
-- Latest [yarn berry](https://yarnpkg.com/getting-started/install) (3.2.4 tested)
+- Latest node v18
+- Latest [npm]([https://yarnpkg.com/getting-started/install](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm))
 
 ## Setup
-- run `yarn` in root folder
+- run `npm i` in root folder
 
 ## Local Dev
-- run `yarn start` in root folder or inside any `packages/<app>` folder.
-- the `proxy` field in `packages/app/package.json` connects the local FE dev server to the test BE running the Avalanche Fuji-C testnet. It can be modified to localhost if you wish to connect the dev server to a local running instance of [0x0-backend](https://github.com/0x0dotcom/0x0-backend)
+- run `npm run dev` in root folder.
 
 ## Deploying to environments:
 
