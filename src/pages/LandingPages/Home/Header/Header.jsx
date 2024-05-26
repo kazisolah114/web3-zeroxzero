@@ -34,7 +34,7 @@ const Header = () => {
 
                 </div>
                 <div className="header-button">
-                    <button  className='flex items-center gap-2'><Link to={`${import.meta.env.VITE_APP_BASE_URL}`}>Launch App</Link></button>
+                    <button  className='flex items-center gap-2'><Link className='block' to={`${import.meta.env.VITE_APP_BASE_URL}`}>Launch App</Link></button>
                 </div>
             </div>
 
