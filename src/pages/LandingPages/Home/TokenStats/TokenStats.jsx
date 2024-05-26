@@ -1,20 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
 import SectionHeader from '../../../../components/CommonComponents/SectionHeader/SectionHeader';
 import './TokenStats.css';
-import { HiOutlineAcademicCap } from 'react-icons/hi2';
 import BackgroundShadow from '../../../../components/CommonComponents/BackgroundShadow/BackgroundShadow';
-import useTokenStats from '../../../../states/hooks/useTokenStats';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+
 
 const TokenStats = () => {
-    const {tokenStats, isLoading} = useTokenStats();
-    console.log(tokenStats)
-    if(tokenStats !== false) {
-        fetch(`https://statboard.0x0.com/api/token/price`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
-    }
+    const [ZeroxStats, setZeroxStats] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        fetch(`https://statboard.0x0.com/api/token/all`)
+            .then(res => res.json())
+            .then(data => {
+                setZeroxStats(data);
+                setIsLoading(false);
+            })
+    }, [])
+
     const [selectedButton, setSelectedButton] = useState("coinstats");
     const [flipLogo, setFlipLogo] = useState(false);
     const handleSelectedButton = (button) => {
@@ -74,13 +76,29 @@ const TokenStats = () => {
             <div className="token-stats-content mt-10">
                 {selectedButton == 'coinstats' ?
                     <div className="coins-stats">
-                        <ul>
-                            <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Transfers<span className='text-light font-semibold'>{tokenData.transfers}</span></li>
-                            <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Unique Wallets<span className='text-light font-semibold'>{tokenData.unique_wallets}</span></li>
-                            <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Liquid Token<span className='text-light font-semibold'>{tokenData.liquid_token}</span></li>
-                            <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Staked Tokens<span className='text-light font-semibold'>{tokenData.staked_token}</span></li>
-                            <li className='text-gray flex items-center justify-between'>Number of Stakers<span className='text-light font-semibold'>{tokenData.number_of_stakers}</span></li>
-                        </ul>
+                        {isLoading ?
+                            <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
+                                <Skeleton className='py-3 mb-4' count={5} />
+                            </SkeletonTheme>
+                            :
+                            <ul>
+                                <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Token Name<span className='text-light font-semibold'>{ZeroxStats.tokenName}</span></li>
+                                <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Transfers<span className='text-light font-semibold'>{ZeroxStats.transfers}</span></li>
+                                <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Unique Wallets<span className='text-light font-semibold'>{ZeroxStats.unique_wallets}</span></li>
+                                <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Staked Tokens<span className='text-light font-semibold'>
+                                    {(function (num) {
+                                        if (num >= 1e6 && num < 1e9) {
+                                            return Math.floor(num / 1e6) + 'M';
+                                        } else if (num >= 1e9) {
+                                            let millionPart = Math.floor((num % 1e9) / 1e6);
+                                            return millionPart + 'M';
+                                        }
+                                        return num.toString();
+                                    })(ZeroxStats.staked_token)}
+                                </span></li>
+                                <li className='text-gray flex items-center justify-between'>Number of Stakers<span className='text-light font-semibold'>{ZeroxStats.number_of_stakers}</span></li>
+                            </ul>
+                        }
                         <div className={`relative zerox-logo ${selectedButton == 'coinstats' && 'flip'}`}>
                             <BackgroundShadow customShadow="0px 0px 150px 60px #10B8B9" />
                             <img
@@ -94,13 +112,39 @@ const TokenStats = () => {
                                 }}
                             />
                         </div>
-                        <ul>
-                            <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Liquidity USDC to 0x0<span className='text-light font-semibold'>{tokenData.liquidity0x0USDC_0x0}</span></li>
-                            <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Liquidity USDC to USDC<span className='text-light font-semibold'>{tokenData.liquidity0x0USDC_USDC}</span></li>
-                            <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Native Price Name<span className='text-light font-semibold'>{tokenData.nativePriceName}</span></li>
-                            <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Native Price Value<span className='text-light font-semibold'>{tokenData.nativePriceValue}</span></li>
-                            <li className='text-gray flex items-center justify-between'>Token Decimals<span className='text-light font-semibold'>{tokenData.tokenDecimals}</span></li>
-                        </ul>
+                        {isLoading ?
+                            <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
+                                <Skeleton className='py-3 mb-4' count={5} />
+                            </SkeletonTheme>
+                            :
+                            <ul>
+                                <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>USD Price<span className='text-light font-semibold'>${ZeroxStats.usdPrice?.toFixed(5)}</span></li>
+                                <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Liquid Token<span className='text-light font-semibold'>
+                                    {(function (num) {
+                                        if (num >= 1e9) {
+                                            let millionPart = Math.floor((num % 1e9) / 1e6);
+                                            return millionPart + 'M';
+                                        } else if (num >= 1e6) {
+                                            return Math.floor(num / 1e6) + 'M';
+                                        }
+                                        return num.toString();
+                                    })(ZeroxStats.liquid_token)}
+                                </span></li>
+                                <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Native Price Name<span className='text-light font-semibold'>{ZeroxStats.nativePriceName}</span></li>
+                                <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Native Price Value<span className='text-light font-semibold'>
+                                    {(function (num) {
+                                        if (num >= 1e9) {
+                                            let millionPart = Math.floor((num % 1e9) / 1e6);
+                                            return millionPart + 'M';
+                                        } else if (num >= 1e6) {
+                                            return Math.floor(num / 1e6) + 'M';
+                                        }
+                                        return num.toString();
+                                    })(ZeroxStats.nativePriceValue)}
+                                </span></li>
+                                <li className='text-gray flex items-center justify-between'>Token Decimals<span className='text-light font-semibold'>{ZeroxStats.nativePriceDecimals}</span></li>
+                            </ul>
+                        }
                     </div>
                     :
                     <div className="airdrop coins-stats">
