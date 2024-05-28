@@ -13,6 +13,7 @@ import JoinCommunity from '../JoinCommunity/JoinCommunity';
 import TokenStats from '../TokenStats/TokenStats';
 import BlogsSection from '../BlogsSection/BlogsSection';
 import Publications from '../Publications/Publications';
+import FeaturedOn from '../FeaturedOn/FeaturedOn';
 
 const Home = () => {
 
@@ -24,6 +25,7 @@ const Home = () => {
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
             <HeroSection />
+            <FeaturedOn />
             <HowItWorks  />
             <TokenStats />
             <Features />
