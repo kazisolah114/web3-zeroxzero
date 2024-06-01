@@ -38,8 +38,7 @@ const PieChart = ({ tokenStats }) => {
         chart: {
             type: 'pie',
             backgroundColor: 'rgba(0, 0, 0, 0)',
-            width: 500,
-            height: 500
+            width: "400"
         },
         title: {
             text: ''
@@ -70,7 +69,7 @@ const PieChart = ({ tokenStats }) => {
     return (
         <div className="flex flex-col items-center relative">
             <BackgroundShadow customShadow="0px 0px 400px 60px #10B8B9" />
-            <HighchartsReact className={"bg-transparent "}
+            <HighchartsReact className={"bg-transparent"}
                 highcharts={Highcharts}
                 options={options}
             />

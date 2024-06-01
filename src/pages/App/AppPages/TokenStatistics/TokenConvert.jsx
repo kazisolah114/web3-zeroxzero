@@ -1,24 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './TokenStatistics.css'
 import { HiArrowsUpDown } from 'react-icons/hi2';
 import { HiOutlineChevronDown } from 'react-icons/hi';
 
-const TokenConvert = () => {
-    const usdPrice = 0.0359340;
-    const [usdPricePerToken, setUsdPricePerToken] = useState(usdPrice);
+const TokenConvert = ({ tokenPrice }) => {
     const [numberOfTokens, setNumberOfTokens] = useState(1);
+    const [usdPrice, setUsdPrice] = useState(tokenPrice?.price?.usdPrice);
 
-    const handleCompareToken = (value) => {
+    useEffect(() => {
+        setUsdPrice(tokenPrice?.price?.usdPrice);
+    }, [tokenPrice]);
+
+    const handleTokenChange = (value) => {
         setNumberOfTokens(value);
-        const calculatedValue = value * usdPrice;
-        setUsdPricePerToken(calculatedValue);
-    }
+    };
+
 
     const languages = [
         { language: "US Dollar", abr: "USD", flag: "https://www.pngall.com/wp-content/uploads/12/USD-PNG-Images.png" },
         { language: "US Dollar Coin", abr: "USDC", flag: "https://seeklogo.com/images/U/usd-coin-usdc-logo-CB4C5B1C51-seeklogo.com.png" },
-        { language: "Ethereum", abr: "ETH", flag: "/public/images/logo-eth.png" },
-        { language: "Bitcoin", abr: "BTC", flag: "/public/images/logo-btc.png" },
+        { language: "Ethereum", abr: "ETH", flag: "/images/logo-eth.png" },
+        { language: "Bitcoin", abr: "BTC", flag: "/images/logo-btc.png" },
         { language: "Swiss Franc", abr: "CHF", flag: "https://cdn.coinranking.com/lJBdOdg9C/chf.svg?size=34x34" },
         { language: "The Euro", abr: "EU", flag: "https://iconape.com/wp-content/png_logo_vector/eur.png" }
 
@@ -65,14 +67,21 @@ const TokenConvert = () => {
             <div className="compare flex flex-col gap-4">
                 <div className='flex items-center justify-between border p-3'>
                     <h2>0x0COM</h2>
-                    <input type="number" value={numberOfTokens} onChange={(e) => handleCompareToken(e.target.value)} />
+                    <input
+                        type="number"
+                        value={numberOfTokens}
+                        onChange={(e) => handleTokenChange(parseFloat(e.target.value) || 0)}
+                    />
                 </div>
                 <div className='mx-auto cursor-pointer flex justify-center items-center'>
                     <HiArrowsUpDown className='text-2xl' />
                 </div>
                 <div className='flex items-center justify-between border p-3'>
                     <h2>USD</h2>
-                    <input type="number" value={usdPricePerToken.toFixed(4)} />
+                    <input
+                        type="number"
+                        value={`${numberOfTokens * usdPrice > 0 ? (numberOfTokens * usdPrice).toFixed(4) : 0}`}
+                    />
                 </div>
             </div>
         </div >

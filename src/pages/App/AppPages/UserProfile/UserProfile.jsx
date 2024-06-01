@@ -31,7 +31,7 @@ const UserProfile = () => {
                         <div className="">
                             <h2 className='text-lg text-light font-semibold mb-2'>Wallet Address</h2>
                             <div className='address flex items-center  gap-3 bg-slate-700 p-3 rounded-md'>
-                                <img src="/public/images/metamask-logo.png" alt="" />
+                                <img src="/images/metamask-logo.png" alt="" />
                                 <p onClick={() => {
                                     handleWalletCopy();
                                     navigator.clipboard.writeText(`${wallet}`)

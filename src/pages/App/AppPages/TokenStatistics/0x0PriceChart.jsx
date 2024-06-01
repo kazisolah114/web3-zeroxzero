@@ -21,8 +21,7 @@ const PriceChart = ({ }) => {
 
     const options = {
         chart: {
-            backgroundColor: 'rgba(0, 0, 0, 0)',
-            width: "700"
+            backgroundColor: 'rgba(0, 0, 0, 0)'
         },
         title: {
             text: ''
@@ -50,7 +49,7 @@ const PriceChart = ({ }) => {
             gridLineWidth: 1, // Hide the horizontal grid lines
         },
         series: [{
-            type: 'area',
+            type: 'line',
             name: '',
             data: priceData.map(item => [new Date(item.timestamp).getTime(), item.price]) // Format data as [timestamp, price]
         }],
@@ -64,11 +63,12 @@ const PriceChart = ({ }) => {
     };
 
     return (
-        <div className="zerox-price flex items-center flex-column justify-center relative ">
-            <BackgroundShadow customShadow="0px 0px 400px 60px #10B8B9" />
-            <HighchartsReact className={"chart"}
+        <div className="zerox-price  ">
+            {/* <BackgroundShadow customShadow="0px 0px 400px 60px #10B8B9" /> */}
+            <HighchartsReact className={"chart "}
                 highcharts={Highcharts}
                 options={options}
+
             />
         </div>
     );
