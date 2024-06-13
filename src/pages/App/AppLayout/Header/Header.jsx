@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HiMenu, HiOutlineLogout, HiX } from 'react-icons/hi';
+import { HiMenu, HiMenuAlt1, HiMenuAlt2, HiMenuAlt3, HiOutlineLogout, HiX } from 'react-icons/hi';
 import { HiOutlineCog6Tooth, HiOutlineUser } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 import './Header.css';
@@ -19,7 +19,7 @@ const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
                             <HiX className='text-3xl opacity-0 ' />
                         </div>
                         :
-                        <HiMenu onClick={() => setShowResponsiveMenu(true)} className='text-3xl text-secondary' />
+                        <HiMenuAlt1 onClick={() => setShowResponsiveMenu(true)} className='text-3xl text-secondary' />
                     }
                 </div>
                 <div className="socials">

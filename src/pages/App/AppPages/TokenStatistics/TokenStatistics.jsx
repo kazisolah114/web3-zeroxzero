@@ -11,10 +11,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
 import { HiGlobe } from 'react-icons/hi';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const TokenStatistics = () => {
     const [tokenPrice, setTokenPrice] = useState(null);
-    console.log(tokenPrice?.price?.usdPrice)
     useEffect(() => {
         fetch('https://statboard.0x0.com/api/token/price')
             .then(res => res.json())
@@ -23,11 +23,20 @@ const TokenStatistics = () => {
             })
     }, [])
 
+    const [tokenAll, setTokenAll] = useState({});
+    console.log(tokenAll)
+    useEffect(() => {
+        fetch('https://statboard.0x0.com/api/token/all')
+            .then(res => res.json())
+            .then(data => {
+                setTokenAll(data);
+            })
+    }, [])
+
     const [zeroxDaily, setZeroxDaily] = useState({});
     const [zeroxWeekly, setZeroxWeekly] = useState({});
     const [zeroxMonthly, setZeroxMonthly] = useState({});
     const [zeroxAlltime, setZeroxAlltime] = useState({});
-    console.log(zeroxDaily.quote?.USD.high)
     useEffect(() => {
         const urls = {
             daily: "https://statboard.0x0.com/api/token/daily",
@@ -41,7 +50,6 @@ const TokenStatistics = () => {
                 const responses = await Promise.all(Object.values(urls).map(url =>
                     fetch(url).then(response => response.json())
                 ));
-                console.log(responses);
                 const [daily, weekly, monthly, alltime] = responses;
                 setZeroxDaily(daily.daily_price.periods['24h']);
                 setZeroxWeekly(weekly.weekly_price.periods['7d']);
@@ -54,20 +62,6 @@ const TokenStatistics = () => {
 
         fetchData();
     }, [])
-
-    const data = {
-        "usdPrice": 0.00189,
-        "_24hrPercentageChange": "+17.008329",
-        "_24High": "0.06883",
-        "_24Low": "0.01498",
-        "_7dHigh": "0.03983",
-        "_7dLow": "0.02933",
-        "_30dHigh": "0.09983",
-        "_30dLow": "0.010933",
-        "allTimeHigh": "0.09993",
-        "allTimeLow": "0.0103933",
-        "totalSupply": "199.83M"
-    }
     const notify = () => toast.success('Wallet has been copied!', {
         position: "top-right",
         autoClose: 2000,
@@ -82,6 +76,48 @@ const TokenStatistics = () => {
     const handleWalletCopy = () => {
         notify();
     }
+
+    const [topHolders, setTopHolders] = useState([]);
+    const [topStakers, setTopStakers] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        fetch('https://statboard.0x0.com/api/token/topholders')
+            .then(res => res.json())
+            .then(data => {
+                if (Array.isArray(data?.top_holders)) {
+                    setTopHolders(data.top_holders);
+                    setIsLoading(false);
+                } else {
+                    console.error('Unexpected data format for top holders', data);
+                    setTopHolders([]);
+                }
+
+            })
+            .catch(error => {
+                console.error('Error fetching top holders', error);
+                // setIsLoading(false);
+            });
+    }, []);
+
+    useEffect(() => {
+        fetch('https://statboard.0x0.com/api/token/topstakers')
+            .then(res => res.json())
+            .then(data => {
+                if (Array.isArray(data?.top_stakers)) {
+                    setTopStakers(data.top_stakers);
+                    // setIsLoading(false);
+                } else {
+                    console.error('Unexpected data format for top stakers', data);
+                    setTopStakers([]);
+                }
+
+            })
+            .catch(error => {
+                console.error('Error fetching top stakers', error);
+                // setIsLoading(false);
+            });
+    }, []);
+
 
     return (
         <div>
@@ -120,7 +156,100 @@ const TokenStatistics = () => {
                                 <PriceChart />
                             </div>
                         </div>
-                        <div className="compare-0x0 mt-5 bg-[#122036] rounded-md py-5 px-5">
+                        <div className=' mt-5 bg-[#122036] rounded-md py-5 px-5'>
+                            <ul className='sm:flex-nowrap  flex-wrap sm:flex gap-5 justify-between grid grid-cols-2'>
+                                <li>
+                                    <span className='text-gray'>24H Volume (USD)</span>
+                                    <p className='text-lg font-bold mt-1'>${tokenAll?.volumn?.toFixed(2) || ' N/A'}</p>
+                                </li>
+                                <li>
+                                    <span className='text-gray'>Market Cap (USD)</span>
+                                    <p className='text-lg font-bold mt-1'>${tokenAll?.marketCap?.toFixed(2) || ' N/A'}</p>
+                                </li>
+                                <li>
+                                    <span className='text-gray'>Total Supply</span>
+                                    <p className='text-lg font-bold mt-1'>
+                                        {tokenAll?.total_supply
+                                            ? (parseFloat(tokenAll.total_supply) >= 1e6
+                                                ? (parseFloat(tokenAll.total_supply) / 1e6).toFixed(2) + 'M'
+                                                : parseFloat(tokenAll.total_supply).toString())
+                                            : 'N/A'} 0x0
+                                    </p>
+                                </li>
+                                <li>
+                                    <span className='text-gray'>Max Supply</span>
+                                    <p className='text-lg font-bold mt-1'>
+                                        {tokenAll?.max_supply
+                                            ? (parseFloat(tokenAll.max_supply) >= 1e6
+                                                ? (parseFloat(tokenAll.max_supply) / 1e6).toFixed(2) + 'M'
+                                                : parseFloat(tokenAll.max_supply).toString())
+                                            : 'N/A'} 0x0
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className='flex gap-2 justify-between flex-col md:flex-row'>
+                            <div className='w-full mt-5'>
+                                <div >
+                                    <h2 className=' font-bold text-light  rounded-md mb-3'>Top Holders</h2>
+                                </div>
+                                <div className="top-holders   rounded-md h-96 overflow-auto outlet-scrollbar">
+                                    <div className="top-holders-head grid grid-cols-[50px_2fr_1fr] text-light bg-[#122036] rounded-md py-3 px-[30px]">
+                                        <p>#</p>
+                                        <p>Wallet</p>
+                                        <p>Balance</p>
+                                    </div>
+                                    {isLoading ?
+                                        <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
+                                            <Skeleton height={"30px"} count={8} className='mt-3' />
+                                        </SkeletonTheme>
+                                        :
+                                        <div>
+                                            {
+                                                topHolders.map((item, index) => (
+                                                    <div key={index} className='top-holders-content grid grid-cols-[50px_2fr_1fr] py-3 px-[30px]'>
+                                                        <p>{index + 1}</p>
+                                                        <Link to={`https://etherscan.io/address/${item.Holder.Address}`} target="_blank" className='hover:text-secondary duration-200'>{item.Holder.Address.substring(0, 6)}...{item.Holder.Address.substring(item.Holder.Address.length - 6)}</Link>
+                                                        <p className='flex items-center gap-2'>{Number(item.Balance.Amount).toFixed(0)} <img className='w-5' src="/images/0x0-logo-head.png" alt="" /></p>
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div className=' w-full mt-5'>
+                                <div>
+                                    <h2 className='font-bold text-light  rounded-md mb-3'>Top Stakers</h2>
+                                </div>
+                                <div className="top-holders rounded-md h-96 overflow-auto outlet-scrollbar">
+                                    <div className="top-holders-head grid grid-cols-[50px_2fr_1fr] text-light bg-[#122036] rounded-md py-3 px-[30px]">
+                                        <p>#</p>
+                                        <p>Wallet</p>
+                                        <p>Balance</p>
+                                    </div>
+                                    {isLoading ?
+                                        <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
+                                            <Skeleton height={"30px"} count={8} className='mt-3' />
+                                        </SkeletonTheme>
+                                        :
+                                        <div>
+                                            {
+                                                topStakers.map((item, index) => (
+                                                    <div key={index} className='top-holders-content grid grid-cols-[50px_2fr_1fr] py-3 px-[30px]'>
+                                                        <p>{index + 1}</p>
+                                                        <Link to={`https://etherscan.io/address/${item}`} target="_blank" className='hover:text-secondary duration-200'>{item.substring(0, 6)}...{item.substring(item.length - 6)}</Link>
+                                                        <p className='flex items-center gap-2'>N/A <img className='w-5' src="/images/0x0-logo-head.png" alt="" /></p>
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className=" mt-5 bg-[#122036] rounded-md py-5 px-5">
                             <h2 className='font-semibold text-xl mb-7'>About 0x0COM Token</h2>
                             <p className='text-light'>Developing a privacy-centric infobiotics application to provide tailored recommendations for traders and fleets, enabling early identification of successful projects. The worlds first AI focused copy trading application. With the Alpha version of 0X0.com, users have the ability to discover and follow the most profitable Ethereum users. 0X0.com enables its users to identify profit per address over a specific period of time, while trading specific pairs. Additionally, 0X0.com users can purchase customized searches. Whenever 0X0.com identifies an Ethereum address that is generating significant profit, users receive alerts each time this address makes a trade.
                                 <br />
@@ -141,7 +270,6 @@ const TokenStatistics = () => {
                                 <h2 className='font-semibold text-xl mb-7'>0x0COM Informations</h2>
                                 <div className="officials mb-5">
                                     <ul className='flex items-center gap-2'>
-                                        {/* <h2 className='text-md font-semibold text-gray '>Official Links</h2> */}
                                         <li className='text-zinc-200 text-[15px] border border-gray-600 hover:border-gray-200 duration-150 rounded-md  px-1'><Link to="https://www.0x0.com" target="_blank" className='flex items-center gap-1'><HiOutlineGlobeAlt /> Website</Link></li>
                                         <li className='text-zinc-200 text-[15px] border border-gray-600 hover:border-gray-200 duration-150 rounded-md  px-1'><Link to="https://www.0x0.com/static/media/whitepaper.3902559b8642dc803f00.pdf" target="_blank" className='flex items-center gap-1'><HiDocumentDuplicate /> Document</Link></li>
                                         <li className='text-zinc-200 text-[15px] border border-gray-600 hover:border-gray-200 duration-150 rounded-md  px-1'><Link to="https://github.com/0x0dotcom" target="_blank" className='flex items-center gap-1'><HiDocumentDuplicate /> Github</Link></li>
@@ -162,8 +290,8 @@ const TokenStatistics = () => {
                                 <h2 className='text-md font-semibold text-gray flex items-center gap-2'><img className='w-6' src="/images/logo-eth.png" alt="" />Ethereum</h2>
                                 <h2 onClick={() => {
                                     handleWalletCopy();
-                                    navigator.clipboard.writeText("wallet address")
-                                }} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer '>0xE320...902J8 <HiOutlineDocumentDuplicate /></h2>
+                                    navigator.clipboard.writeText("0xb8fda5aee55120247f16225feff266dfdb381d4c")
+                                }} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer '>0xb8f...381d4c <HiOutlineDocumentDuplicate /></h2>
                             </div>
                             <div className="address mt-5 flex items-center justify-between">
                                 <h2 className='text-md font-semibold text-gray '>Airdrop Address</h2>
@@ -177,18 +305,26 @@ const TokenStatistics = () => {
                         <div className="statistics bg-[#122036] rounded-md py-3 px-5">
                             <h2 className='font-semibold text-xl mb-7'>0x0COM Price Statistics</h2>
                             <ul>
-                                <li className='flex items-center justify-between text-light mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>0x0.com Price</p><p>${tokenPrice?.price?.usdPrice.toFixed(5)}</p></li>
-                                <li className='flex items-center justify-between text-light mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>24H Percentage</p><p>{Number(tokenPrice?.price?.['24hrPercentChange']).toFixed(5)}%</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>24H High</p><p>${zeroxDaily.quote?.USD.high.toFixed(5)}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>24H Low</p><p>${zeroxDaily.quote?.USD.low.toFixed(5)}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>7D High</p><p>${zeroxWeekly.quote?.USD.high.toFixed(5)}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>7D Low</p><p>${zeroxWeekly.quote?.USD.low.toFixed(5)}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>30D High</p><p>${zeroxMonthly.quote?.USD.high.toFixed(5)}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>30D Low</p><p>${zeroxMonthly.quote?.USD.low.toFixed(5)}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>All Time High</p><p>${zeroxAlltime.quote?.USD.high.toFixed(5)}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-804'><p className='text-gray'>All Time Low</p><p>${zeroxAlltime.quote?.USD.low.toFixed(5)}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-804'><p className='text-gray'>Total Supply</p><p>199.83M 0x0</p></li>
-                                <li className='flex items-center justify-between text-light mb-2'><p className='text-gray'>Max Supply</p><p>200M 0x0</p></li>
+                                <li className='flex items-center justify-between text-light mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>0x0.com Price</p><p>${tokenPrice?.price?.usdPrice.toFixed(5) || ' N/A'}</p></li>
+                                <li className='flex items-center justify-between text-light mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>24H Percentage</p><p>{Number(tokenPrice?.price?.['24hrPercentChange']).toFixed(5) || ' N/A'}%</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>24H High</p><p>${zeroxDaily.quote?.USD.high.toFixed(5) || ' N/A'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>24H Low</p><p>${zeroxDaily.quote?.USD.low.toFixed(5) || ' N/A'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>7D High</p><p>${zeroxWeekly.quote?.USD.high.toFixed(5) || ' N/A'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>7D Low</p><p>${zeroxWeekly.quote?.USD.low.toFixed(5) || ' N/A'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>30D High</p><p>${zeroxMonthly.quote?.USD.high.toFixed(5) || ' N/A'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>30D Low</p><p>${zeroxMonthly.quote?.USD.low.toFixed(5) || ' N/A'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>All Time High</p><p>${zeroxAlltime.quote?.USD.high.toFixed(5) || ' N/A'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-804'><p className='text-gray'>All Time Low</p><p>${zeroxAlltime.quote?.USD.low.toFixed(5) || ' N/A'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-804'><p className='text-gray'>Total Supply</p><p>{tokenAll?.total_supply
+                                    ? (parseFloat(tokenAll.total_supply) >= 1e6
+                                        ? (parseFloat(tokenAll.total_supply) / 1e6).toFixed(2) + 'M'
+                                        : parseFloat(tokenAll.total_supply).toString())
+                                    : 'N/A'} 0x0</p></li>
+                                <li className='flex items-center justify-between text-light mb-2'><p className='text-gray'>Max Supply</p><p>{tokenAll?.max_supply
+                                    ? (parseFloat(tokenAll.max_supply) >= 1e6
+                                        ? (parseFloat(tokenAll.max_supply) / 1e6).toFixed(2) + 'M'
+                                        : parseFloat(tokenAll.max_supply).toString())
+                                    : 'N/A'} 0x0</p></li>
                             </ul>
                         </div>
                     </div>
