@@ -5,12 +5,9 @@ import './FindTraders.css';
 import SearchDayCount from './SearchDayCount';
 import SearchResult from './SearchResult';
 import { Helmet } from 'react-helmet';
-import useLeaderboard from '../../../../states/hooks/useLeaderboard';
 
 
 const FindTraders = () => {
-    const leaderboard = useLeaderboard();
-    const {leaderboardData, isLoading} = leaderboard;
     const [baseCurrency, setBaseCurrency] = useState([]);
     const [targetCurrency, setTargetCurrency] = useState([]);
     const [timePeriod, setTimePeriod] = useState("");
@@ -58,7 +55,7 @@ const FindTraders = () => {
             setSelectedTime(timePeriod[0]);
         }
     }, [timePeriod]);
-    const handleSelectedTime = (time) => {
+    const handleSelectedTime = (time) => { 
         setSelectedTime(time);
         setClickedTime(false);
     };
@@ -167,13 +164,12 @@ const FindTraders = () => {
                             }
                         </div>
                         <div className="item flex items-end">
-                            {/* <h2 className='font-semibold uppercase text-light mb-3 opacity-0 invisible'>Search Now</h2> */}
                             <button onClick={handleShowSearchResult} className='bg-secondaryHover hover:bg-secondary duration-200 w-full font-semibold py-[13px] rounded-md'>Search Now</button>
                         </div>
                     </div>
                 </div>
                 {showSearchResult &&
-                    <SearchResult leaderboardData={leaderboardData} isLoading={isLoading} />
+                    <SearchResult selectedBase={selectedBase} selectedTarget={selectedTarget} selectedTime={selectedTime} />
                 }
             </div>
         </div>

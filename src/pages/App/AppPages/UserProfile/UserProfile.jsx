@@ -43,7 +43,7 @@ const UserProfile = () => {
                             <h2 className='text-lg text-light font-semibold mb-2'>Wallet Balance</h2>
                             <div className='address flex items-center gap-3 bg-slate-700 p-3 rounded-md'>
                                 <img className='w-6' src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="" />
-                                <p className='font-semibold'>{balance}00 ETH</p>
+                                <p className='font-semibold'>{Number(balance).toFixed(4)} ETH</p>
                             </div>
                         </div>
                     </div>

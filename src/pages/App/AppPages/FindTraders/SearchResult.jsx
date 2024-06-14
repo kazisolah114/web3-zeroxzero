@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HiOutlineEye, HiOutlineEyeSlash } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
-import BackgroundShadow from '../../../../components/CommonComponents/BackgroundShadow/BackgroundShadow';
-import useLeaderboard from '../../../../states/hooks/useLeaderboard';
 import Loader from '../../../../components/CommonComponents/Loader/Loader';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
-const SearchResult = ({ leaderboardData, isLoading }) => {
+const SearchResult = ({ selectedBase, selectedTarget, selectedTime }) => {
+    console.log(selectedBase)
+    const [customResult, setCustomResult] = useState({})
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        fetch(`https://leaderboard.0x0.com/top?token=${selectedTarget.wallet}&interval=${selectedTime.interval}`)
+            .then(res => res.json())
+            .then(data => {
+                setCustomResult(data);
+                setIsLoading(false);
+            })
+    }, [selectedTarget.wallet, selectedTime.interval])
 
     const notify = () => toast.success('Wallet added to the tracking list!', {
         position: "top-right",
@@ -52,33 +61,38 @@ const SearchResult = ({ leaderboardData, isLoading }) => {
                 :
                 <div className='search-result '>
                     <ToastContainer />
-                    <div className='mt-5 flex flex-col justify-center '>
-                        <div className='search-table-head text-light bg-[#122036] px-[30px] py-5 rounded-md '>
-                            <p>#</p>
-                            <p className='mr-12'>Wallet Address</p>
-                            <p>Target Coin Volume</p>
-                            <p>Profit Percentage</p>
-                            <p className='mx-auto text-center'>Track Wallet</p>
+                    {customResult?.leaderboard && customResult?.leaderboard.length > 0 ?
+                        <div className='mt-5 flex flex-col justify-center '>
+                            <div className='search-table-head text-light bg-[#122036] px-[30px] py-5 rounded-md '>
+                                <p>#</p>
+                                <p className='mr-12'>Wallet Address</p>
+                                <p>Profit Percentage</p>
+                                <p>Target Coin Volume</p>
+                                <p className='mx-auto text-center'>Track Wallet</p>
+                            </div>
+                            {
+                                customResult?.leaderboard?.map((item, index) => <div className='search-table-content  border-b border-slate-800   text-light  px-[30px] py-5'>
+                                    <p>{index + 1}</p>
+                                    <Link to={`https://etherscan.io/address/${item.wallet}`} target="_blank" className=''>{item.wallet.substring(0, 6)}...{item.wallet.substring(item.wallet.length - 6)}</Link>
+                                    <p className={`${item.profitPercent.startsWith("-") ? 'text-red-400' : 'text-green-400'}`}>{item.profitPercent}</p>
+                                    <p>N/A</p>
+                                    <p onClick={() => handleTrackWallet(item.wallet)} className='mx-auto cursor-pointer'>
+                                        {trackingList.includes(item.wallet) ?
+                                            <HiOutlineEyeSlash className='text-2xl text-secondary' />
+                                            :
+                                            <HiOutlineEye className='text-2xl' />
+                                        }
+                                    </p>
+
+                                </div>)
+                            }
                         </div>
-                        {
-                            leaderboardData[0]?.data.slice(0, 10).map((item, index) => <div className='search-table-content  border-b border-slate-800   text-light  px-[30px] py-5'>
+                        :
+                        <div className='text-center mt-10'>
+                            <h4 className=''>No records were found for the given base, target and time period😕</h4>
+                        </div>
+                    }
 
-                                <p>{index + 1}</p>
-
-                                <Link to={item.wallet_address} target="_blank" className=''>{item.wallet_address.substring(0, 6)}...{item.wallet_address.substring(item.wallet_address.length - 6)}</Link>
-                                <p>{item.target_coin_volume}</p>
-                                <p className={`${item.profit_perc.toString().startsWith("-") ? 'text-red-400' : 'text-green-400'}`}>{item.profit_perc.toFixed(5)}%</p>
-                                <p onClick={() => handleTrackWallet(item.wallet_address)} className='mx-auto cursor-pointer'>
-                                    {trackingList.includes(item.wallet_address) ?
-                                        <HiOutlineEyeSlash className='text-2xl text-secondary' />
-                                        :
-                                        <HiOutlineEye className='text-2xl' />
-                                    }
-
-                                </p>
-                            </div>)
-                        }
-                    </div>
                 </div>
             }
         </div>

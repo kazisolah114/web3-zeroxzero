@@ -1,26 +1,21 @@
 {
     "base_currency": [
-        { "currency": "Wrapped Ethereum", "abr": "WETH", "flag": "https://changenow.io/images/cached/weth.png" },
-        { "currency": "USD Coin", "abr": "USDC", "flag": "https://seeklogo.com/images/U/usd-coin-usdc-logo-CB4C5B1C51-seeklogo.com.png" },
-        { "currency": "Wrapped Bitcoin", "abr": "WBTC", "flag": "https://cryptologos.cc/logos/wrapped-bitcoin-wbtc-logo.png" },
-        { "currency": "Dodge Coin", "abr": "DODGE", "flag": "https://upload.wikimedia.org/wikipedia/en/d/d0/Dogecoin_Logo.png" },
-        { "currency": "Shiba Inu", "abr": "SHIB", "flag": "https://logo.moralis.io/0x1_0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce_ffef6845a455407394138d3e914a7cc1" },
-        { "currency": "Chain Link", "abr": "LINK", "flag": "https://logo.moralis.io/0x1_0x514910771af9ca656af840dff83e8264ecf986ca_9fae9a4833e343b3a67983dfdd9d048f" }
+        { "currency": "Wrapped Ethereum", "abr": "WETH", "wallet": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", "flag": "https://changenow.io/images/cached/weth.png" }
     ],
     "target_currency": [
-        { "currency": "Wrapped Bitcoin", "abr": "WBTC", "flag": "https://cryptologos.cc/logos/wrapped-bitcoin-wbtc-logo.png" },
-        { "currency": "Shiba Inu", "abr": "SHIB", "flag": "https://logo.moralis.io/0x1_0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce_ffef6845a455407394138d3e914a7cc1" },
-        { "currency": "Chain Link", "abr": "LINK", "flag": "https://logo.moralis.io/0x1_0x514910771af9ca656af840dff83e8264ecf986ca_9fae9a4833e343b3a67983dfdd9d048f" },
-        { "currency": "Wrapped Ethereum", "abr": "WETH", "flag": "https://changenow.io/images/cached/weth.png" },
-        { "currency": "USD Coin", "abr": "USDC", "flag": "https://seeklogo.com/images/U/usd-coin-usdc-logo-CB4C5B1C51-seeklogo.com.png" },
-        { "currency": "Dodge Coin", "abr": "DODGE", "flag": "https://upload.wikimedia.org/wikipedia/en/d/d0/Dogecoin_Logo.png" }
+        { "currency": "Wrapped Bitcoin", "abr": "WBTC", "wallet": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599", "flag": "https://cryptologos.cc/logos/wrapped-bitcoin-wbtc-logo.png" },
+        { "currency": "Shiba Inu", "abr": "SHIB", "wallet": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce", "flag": "https://logo.moralis.io/0x1_0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce_ffef6845a455407394138d3e914a7cc1" },
+        { "currency": "Chain Link", "abr": "LINK", "wallet": "0x514910771af9ca656af840dff83e8264ecf986ca", "flag": "https://logo.moralis.io/0x1_0x514910771af9ca656af840dff83e8264ecf986ca_9fae9a4833e343b3a67983dfdd9d048f" },
+        { "currency": "Dodge Coin", "abr": "DODGE", "wallet": "0x2541a36be4cd39286ed61a3e6afc2307602489d6", "flag": "https://upload.wikimedia.org/wikipedia/en/d/d0/Dogecoin_Logo.png" },
+        { "currency": "Wrapped Ethereum", "abr": "WETH", "wallet": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", "flag": "https://changenow.io/images/cached/weth.png" },
+        { "currency": "USD Coin", "abr": "USDC", "wallet": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", "flag": "https://seeklogo.com/images/U/usd-coin-usdc-logo-CB4C5B1C51-seeklogo.com.png" }
     ],
     "time_period": [
-        { "time": "Last day", "cost": 1 },
-        { "time": "Last week", "cost": 7 },
-        { "time": "Last month", "cost": 30 },
-        { "time": "Last 3 months", "cost": 90 },
-        { "time": "Last 6 months", "cost": 180 },
-        { "time": "Last year", "cost": 360 }
+        { "time": "Last day", "interval": "1d", "cost": 1 },
+        { "time": "Last week", "interval": "7d", "cost": 7 },
+        { "time": "Last month", "interval": "30d", "cost": 30 },
+        { "time": "Last 3 months", "interval": "90d", "cost": 90 },
+        { "time": "Last 6 months", "interval": "180d", "cost": 180 },
+        { "time": "Last year", "interval": "360d", "cost": 360 }
     ]
 }
