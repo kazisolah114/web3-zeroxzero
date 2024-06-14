@@ -33,7 +33,7 @@ const MarketUpdate = ({ marketUpdate }) => {
                         onChange={handleSearch}
                         value={searchTerm}
                         placeholder='Search Coin'
-                        className='outline-none bg-transparent'
+                        className='outline-none bg-transparent md:w-auto w-32'
                     />
                 </div>
             </div>
@@ -50,14 +50,14 @@ const MarketUpdate = ({ marketUpdate }) => {
                     filteredCoins.map((coin, index) => (
                         <div className='table-content px-5 text-light py-4 duration-200 border-b  border-gray-700 border-opacity-80' key={index}>
                             <p>{coin.market_cap_rank}</p>
-                            <p className='flex items-center gap-3'><img className='w-5' src={coin.image} alt="" /> {coin.name}</p>
+                            <p className='flex items-center text-left gap-3'><img className='w-5' src={coin.image} alt="" /> {coin.name}</p>
                             <p>${coin.current_price}</p>
                             <p className={parseFloat(coin.price_change_24h) < 0 ? "text-red-400" : "text-green-400"}>
                                 {parseFloat(coin.price_change_24h) < 0 ? "" : "+"}
                                 {parseFloat(coin.price_change_24h).toFixed(2)}%
                             </p>
                             <p>${coin.market_cap}</p>
-                            <button onClick={() => handleShowModal(coin)} className='bg-secondary hover:bg-[#12AFAF] duration-200 px-3 py-2 rounded-md font-semibold'>View Chart</button>
+                            <button onClick={() => handleShowModal(coin)} className='border border-[#12AFAF] text-secondary duration-200 px-3 py-2 rounded-md font-semibold'>View Chart</button>
                         </div>
                     ))
                 }

@@ -67,7 +67,7 @@ const SearchResult = ({ selectedBase, selectedTarget, selectedTime }) => {
                                 <p>#</p>
                                 <p className='mr-12'>Wallet Address</p>
                                 <p>Profit Percentage</p>
-                                <p>Target Coin Volume</p>
+                                <p>Coin Volume</p>
                                 <p className='mx-auto text-center'>Track Wallet</p>
                             </div>
                             {

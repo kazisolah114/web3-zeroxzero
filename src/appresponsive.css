@@ -194,9 +194,11 @@
     }
     .leaderboard-table-head {
         grid-template-columns: 20px 155px 122px 85px!important;
+        gap: 10px!important;
     }
     .leaderboard-table-content {
         grid-template-columns: 20px 155px 122px 85px!important;
+        gap: 10px!important;
     }
     
 }

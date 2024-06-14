@@ -38,7 +38,7 @@ const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
                 <div className="user-details flex items-center  gap-4">
                     <div className="balance flex items-center gap-2  py-[6px] px-3 rounded-md border border-[#0fcfcfb7]">
                         <img className='w-5' src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="" />
-                        <h4 className='font-semibold text-light'>{Number(balance).toFixed(4)} ETH</h4>
+                        <h4 className='font-semibold text-light'>{Number(balance).toFixed(3)} ETH</h4>
                     </div>
                     <div className="account-info cursor-pointer flex items-center gap-2  py-[6px] px-3 rounded-md border border-[#0fcfcfb7]">
                         <img src="/images/metamask-logo.png" alt="" />

@@ -1,6 +1,6 @@
 {
     "base_currency": [
-        { "currency": "Wrapped Ethereum", "abr": "WETH", "wallet": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", "flag": "https://changenow.io/images/cached/weth.png" }
+        { "currency": "Wrapped Ethereum", "abr": "WETH", "wallet": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", "flag": "https://etherscan.io/token/images/weth_28.png" }
     ],
     "target_currency": [
         { "currency": "Wrapped Bitcoin", "abr": "WBTC", "wallet": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599", "flag": "https://cryptologos.cc/logos/wrapped-bitcoin-wbtc-logo.png" },
