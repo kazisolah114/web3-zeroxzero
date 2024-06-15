@@ -237,7 +237,7 @@
         grid-template-columns: 20px 180px 90px 120px!important
     }
 }
-@media screen and (max-width: 492px) {
+@media screen and (max-width: 516px) {
     .app-header .user-details{
         gap: 8px;
     }
@@ -272,11 +272,19 @@
         width: 90%;
     }
 }
-@media screen and (max-width: 396px) {
+@media screen and (max-width: 428px) {
     .leaderboard-table-head {
-        grid-template-columns: 20px 120px 80px 50px !important;
+        grid-template-columns: 20px 120px 70px 50px !important;
     }
     .leaderboard-table-content {
-        grid-template-columns: 20px 120px 80px 50px !important;
+        grid-template-columns: 20px 120px 70px 50px !important;
+    }
+}
+@media screen and (max-width: 396px) {
+    .leaderboard-table-head {
+        grid-template-columns: 20px 120px 60px 50px !important;
+    }
+    .leaderboard-table-content {
+        grid-template-columns: 20px 120px 60px 50px !important;
     }
 }

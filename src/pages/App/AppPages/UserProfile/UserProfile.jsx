@@ -19,7 +19,7 @@ const UserProfile = () => {
         theme: "light",
         transition: Bounce,
     });
-    const {wallet, balance} = useUserContext();
+    const { wallet, balance } = useUserContext();
     const handleWalletCopy = () => {
         notify();
     }
@@ -35,7 +35,11 @@ const UserProfile = () => {
                                 <p onClick={() => {
                                     handleWalletCopy();
                                     navigator.clipboard.writeText(`${wallet}`)
-                                }} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer '>{wallet} <HiOutlineDocumentDuplicate className='' /></p>
+                                }} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer md:hidden'>{wallet?.substring(0, 9)}...{wallet?.substring(wallet?.length - 9)} <HiOutlineDocumentDuplicate /></p>
+                                <p onClick={() => {
+                                    handleWalletCopy();
+                                    navigator.clipboard.writeText(`${wallet}`)
+                                }} className='md:flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer hidden'>{wallet} <HiOutlineDocumentDuplicate /></p>
                             </div>
                             <ToastContainer />
                         </div>
