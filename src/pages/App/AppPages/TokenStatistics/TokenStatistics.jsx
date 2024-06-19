@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
 import { HiGlobe } from 'react-icons/hi';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import NewTokens from './NewTokens';
 
 const TokenStatistics = () => {
     const [tokenPrice, setTokenPrice] = useState(null);
@@ -24,7 +25,6 @@ const TokenStatistics = () => {
     }, [])
 
     const [tokenAll, setTokenAll] = useState({});
-    console.log(tokenAll)
     useEffect(() => {
         fetch('https://statboard.0x0.com/api/token/all')
             .then(res => res.json())
@@ -89,7 +89,6 @@ const TokenStatistics = () => {
                     setIsLoading(false);
                 } else {
                     console.error('Unexpected data format for top holders', data);
-                    setTopHolders([]);
                 }
 
             })
@@ -108,7 +107,6 @@ const TokenStatistics = () => {
                     // setIsLoading(false);
                 } else {
                     console.error('Unexpected data format for top stakers', data);
-                    setTopStakers([]);
                 }
 
             })
@@ -193,7 +191,7 @@ const TokenStatistics = () => {
                                 <div >
                                     <h2 className=' font-bold text-light  rounded-md mb-3'>Top Holders</h2>
                                 </div>
-                                <div className="top-holders   rounded-md h-96 overflow-auto outlet-scrollbar">
+                                <div className="top-holders   rounded-md h-[28rem] overflow-auto outlet-scrollbar">
                                     <div className="top-holders-head grid grid-cols-[50px_2fr_1fr] text-light bg-[#122036] rounded-md py-3 px-[30px]">
                                         <p>#</p>
                                         <p>Wallet</p>
@@ -201,12 +199,12 @@ const TokenStatistics = () => {
                                     </div>
                                     {isLoading ?
                                         <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
-                                            <Skeleton height={"30px"} count={8} className='mt-3' />
+                                            <Skeleton height={"32px"} count={9} className='mt-3' />
                                         </SkeletonTheme>
                                         :
                                         <div>
                                             {
-                                                topHolders.map((item, index) => (
+                                                topHolders?.map((item, index) => (
                                                     <div key={index} className='top-holders-content grid grid-cols-[50px_2fr_1fr] py-3 px-[30px]'>
                                                         <p>{index + 1}</p>
                                                         <Link to={`https://etherscan.io/address/${item.Holder.Address}`} target="_blank" className='hover:text-secondary duration-200'>{item.Holder.Address.substring(0, 6)}...{item.Holder.Address.substring(item.Holder.Address.length - 6)}</Link>
@@ -222,7 +220,7 @@ const TokenStatistics = () => {
                                 <div>
                                     <h2 className='font-bold text-light  rounded-md mb-3'>Top Stakers</h2>
                                 </div>
-                                <div className="top-holders rounded-md h-96 overflow-auto outlet-scrollbar">
+                                <div className="top-holders rounded-md h-[28rem] overflow-auto outlet-scrollbar">
                                     <div className="top-holders-head grid grid-cols-[50px_2fr_1fr] text-light bg-[#122036] rounded-md py-3 px-[30px]">
                                         <p>#</p>
                                         <p>Wallet</p>
@@ -230,12 +228,12 @@ const TokenStatistics = () => {
                                     </div>
                                     {isLoading ?
                                         <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
-                                            <Skeleton height={"30px"} count={8} className='mt-3' />
+                                            <Skeleton height={"32px"} count={9} className='mt-3' />
                                         </SkeletonTheme>
                                         :
                                         <div>
                                             {
-                                                topStakers.map((item, index) => (
+                                                topStakers?.map((item, index) => (
                                                     <div key={index} className='top-holders-content grid grid-cols-[50px_2fr_1fr] py-3 px-[30px]'>
                                                         <p>{index + 1}</p>
                                                         <Link to={`https://etherscan.io/address/${item}`} target="_blank" className='hover:text-secondary duration-200'>{item.substring(0, 6)}...{item.substring(item.length - 6)}</Link>
@@ -249,18 +247,17 @@ const TokenStatistics = () => {
                             </div>
                         </div>
 
-                        <div className=" mt-5 bg-[#122036] rounded-md py-5 px-5">
+                        <div className="mt-5 bg-[#122036] rounded-md py-5 px-5">
                             <h2 className='font-semibold text-xl mb-7'>About 0x0COM Token</h2>
-                            <p className='text-light'>Developing a privacy-centric infobiotics application to provide tailored recommendations for traders and fleets, enabling early identification of successful projects. The worlds first AI focused copy trading application. With the Alpha version of 0X0.com, users have the ability to discover and follow the most profitable Ethereum users. 0X0.com enables its users to identify profit per address over a specific period of time, while trading specific pairs. Additionally, 0X0.com users can purchase customized searches. Whenever 0X0.com identifies an Ethereum address that is generating significant profit, users receive alerts each time this address makes a trade.
-                                <br />
-                                <br />
-                                High Flyers will receive 5000 unique NFTs on the Ethereum blockchain, which can be utilized for staking. Monthly treasure hunts will be organized in the Metaverse for tracking virtual asset profits. For the monthly treasure hunts, owners of High Flyer NFTs will receive a clue based on the token ID of their NFT. To win the treasure hunts, users must own three NFTs with the appropriate token IDs or collaborate as a team and gather three clues. If you would like to know where to buy 0x0.com at the current rate, the top cryptocurrency exchange for trading in 0x0.com stock is currently Uniswap v2.
+                            <p className='text-gray'>
+                                With the Alpha version of 0X0.com, users have the ability to discover and follow the most profitable Ethereum users. 0X0.com enables its users to identify profit per address over a specific period of time, while trading specific pairs. Additionally, 0X0.com users can purchase customized searches. Whenever 0X0.com identifies an Ethereum address that is generating significant profit, users receive alerts each time this address makes a trade. This provides 0X0.com users with an opportunity to copy trades on the Ethereum blockchain.
+                                <p className='mt-4'>High Flyers will receive 5000 unique NFTs on the Ethereum blockchain, which can be utilized for staking. Monthly treasure hunts will be organized in the Metaverse for tracking virtual asset profits. For the monthly treasure hunts, owners of High Flyer NFTs will receive a clue based on the token ID of their NFT. To win the treasure hunts, users must own three NFTs with the appropriate token IDs or collaborate as a team and gather three clues.</p>
+                                <p className='mt-4'>0X0.com aims to establish itself in three main Metaverses: Sandbox, The Other Side, and Crypto.com. They will analyze transactions within the Metaverses and provide alerts on which people are making the most profit and the popularity increases of specific assets. The high flyers will be required to interact with this functionality, gain information, and have their own game within each Metaverse.</p>
                             </p>
                             <div className='mt-10 flex gap-5 items-center'>
                                 <Link target='_blank' to="https://www.0x0.com/static/media/whitepaper.3902559b8642dc803f00.pdf"><button className='underline text-secondary hover:text-[#65ffffeb] duration-200 text-sm'>View White Paper</button></Link>
                                 <Link target='_blank' to="https://etherscan.io/token/0xB8fda5AEe55120247F16225feFf266dfdB381D4C#code"><button className='underline text-secondary hover:text-[#65ffffeb] duration-200 text-sm'>View Token Contract</button></Link>
                             </div>
-
                         </div>
                     </div>
                     <div className="token-details-sidebar ">
@@ -327,6 +324,7 @@ const TokenStatistics = () => {
                                     : 'N/A'} 0x0</p></li>
                             </ul>
                         </div>
+                        <NewTokens />
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@ const LanguageSelector = () => {
         setSelectedLanguage(language);
         setClicked(false);
     }
-    // console.log(selectedLanguage)
+
 
     return (
         <div className='relative'>

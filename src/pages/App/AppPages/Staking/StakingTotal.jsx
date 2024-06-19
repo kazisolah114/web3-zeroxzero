@@ -10,7 +10,6 @@ const StakingTotal = () => {
                 setStakingTotal(data.stakingTotal);
             })
     }, [])
-    console.log(stakingTotal);
     return (
         <div className='mb-14 relative'>
             <div className="all-total flex items-center justify-between ">

@@ -8,7 +8,7 @@ import Loader from '../../../../components/CommonComponents/Loader/Loader';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const SearchResult = ({ selectedBase, selectedTarget, selectedTime }) => {
-    console.log(selectedBase)
+
     const [customResult, setCustomResult] = useState({})
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {

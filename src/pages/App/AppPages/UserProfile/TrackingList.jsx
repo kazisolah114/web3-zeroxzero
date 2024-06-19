@@ -74,9 +74,7 @@ const TrackingList = () => {
 
 
     const [trackingList, setTrackingList] = useState(leaderboard);
-    console.log(trackingList);
     const handleTrackedWallet = (wallet) => {
-        console.log(wallet)
         const sortedWallets = trackingList.filter(item => item.address !== wallet);
         setTrackingList(sortedWallets);
 

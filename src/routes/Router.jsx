@@ -14,6 +14,7 @@ import StakingDetails from "../pages/App/AppPages/Staking/StakingDetails";
 import UserProfile from "../pages/App/AppPages/UserProfile/UserProfile";
 import Blogs from "../pages/LandingPages/Blogs/Blogs";
 import BlogDetails from "../pages/LandingPages/Blogs/BlogDetails";
+import UserProfilePr from "../private/UserProfilePr";
 
 
 const router = createBrowserRouter([
@@ -74,7 +75,7 @@ const router = createBrowserRouter([
       },
       {
         path: "user-profile",
-        element: <UserProfile />
+        element: <UserProfilePr><UserProfile /></UserProfilePr>
       }
     ]
   },

@@ -4,7 +4,6 @@ import './MarketStatistics.css';
 import CoinChart from './CoinChart';
 
 const MarketUpdate = ({ marketUpdate }) => {
-    console.log(marketUpdate);
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleSearch = (event) => {
@@ -57,7 +56,7 @@ const MarketUpdate = ({ marketUpdate }) => {
                                 {parseFloat(coin.price_change_24h).toFixed(2)}%
                             </p>
                             <p>${coin.market_cap}</p>
-                            <button onClick={() => handleShowModal(coin)} className='border border-[#12AFAF] text-secondary duration-200 px-3 py-2 rounded-md font-semibold'>View Chart</button>
+                            <button onClick={() => handleShowModal(coin)} className='border border-[#12AFAF]  text-secondary hover:text-[#65ffffeb] duration-200 px-3 py-2 rounded-md font-semibold'>View Chart</button>
                         </div>
                     ))
                 }

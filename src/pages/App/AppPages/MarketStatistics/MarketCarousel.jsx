@@ -3,7 +3,6 @@ import React from 'react';
 
 
 const MarketCarousel = ({ marketUpdate }) => {
-    console.log(marketUpdate)
     return (
         <div className='carousel p-5 bg-[#122036] rounded-md mt-20'>
             {

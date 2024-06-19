@@ -5,7 +5,6 @@ import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official';
 
 const PieChart = ({ tokenStats }) => {
-    console.log("Token Stats from char:", tokenStats);
     const data = {
         "last24hrPercentChange": -101.09137,
         "lastWeekPercentChange": -104.0307,

@@ -26,8 +26,6 @@ const StakingDetails = () => {
         navigate("/app/staking")
     }
 
-    console.log("Filtered Data", filteredStaking);
-    console.log(stakeToggle)
 
     return (
         <div>

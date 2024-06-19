@@ -12,7 +12,6 @@ const BlogsSection = () => {
                 setBlogs(data);
             })
     }, []);
-    console.log(blogs);
     return (
         <div className='blogs-section py-24'>
             <div className="blogs-section-header flex justify-between items-start container">

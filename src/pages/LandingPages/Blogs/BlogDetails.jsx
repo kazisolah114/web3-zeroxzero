@@ -15,7 +15,6 @@ const BlogDetails = () => {
             })
     }, [])
 
-    console.log(blog);
 
     return (
         <div className='blog-details py-12 container'>

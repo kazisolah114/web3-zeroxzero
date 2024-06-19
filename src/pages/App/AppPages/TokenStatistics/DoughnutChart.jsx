@@ -5,7 +5,6 @@ import HighchartsReact from 'highcharts-react-official';
 import BackgroundShadow from '../../../../components/CommonComponents/BackgroundShadow/BackgroundShadow';
 
 const DoughnutChart = ({ transections }) => {
-    console.log("Transections:", transections);
     const data = [
         {
           "token_name": "0x0 Token",
