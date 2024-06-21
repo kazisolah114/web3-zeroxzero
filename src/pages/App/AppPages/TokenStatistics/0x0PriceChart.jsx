@@ -64,6 +64,7 @@ const PriceChart = ({ }) => {
 
     return (
         <div className="zerox-price  ">
+            <h2>0x0 Token price history</h2>
             <HighchartsReact className={"chart "}
                 highcharts={Highcharts}
                 options={options}
