@@ -6,46 +6,61 @@ import { Link } from 'react-router-dom';
 const NewTokens = () => {
     const [newTokens, setNewTokens] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
-        fetch(`https://statboard.0x0.com/api/token/list?method=month`)
-            .then(res => res.json())
-            .then(data => {
-                setNewTokens(data.data);
+        const fetchNewTokens = async () => {
+            try {
+                const response = await fetch(`https://statboard.0x0.com/api/token/list?method=month&page=1&limit=10`);
+                const data = await response.json();
+                if (data.data.length > 0) {
+                    setNewTokens(data.data);
+                }
+            } catch (error) {
+                console.error('Error fetching new tokens:', error);
+            } finally {
                 setIsLoading(false);
-            })
-    }, [])
+            }
+        };
+
+        fetchNewTokens();
+    }, []);
+
     return (
         <div className='bg-[#122036] rounded-md py-3 px-5 mt-5'>
             <h2 className='font-semibold text-xl mb-7'>New Uniswap Tokens</h2>
-            {isLoading ?
-                <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
-                    <Skeleton height={"35px"} count={10} className='mt-3' />
-                </SkeletonTheme>
-                :
-                <div>
-                    <ul>
-                        {
-                            newTokens.slice(0, 10).map(token => (
-                                <li key={token._id} className='group flex justify-between items-center cursor-pointer text-light mb-2 pb-3 border-b border-gray-700 border-opacity-80 last:border-none'>
-                                    <div className='flex items-center gap-2'>
-                                        <img className='w-4' src="/images/0x0-logo-head.png" alt="" />
-                                        <p className='text-gray group-hover:text-white duration-200'>{token.name.slice(0, 13)}</p>
-                                    </div>
-                                    <div className='flex items-center gap-3'>
-                                        <p>$0.029</p>
-                                        <p className='text-green-500'>+8.32%</p>
-                                    </div>
-                                </li>
-
-                            ))
-                        }
-                    </ul>
-                    <Link><button className='text-secondary underline flex items-center gap-1 hover:text-[#65ffffeb] duration-200'>Explore More <HiOutlineExternalLink /></button></Link>
-                </div>
-            }
-
+            {isLoading ? <LoadingSkeleton /> : <TokenList newTokens={newTokens} />}
         </div>
     );
 };
+
+const LoadingSkeleton = () => (
+    <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
+        <Skeleton height={"35px"} count={10} className='mt-3' />
+    </SkeletonTheme>
+);
+
+const TokenList = ({ newTokens }) => (
+    <>
+        <ul>
+            {newTokens.map(token => (
+                <li key={token._id} className='group flex justify-between items-center cursor-pointer text-light mb-2 pb-3 border-b border-gray-700 border-opacity-80 last:border-none'>
+                    <div className='flex items-center gap-2'>
+                        <img className='w-4' src={token?.logo || 'https://cdn-icons-png.flaticon.com/512/16/16096.png'} alt="logo" />
+                        <p className='text-gray group-hover:text-white duration-200'>{token.name.slice(0, 13)}</p>
+                    </div>
+                    <div className='grid grid-cols-2 items-center gap-4'>
+                        <p className='text-left'>$0.029</p>
+                        <p className={`${token['24h_percent'].toString().startsWith('-') ? 'text-red-500' : 'text-green-500'}`}>{token['24h_percent'].toFixed(2)}%</p>
+                    </div>
+                </li>
+            ))}
+        </ul>
+        <Link to="/explore-more">
+            <button className='text-secondary underline flex items-center gap-1 hover:text-[#65ffffeb] duration-200'>
+                Explore More <HiOutlineExternalLink />
+            </button>
+        </Link>
+    </>
+);
 
 export default NewTokens;

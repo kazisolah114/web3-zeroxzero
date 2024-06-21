@@ -22,11 +22,9 @@ const Staking = () => {
         setIsDefault(!isDefault);
 
         if (isDefault) {
-            // Sort stakingData based on apr_percentage in descending order
             const sortedData = [...stakingData].sort((a, b) => b.apr_percentage - a.apr_percentage);
             setStakingData(sortedData);
         } else {
-            // Reset stakingData to its original order
             fetch('/staking.json')
                 .then(res => res.json())
                 .then(data => {
@@ -82,7 +80,6 @@ const Staking = () => {
                     {
                         stakingData.map((item) =>
                             <div key={item.id} className={`staking-item  ${item.apr_percentage >= 20 && 'top'} py-5 px-5 rounded-md `}>
-                                {/* <BackgroundShadow customShadow="0px 0px 400px 60px #10B8B9" /> */}
                                 <div className='flex items-center gap-5 '>
                                     <img className='w-12' src={item.staking_with_logo} alt="" />
                                     <h2 className=' font-semibold text-lg text-light uppercase'>{item.staking_with_abr} to {item.staking_for_abr}</h2>

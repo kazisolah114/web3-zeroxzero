@@ -27,7 +27,7 @@ const OurVision = () => {
                     <p className='text-gray '>Our mission is to facilitate global connectivity and accessibility, empowering individuals worldwide to engage in seamless and secure cryptocurrency trading experiences.</p>
                     <div className="items flex items-center gap-16 mt-12">
                         <div className='text-center'>
-                            <h2 className='text-light text-4xl font-bold mb-2'>{ZeroxStats.unique_wallets ? ZeroxStats.unique_wallets : 0}</h2>
+                            <h2 className='text-light text-4xl font-bold mb-2'>{ZeroxStats.unique_wallets ? ZeroxStats.unique_wallets : 'N/A'}</h2>
                             <p className='text-gray'>Token Holders</p>
                         </div>
                         <div className='text-center'>
@@ -39,7 +39,7 @@ const OurVision = () => {
                                     return Math.floor(num / 1e6) + 'M';
                                 }
                                 return num.toString();
-                            })(ZeroxStats.liquid_token) : 0}</h2>
+                            })(ZeroxStats.liquid_token) : 'N/A'}</h2>
                             <p className='text-gray'>Liquid Tokens</p>
                         </div>
                         <div className='text-center'>
@@ -51,7 +51,7 @@ const OurVision = () => {
                                     return Math.floor(num / 1e6) + 'M';
                                 }
                                 return num.toString();
-                            })(ZeroxStats.staked_token) : 0}</h2>
+                            })(ZeroxStats.staked_token) : 'N/A'}</h2>
                             <p className='text-gray'>Staked Tokens</p>
                         </div>
                     </div>

@@ -30,12 +30,10 @@ const Header = () => {
                         </div>
                         <LanguageSelector />
                     </div>
-
-
                 </div>
                 <div className="header-button">
-                    {/* <button  className='flex items-center gap-2'><Link className='block' to={`${import.meta.env.VITE_APP_BASE_URL}`}>Launch App</Link></button> */}
-                    <button  className='flex items-center gap-2'><Link className='block' to={`/app/leaderboard`}>Launch App</Link></button>
+                    {/* <button  className='flex items-center gap-2'><Link className='flex justify-center items-center w-full h-full' to={`${import.meta.env.VITE_APP_BASE_URL}`}>Launch App</Link></button> */}
+                    <button  className='flex items-center gap-2'><Link className='flex justify-center items-center w-full h-full' to={`/app/leaderboard`}>Launch App</Link></button>
                 </div>
             </div>
 

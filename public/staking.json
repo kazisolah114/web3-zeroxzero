@@ -75,7 +75,7 @@
         {
             "id": "weth", 
             "staking_with_logo": "https://token-repository.dappradar.com/tokens?protocol=ethereum&contract=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2&file=logo.png",
-            "staking_with": "Wraped Ether",
+            "staking_with": "Wraped Eth",
             "staking_for": "0x0COM",
             "staking_with_abr": "WETH",
             "staking_for_abr": "0x0",

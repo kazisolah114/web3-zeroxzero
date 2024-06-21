@@ -84,7 +84,7 @@ const TokenStats = () => {
                             <ul>
                                 <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Token Name<span className='text-light font-semibold'>{ZeroxStats.tokenName}</span></li>
                                 <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Transfers<span className='text-light font-semibold'>{ZeroxStats.transfers}</span></li>
-                                <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Unique Wallets<span className='text-light font-semibold'>{ZeroxStats.unique_wallets}</span></li>
+                                <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Unique Wallets<span className='text-light font-semibold'>{ZeroxStats?.unique_wallets || 'N/A'}</span></li>
                                 <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Staked Tokens<span className='text-light font-semibold'>
                                     {(function (num) {
                                         if (num >= 1e6 && num < 1e9) {
@@ -96,7 +96,7 @@ const TokenStats = () => {
                                         return num.toString();
                                     })(ZeroxStats.staked_token)}
                                 </span></li>
-                                <li className='text-gray flex items-center justify-between'>Number of Stakers<span className='text-light font-semibold'>{ZeroxStats.number_of_stakers}</span></li>
+                                <li className='text-gray flex items-center justify-between'>Number of Stakers<span className='text-light font-semibold'>{ZeroxStats.number_of_stakers || 'N/A'}</span></li>
                             </ul>
                         }
                         <div className={`relative zerox-logo ${selectedButton == 'coinstats' && 'flip'}`}>

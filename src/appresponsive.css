@@ -282,17 +282,17 @@
 }
 @media screen and (max-width: 396px) {
     .leaderboard-table-head {
-        grid-template-columns: 20px 120px 60px 50px !important;
+        grid-template-columns: 20px 125px 60px 45px !important;
     }
     .leaderboard-table-content {
-        grid-template-columns: 20px 120px 60px 50px !important;
+        grid-template-columns: 20px 125px 60px 45px !important;
     }
 }
 @media screen and (max-width: 378px) {
     .leaderboard-table-head {
-        gap: 0!important;
+        gap: 2px!important;
     }
     .leaderboard-table-content {
-        gap: 0!important;
+        gap: 2px!important;
     }
 }

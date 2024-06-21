@@ -64,11 +64,9 @@ const PriceChart = ({ }) => {
 
     return (
         <div className="zerox-price  ">
-            {/* <BackgroundShadow customShadow="0px 0px 400px 60px #10B8B9" /> */}
             <HighchartsReact className={"chart "}
                 highcharts={Highcharts}
                 options={options}
-
             />
         </div>
     );
