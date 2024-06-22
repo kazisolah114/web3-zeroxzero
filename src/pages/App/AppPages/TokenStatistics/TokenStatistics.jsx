@@ -117,6 +117,12 @@ const TokenStatistics = () => {
     }, []);
 
 
+    // 0x0 Token Price History
+    const [selectedDuration, setSelectedDuration] = useState("1D")
+    const handleDuration = (duration) => {
+        setSelectedDuration(duration)
+    }
+
     return (
         <div>
             <Helmet>
@@ -134,7 +140,7 @@ const TokenStatistics = () => {
                         <div className=" bg-[#122036] rounded-md py-3 px-5">
                             <div className="token-details-header flex justify-between items-end">
                                 <div className='token-main-header'>
-                                    <div className='flex items-center gap-2 mb-2 text-light'>
+                                    <div className='flex items-center gap-2 text-light'>
                                         <h2 className='text-2xl font-bold'>${(tokenPrice?.price?.usdPrice ?? 0).toFixed(5)} USD</h2>
                                         <h2 className={` text-md font-semibold  ${tokenPrice?.price?.['24hrPercentChange']?.startsWith('-') ? 'text-red-400' : 'text-green-400'}`}><span className=''>{`${tokenPrice?.price?.['24hrPercentChange']?.startsWith('-') ? '' : '+'}`}{Number(tokenPrice?.price?.['24hrPercentChange'] ?? 0).toFixed(2)}%</span> (1d)</h2>
                                     </div>
@@ -143,15 +149,15 @@ const TokenStatistics = () => {
                                     </div>
                                 </div>
                                 <div className="token-time-header  rounded-md  p-1 flex items-center gap-1 text-light">
-                                    <button className=' hover:bg-[#192b4793] px-4   rounded-md'>1D</button>
-                                    <button className='bg-[#182b47] hover:bg-[#192b4793] px-4  rounded-md'>7D</button>
-                                    <button className='hover:bg-[#192b4793] px-4   rounded-md'>1M</button>
-                                    <button className='hover:bg-[#192b4793] px-4   rounded-md'>1Y</button>
-                                    <button className='hover:bg-[#192b4793] px-4 rounded-md'>All</button>
+                                    <button onClick={() => handleDuration("1D")} className={`${selectedDuration == "1D" && 'bg-[#182b47]'} px-4 rounded-md`}>1D</button>
+                                    <button onClick={() => handleDuration("7D")} className={`${selectedDuration == "7D" && 'bg-[#182b47]'} px-4 rounded-md`}>7D</button>
+                                    <button onClick={() => handleDuration("1M")} className={`${selectedDuration == "1M" && 'bg-[#182b47]'} px-4 rounded-md`}>1M</button>
+                                    <button onClick={() => handleDuration("1Y")} className={`${selectedDuration == "1Y" && 'bg-[#182b47]'} px-4 rounded-md`}>1Y</button>
+                                    <button onClick={() => handleDuration("All")} className={`${selectedDuration == "All" && 'bg-[#182b47]'} px-4 rounded-md`}>All</button>
                                 </div>
                             </div>
                             <div className="price-chart mt-12 w-[95%] mx-auto">
-                                <PriceChart />
+                                <PriceChart selectedDuration={selectedDuration} setSelectedDuration={setSelectedDuration} />
                             </div>
                         </div>
                         <div className=' mt-5 bg-[#122036] rounded-md py-5 px-5'>

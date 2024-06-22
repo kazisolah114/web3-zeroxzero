@@ -22,6 +22,6 @@
   -webkit-appearance: none;
   margin: 0;
 }
-.highcharts-credits{
+.highcharts-credits, .highcharts-legend{
     display: none;
 }
