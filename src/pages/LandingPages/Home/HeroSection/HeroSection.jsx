@@ -19,8 +19,8 @@ const HeroSection = () => {
                         We scan the blockchain to spot successful traders, using AI to rate them. If a trader scores above 8, we analyze their trades rigorously. When they invest in a project approved by our AI tool, we provide you with details to open a position. Selling prompts a timely notification</p>
                     <div className='hero-buttons mt-10 flex gap-2 items-center relative' data-aos="fade-up">
                         <BackgroundShadow customShadow="0px 0px 150px 40px #10B8B9" />
-                        <Link className='w-48 text-center primary-button hover:bg-[#12afaf] duration-200' to={`/app/leaderboard`}>Connect MetaMask</Link>
-                        <button className='w-48 text-center hero-find-more flex justify-center items-center gap-2 hover:text-secondary duration-200 '>Trade 0x0 Token <HiOutlineArrowRight /></button>
+                        <Link className='w-48 text-center primary-button hover:bg-[#12afaf] duration-200' to={`${import.meta.env.VITE_APP_BASE_URL}`}>Connect MetaMask</Link>
+                        <Link to={'https://flooz.xyz/swap?network=eth&tokenAddress=0xb8fda5aee55120247f16225feff266dfdb381d4c'} target='_blank' className='w-48 text-center hero-find-more flex justify-center items-center gap-2 hover:text-secondary duration-200 '>Trade 0x0 Token <HiOutlineArrowRight /></Link>
                     </div>
 
                 </div>

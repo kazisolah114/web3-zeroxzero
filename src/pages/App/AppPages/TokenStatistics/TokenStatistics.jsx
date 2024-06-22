@@ -13,6 +13,7 @@ import { Bounce } from 'react-toastify';
 import { HiGlobe } from 'react-icons/hi';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import NewTokens from './NewTokens';
+import TopHoldersStakers from './TopHoldersStakers';
 
 const TokenStatistics = () => {
     const [tokenPrice, setTokenPrice] = useState(null);
@@ -24,7 +25,7 @@ const TokenStatistics = () => {
             })
     }, [])
 
-    const [tokenAll, setTokenAll] = useState({});
+    const [tokenAll, setTokenAll] = useState(null);
     useEffect(() => {
         fetch('https://statboard.0x0.com/api/token/all')
             .then(res => res.json())
@@ -76,45 +77,6 @@ const TokenStatistics = () => {
     const handleWalletCopy = () => {
         notify();
     }
-
-    const [topHolders, setTopHolders] = useState([]);
-    const [topStakers, setTopStakers] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        fetch('https://statboard.0x0.com/api/token/topholders')
-            .then(res => res.json())
-            .then(data => {
-                if (Array.isArray(data?.top_holders)) {
-                    setTopHolders(data.top_holders);
-                    setIsLoading(false);
-                } else {
-                    console.error('Unexpected data format for top holders', data);
-                }
-
-            })
-            .catch(error => {
-                console.error('Error fetching top holders', error);
-                // setIsLoading(false);
-            });
-    }, []);
-
-    useEffect(() => {
-        fetch('https://statboard.0x0.com/api/token/topstakers')
-            .then(res => res.json())
-            .then(data => {
-                if (Array.isArray(data?.top_stakers)) {
-                    setTopStakers(data.top_stakers);
-                    // setIsLoading(false);
-                } else {
-                    console.error('Unexpected data format for top stakers', data);
-                }
-
-            })
-            .catch(error => {
-                console.error('Error fetching top stakers', error);
-                // setIsLoading(false);
-            });
-    }, []);
 
 
     // 0x0 Token Price History
@@ -192,63 +154,8 @@ const TokenStatistics = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className='flex gap-2 justify-between flex-col md:flex-row'>
-                            <div className='w-full mt-5'>
-                                <div className="top-holders-head grid md:grid-cols-[50px_2fr_1fr_10px] grid-cols-[50px_2fr_1fr] text-light bg-[#122036] rounded-md py-3 px-[30px]">
-                                    <p>#</p>
-                                    <p>Top Holders</p>
-                                    <p>Balance</p>
-                                </div>
-                                <div className="top-holders   rounded-md h-[27rem] overflow-auto outlet-scrollbar">
-
-                                    {isLoading ?
-                                        <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
-                                            <Skeleton height={"31px"} count={10} className='mt-3' />
-                                        </SkeletonTheme>
-                                        :
-                                        <div>
-                                            {
-                                                topHolders?.map((item, index) => (
-                                                    <div key={index} className='top-holders-content grid grid-cols-[50px_2fr_1fr] py-3 px-[30px] '>
-                                                        <p>{index + 1}</p>
-                                                        <Link to={`https://etherscan.io/address/${item.Holder.Address}`} target="_blank" className='hover:text-secondary duration-200'>{item.Holder.Address.substring(0, 6)}...{item.Holder.Address.substring(item.Holder.Address.length - 6)}</Link>
-                                                        <p className='flex items-center gap-2'>{Number(item.Balance.Amount).toFixed(0)} <img className='w-5' src="/images/0x0-logo-head.png" alt="" /></p>
-                                                    </div>
-                                                ))
-                                            }
-                                        </div>
-                                    }
-                                </div>
-                            </div>
-                            <div className=' w-full mt-5'>
-                                <div className="top-holders-head grid md:grid-cols-[50px_2fr_1fr_10px] grid-cols-[50px_2fr_1fr] text-light bg-[#122036] rounded-md py-3 px-[30px]">
-                                    <p>#</p>
-                                    <p>Top Stakers</p>
-                                    <p>Balance</p>
-                                </div>
-                                <div className="top-holders rounded-md h-[27rem] overflow-auto outlet-scrollbar">
-                                    {isLoading ?
-                                        <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
-                                            <Skeleton height={"31px"} count={10} className='mt-3' />
-                                        </SkeletonTheme>
-                                        :
-                                        <div>
-                                            {
-                                                topStakers?.map((item, index) => (
-                                                    <div key={index} className='top-holders-content grid grid-cols-[50px_2fr_1fr] py-3 px-[30px]'>
-                                                        <p>{index + 1}</p>
-                                                        <Link to={`https://etherscan.io/address/${item}`} target="_blank" className='hover:text-secondary duration-200'>{item.substring(0, 6)}...{item.substring(item.length - 6)}</Link>
-                                                        <p className='flex items-center gap-2'>N/A <img className='w-5' src="/images/0x0-logo-head.png" alt="" /></p>
-                                                    </div>
-                                                ))
-                                            }
-                                        </div>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="mt-6 bg-[#122036] rounded-md py-5 px-5">
+                        <TopHoldersStakers />
+                        <div className="about0x0-token mt-6 bg-[#122036] rounded-md py-5 px-5">
                             <h2 className='font-semibold text-xl mb-7'>About 0x0COM Token</h2>
                             <p className='text-gray'>
                                 With the Alpha version of 0X0.com, users have the ability to discover and follow the most profitable Ethereum users. 0X0.com enables its users to identify profit per address over a specific period of time, while trading specific pairs. Additionally, 0X0.com users can purchase customized searches. Whenever 0X0.com identifies an Ethereum address that is generating significant profit, users receive alerts each time this address makes a trade. This provides 0X0.com users with an opportunity to copy trades on the Ethereum blockchain.
@@ -295,8 +202,8 @@ const TokenStatistics = () => {
                                 <h2 className='text-md font-semibold text-gray '>Airdrop Address</h2>
                                 <h2 onClick={() => {
                                     handleWalletCopy();
-                                    navigator.clipboard.writeText("airdrop wallet address")
-                                }} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer '>0xT280...73J17 <HiOutlineDocumentDuplicate /></h2>
+                                    navigator.clipboard.writeText("0x2d2a04422dc3888b912B6e76a0e2b4adc580028d")
+                                }} className='flex items-center justify-between text-[#f1f1f1] hover:text-white duration-200 gap-2 cursor-pointer '>0x2d2...0028d <HiOutlineDocumentDuplicate /></h2>
                             </div>
                             <ToastContainer />
                         </div>

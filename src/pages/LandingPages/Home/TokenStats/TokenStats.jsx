@@ -78,7 +78,7 @@ const TokenStats = () => {
                     <div className="coins-stats">
                         {isLoading ?
                             <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
-                                <Skeleton className='py-3 mb-4' count={5} />
+                                <Skeleton className='py-2 mb-4' count={5} />
                             </SkeletonTheme>
                             :
                             <ul>
@@ -114,7 +114,7 @@ const TokenStats = () => {
                         </div>
                         {isLoading ?
                             <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
-                                <Skeleton className='py-3 mb-4' count={5} />
+                                <Skeleton className='py-2 mb-4' count={5} />
                             </SkeletonTheme>
                             :
                             <ul>
@@ -149,7 +149,7 @@ const TokenStats = () => {
                     :
                     <div className="airdrop coins-stats">
                         <ul>
-                            <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Airdrop Wallet<span className='text-light font-semibold'>0xT28029D02L73J17</span></li>
+                            <li className='text-gray flex items-center justify-between border-b border-gray-600 border-opacity-50 pb-4 mb-4'>Airdrop Wallet<span className='text-light font-semibold cursor-pointer' onClick={() => {navigator.clipboard.writeText(`0x2d2a04422dc3888b912B6e76a0e2b4adc580028d`)}}>0x2d2a0442...adc580028d</span></li>
                             <li className='text-gray flex items-center justify-between'>Airdrop Balance<span className='text-light font-semibold'>10,000</span></li>
                         </ul>
                         <div className={`relative zerox-logo ${selectedButton === 'airdrop' && 'flip-two'}`}>

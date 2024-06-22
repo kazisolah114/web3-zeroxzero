@@ -42,19 +42,27 @@ const LoadingSkeleton = () => (
 const TokenList = ({ newTokens }) => (
     <>
         <ul>
-            {newTokens.map(token => (
-                <li key={token._id} className='group flex justify-between items-center cursor-pointer text-light mb-2 pb-3 border-b border-gray-700 border-opacity-80 last:border-none'>
-                    <div className='flex items-center gap-2'>
-                        <img className='w-4' src={token?.logo || 'https://cdn-icons-png.flaticon.com/512/16/16096.png'} alt="logo" />
-                        <p className='text-gray group-hover:text-white duration-200'>{token.name.slice(0, 13)}</p>
-                    </div>
-                    <div className='grid grid-cols-2 items-center gap-4'>
-                        <p className='text-left'>$0.029</p>
-                        <p className={`${token['24h_percent'].toString().startsWith('-') ? 'text-red-500' : 'text-green-500'}`}>{token['24h_percent'].toFixed(2)}%</p>
-                    </div>
-                </li>
-            ))}
+            {newTokens.map(token => {
+                const latestPrice = token.prices[token.prices.length - 1]; // Get the latest price
+                return (
+                    <li key={token._id} className='group grid grid-cols-[3fr_2fr] items-center cursor-pointer text-light mb-2 pb-3 border-b border-gray-700 border-opacity-80 last:border-none'>
+                        <div className='flex items-center gap-2'>
+                            <img className='w-4' src={token?.logo || 'https://cdn-icons-png.flaticon.com/512/16/16096.png'} alt="logo" />
+                            <p className='text-gray group-hover:text-white duration-200'>{token.name.slice(0, 13)}</p>
+                        </div>
+                        <div className='flex items-center justify-between'>
+                            {latestPrice ?
+                                <p className=''>${Number(latestPrice.priceUSD).toFixed(2)}</p>
+                                :
+                                <p className=''>$N/A</p>
+                            }
+                            <p className={`${token['24h_percent'].toString().startsWith('-') ? 'text-red-500' : 'text-green-500'}`}>{token['24h_percent'].toString().startsWith('-') || <span className='text-[10px] -mr-1'>+</span>} {token['24h_percent'].toFixed(2)}%</p>
+                        </div>
+                    </li>
+                );
+            })}
         </ul>
+
         <Link to="/explore-more">
             <button className='text-secondary underline flex items-center gap-1 hover:text-[#65ffffeb] duration-200'>
                 Explore More <HiOutlineExternalLink />

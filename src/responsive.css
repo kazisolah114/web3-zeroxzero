@@ -1,13 +1,9 @@
 
 @media screen and (max-width: 1128px) {
-    .main-header{
-        /* padding-bottom: 0; */
-    }
     .main-header .header-content {
         display: flex!important;
         align-items: center!important;
         justify-content: space-between;
-        /* padding-bottom: 50px; */
     }
     .header-logo{
         order: 2;
@@ -27,18 +23,17 @@
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 9;
+        z-index: 99;
         overflow: auto;
     }
     .header-menu.hide{
-        /* display: none; */
         opacity: 0;
         visibility: hidden;
         left: -100%;
         transition: all .4s;
     }
     .header-menu.show{
-        /* display: flex; */
+        
         opacity: 1;
         visibility: visible;
         left: 0;
@@ -60,7 +55,6 @@
         top: 0;
         left: 0;
         z-index: 1;
-        /* opacity: 0; */
     }
     .header-menu-main button{
         display: unset!important;

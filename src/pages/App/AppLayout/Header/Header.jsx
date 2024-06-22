@@ -68,7 +68,7 @@ const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
                 </div>
                 :
                 <div className="connect-metamask ">
-                    <button onClick={handleConnectWallet} className='text-light bg-secondary hover:bg-[#12AFAF] duration-200 py-2 px-4 rounded-md font-semibold'>Connect MetaMask</button>
+                    <button onClick={handleConnectWallet} className=' bg-secondary hover:bg-[#12AFAF] duration-200 w-44 h-10 rounded-full font-semibold'>Connect MetaMask</button>
                 </div>
             }
 

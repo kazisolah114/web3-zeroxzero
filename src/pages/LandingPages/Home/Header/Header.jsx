@@ -1,12 +1,29 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import './Header.css';
-import { HiMenu, HiX, HiMenuAlt1} from "react-icons/hi";
+import { HiMenu, HiX, HiMenuAlt1 } from "react-icons/hi";
 import LanguageSelector from './LanguageSelector';
 
 const Header = () => {
     const [showResponsiveMenu, setShowResponsiveMenu] = useState(false);
+
+    useEffect(() => {
+        if (showResponsiveMenu) {
+            // Add the class to body when menu is shown
+            document.body.classList.add('no-scroll');
+        } else {
+            // Remove the class from body when menu is hidden
+            document.body.classList.remove('no-scroll');
+        }
+
+        // Clean up by removing the class when the component unmounts
+        return () => {
+            document.body.classList.remove('no-scroll');
+        };
+    }, [showResponsiveMenu]);
+
     return (
         <header className='main-header py-4'>
             <div className='header-content container'>
@@ -32,15 +49,10 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="header-button">
-                    {/* <button  className='flex items-center gap-2'><Link className='flex justify-center items-center w-full h-full' to={`${import.meta.env.VITE_APP_BASE_URL}`}>Launch App</Link></button> */}
-                    <button  className='flex items-center gap-2'><Link className='flex justify-center items-center w-full h-full' to={`/app/leaderboard`}>Launch App</Link></button>
+                    <button className='flex items-center gap-2'><Link className='flex justify-center items-center w-full h-full' to={`${import.meta.env.VITE_APP_BASE_URL}`}>Launch App</Link></button>
                 </div>
             </div>
-
-
-
-
-        </header >
+        </header>
     );
 };
 
