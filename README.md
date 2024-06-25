@@ -10,6 +10,8 @@
 ## Local Dev
 - run `npm run dev` in root folder.
 
+### IGNORE THE FOLLOWING TEXTS, THEY'RE YET TO BE UPDATED:
+
 ## Deploying to environments:
 
 ### Setup:
