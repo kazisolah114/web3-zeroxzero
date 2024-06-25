@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { HiMenu, HiMenuAlt1, HiMenuAlt2, HiMenuAlt3, HiOutlineLogout, HiX } from 'react-icons/hi';
-import { HiOutlineCog6Tooth, HiOutlineUser } from 'react-icons/hi2';
+import { HiMenu, HiMenuAlt1, HiMenuAlt2, HiMenuAlt3, HiOutlineCode, HiOutlineLogout, HiX } from 'react-icons/hi';
+import { HiOutlineBugAnt, HiOutlineCodeBracket, HiOutlineCog6Tooth, HiOutlineUser } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { useUserContext } from '../../../../ContextAPI/UserContext';
@@ -53,13 +53,18 @@ const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
                                 </div>
                                 <ul>
                                     <li>
-                                        <Link to="user-profile" className='group flex items-center gap-3 py-3 px-2 text-[#dfdfdf] hover:text-secondary duration-200 hover:bg-slate-800 rounded-t-md'>
-                                            <HiOutlineUser className='text-[#dfdfdf] text-[22px] group-hover:text-secondary' />User Profile
+                                        <Link to="user-profile" className='group flex items-center gap-3 py-3 px-2 text-[#dfdfdf] hover:text-secondary duration-200 hover:bg-slate-800 rounded-t-md border-b border-gray-500 border-opacity-50'>
+                                            <HiOutlineUser className='text-[#dfdfdf] text-xl group-hover:text-secondary' />User profile
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="" className='group flex items-center gap-3 py-3 px-2 text-[#dfdfdf] hover:text-secondary duration-200 hover:bg-slate-800 rounded-t-md border-b border-gray-500 border-opacity-50'>
+                                            <HiOutlineCodeBracket className='text-[#dfdfdf] text-xl] group-hover:text-secondary' />Report a bug
                                         </Link>
                                     </li>
                                     <li onClick={handleDisconnectWallet} className='group flex items-center gap-3 py-3 px-2 cursor-pointer text-[#dfdfdf] hover:text-red-500 duration-200 hover:bg-slate-800 rounded-b-md'>
-                                        <HiOutlineLogout className='text-[#dfdfdf] text-[22px] group-hover:text-red-500' />
-                                        Disconnect Wallet
+                                        <HiOutlineLogout className='text-[#dfdfdf] text-xl group-hover:text-red-500' />
+                                        Disconnect wallet
                                     </li>
                                 </ul>
                             </div>

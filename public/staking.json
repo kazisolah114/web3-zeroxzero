@@ -1,11 +1,31 @@
 {
-    "stakingTotal": {
-        "total_staked_eth": "217.38",
-        "total_staked_usd": "127.93",
-        "last_month_staked_eth": "5217.34",
-        "last_month_staked_usd": "217.13"
-    },
     "stakingData": [
+        {
+            "id": "0x0com", 
+            "staking_with_logo": "https://i.ibb.co/MVbmMsv/0x0-logo-head.png",
+            "staking_with": "0x0COM",
+            "staking_for": "0x0COM",
+            "staking_with_abr": "0x0",
+            "staking_for_abr": "0x0",
+            "apr_percentage": 20.99,
+            "pool_value": "22249247.44",
+            "staked": "0.00",
+            "pool_share_percentage": "0.00",
+            "staking_rewards": "0.00"
+        },
+        {
+            "id": "ethbits", 
+            "staking_with_logo": "https://static.coinpaprika.com/coin/etbs-ethbits/logo.png?rev=116743",
+            "staking_with": "Ethbits",
+            "staking_for": "0x0COM",
+            "staking_with_abr": "ETBS",
+            "staking_for_abr": "0x0",
+            "apr_percentage": 29.10,
+            "pool_value": "637878.00",
+            "staked": "0.00",
+            "pool_share_percentage": "0.00",
+            "staking_rewards": "0.00"
+        },
         {
             "id": "ethereum", 
             "staking_with_logo": "https://i.ibb.co/7QqVbqh/logo-eth.png",
@@ -27,47 +47,8 @@
             "staking_for": "Tether",
             "staking_with_abr": "BTC",
             "staking_for_abr": "USDT",
-            "apr_percentage": 38.50,
+            "apr_percentage": 18.50,
             "pool_value": "9500",
-            "staked": "0.00",
-            "pool_share_percentage": "0.00",
-            "staking_rewards": "0.00"
-        },
-        {
-            "id": "litecoin", 
-            "staking_with_logo": "https://i.ibb.co/q1GbJ4p/logo-ltc.png",
-            "staking_with": "Litecoin",
-            "staking_for": "0x0COM",
-            "staking_with_abr": "LTC",
-            "staking_for_abr": "0x0",
-            "apr_percentage": 64.05,
-            "pool_value": "9500",
-            "staked": "0.00",
-            "pool_share_percentage": "0.00",
-            "staking_rewards": "0.00"
-        },
-        {
-            "id": "0x0com", 
-            "staking_with_logo": "https://i.ibb.co/MVbmMsv/0x0-logo-head.png",
-            "staking_with": "0x0COM",
-            "staking_for": "USD Coin",
-            "staking_with_abr": "0x0",
-            "staking_for_abr": "USDC",
-            "apr_percentage": 98.44,
-            "pool_value": "9500",
-            "staked": "0.00",
-            "pool_share_percentage": "0.00",
-            "staking_rewards": "0.00"
-        },
-        {
-            "id": "ethbits", 
-            "staking_with_logo": "https://static.coinpaprika.com/coin/etbs-ethbits/logo.png?rev=116743",
-            "staking_with": "Ethbits",
-            "staking_for": "0x0COM",
-            "staking_with_abr": "ETBS",
-            "staking_for_abr": "0x0",
-            "apr_percentage": 18.10,
-            "pool_value": "1200",
             "staked": "0.00",
             "pool_share_percentage": "0.00",
             "staking_rewards": "0.00"
@@ -79,7 +60,7 @@
             "staking_for": "0x0COM",
             "staking_with_abr": "WETH",
             "staking_for_abr": "0x0",
-            "apr_percentage": 89.38,
+            "apr_percentage": 19.38,
             "pool_value": "4800",
             "staked": "0.00",
             "pool_share_percentage": "0.00",

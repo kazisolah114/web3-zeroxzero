@@ -1,14 +1,16 @@
 .market-update-header {
     display: grid;
-    grid-template-columns: 50px 200px 170px 100px 200px 120px;
+    grid-template-columns: 40px 230px 140px 150px 140px 140px 140px;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 .market-update-table .table-content {
     display: grid;
-    grid-template-columns: 50px 200px 170px 100px 200px 120px;
+    grid-template-columns: 40px 230px 140px 150px 140px 140px 140px;
     justify-content: space-between;
     align-items: center;
+    gap: 10x;
 }
 
 
