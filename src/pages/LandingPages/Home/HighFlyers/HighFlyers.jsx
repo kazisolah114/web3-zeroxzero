@@ -38,7 +38,7 @@ const HighFlyers = () => {
                         A significant portion of the 200 million 0x0 tokens is dedicated to staking High Flyers, with 100 million set aside for this purpose. The more High Flyers you hold, the larger your stake in the pool, promising enhanced rewards for avid collectors.
                         <span className='mb-3 block'></span>
                         Beyond the intrinsic value of ownership, High Flyers NFT holders enjoy exclusive privileges such as participating in bi-monthly skirmishes. During these events, participants can redeem clues for a chance to win prizes reaching up to $50,000, with unclaimed prizes rolling over for added anticipation. Additionally, holders receive exclusive invitations to virtual reality meetups and the opportunity to host engaging gaming events. Don't miss the chance to grow your High Flyers fleet, unlocking unique utilities, and immerse yourself in a dynamic world of NFT collecting and experiences.</p>
-                    <button className='primary-button-outline mt-10'>Launch Our App Now</button>
+                    <button className='mt-10 bg-secondaryHover hover:bg-secondary duration-200 w-36 h-11 rounded '>Learn More</button>
                 </div>
                 <div className="flyers-image max-w-2/5 sm:w-2/5">
                     <Lottie options={defaultOptions} />

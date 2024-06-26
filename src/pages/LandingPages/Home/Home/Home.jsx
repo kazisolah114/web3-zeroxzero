@@ -14,6 +14,7 @@ import TokenStats from '../TokenStats/TokenStats';
 import BlogsSection from '../BlogsSection/BlogsSection';
 import Publications from '../Publications/Publications';
 import FeaturedOn from '../FeaturedOn/FeaturedOn';
+import StackedCards from '../StackedCards/StackedCards';
 
 const Home = () => {
 
@@ -28,6 +29,7 @@ const Home = () => {
             {/* <FeaturedOn /> */}
             <HowItWorks  />
             <TokenStats />
+            <StackedCards />
             <Features />
             <AboutUs />
             <WhyUs />

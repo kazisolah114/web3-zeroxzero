@@ -1,9 +1,8 @@
 
 @media screen and (max-width: 1128px) {
     .main-header .header-content {
-        display: flex!important;
-        align-items: center!important;
-        justify-content: space-between;
+        gap: 0!important;
+        grid-template-columns: 1fr 1fr 1fr!important;
     }
     .header-logo{
         order: 2;
@@ -64,15 +63,20 @@
     }
     .navbar ul li a {
         justify-content: space-between!important;
+        font-weight: 500;
     }
     .nav-item:hover .dropdown {
         position: unset;
-        margin-top: 15px;
         background: transparent;
         max-width: 100%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
     .nav-item:hover .dropdown li{
-
+        margin-bottom: 6px;
+    }
+    .nav-item:hover .dropdown li:last-child{
+        margin-bottom: 0;
     }
     .nav-item:hover .dropdown li a {
         justify-content: unset!important;
@@ -82,7 +86,8 @@
     }
     .header-button{
         order: 3;
-        flex-basis: 33%.3;
+        display: flex;
+        justify-content: flex-end;
     }
     .header-button button {
         width: 115px!important;

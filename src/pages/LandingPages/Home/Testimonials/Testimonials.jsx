@@ -3,6 +3,7 @@ import BackgroundShadow from '../../../../components/CommonComponents/Background
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { HiArrowLeft, HiArrowRight, HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
 import './Testimonials.css'
+import Lottie from 'react-lottie';
 
 const Testimonials = () => {
     const testimonials = [
@@ -20,6 +21,32 @@ const Testimonials = () => {
         setCurrentIndex((prevIndex) =>
             prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
         );
+    };
+
+
+
+    const animationDataUrl = 'https://lottie.host/7ff92bce-8e80-4b4a-a7a8-90e4abb9d121/MSM04kc97P.json';
+    const [animationData, setAnimationData] = React.useState(null);
+
+    React.useEffect(() => {
+        fetch(animationDataUrl)
+            .then((response) => response.json())
+            .then((data) => setAnimationData(data))
+            .catch((error) => console.error('Error loading animation data:', error));
+    }, [animationDataUrl]);
+
+    if (!animationData) {
+        return null; // or render a loading indicator
+    }
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+        speed: 5000,
     };
 
     return (
@@ -79,6 +106,7 @@ const Testimonials = () => {
                 <div className="testimonials-image relative">
                     <BackgroundShadow customShadow="0px 0px 300px 50px #fff" />
                     <img className='' src="https://i.ibb.co/jGLJq0C/testi-flat-map.png" alt="" />
+                    {/* <Lottie options={defaultOptions} /> */}
                 </div>
             </div>
         </div>

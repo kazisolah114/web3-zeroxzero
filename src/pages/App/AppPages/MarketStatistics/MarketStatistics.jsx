@@ -22,7 +22,7 @@ const MarketStatistics = () => {
                 <link rel="canonical" href="https://0x0.com" />
             </Helmet>
             <MarketUpdate marketUpdate={marketUpdate}  />
-            <MarketCarousel marketUpdate={marketUpdate} />
+            {/* <MarketCarousel marketUpdate={marketUpdate} /> */}
         </div>
     );
 };

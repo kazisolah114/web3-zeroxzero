@@ -14,8 +14,7 @@ const PageNotFound = () => {
                 <div className='flex items-center flex-col top-36 relative'>
                     <h3 className='text-9xl font-extrabold italic text-slate-600 mb-10'>404</h3>
                     <p className='text-7xl font-bold italic text-slate-700 mb-8'>Page Not Found</p>
-                    <p className='text-xl text-slate-900 mb-10'>The page you are looking for doesn't exist or has been removed!</p>
-                    <button className='primary-button'><Link className='block' to="/">Go to the homepage</Link></button>
+                    <p className='text-xl text-slate-900 mb-10'>The page you are looking for doesn't exist or has been removed!</p><Link className='primary-button hover:bg-[#2abcbc] duration-200' to="/">Go to the homepage</Link>
                 </div>
             </div>
         </div>

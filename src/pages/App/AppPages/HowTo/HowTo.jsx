@@ -18,7 +18,7 @@ const HowTo = () => {
             </Helmet>
             <div className="howto-content">
                 <Tabs>
-                    <TabList className="tablist flex items-center gap-5 mb-7 ">
+                    <TabList className="tablist flex items-center gap-3 mb-7 ">
                         <Tab onClick={() => handleActiveTab("trade")} className={`${activeTab == 'trade' && 'bg-secondary'}`}>Trade Alert</Tab>
                         <Tab onClick={() => handleActiveTab("custom")} className={`${activeTab == 'custom' && 'bg-secondary'}`}>Custom Search</Tab>
                         <Tab onClick={() => handleActiveTab("faq")} className={`${activeTab == 'faq' && 'bg-secondary'}`}>FAQ</Tab>
