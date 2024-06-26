@@ -2,28 +2,34 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 100px;
-    /* align-items: center; */
 }
 .roadmap-section .roadmap {
     height: 600px;
     overflow: auto;
-    
 }
 .roadmap-section .roadmap::-webkit-scrollbar {
     display: none;
   }
-.roadmap-section .roadmap li{
-    position: relative!important;
-  }
-.roadmap-section .roadmap li::before{
+  .roadmap-section .roadmap li {
+    position: relative !important;
+    padding-left: 24px; /* Adjust padding for better alignment */
+}
+
+.roadmap-section .roadmap li::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 16px;
-    height: 140px;
+    top: 30px;
+    left: 40px; /* Adjust to match padding */
+    height: 100%;
     width: 1px;
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23616367FF' stroke-width='3' stroke-dasharray='5%2c 6' stroke-dashoffset='20' stroke-linecap='butt'/%3e%3c/svg%3e");
+    z-index: -1;
 }
-.roadmap-section .roadmap li:last-child::before{
-    width: 0;
+
+.roadmap-section .roadmap li:not(:last-child)::before {
+    height: calc(100% + 20px); /* Extend beyond the height of each item to connect to the next */
+}
+
+.roadmap-section .roadmap li:last-child::before {
+    height: 0; /* Remove line for the last item */
 }
