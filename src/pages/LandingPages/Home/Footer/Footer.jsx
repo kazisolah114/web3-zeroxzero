@@ -24,7 +24,7 @@ const Footer = () => {
                         <h2 className='text-zinc-200 font-bold text-xl mb-3'>What we do</h2>
                         <li className='text-zinc-300 inline-block hover:tracking-wider hover:underline duration-200'><Link to="">Trade Alert Subscription</Link></li>
                         <li className='text-zinc-300 inline-block hover:tracking-wider hover:underline duration-200'><Link to="">AI Trade Alerts</Link></li>
-                        <li className='text-zinc-300 inline-block hover:tracking-wider hover:underline duration-200'><Link to="">0x0 Stacking</Link></li>
+                        <li className='text-zinc-300 inline-block hover:tracking-wider hover:underline duration-200'><Link to="">0x0 Staking</Link></li>
                         <li className='text-zinc-300 inline-block hover:tracking-wider hover:underline duration-200'><Link to="">High Flyers NFTs</Link></li>
                     </ul>
                     <ul className='flex flex-col gap-1'>
