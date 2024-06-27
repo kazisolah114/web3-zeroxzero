@@ -23,7 +23,6 @@ const HeroSection = () => {
                         <Link className='w-48 text-center primary-button hover:bg-[#12afaf] duration-200' to={`${import.meta.env.VITE_APP_BASE_URL}`}>Connect MetaMask</Link>
                         <Link to={'https://flooz.xyz/swap?network=eth&tokenAddress=0xb8fda5aee55120247f16225feff266dfdb381d4c'} target='_blank' className='w-48 text-center hero-find-more flex justify-center items-center gap-2 hover:text-secondary duration-200 '>Trade 0x0 Token <HiOutlineArrowRight /></Link>
                     </div>
-
                 </div>
                 <Animations />
             </div>

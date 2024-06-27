@@ -2,12 +2,11 @@
 .stacked-cards-container {
     position: relative;
     max-width: 1100px;
-    /* padding-top: 100px; */
 }
 
 .card {
     position: sticky;
-    top: 10%;
+    top: 20%;
     background-color: #38a169; /* Equivalent to bg-green-500 */
     border-radius: 10px; /* Rounded corners */
     margin-bottom: 40px; /* Adjust to control the space between cards */
@@ -16,16 +15,27 @@
     justify-content: space-between;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding shadow for better visibility */
 }
-
+.card .header{
+    
+}
 
 /* Specific colors for each card */
 .card:nth-child(1) {
-    background-color: #0044cc;
+    background: linear-gradient(
+        135deg, 
+        #0044cc, 
+        rgb(18, 9, 71)
+    );
     width: 88%;
 }
 .card:nth-child(2) {
-    background-color: #00c7b7;
+    background: linear-gradient(
+        145deg, 
+        #06f8e4, 
+        rgb(15, 74, 125)
+    );
     width: 91%;
+    top: 210px;
 }
 .card:nth-child(2) h2, h4{
     color: #13131b;
@@ -34,13 +44,23 @@
     color: #13131b;
 }
 .card:nth-child(3) {
-    background-color: #ba00b0;
+    background: linear-gradient(
+        145deg, 
+        #ba00b0, 
+        rgb(125, 15, 114)
+    );
     width: 94%;
+    top: 270px;
 }
 
 .card:nth-child(4) {
-    background-color: #FDD45E;
+    background: linear-gradient(
+        145deg, 
+        #FDD45E, 
+        rgb(219, 249, 25)
+    );
     width: 97%;
+    top: 335px;
 }
 .card:nth-child(4) h2, h4{
     color: #370642;
@@ -49,6 +69,10 @@
     color: #370642;
 }
 .card:nth-child(5) {
-    background-color: #6600cc;
+    background: linear-gradient(
+        145deg, 
+        #6600cc, 
+        rgb(126, 29, 150)
+    );
     width: 100%;
 }

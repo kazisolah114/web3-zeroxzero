@@ -7,9 +7,9 @@ import Lottie from 'react-lottie';
 
 const Testimonials = () => {
     const testimonials = [
-        { title: "Trading crypto has been so easy", opinion: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Loamet consectetur adipisicingor sit amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.", userData: { image: "/images/logo-eth.png", name: "Daniel Dugan", title: "CEO, ABC Inc." } },
-        { title: "Changed my thoughts about crypto", opinion: "amet consectetur adipisicingLorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.", userData: { image: "/images/logo-ltc.png", name: "David Miller", title: "CTO, Beck IT" } },
-        { title: "Can't thank enough to 0x0", opinion: "Lorem amet consectetur adipisicing adipisicing elit.amet consectetur adipisicing dolor sit amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.", userData: { image: "/images/logo-btc.png", name: "Ritchel Goes", title: "Crypto Trader" } }
+        { title: "Trading crypto has been so easy", opinion: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Loamet consectetur adipisicingor sit amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.", userData: { image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg", name: "Daniel Dugan", title: "CEO, ABC Inc." } },
+        { title: "Changed my thoughts about crypto", opinion: "amet consectetur adipisicingLorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.", userData: { image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg", name: "David Miller", title: "CTO, Beck IT" } },
+        { title: "Can't thank enough to 0x0", opinion: "Lorem amet consectetur adipisicing adipisicing elit.amet consectetur adipisicing dolor sit amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.", userData: { image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg", name: "Ritchel Goes", title: "Crypto Trader" } }
     ];
 
 
@@ -67,7 +67,7 @@ const Testimonials = () => {
                             <p className="text-gray">{testimonials[currentIndex].opinion}</p>
                             <div className="user mt-5 flex items-center gap-5">
                                 <img
-                                    className="w-10"
+                                    className="w-10 rounded-full"
                                     src={testimonials[currentIndex].userData.image}
                                     alt=""
                                 />
