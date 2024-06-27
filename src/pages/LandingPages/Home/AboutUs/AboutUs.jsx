@@ -41,9 +41,9 @@ const AboutUs = () => {
                 <div className="aboutus-info relative w-3/5">
                     <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
                     <h2 className='text-light text-5xl font-bold mb-10 leading-[60px]'>
-                        We are dedicated to bring you the best <span className='text-secondary'>trading information</span>
+                        We are dedicated to bringing you the best <span className='text-secondary'>trading information</span>
                     </h2>
-                    <h4 className='text-gray text-xl  mb-4 '>Our project is live all around the world, with different features available we are expanding everyday</h4>
+                    <h4 className='text-gray text-xl  mb-4 '>Our project is live all around the world, with different features available; we are expanding everyday</h4>
                     <p className='text-gray text-1xl text-justify mb-10'>
                         We address a critical issue in copy trading. While copy trading is not a new concept, centralized copy trading platforms pose risks of market manipulation, particularly with low-volume tokens. At 0x0, traders are unaware they're being followed, ensuring trades are solely based on blockchain data, mitigating manipulation risks. 0x0 is a game-changing decentralized trading app that harnesses the power of cutting-edge algorithms to detect profitable trading patterns for you.
                     </p>

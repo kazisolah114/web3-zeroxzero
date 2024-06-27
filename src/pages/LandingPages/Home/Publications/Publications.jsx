@@ -22,7 +22,7 @@ const Publications = () => {
     }
     return (
         <div className='publications-section py-24 my-24 container' data-aos="fade-up" data-aos-duration="1000">
-            <SectionHeader sectionTitle={"Our_ Publications"} sectionDesc={"Have a look at some of our publications posted on different platforms with ethical community"} />
+            <SectionHeader sectionTitle={"Our_ Publications"} sectionDesc={"Have a look at some of our publications posted on ethical platforms with decent community"} />
             <div className="publications mt-10 grid lg:grid-cols-2 gap-10">
                 {
                     publications.map((item, index) => (

@@ -43,7 +43,7 @@ const WhyUs = () => {
                     </div>
                     <div className="list relative top-6 hover:top-3 duration-300">
                         <span><HiOutlineRefresh /></span>
-                        <h2>Realiability</h2>
+                        <h2>Reliability</h2>
                         <p>Trust our platform's consistent performance and timely alerts for successful trading outcomes</p>
                     </div>
                     <div className="list relative top-0 hover:-top-3 duration-300">
