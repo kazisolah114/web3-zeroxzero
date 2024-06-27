@@ -44,6 +44,18 @@ const StakingDetails = () => {
         getUserInfo();
     }, [wallet]);
 
+    const handleSetAmount = (value) => {
+        setAmount(value);
+        console.log(parseFloat(value) + stakeData.staked)
+        if (!value) value = 0;
+        setStakeData({
+            ...stakeData,
+            daily: ((parseFloat(value) + parseFloat(stakeData.staked)) * parseFloat(stakeData.apr) / 365 / 100).toFixed(2),
+            monthly: ((parseFloat(value) + parseFloat(stakeData.staked)) * parseFloat(stakeData.apr) / 12 / 100).toFixed(2),
+            annual: ((parseFloat(value) + parseFloat(stakeData.staked)) * parseFloat(stakeData.apr) / 100).toFixed(2)
+        })
+    }
+
     const handleStakeToggle = (value) => {
         setStakeToggle(value);
         setError(`Enter the amount you want to ${value}`)
@@ -71,6 +83,7 @@ const StakingDetails = () => {
                     poolInfo = await stakingContract.poolInfo(1);
                     response = await stakingContract.userInfo(1, wallet);
                     balance = await zeroContract.balanceOf(wallet);
+                    balance = (parseFloat(balance).toFixed(2) / Math.pow(10, 18)).toFixed(2);
                     pending = await stakingContract.pendingZeroxZero(1, wallet);
                     poolBalance = await stakingContract.poolBalances(1);
                 }
@@ -78,6 +91,7 @@ const StakingDetails = () => {
                     poolInfo = await stakingContract.poolInfo(0);
                     response = await stakingContract.userInfo(0, wallet);
                     balance = await ethbitContract.balanceOf(wallet);
+                    balance = (parseFloat(balance).toFixed(2) / Math.pow(10, 12)).toFixed(2);
                     pending = await stakingContract.pendingZeroxZero(0, wallet);
                     poolBalance = await stakingContract.poolBalances(0);
                 }
@@ -89,9 +103,9 @@ const StakingDetails = () => {
                     staked: parseFloat(amount).toFixed(2),
                     staking_rewards: parseFloat(rewardDebt).toFixed(2),
                     pendingReward: (parseFloat(pending)).toFixed(2),
-                    daily: (parseInt(amount) * parseInt(poolInfo.allocPoint) / parseInt(totalAllocPoint) / 365).toFixed(2),
-                    monthly: (parseInt(amount) * parseInt(poolInfo.allocPoint) / parseInt(totalAllocPoint) / 12).toFixed(2),
-                    annual: (parseInt(amount) * parseInt(poolInfo.allocPoint) / parseInt(totalAllocPoint)).toFixed(2),
+                    // daily: (parseInt(amount) * parseInt(poolInfo.allocPoint) / parseInt(totalAllocPoint) / 365).toFixed(2),
+                    // monthly: (parseInt(amount) * parseInt(poolInfo.allocPoint) / parseInt(totalAllocPoint) / 12).toFixed(2),
+                    // annual: (parseInt(amount) * parseInt(poolInfo.allocPoint) / parseInt(totalAllocPoint)).toFixed(2),
                     apr: (parseInt(poolInfo.allocPoint) * 100 / parseInt(totalAllocPoint)).toFixed(2),
                     pool_share: (parseInt(balance) * 100 / parseInt(poolBalance)).toFixed(2)
 
@@ -118,7 +132,7 @@ const StakingDetails = () => {
     const handleStaking = async () => {
         if (wallet) {
             if (amount > 0) {
-                if (parseFloat(amount).toFixed(2) <= stakeData.wallet_balance) {
+                if (parseFloat(amount).toFixed(2) <= parseFloat(stakeData.wallet_balance).toFixed(2)) {
                     if (id == "0x0com") {
                         await stakingContract.deposit(1, amount, wallet);
                     }
@@ -228,7 +242,7 @@ const StakingDetails = () => {
                             <p className='text-gray text-center'>{error}</p>
                             <div className='mt-10 pb-3 flex items-center justify-between border-b border-gray-700 border-opacity-80'>
                                 <img className='w-6' src={filteredStaking.staking_with_logo} alt="" />
-                                <input className='staking-input  outline-none text-center' type="number" placeholder="0.00" onChange={e => setAmount(e.target.value)}/>
+                                <input className='staking-input  outline-none text-center' type="number" placeholder="0.00" onChange={e => handleSetAmount(e.target.value)}/>
                                 <span className='cursor-pointer'><FaSort /></span>
                             </div>
                             <div className='flex items-center justify-between mt-2 text-gray text-sm'>
