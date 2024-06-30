@@ -5,15 +5,16 @@ import PieChart from './PieChart';
 import DoughnutChart from './DoughnutChart';
 import PriceChart from './0x0PriceChart';
 import { Link } from 'react-router-dom';
-import { HiDocument, HiDocumentDuplicate, HiGlobeAlt, HiOutlineDocumentDuplicate, HiOutlineGlobeAlt } from 'react-icons/hi2';
+import { HiDocument, HiDocumentDuplicate, HiGlobeAlt, HiOutlineChartBar, HiOutlineDocumentDuplicate, HiOutlineGlobeAlt } from 'react-icons/hi2';
 import TokenConvert from './TokenConvert';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
-import { HiGlobe } from 'react-icons/hi';
+import { HiGlobe, HiOutlineExternalLink } from 'react-icons/hi';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import NewTokens from './NewTokens';
 import TopHoldersStakers from './TopHoldersStakers';
+import ZeroxBalance from './ZeroxBalance';
 
 const TokenStatistics = () => {
     const [tokenPrice, setTokenPrice] = useState(null);
@@ -99,6 +100,7 @@ const TokenStatistics = () => {
                 </div> */}
                 <div className="token-details ">
                     <div>
+                        <ZeroxBalance tokenPrice={tokenPrice} />
                         <div className=" bg-[#122036] rounded-md py-3 px-5">
                             <div className="token-details-header flex justify-between items-end">
                                 <div className='token-main-header'>
@@ -106,8 +108,9 @@ const TokenStatistics = () => {
                                         <h2 className='text-2xl font-bold'>${(tokenPrice?.price?.usdPrice ?? 0).toFixed(5)} USD</h2>
                                         <h2 className={` text-md font-semibold  ${tokenPrice?.price?.['24hrPercentChange']?.startsWith('-') ? 'text-red-400' : 'text-green-400'}`}><span className=''>{`${tokenPrice?.price?.['24hrPercentChange']?.startsWith('-') ? '' : '+'}`}{Number(tokenPrice?.price?.['24hrPercentChange'] ?? 0).toFixed(2)}%</span> (1d)</h2>
                                     </div>
-                                    <div className='mt-5'>
-                                        <p className='text-sm'>0x0.com: AI Smart Contract Price Chart (USD)</p>
+                                    <div className='mt-5 flex items-center gap-2'>
+                                        <img className='w-6' src="https://static.cx.metamask.io/api/v1/tokenIcons/1/0xb8fda5aee55120247f16225feff266dfdb381d4c.png" alt="" />
+                                        <p className='text-sm'>0x0.com: Smart Contract Price Chart (USD)</p>
                                     </div>
                                 </div>
                                 <div className="token-time-header  rounded-md  p-1 flex items-center gap-1 text-light">
@@ -155,16 +158,15 @@ const TokenStatistics = () => {
                             </ul>
                         </div>
                         <TopHoldersStakers />
-                        <div className="about0x0-token mt-6 bg-[#122036] rounded-md py-5 px-5">
-                            <h2 className='font-semibold text-xl mb-7'>About 0x0COM Token</h2>
+                        <div className="about0x0-token mt-5 bg-[#122036] rounded-md py-5 px-5">
+                            <h2 className='font-semibold text-xl mb-10'>About 0x0COM Token</h2>
                             <p className='text-gray'>
                                 With the Alpha version of 0X0.com, users have the ability to discover and follow the most profitable Ethereum users. 0X0.com enables its users to identify profit per address over a specific period of time, while trading specific pairs. Additionally, 0X0.com users can purchase customized searches. Whenever 0X0.com identifies an Ethereum address that is generating significant profit, users receive alerts each time this address makes a trade. This provides 0X0.com users with an opportunity to copy trades on the Ethereum blockchain.
-                                <p className='mt-4'>High Flyers will receive 5000 unique NFTs on the Ethereum blockchain, which can be utilized for staking. Monthly treasure hunts will be organized in the Metaverse for tracking virtual asset profits. For the monthly treasure hunts, owners of High Flyer NFTs will receive a clue based on the token ID of their NFT. To win the treasure hunts, users must own three NFTs with the appropriate token IDs or collaborate as a team and gather three clues.</p>
                                 <p className='mt-4'>0X0.com aims to establish itself in three main Metaverses: Sandbox, The Other Side, and Crypto.com. They will analyze transactions within the Metaverses and provide alerts on which people are making the most profit and the popularity increases of specific assets. The high flyers will be required to interact with this functionality, gain information, and have their own game within each Metaverse.</p>
                             </p>
-                            <div className='mt-10 flex gap-5 items-center'>
-                                <Link target='_blank' to="https://www.0x0.com/static/media/whitepaper.3902559b8642dc803f00.pdf"><button className='underline text-secondary hover:text-[#65ffffeb] duration-200 text-sm'>View White Paper</button></Link>
-                                <Link target='_blank' to="https://etherscan.io/token/0xB8fda5AEe55120247F16225feFf266dfdB381D4C#code"><button className='underline text-secondary hover:text-[#65ffffeb] duration-200 text-sm'>View Token Contract</button></Link>
+                            <div className='mt-14 flex gap-6 items-center'>
+                                <Link target='_blank' to="https://www.coinstore.com/spot/0X0USDT?ts=1719641059546"><button className='underline text-secondary hover:text-[#65ffffeb] duration-200 text-sm flex items-center gap-1'>Coinstore Exchange <HiOutlineExternalLink /></button></Link>
+                                <Link target='_blank' to=""><button className='underline text-secondary hover:text-[#65ffffeb] duration-200 text-sm flex items-center gap-1'>Uniswap Exchange <HiOutlineExternalLink /></button></Link>
                             </div>
                         </div>
                     </div>

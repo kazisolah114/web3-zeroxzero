@@ -7,7 +7,7 @@ export const UserContext = createContext();
 export const useUserContext = () => useContext(UserContext)
 
 export const UserProvider = ({ children }) => {
-    const { wallet, balance, handleConnectWallet, handleDisconnectWallet } = useConnectMetamask();
+    const { wallet, balance, tokenBalance, handleConnectWallet, handleDisconnectWallet } = useConnectMetamask();
     
     // Retrieve wallet from localStorage on component mount
     useEffect(() => {
@@ -33,7 +33,7 @@ export const UserProvider = ({ children }) => {
     };
 
     return (
-        <UserContext.Provider value={{ wallet, balance, handleConnectWallet, handleDisconnectWallet: handleDisconnect }}>
+        <UserContext.Provider value={{ wallet, balance, tokenBalance, handleConnectWallet, handleDisconnectWallet: handleDisconnect }}>
             {children}
         </UserContext.Provider>
     )

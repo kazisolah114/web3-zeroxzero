@@ -42,13 +42,15 @@
         align-items: unset;
         gap: 20px;
     }
-    .market-update-header{
-        grid-template-columns: 30px 140px 110px 100px 150px 110px!important;
-        width: fit-content;
+    .market-update-header {
+        /* grid-template-columns: auto 150px auto auto auto auto 140px!important;
+        justify-content: unset!important;
+        gap: 20px!important; */
     }
     .market-update-table .table-content{
-        grid-template-columns: 30px 140px 110px 100px 150px 110px!important;
-        width: fit-content;
+        /* grid-template-columns: auto 150px auto auto auto auto 140px!important;
+        justify-content: unset!important;
+        gap: 20px!important; */
     }
     .carousel{
         justify-content: center!important;

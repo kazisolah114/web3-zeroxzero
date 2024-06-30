@@ -5,6 +5,20 @@ const useConnectMetamask = () => {
     const web3 = new Web3(window.ethereum);
     const [wallet, setWallet] = useState(null);
     const [balance, setBalance] = useState(0);
+
+    const [tokenBalance, setTokenBalance] = useState(0);
+    const tokenAddress = '0xB8fda5AEe55120247F16225feFf266dfdB381D4C'; // 0x0 token contract address
+    const tokenABI = [
+        // A minimal ERC-20 ABI containing only the balanceOf function
+        {
+            "constant": true,
+            "inputs": [{ "name": "_owner", "type": "address" }],
+            "name": "balanceOf",
+            "outputs": [{ "name": "balance", "type": "uint256" }],
+            "type": "function"
+        }
+    ];
+
     const handleConnectWallet = async () => {
         try {
             if (window.ethereum !== undefined) {
@@ -43,6 +57,11 @@ const useConnectMetamask = () => {
                     const balanceWei = await web3.eth.getBalance(wallet);
                     const balanceEther = web3.utils.fromWei(balanceWei, 'ether');
                     setBalance(balanceEther);
+                    // Fetch 0x0 token balance
+                    const tokenContract = new web3.eth.Contract(tokenABI, tokenAddress);
+                    const balanceToken = await tokenContract.methods.balanceOf(wallet).call();
+                    const balanceTokenFormatted = web3.utils.fromWei(balanceToken, 'ether');
+                    setTokenBalance(balanceTokenFormatted);
                 }
             } catch (error) {
                 console.error('Error fetching balance', error);
@@ -53,6 +72,7 @@ const useConnectMetamask = () => {
     return {
         wallet,
         balance,
+        tokenBalance,
         handleConnectWallet,
         handleDisconnectWallet
     }
