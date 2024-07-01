@@ -6,7 +6,7 @@ import './Main.css';
 
 const Main = () => {
     return (
-        <main  className='landing-main bg-[#111621] '>
+        <main  className='bg-[#111621]'>
             <Header />
             <Outlet />
             <Footer />

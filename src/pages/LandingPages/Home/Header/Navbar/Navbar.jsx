@@ -7,34 +7,33 @@ const Navbar = () => {
     const navs = [
         {
             title: "Purpose", items: [
-                { icon: <HiOutlineDatabase />, name: "Trade Masters Table", desc: "Trade insights and analytics", link: "/trade-table" },
-                { icon: <HiOutlineCurrencyDollar />, name: "Quantum Profit Scanner", desc: "Profit scanning tool", link: "/profit-scanner" },
-                { icon: <HiOutlineChip />, name: "AI Arb Scout", desc: "AI-driven arbitrage scout", link: "/arb-scout" },
-                { icon: <HiOutlineLightBulb />, name: "Chain Trace Pro", desc: "Blockchain tracing tool", link: "/chain-trace" },
-                { icon: <HiOutlineCurrencyYen />, name: "Cryptoscore Pro", desc: "Crypto scoring tool", link: "/cryptoscore" }
+                { icon: <HiOutlineDatabase />, name: "Trade Masters Table", desc: "Lorem ipsum doler semit", link: "/trade-table" },
+                { icon: <HiOutlineCurrencyDollar />, name: "Quantum Profit Scanner", desc: "Lorem ipsum doler semit", link: "/profit-scanner" },
+                { icon: <HiOutlineChip />, name: "AI Arb Scout", desc: "Lorem ipsum doler semit", link: "/arb-scout" },
+                { icon: <HiOutlineLightBulb />, name: "Chain Trace Pro", desc: "Lorem ipsum doler semit", link: "/chain-trace" },
+                { icon: <HiOutlineCurrencyYen />, name: "Cryptoscore Pro", desc: "Lorem ipsum doler semit", link: "/cryptoscore" }
             ]
         },
         {
             title: "Hybrid AI Tech", items: [
-                { icon: <HiOutlineCurrencyYen />, name: "Crypto Guardian", desc: "Crypto monitoring tool", link: "/crypto-guardian" },
-                { icon: <HiOutlineCalculator />, name: "Sectors Seasons Charge", desc: "Sector analysis tool", link: "/sectors-seasons" },
-                { icon: <HiOutlineLightBulb />, name: "Block Trend Illuminator", desc: "Blockchain trend analysis", link: "/block-trend" },
-                { icon: <HiOutlineScale />, name: "Project Trend Predictor", desc: "Project trend forecasting", link: "/trend-predictor" }
+                { icon: <HiOutlineCurrencyYen />, name: "Crypto Guardian", desc: "Lorem ipsum doler semit", link: "/trade-table" },
+                { icon: <HiOutlineCalculator />, name: "Sectors Seasons Charge", desc: "Lorem ipsum doler semit", link: "/profit-scanner" },
+                { icon: <HiOutlineLightBulb />, name: "Block Trend Illuminator", desc: "Lorem ipsum doler semit", link: "/arb-scout" },
+                { icon: <HiOutlineScale />, name: "Project Trend Predictor", desc: "Lorem ipsum doler semit", link: "/chain-trace" }
             ]
         },
         { title: "Ethical Consideration", link: "/consideration" },
         { title: "Blogs", link: "/blogs" },
         {
             title: "Company", items: [
-                { icon: <HiOutlineOfficeBuilding />, name: "About 0X0", desc: "Company background", link: "/about" },
-                { icon: <HiOutlineUsers />, name: "Our Team", desc: "Meet the team", link: "/team" },
-                { icon: <HiOutlineQuestionMarkCircle />, name: "Support", desc: "Customer support", link: "/support" },
-                { icon: <HiOutlineUserGroup />, name: "Partnership", desc: "Partner with us", link: "/partnership" },
-                { icon: <HiOutlineBriefcase />, name: "Careers", desc: "Join our team", link: "/careers" }
+                { icon: <HiOutlineOfficeBuilding />, name: "About 0X0", desc: "Lorem ipsum doler semit", link: "/trade-table" },
+                { icon: <HiOutlineUsers />, name: "Our Team", desc: "Lorem ipsum doler semit", link: "/profit-scanner" },
+                { icon: <HiOutlineQuestionMarkCircle />, name: "Support", desc: "Lorem ipsum doler semit", link: "/arb-scout" },
+                { icon: <HiOutlineUserGroup />, name: "Partnership", desc: "Lorem ipsum doler semit", link: "/arb-scout" },
+                { icon: <HiOutlineBriefcase />, name: "Careers", desc: "Lorem ipsum doler semit", link: "/chain-trace" }
             ]
         }
     ];
-
 
     return (
         <nav className='navbar'>
@@ -52,8 +51,8 @@ const Navbar = () => {
                                         <Link to={dropdown.link} className='flex gap-4 items-center'>
                                             <span className='text-3xl'>{dropdown.icon}</span>
                                             <div className='w-full'>
-                                                <h5 className='font-semibold'>{dropdown.name}</h5>
-                                                <p className='font-extralight text-sm'>{dropdown.desc}</p>
+                                            <h5 className='font-semibold'>{dropdown.name}</h5>
+                                            <p className='font-extralight text-sm'>{dropdown.desc}</p>
                                             </div>
                                         </Link>
                                     </li>

@@ -1,8 +1,5 @@
 
 @media screen and (max-width: 1128px) {
-    .main-header{
-        position: relative!important;
-    }
     .main-header .header-content {
         gap: 0!important;
         grid-template-columns: 1fr 1fr 1fr!important;

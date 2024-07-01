@@ -5,8 +5,8 @@ import './HowItWorks.css'
 const HowItWorks = () => {
     const items = [
         { image: "/images/btc-wallet.png", step: "STEP 1", title: "Connect Wallet", desc: "Connect wallet to get AI-driven alerts for potential successful projects" },
-        { image: "/images/crypto-comparison.png", step: "STEP 2", title: "Get Trading Alerts", desc: "Connect your Telegram in order to get real time trade alerts" },
-        { image: "/images/btc-cloud.png", step: "STEP 3", title: "Start Trading", desc: "Sit back and wait for alerts for positions you can open and liquidate" },
+        { image: "/images/crypto-comparison.png", step: "STEP 2", title: "Get Trading Alerts", desc: "Connect your telegram in order to get real time trade alerts" },
+        { image: "/images/btc-cloud.png", step: "STEP 3", title: "Start Trading", desc: "Sit back and wait for alerts for position you can open and liquidate" },
         { image: "/images/btc-mining.png", step: "STEP 4", title: "Earn Money", desc: "Unlock your financial potential with our AI-driven trading platform" }
     ]
     return (
