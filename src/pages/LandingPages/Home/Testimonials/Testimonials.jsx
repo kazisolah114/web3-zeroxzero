@@ -7,10 +7,77 @@ import Lottie from 'react-lottie';
 
 const Testimonials = () => {
     const testimonials = [
+<<<<<<< HEAD
         { title: "Trading crypto has been so easy", opinion: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Loamet consectetur adipisicingor sit amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.", userData: { image: "/images/logo-eth.png", name: "Daniel Dugan", title: "CEO, ABC Inc." } },
         { title: "Changed my thoughts about crypto", opinion: "amet consectetur adipisicingLorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.", userData: { image: "/images/logo-ltc.png", name: "David Miller", title: "CTO, Beck IT" } },
         { title: "Can't thank enough to 0x0", opinion: "Lorem amet consectetur adipisicing adipisicing elit.amet consectetur adipisicing dolor sit amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.", userData: { image: "/images/logo-btc.png", name: "Ritchel Goes", title: "Crypto Trader" } }
+=======
+        {
+            title: "Trading crypto has been so easy",
+            opinion: "0x0 has revolutionized my crypto trading experience. The platform is user-friendly and the support team is always ready to help. Highly recommended! I can now trade confidently.",
+            userData: {
+                image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg",
+                name: "Sophia Johnson",
+                title: "CEO, Crypto Innovations Inc."
+            }
+        },
+        {
+            title: "Changed my thoughts about crypto",
+            opinion: "I was skeptical about crypto trading, but 0x0 made it so accessible and understandable. The resources and tools provided have been invaluable. Now, I can trade with ease.",
+            userData: {
+                image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg",
+                name: "James Thompson",
+                title: "CTO, FinTech Solutions"
+            }
+        },
+        {
+            title: "Can't thank enough to 0x0",
+            opinion: "0x0 has been a game-changer for my trading strategy. The advanced analytics and real-time data have allowed me to make informed decisions and maximize my profits. Truly amazing platform!",
+            userData: {
+                image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg",
+                name: "Emily Davis",
+                title: "Crypto Trader"
+            }
+        },
+        {
+            title: "Best trading platform ever",
+            opinion: "I have tried several trading platforms, but 0x0 stands out. The interface is intuitive and the features are top-notch. I have seen significant improvements in my trades. Highly satisfied!",
+            userData: {
+                image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg",
+                name: "Michael Brown",
+                title: "Investor, Future Wealth"
+            }
+        },
+        {
+            title: "Innovative and reliable",
+            opinion: "0x0 offers innovative solutions that cater to both beginners and experienced traders. The platform's reliability and security features give me peace of mind while trading. It's a must-try!",
+            userData: {
+                image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg",
+                name: "Olivia Martinez",
+                title: "Founder, Tech Ventures"
+            }
+        },
+        {
+            title: "Exceptional customer support",
+            opinion: "The customer support at 0x0 is exceptional. They are always available to assist with any queries and ensure a smooth trading experience. I appreciate their dedication and professionalism.",
+            userData: {
+                image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg",
+                name: "William Smith",
+                title: "Crypto Enthusiast"
+            }
+        },
+        {
+            title: "Highly recommend 0x0",
+            opinion: "0x0 is a reliable and efficient trading platform. The educational resources and tools have been extremely helpful in enhancing my trading skills. I highly recommend 0x0 to everyone.",
+            userData: {
+                image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg",
+                name: "Ava Johnson",
+                title: "Financial Analyst, Global Investments"
+            }
+        }
+>>>>>>> 9535ac5a7725a2e3c34b91a02b4ec4dba5b67945
     ];
+
 
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,35 +90,9 @@ const Testimonials = () => {
         );
     };
 
-
-
-    const animationDataUrl = 'https://lottie.host/7ff92bce-8e80-4b4a-a7a8-90e4abb9d121/MSM04kc97P.json';
-    const [animationData, setAnimationData] = React.useState(null);
-
-    React.useEffect(() => {
-        fetch(animationDataUrl)
-            .then((response) => response.json())
-            .then((data) => setAnimationData(data))
-            .catch((error) => console.error('Error loading animation data:', error));
-    }, [animationDataUrl]);
-
-    if (!animationData) {
-        return null; // or render a loading indicator
-    }
-
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
-        speed: 5000,
-    };
-
     return (
         <div className='testimonials-section py-24 container' data-aos="fade-up"
-         data-aos-duration="1000">
+            data-aos-duration="1000">
             <div className="testimonials-content flex gap-20 items-center justify-between">
                 <div className="testimonials-info relative w-[50%]">
                     <BackgroundShadow customShadow="0px 0px 400px  50px #1181E8" />
@@ -102,11 +143,10 @@ const Testimonials = () => {
                     </div>
 
                 </div>
-                
+
                 <div className="testimonials-image relative">
                     <BackgroundShadow customShadow="0px 0px 300px 50px #fff" />
                     <img className='' src="https://i.ibb.co/jGLJq0C/testi-flat-map.png" alt="" />
-                    {/* <Lottie options={defaultOptions} /> */}
                 </div>
             </div>
         </div>

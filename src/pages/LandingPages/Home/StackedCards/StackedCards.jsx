@@ -39,6 +39,7 @@ const StackedCards = () => {
     }
 
     return (
+<<<<<<< HEAD
         <div className='stacked-cards-container container py-24'>
             <SectionHeader sectionTitle={"X-Factors Of _0x0COM"} sectionDesc={"Our X-Factors and Articial Intelligence tools developed and being developed"} />
             <div className="cards flex flex-col items-center">
@@ -61,6 +62,33 @@ const StackedCards = () => {
                                         },
                                     }}
                                 />
+=======
+        <div className=' py-24 my-24 bg-[#161c28]' data-aos="fade-up"
+        data-aos-duration="1000">
+            <div className='stacked-cards-container container'>
+                <SectionHeader sectionTitle={"X-Factors Of _0x0COM"} sectionDesc={"Our X-Factors and Articial Intelligence tools developed and being developed"} />
+                <div className="cards flex flex-col items-center">
+                    {cards.map((item, index) => (
+                        <div key={index} className='card h-72 md:h-[340px]'>
+                            <div className="texts text-center md:text-left px-5 md:px-10 py-7 flex flex-col justify-between">
+                                <h2 className='header font-semibold uppercase text-sm md:text-base md:font-bold text-white'>{item.title}</h2>
+                                <h2 className='font-bold uppercase leading-10 text-2xl md:text-4xl text-white'>{item.title}</h2>
+                                <p className='text-semibold md:text-xl text-white'>{item.details}</p>
+                            </div>
+                            <div className="image hidden bg-white rounded-e-[10px] w-80 h-full md:flex items-center justify-center">
+                                <div className='max-w-64'>
+                                    <Lottie
+                                        options={{
+                                            loop: true,
+                                            autoplay: true,
+                                            animationData: animationsData[index],
+                                            rendererSettings: {
+                                                preserveAspectRatio: 'xMidYMid slice',
+                                            },
+                                        }}
+                                    />
+                                </div>
+>>>>>>> 9535ac5a7725a2e3c34b91a02b4ec4dba5b67945
                             </div>
                         </div>
                     </div>

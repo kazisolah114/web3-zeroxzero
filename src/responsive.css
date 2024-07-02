@@ -60,6 +60,10 @@
     }
     .header-menu .navbar ul{
         flex-direction: column;
+        gap: 5px!important;
+    }
+    .header-menu .navbar ul .nav-item {
+        padding: 20px 0;
     }
     .navbar ul li a {
         justify-content: space-between!important;

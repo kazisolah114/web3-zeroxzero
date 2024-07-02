@@ -56,7 +56,7 @@ const TokenList = ({ newTokens }) => (
                                 :
                                 <p className=''>$N/A</p>
                             }
-                            <p className={`${token['24h_percent'].toString().startsWith('-') ? 'text-red-500' : 'text-green-500'}`}>{token['24h_percent'].toString().startsWith('-') || <span className='text-[10px] -mr-1'>+</span>} {token['24h_percent'].toFixed(2)}%</p>
+                            <p className={`${token['24h_percent']?.toString().startsWith('-') ? 'text-red-500' : 'text-green-500'}`}>{token['24h_percent']?.toString().startsWith('-') || <span className='text-[10px] -mr-1'>+</span>} {token['24h_percent']?.toFixed(2) || 'N/A'}%</p>
                         </div>
                     </li>
                 );

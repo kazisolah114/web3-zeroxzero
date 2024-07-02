@@ -9,7 +9,7 @@ export const useUserContext = () => useContext(UserContext)
 
 export const UserProvider = ({ children }) => {
     // const { wallet, balance, handleConnectWallet, handleDisconnectWallet, web3, activatingConnector, setActivatingConnector, rpcProvider } = useConnectMetamask();
-    const { wallet, balance, handleConnectWallet, handleDisconnectWallet, web3, activatingConnector, setActivatingConnector } = useConnectMetamask();
+    const { wallet, balance, tokenBalance, handleConnectWallet, handleDisconnectWallet, web3, activatingConnector, setActivatingConnector } = useConnectMetamask();
     
     // Retrieve wallet from localStorage on component mount
     useEffect(() => {
@@ -37,8 +37,7 @@ export const UserProvider = ({ children }) => {
     useInactiveListener(!!activatingConnector);
 
     return (
-        <UserContext.Provider value={{ wallet, balance, web3, handleConnectWallet, handleDisconnectWallet: handleDisconnect }}>
-        {/* <UserContext.Provider value={{ wallet, balance, web3, handleConnectWallet, handleDisconnectWallet: handleDisconnect, rpcProvider }}> */}
+        <UserContext.Provider value={{ wallet, balance, tokenBalance, web3, handleConnectWallet, handleDisconnectWallet: handleDisconnect }}>
             {children}
         </UserContext.Provider>
     )

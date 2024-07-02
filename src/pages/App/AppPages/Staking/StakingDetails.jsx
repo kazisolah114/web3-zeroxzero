@@ -114,70 +114,71 @@ const StakingDetails = () => {
         navigate("/app/staking")
     }
 
-    useEffect(()=>{
-        const getUserInfo = async () => {
-            if (wallet && stakingContract && zeroContract && ethbitContract) {
-                try {
-                    let response = {
-                        amount: 0,
-                        rewardDebt: 0
-                    };
-                    let poolInfo = {
-                        accZeroxZeroPerShare: 0,
-                        allocPoint: 0
-                    }
-                    let balance = 0, pending = 0;
-                    const totalAllocPoint = await stakingContract.totalAllocPoint();
-                    let poolBalance = 0;
-                    if (id == "0x0com") {
-                        poolInfo = await stakingContract.poolInfo(1);
-                        response = await stakingContract.userInfo(1, wallet);
-                        balance = await zeroContract.balanceOf(wallet);
-                        balance = (parseFloat(balance).toFixed(2) / Math.pow(10, 18)).toFixed(2);
-                        pending = await stakingContract.pendingZeroxZero(1, wallet);
-                        poolBalance = await stakingContract.poolBalances(1);
-                    }
-                    if (id == "ethbits") {
-                        poolInfo = await stakingContract.poolInfo(0);
-                        response = await stakingContract.userInfo(0, wallet);
-                        balance = await ethbitContract.balanceOf(wallet);
-                        balance = (parseFloat(balance).toFixed(2) / Math.pow(10, 12)).toFixed(2);
-                        pending = await stakingContract.pendingZeroxZero(0, wallet);
-                        poolBalance = await stakingContract.poolBalances(0);
-                    }
-                    const { amount, rewardDebt } = response;
-    
-                    setStakeData({
-                        ...stakeData,
-                        wallet_balance: parseFloat(balance).toFixed(2),
-                        staked: parseFloat(amount).toFixed(2),
-                        staking_rewards: parseFloat(rewardDebt).toFixed(2),
-                        pendingReward: (parseFloat(pending)).toFixed(2),
-                        // daily: (parseInt(amount) * parseInt(poolInfo.allocPoint) / parseInt(totalAllocPoint) / 365).toFixed(2),
-                        // monthly: (parseInt(amount) * parseInt(poolInfo.allocPoint) / parseInt(totalAllocPoint) / 12).toFixed(2),
-                        // annual: (parseInt(amount) * parseInt(poolInfo.allocPoint) / parseInt(totalAllocPoint)).toFixed(2),
-                        apr: (parseInt(poolInfo.allocPoint) * 100 / parseInt(totalAllocPoint)).toFixed(2),
-                        pool_share: (parseInt(balance) * 100 / parseInt(poolBalance)).toFixed(2)
-    
-                    });
-                } catch (error) {
-                    console.log(error.message);
+    const getUserInfo = async () => {
+        if (wallet && stakingContract && zeroContract && ethbitContract) {
+            try {
+                let response = {
+                    amount: 0,
+                    rewardDebt: 0
+                };
+                let poolInfo = {
+                    accZeroxZeroPerShare: 0,
+                    allocPoint: 0
                 }
-            }
-            else {
+                let balance = 0, pending = 0;
+                const totalAllocPoint = await stakingContract.totalAllocPoint();
+                let poolBalance = 0;
+                if (id == "0x0com") {
+                    poolInfo = await stakingContract.poolInfo(1);
+                    response = await stakingContract.userInfo(1, wallet);
+                    balance = await zeroContract.balanceOf(wallet);
+                    balance = (parseFloat(balance).toFixed(2) / Math.pow(10, 18)).toFixed(2);
+                    pending = await stakingContract.pendingZeroxZero(1, wallet);
+                    poolBalance = await stakingContract.poolBalances(1);
+                }
+                if (id == "ethbits") {
+                    poolInfo = await stakingContract.poolInfo(0);
+                    response = await stakingContract.userInfo(0, wallet);
+                    balance = await ethbitContract.balanceOf(wallet);
+                    balance = (parseFloat(balance).toFixed(2) / Math.pow(10, 12)).toFixed(2);
+                    pending = await stakingContract.pendingZeroxZero(0, wallet);
+                    poolBalance = await stakingContract.poolBalances(0);
+                }
+                const { amount, rewardDebt } = response;
+
                 setStakeData({
                     ...stakeData,
-                    wallet_balance: 0,
-                    staked: 0,
-                    staking_rewards: 0,
-                    pendingReward: 0,
-                    daily: 0,
-                    monthly: 0,
-                    annual: 0,
-                    apr: 0
+                    wallet_balance: parseFloat(balance).toFixed(2),
+                    staked: (parseFloat(amount) / Math.pow(10, 18)).toFixed(2),
+                    staking_rewards: (parseFloat(rewardDebt) / Math.pow(10, 18)).toFixed(2),
+                    pendingReward: (parseFloat(pending) / Math.pow(10, 18)).toFixed(2),
+                    // daily: (parseInt(amount) * parseInt(poolInfo.allocPoint) / parseInt(totalAllocPoint) / 365).toFixed(2),
+                    // monthly: (parseInt(amount) * parseInt(poolInfo.allocPoint) / parseInt(totalAllocPoint) / 12).toFixed(2),
+                    // annual: (parseInt(amount) * parseInt(poolInfo.allocPoint) / parseInt(totalAllocPoint)).toFixed(2),
+                    apr: (parseInt(poolInfo.allocPoint) * 100 / parseInt(totalAllocPoint)).toFixed(2),
+                    pool_share: (parseInt(balance) * 100 / parseInt(poolBalance)).toFixed(2)
+
                 });
+            } catch (error) {
+                console.log(error.message);
             }
         }
+        else {
+            setStakeData({
+                ...stakeData,
+                wallet_balance: 0,
+                staked: 0,
+                staking_rewards: 0,
+                pendingReward: 0,
+                daily: 0,
+                monthly: 0,
+                annual: 0,
+                apr: 0
+            });
+        }
+    }
+
+    useEffect(()=>{
         getUserInfo();
     }, [wallet, stakingContract, zeroContract, ethbitContract]);
     
@@ -215,7 +216,8 @@ const StakingDetails = () => {
                     await handleApprove();
                     const stakingContract = getContract(process.env.VITE_APP_STAKING_ADDRESS, asset.abi, library, account);
                     await stakingContract.deposit(poolIndex, toSmallUnit(amount, stakeToken[poolIndex]), account).then(tx => {
-                        tx.wait()
+                        tx.wait();
+                        setAmount(0);
                     }).catch(err => {
                         console.error(err)
                     })
@@ -244,6 +246,7 @@ const StakingDetails = () => {
                         const stakingContract = getContract(process.env.VITE_APP_STAKING_ADDRESS, asset.abi, library, account);
                         await stakingContract.withdraw(poolIndex, toSmallUnit(amount, stakeToken[poolIndex]), account).then(tx => {
                             tx.wait()
+                            setAmount(0)
                         }).catch(err => {
                           console.error(err)
                         })
@@ -350,7 +353,7 @@ const StakingDetails = () => {
                         <div className='mb-48'>
                             <h2 className='text-lg font-semibold text-light mb-6'>YOUR BALANCE</h2>
                             <p className='text-gray flex items-center justify-between mb-4 pb-4 border-b border-gray-700 border-opacity-80' >Staked Amount <span className='text-light'>{stakeData.staked} {filteredStaking.staking_with_abr}</span></p>
-                            <p className='text-gray flex items-center justify-between mb-4 pb-4 border-b border-gray-700 border-opacity-80' >Earned Rewards <span className='text-light'>{stakeData.staking_rewards} {filteredStaking.staking_for_abr}</span></p>
+                            <p className='text-gray flex items-center justify-between mb-4 pb-4 border-b border-gray-700 border-opacity-80' >Earned Rewards <span className='text-light'>{stakeData.pendingReward} {filteredStaking.staking_for_abr}</span></p>
                             <p className='text-gray flex items-center justify-between ' >Pool Share <span className='text-light'>{stakeData.pool_share} %</span></p>
                         </div>
                         <div className=''>

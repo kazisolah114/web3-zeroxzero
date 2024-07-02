@@ -14,12 +14,14 @@ const AppLayout = () => {
                 <title>App | 0x0</title>
                 <link rel="canonical" href="http://0x0.com" />
             </Helmet>
-            <div className='container flex justify-between  '>
-                <Sidebar showResponsiveMenu={showResponsiveMenu} setShowResponsiveMenu={setShowResponsiveMenu} />
-                <div className='flex flex-col  w-full '>
-                    <Header showResponsiveMenu={showResponsiveMenu} setShowResponsiveMenu={setShowResponsiveMenu} />
-                    <div className='outlet p-5 h-[calc(100vh-5rem)] overflow-auto outlet-scrollbar'>
-                        <Outlet />
+            <div className='container '>
+                <div className='flex'>
+                    <Sidebar showResponsiveMenu={showResponsiveMenu} setShowResponsiveMenu={setShowResponsiveMenu} />
+                    <div className='flex flex-col w-full'>
+                        <Header showResponsiveMenu={showResponsiveMenu} setShowResponsiveMenu={setShowResponsiveMenu} />
+                        <div className='outlet p-5 h-[calc(100vh-5rem)] overflow-auto outlet-scrollbar'>
+                            <Outlet />
+                        </div>
                     </div>
                 </div>
             </div>
