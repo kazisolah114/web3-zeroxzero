@@ -15,6 +15,7 @@ import UserProfile from "../pages/App/AppPages/UserProfile/UserProfile";
 import Blogs from "../pages/LandingPages/Blogs/Blogs";
 import BlogDetails from "../pages/LandingPages/Blogs/BlogDetails";
 import UserProfilePr from "../private/UserProfilePr";
+import NewUniswapTokens from "../pages/App/AppPages/NewUniwsapTokens/NewUniswapTokens";
 
 
 const router = createBrowserRouter([
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "token-statistics",
         element: <TokenStatistics />
+      },
+      {
+        path: "new-tokens",
+        element: <NewUniswapTokens />
       },
       {
         path: "how-to",

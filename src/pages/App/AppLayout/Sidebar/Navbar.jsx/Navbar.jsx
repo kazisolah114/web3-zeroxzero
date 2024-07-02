@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { HiOutlineChartPie } from 'react-icons/hi';
-import { HiOutlineBanknotes, HiOutlineChartBar, HiOutlineCpuChip, HiOutlineCurrencyDollar, HiOutlineHomeModern, HiOutlineLockClosed, HiOutlineQuestionMarkCircle, HiOutlineTrophy, HiOutlineUsers } from 'react-icons/hi2';
+import { HiOutlineChartPie, HiOutlineStar } from 'react-icons/hi';
+import { HiOutlineBanknotes, HiOutlineChartBar, HiOutlineCpuChip, HiOutlineCurrencyDollar, HiOutlineHomeModern, HiOutlineLockClosed, HiOutlineQuestionMarkCircle, HiOutlineSparkles, HiOutlineTrophy, HiOutlineUsers } from 'react-icons/hi2';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
@@ -31,6 +31,7 @@ const Navbar = ({setShowResponsiveMenu}) => {
         },
         { icon: <HiOutlineChartPie />, title: "Token Statistics", link: "token-statistics" },
         { icon: <HiOutlineChartBar />, title: "Market Statistics", link: "market-statistics" },
+        { icon: <HiOutlineSparkles />, title: "Uniswap Tokens", link: "new-tokens" },
         { icon: <HiOutlineQuestionMarkCircle />, title: "How To", link: "how-to" }
     ]
 

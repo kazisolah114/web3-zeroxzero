@@ -8,7 +8,7 @@ const MarketUpdate = () => {
     const [marketUpdate, setMarketUpdate] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-        fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false`)
+        fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false&price_change_percentage=7d`)
             .then(res => res.json())
             .then(data => {
                 setMarketUpdate(data);
@@ -30,7 +30,6 @@ const MarketUpdate = () => {
     const handleShowModal = (coin) => {
         setModalCoinData(coin);
     }
-    console.log(modalCoinData)
 
 
     return (
@@ -90,7 +89,10 @@ const MarketUpdate = () => {
                                     {parseFloat(coin.price_change_percentage_24h) < 0 ? "" : "+"}
                                     {parseFloat(coin.price_change_percentage_24h).toFixed(2)}%
                                 </p>
-                                <p  className='max-md:hidden'>N/A</p>
+                                <p className={`max-md:hidden ${parseFloat(coin.price_change_percentage_7d_in_currency) < 0 ? "text-red-400" : "text-green-400"}`}>
+                                    {parseFloat(coin.price_change_percentage_7d_in_currency) < 0 ? "" : "+"}
+                                    {parseFloat(coin.price_change_percentage_7d_in_currency).toFixed(2)}%
+                                </p>
                                 <p className='max-lg:hidden'>${coin.market_cap.toLocaleString()}</p>
                             </div>
                         ))

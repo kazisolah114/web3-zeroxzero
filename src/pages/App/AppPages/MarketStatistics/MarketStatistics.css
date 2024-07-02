@@ -1,29 +1,2 @@
-.market-update-header {
-    /* display: grid;
-    grid-template-columns: 20px 230px 140px 150px 140px 140px;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px; */
-}
-.market-update-table .table-content {
-    /* display: grid;
-    grid-template-columns: 20px 230px 140px 150px 140px 140px;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10x; */
-}
 
 
-.carousel{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px 10px;
-    justify-content: space-between;
-}
-.carousel-item{
-    transition: .2s ease-in-out;
-
-}
-.carousel-item:hover {
-    box-shadow: 1px 1px 25px -16px #08cda9;
-}

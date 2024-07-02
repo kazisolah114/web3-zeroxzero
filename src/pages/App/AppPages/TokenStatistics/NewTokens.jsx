@@ -64,7 +64,7 @@ const TokenList = ({ newTokens }) => (
         </ul>
 
         <Link to="/explore-more">
-            <button className='text-secondary underline flex items-center gap-1 hover:text-[#65ffffeb] duration-200'>
+            <button className='text-secondary text-sm underline flex items-center gap-1 hover:text-[#65ffffeb] duration-200'>
                 Explore More <HiOutlineExternalLink />
             </button>
         </Link>

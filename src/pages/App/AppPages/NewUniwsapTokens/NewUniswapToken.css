@@ -1,0 +1,8 @@
+
+.carousel-item{
+    transition: .2s ease-in-out;
+
+}
+.carousel-item:hover {
+    box-shadow: 1px 1px 25px -16px #08cda9;
+}
