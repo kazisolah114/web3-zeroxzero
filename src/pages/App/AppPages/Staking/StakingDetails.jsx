@@ -272,25 +272,20 @@ const StakingDetails = () => {
 
     const handleClaim = async () => {
         if (wallet) {
-            if (amount > 0) {
-                if (parseFloat(amount).toFixed(2) <= stakeData.pendingReward) {
-                    try {
-                        const stakingContract = getContract(process.env.VITE_APP_STAKING_ADDRESS, asset.abi, library, account);
-                        await stakingContract.harvest(poolIndex, account).then(tx => {
-                            tx.wait()
-                        }).catch(err => {
-                          console.error(err)
-                        })
-                    } catch (error) {
-                        console.error(error.message)
-                    }
-                }
-                else {
-                    console.log("Your pending reward balance is not sufficient fot this trade.");
+            if (parseFloat(stakeData.pendingReward) > 0) {
+                try {
+                    const stakingContract = getContract(process.env.VITE_APP_STAKING_ADDRESS, asset.abi, library, account);
+                    await stakingContract.harvest(poolIndex, account).then(tx => {
+                        tx.wait()
+                    }).catch(err => {
+                    console.error(err)
+                    })
+                } catch (error) {
+                    console.error(error.message)
                 }
             }
             else {
-                console.log("Please enter amount.");
+                console.log("Earned amount is not enough.");
             }
         }
         else {
