@@ -4,9 +4,14 @@ import BackgroundShadow from '../../../../components/CommonComponents/Background
 import { HiChevronUpDown, HiMiniListBullet, HiOutlineSquares2X2 } from "react-icons/hi2";
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import asset from './abi.json';
+import { ethers } from 'ethers';
 
 const Staking = () => {
     const [stakingData, setStakingData] = useState([]);
+    const provider = new ethers.JsonRpcProvider(process.env.VITE_APP_RPC_URL);
+    const stakingContract = new ethers.Contract(process.env.VITE_APP_STAKING_ADDRESS, asset.abi, provider);
+    const [flag, setFlag] = useState(false);
 
     useEffect(() => {
         fetch('/staking.json')
@@ -14,7 +19,14 @@ const Staking = () => {
             .then(data => {
                 setStakingData(data.stakingData);
             })
-    }, []);
+        }, []);
+        
+    useEffect(() => {
+        if (stakingData.length > 0 && !flag) {
+            getPoolData();
+            setFlag(true);
+        }
+    }, [stakingData]);
 
     const [isDefault, setIsDefault] = useState(true);
 
@@ -36,6 +48,30 @@ const Staking = () => {
     const [viewMode, setViewMode] = useState("block");
     const handleViewMode = (view) => {
         setViewMode(view);
+    }
+
+    const getPoolData = async () => {
+        const poolEtbs = await stakingContract.poolBalances(0);
+        const pool0x0 = await stakingContract.poolBalances(1);
+        const totalAllocPoint = await stakingContract.totalAllocPoint();
+        const poolInfo0x0 = await stakingContract.poolInfo(1);
+        const poolInfoEth = await stakingContract.poolInfo(0);
+        let data = stakingData.map(item => {
+            if (item.id == "0x0com"){
+                item.pool_value = (parseInt(pool0x0) / Math.pow(10, 18)).toFixed(2);
+                item.apr_percentage = parseInt(poolInfo0x0.allocPoint) * 100 / parseInt(totalAllocPoint);
+            }
+            if (item.id == "ethbits") {
+                item.pool_value = (parseInt(poolEtbs) / Math.pow(10, 12)).toFixed(2);
+                item.apr_percentage = parseInt(poolInfoEth.allocPoint) * 100 / parseInt(totalAllocPoint);
+            }
+            return item;
+        })
+
+        console.log(data);
+        setStakingData(data);
+        // console.log((parseInt(pool0x0) / Math.pow(10, 18)).toFixed(2));
+        // console.log((parseInt(poolEtbs) / Math.pow(10, 12)).toFixed(2))
     }
 
     return (

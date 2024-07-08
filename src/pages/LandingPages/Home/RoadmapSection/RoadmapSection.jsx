@@ -10,14 +10,14 @@ const RoadmapSection = () => {
         { year: "2022", period: "Q4", achivements: "0x0.com launch with DeFi copy trading alerts crypto.com Land Purchased", status: "done", icon: <HiOutlineRocketLaunch /> },
         { year: "2023", period: "Q1", achivements: "NFTs mint, NFTs Staking Live, NFTs Treasure hunts with prizes up to 50k USD", status: "progressing", icon: <HiOutlineTrophy /> },
         { year: "2023", period: "Q2", achivements: "NFTs Revealed", status: "progressing", icon: <HiOutlineGiftTop /> },
-        { year: "2023", period: "Q3", achivements: "0x0 Virtual Head Quarters, Established Sandbox - Asset insights, detailed progress, recommended virtual asset portfolio and alerts of recommended assets based on your scanner", status: "next", icon: <HiOutlineShieldCheck /> },
+        { year: "2023", period: "Q3", achivements: "0x0 Virtual Head Quarters, Established Sand Box - Asset insights, detailed progress, recommended virtual asset portfolio and alerts of recommended assets based on your scanner", status: "next", icon: <HiOutlineShieldCheck /> },
         { year: "2023", period: "Q4", achivements: "Virtual asset futures game", status: "next", icon: <HiOutlineSquaresPlus /> },
         { year: "2024", period: "Q1", achivements: "1st CEXs", status: "next", icon: <HiOutlineBellAlert /> },
         { year: "2024", period: "Q2", achivements: "BETA version AI based technology ratings and organic growth models", status: "next", icon: <HiOutlineCpuChip /> },
-        { year: "2024", period: "Q3", achivements: "Trader evaluation based on linked wallets (traders Hall Of Fame and Trader Finder)", status: "next", icon: <HiOutlineWallet /> },
-        { year: "2024", period: "Q3", achivements: "NFT Drop (NFTs to be used within the metaverse and to access advanced features on our web page, staking boosts)", status: "next", icon: <HiOutlineViewColumns /> },
+        { year: "2024", period: "Q3", achivements: "Trader evaluation based on linked wallets(traders hall of Fame and Trader Finder)", status: "next", icon: <HiOutlineWallet /> },
+        { year: "2024", period: "Q3", achivements: "NFT Drop(NFT's to be used within the metaverse and to access advanced features on our web page, staking boosts)", status: "next", icon: <HiOutlineViewColumns /> },
         { year: "2024", period: "Q4", achivements: "AI based technology ratings and organic growth models", status: "next", icon: <HiOutlineChartBar /> },
-        { year: "2025", period: "Q1", achivements: "Decentralised Copy Trading (only the transactions need to be granted by the copier and all the positions tracked and can be closed at anytime)", status: "next", icon: <HiOutlineCurrencyDollar /> },
+        { year: "2025", period: "Q1", achivements: "Decentralised Copy Trading(only the transactions need to be granted by the copier and all the positions tracked and can be closed at anytime)", status: "next", icon: <HiOutlineCurrencyDollar /> },
     ]
     return (
         <div className='roadmap-section py-24 container'>
