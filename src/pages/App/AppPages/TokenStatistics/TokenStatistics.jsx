@@ -166,7 +166,7 @@ const TokenStatistics = () => {
                             </p>
                             <div className='mt-14 flex gap-6 items-center'>
                                 <Link target='_blank' to="https://www.coinstore.com/spot/0X0USDT?ts=1719641059546"><button className='underline text-secondary hover:text-[#65ffffeb] duration-200 text-sm flex items-center gap-1'>Coinstore Exchange <HiOutlineExternalLink /></button></Link>
-                                <Link target='_blank' to=""><button className='underline text-secondary hover:text-[#65ffffeb] duration-200 text-sm flex items-center gap-1'>Uniswap Exchange <HiOutlineExternalLink /></button></Link>
+                                <Link target='_blank' to="https://app.uniswap.org/explore/tokens/ethereum/0xb8fda5aee55120247f16225feff266dfdb381d4c"><button className='underline text-secondary hover:text-[#65ffffeb] duration-200 text-sm flex items-center gap-1'>Uniswap Exchange <HiOutlineExternalLink /></button></Link>
                             </div>
                         </div>
                     </div>

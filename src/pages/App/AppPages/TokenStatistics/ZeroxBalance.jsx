@@ -29,7 +29,7 @@ const ZeroxBalance = ({tokenPrice}) => {
                 }
             </div>
             <div>
-                <Link className='w-40 h-11 flex justify-center items-center font-bold rounded-md  bg-[#233550] text-secondary shadow-[1px_1px_10px_#101825] hover:shadow-[1px_1px_20px_#101825] duration-200'>Buy 0x0 Now <HiOutlineExternalLink className='ml-2' /></Link>
+                <Link to="https://app.uniswap.org/explore/tokens/ethereum/0xb8fda5aee55120247f16225feff266dfdb381d4c" target='_blank' className='w-40 h-11 flex justify-center items-center font-bold rounded-md  bg-[#233550] text-secondary shadow-[1px_1px_10px_#101825] hover:shadow-[1px_1px_20px_#101825] duration-200'>Buy 0x0 Now <HiOutlineExternalLink className='ml-2' /></Link>
             </div>
         </div>
     );
