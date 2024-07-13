@@ -16,6 +16,7 @@ import Blogs from "../pages/LandingPages/Blogs/Blogs";
 import BlogDetails from "../pages/LandingPages/Blogs/BlogDetails";
 import UserProfilePr from "../private/UserProfilePr";
 import NewUniswapTokens from "../pages/App/AppPages/NewUniwsapTokens/NewUniswapTokens";
+import CoinDetails from "../pages/App/AppPages/MarketStatistics/CoinDetails";
 
 
 const router = createBrowserRouter([
@@ -27,14 +28,14 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />
       },
-      // {
-      //   path: '/blogs',
-      //   element: <Blogs />
-      // },
-      // {
-      //   path: 'blogs/:id',
-      //   element: <BlogDetails />
-      // }
+      {
+        path: '/blogs',
+        element: <Blogs />
+      },
+      {
+        path: 'blogs/:id',
+        element: <BlogDetails />
+      }
     ]
   },
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "market-statistics",
         element: <MarketStatistics />
+      },
+      {
+        path: "market-statistics/:id",
+        element: <CoinDetails />
       },
       {
         path: "token-statistics",

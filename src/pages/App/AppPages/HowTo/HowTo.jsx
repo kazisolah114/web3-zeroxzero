@@ -18,14 +18,14 @@ const HowTo = () => {
             </Helmet>
             <div className="howto-content">
                 <Tabs>
-                    <TabList className="tablist flex items-center gap-3 mb-7 ">
-                        <Tab onClick={() => handleActiveTab("trade")} className={`${activeTab == 'trade' && 'bg-secondary'}`}>Trade Alert</Tab>
-                        <Tab onClick={() => handleActiveTab("custom")} className={`${activeTab == 'custom' && 'bg-secondary'}`}>Custom Search</Tab>
-                        <Tab onClick={() => handleActiveTab("faq")} className={`${activeTab == 'faq' && 'bg-secondary'}`}>FAQ</Tab>
+                    <TabList className="tablist flex items-center gap-5 mb-7 border-b border-slate-700 border-opacity-70">
+                        <Tab onClick={() => handleActiveTab("trade")} className={`w-36 text-center font-bold pb-2 cursor-pointer ${activeTab == 'trade' && 'border-b-2 border-[#0FCFCF] text-secondary'}`}>AI Trade Alerts</Tab>
+                        <Tab onClick={() => handleActiveTab("custom")} className={`w-36 text-center font-bold pb-2 cursor-pointer ${activeTab == 'custom' && 'border-b-2 border-[#0FCFCF] text-secondary'}`}>Custom Search</Tab>
+                        <Tab onClick={() => handleActiveTab("faq")} className={`w-36 text-center font-bold pb-2 cursor-pointer ${activeTab == 'faq' && 'border-b-2 border-[#0FCFCF] text-secondary'}`}>FAQ</Tab>
                     </TabList>
 
                     <TabPanel>
-                        <div className="trade-alert bg-[#122036] p-5 rounded-md">
+                        <div className="trade-alert  p-5 rounded-md">
                             <h2 className='main-title'>Defination</h2>
                             <p>A Trade Alert Subscription is a subscription by the user to follow a particular ETH address (Ethereum wallet/user) trading on a particular market, e.g. wallet 0x7A49140b3E8A97d0Ac1ca46967074A51DD4359fF, trading APE/USDC.</p>
                             <p className='mt-2'>Once the subscription is set up, the 0x0 Telegram Bot will alert the user of any trade by that wallet on that market, when it happens in the future.
@@ -186,8 +186,8 @@ const HowTo = () => {
 
                     </TabPanel>
                     <TabPanel>
-                        <div className='custom-search trade-alert bg-[#122036] p-5 rounded-md'>
-                            <h2 className='main-title'>Definiation</h2>
+                        <div className='custom-search trade-alert  p-5 rounded-md'>
+                            <h2 className='main-title'>Defination</h2>
                             <p>The Custom Search Function is a way for you to find the top traders on Ethereum for a certain market, i.e. token pair, over a certain time period.</p>
                             <p className='mt-2'>
                                 After making a selection, and clicking on the Submit button, the user will be shown a waiting spinner while the search is performed. The search can take some time, depending on the time period size, and the popularity of the particular search. After done user is shown:

@@ -159,12 +159,12 @@ const TokenStatistics = () => {
                         </div>
                         <TopHoldersStakers />
                         <div className="about0x0-token mt-5 bg-[#122036] rounded-md py-5 px-5">
-                            <h2 className='font-semibold text-xl mb-10'>About 0x0COM Token</h2>
+                            <h2 className='font-semibold text-xl mb-5'>About 0x0COM Token</h2>
                             <p className='text-gray'>
                                 With the Alpha version of 0X0.com, users have the ability to discover and follow the most profitable Ethereum users. 0X0.com enables its users to identify profit per address over a specific period of time, while trading specific pairs. Additionally, 0X0.com users can purchase customized searches. Whenever 0X0.com identifies an Ethereum address that is generating significant profit, users receive alerts each time this address makes a trade. This provides 0X0.com users with an opportunity to copy trades on the Ethereum blockchain.
                                 <p className='mt-4'>0X0.com aims to establish itself in three main Metaverses: Sandbox, The Other Side, and Crypto.com. They will analyze transactions within the Metaverses and provide alerts on which people are making the most profit and the popularity increases of specific assets. The high flyers will be required to interact with this functionality, gain information, and have their own game within each Metaverse.</p>
                             </p>
-                            <div className='mt-14 flex gap-6 items-center'>
+                            <div className='mt-7 flex gap-6 items-center'>
                                 <Link target='_blank' to="https://www.coinstore.com/spot/0X0USDT?ts=1719641059546"><button className='underline text-secondary hover:text-[#65ffffeb] duration-200 text-sm flex items-center gap-1'>Coinstore Exchange <HiOutlineExternalLink /></button></Link>
                                 <Link target='_blank' to="https://app.uniswap.org/explore/tokens/ethereum/0xb8fda5aee55120247f16225feff266dfdb381d4c"><button className='underline text-secondary hover:text-[#65ffffeb] duration-200 text-sm flex items-center gap-1'>Uniswap Exchange <HiOutlineExternalLink /></button></Link>
                             </div>

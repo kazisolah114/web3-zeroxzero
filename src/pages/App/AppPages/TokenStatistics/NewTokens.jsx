@@ -10,7 +10,7 @@ const NewTokens = () => {
     useEffect(() => {
         const fetchNewTokens = async () => {
             try {
-                const response = await fetch(`https://statboard.0x0.com/api/token/list?method=month&page=1&limit=10`);
+                const response = await fetch(`https://statboard.0x0.com/api/token/list?method=month&page=1&limit=9`);
                 const data = await response.json();
                 if (data.data.length > 0) {
                     setNewTokens(data.data);
@@ -35,7 +35,7 @@ const NewTokens = () => {
 
 const LoadingSkeleton = () => (
     <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
-        <Skeleton height={"35px"} count={10} className='mt-3' />
+        <Skeleton height={"35px"} count={9} className='mt-3' />
     </SkeletonTheme>
 );
 

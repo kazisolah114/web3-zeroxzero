@@ -7,7 +7,6 @@
 
 .card {
     position: sticky;
-    top: 10%;
     background-color: #38a169; /* Equivalent to bg-green-500 */
     border-radius: 10px; /* Rounded corners */
     margin-bottom: 40px; /* Adjust to control the space between cards */
@@ -22,13 +21,16 @@
 .card:nth-child(1) {
     background-color: #0044cc;
     width: 88%;
+    top: 10%;
 }
 .card:nth-child(2) {
     background-color: #00c7b7;
     width: 91%;
+    top: 20%;
 }
 .card:nth-child(2) h2, h4{
     color: #13131b;
+    
 }
 .card:nth-child(2) p{
     color: #13131b;
@@ -36,11 +38,13 @@
 .card:nth-child(3) {
     background-color: #ba00b0;
     width: 94%;
+    top: 30%;
 }
 
 .card:nth-child(4) {
     background-color: #FDD45E;
     width: 97%;
+    top: 40%;
 }
 .card:nth-child(4) h2, h4{
     color: #370642;
@@ -51,4 +55,5 @@
 .card:nth-child(5) {
     background-color: #6600cc;
     width: 100%;
+    top: 40%;
 }

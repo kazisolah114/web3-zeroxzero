@@ -24,6 +24,8 @@ const Header = () => {
         };
     }, [showResponsiveMenu]);
 
+    
+
     return (
         <header className='main-header py-4'>
             <div className='header-content container'>
@@ -41,7 +43,7 @@ const Header = () => {
                     <div className={`header-menu flex items-center justify-between ${showResponsiveMenu ? 'show' : 'hide'}`}>
                         <div className=''>
                             <div className={`menu-logo mb-4 pb-4 border-b border-gray-700 border-opacity-50 ${showResponsiveMenu ? 'show' : 'hide'}`}>
-                            <Link to="/"><img className='w-28' src="https://i.ibb.co/hf991LQ/0x0-logo-2.png" alt="" /></Link>
+                                <Link to="/"><img className='w-28' src="https://i.ibb.co/hf991LQ/0x0-logo-2.png" alt="" /></Link>
                             </div>
                             <Navbar />
                         </div>

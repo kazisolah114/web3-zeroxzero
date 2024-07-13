@@ -1,31 +1,6 @@
-.howto-content{}
-.howto-content .tablist {
-    border-bottom: 1px solid #0fcfcfb7;
-}
-.howto-content .tablist li {
-    border-top: 1px solid #0fcfcfb7;
-    border-right: 1px solid #0fcfcfb7;
-    border-left: 1px solid #0fcfcfb7;
-    width: 160px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    border-radius: 12px 12px 0 0;
-    cursor: pointer;
-    transition: .2s ease-in-out;
-    outline: none;
-}
-.howto-content .tablist li:hover{
-    background: var(--secondary-color)
-}
 
-/* AI Alert Subscription */
-.howto-content{
-    
-}
-.howto-content .trade-alert{
-    /* padding: 20px 200px; */
-}
+
+
 .howto-content .main-title {
     font-size: 20px;
     font-weight: bold;
@@ -47,9 +22,7 @@
     text-align: left;
     line-height: 28px;
 }
-.howto-content .trade-alert ul{
-    
-}
+
 .howto-content .trade-alert ul li{
     position: relative;
     z-index: 1;
@@ -76,7 +49,7 @@
     z-index: -1;
 }
 .howto-content .trade-alert ul li:last-child::after {
-    content: none; /* This will hide the border for the last li */
+    content: none;
 }
 
 /* FAQ */

@@ -19,10 +19,7 @@ const TokenConvert = ({ tokenPrice }) => {
     const languages = [
         { language: "US Dollar", abr: "USD", flag: "https://www.pngall.com/wp-content/uploads/12/USD-PNG-Images.png" },
         { language: "US Dollar Coin", abr: "USDC", flag: "https://seeklogo.com/images/U/usd-coin-usdc-logo-CB4C5B1C51-seeklogo.com.png" },
-        { language: "Ethereum", abr: "ETH", flag: "/images/logo-eth.png" },
-        { language: "Bitcoin", abr: "BTC", flag: "/images/logo-btc.png" },
-        { language: "Swiss Franc", abr: "CHF", flag: "https://cdn.coinranking.com/lJBdOdg9C/chf.svg?size=34x34" },
-        { language: "The Euro", abr: "EU", flag: "https://iconape.com/wp-content/png_logo_vector/eur.png" }
+        { language: "Ethereum", abr: "ETH", flag: "/images/logo-eth.png" }
 
     ]
     const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);

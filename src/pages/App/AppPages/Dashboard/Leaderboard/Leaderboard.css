@@ -13,4 +13,5 @@
   }
   .leaderboard{
     gap: 40px 0;
+    align-items: flex-start;
   }

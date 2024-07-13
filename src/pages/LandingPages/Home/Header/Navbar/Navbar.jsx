@@ -39,7 +39,7 @@ const Navbar = () => {
         <nav className='navbar'>
             <ul className='flex gap-7'>
                 {navs.map((nav, index) => (
-                    <li key={index} className='nav-item'>
+                    <li key={index} className={`nav-item`}>
                         <Link to={nav.link} className=' flex items-center gap-1'>
                             {nav.title}
                             {nav.items && <HiOutlineChevronDown className='relative top-[1px]' />}
@@ -47,7 +47,7 @@ const Navbar = () => {
                         {nav.items && (
                             <ul className='dropdown z-10 w-80 top-10 p-3 rounded-md absolute bg-gray-800'>
                                 {nav.items.map((dropdown, dropdownIndex) => (
-                                    <li key={dropdownIndex} className='py-2 cursor-pointer hover:bg-gray-700 rounded-md px-2 mb-1 last:mb-0'>
+                                    <li key={dropdownIndex} className={`py-2 cursor-pointer hover:bg-gray-700 rounded-md px-2 mb-1 last:mb-0`}>
                                         <Link to={dropdown.link} className='flex gap-4 items-center'>
                                             <span className='text-3xl'>{dropdown.icon}</span>
                                             <div className='w-full'>

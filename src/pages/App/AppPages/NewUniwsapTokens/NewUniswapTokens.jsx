@@ -83,10 +83,10 @@ const NewUniswapTokens = () => {
                                         <span className='uppercase font-semibold text-gray'>{symbol} / usd</span>
                                     </div>
                                     <div className='flex items-center gap-3'>
-                                        <h2 className='text-xl font-bold'>USD {prices.length > 0 ? <span>{Number(prices[prices.length - 1]?.priceUSD).toFixed(5)}</span> : <span>N/A</span>}</h2>
+                                        <h2 className='text-xl font-bold'>USD {prices.length > 0 ? <span>{Number(prices[prices.length - 1]?.priceUSD)?.toFixed(5)}</span> : <span>N/A</span>}</h2>
                                         <span className={`flex items-center ${percentChange > 0 ? 'bg-green-500' : 'bg-red-500'} rounded-full px-2`}>
                                             {percentChange > 0 && <span className='text-sm'>+</span>}
-                                            {percentChange.toFixed(2)}%
+                                            {percentChange?.toFixed(2) || 'N/A'}%
                                         </span>
                                     </div>
                                     <div>

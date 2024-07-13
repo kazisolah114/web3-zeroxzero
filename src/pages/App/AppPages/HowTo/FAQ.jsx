@@ -10,9 +10,11 @@ const FAQ = () => {
         { question: "Question number four?", answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam et repellat consequatur illo ratione quaerat quia, esse facilis Lorem ipsum dolor sit amet consectetur adipisicing elit. optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam et repellat consequatur illo ratione quaerat quia, esse facilis optio.", closeIcon: <HiMiniPlus />, openIcon: <HiMiniMinus /> },
         { question: "Question number five?", answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam et repellat consequatur illo Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. sit amet consectetur adipisicing elit. ratione quaerat quia, esse facilis optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam et repellat consequatur illo ratione quaerat quia, esse facilis optio.", closeIcon: <HiMiniPlus />, openIcon: <HiMiniMinus /> },
         { question: "Question number six?", answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam et repellat consequatur illo Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. sit amet consectetur adipisicing elit. ratione quaerat quia, esse facilis optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam et repellat consequatur illo ratione quaerat quia, esse facilis optio.", closeIcon: <HiMiniPlus />, openIcon: <HiMiniMinus /> },
+        { question: "Question number seven?", answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam et repellat consequatur illo Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. sit amet consectetur adipisicing elit. ratione quaerat quia, esse facilis optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam et repellat consequatur illo ratione quaerat quia, esse facilis optio.", closeIcon: <HiMiniPlus />, openIcon: <HiMiniMinus /> },
+        { question: "Question number eight?", answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam et repellat consequatur illo Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. sit amet consectetur adipisicing elit. ratione quaerat quia, esse facilis optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam et repellat consequatur illo ratione quaerat quia, esse facilis optio.", closeIcon: <HiMiniPlus />, openIcon: <HiMiniMinus /> },
     ]
 
-    const [clickedQuestion, setClickedQuestion] = useState(null)
+    const [clickedQuestion, setClickedQuestion] = useState(0)
     const handleClickedQuestion = (index) => {
         setClickedQuestion(index);
     }
@@ -22,7 +24,7 @@ const FAQ = () => {
             <div className="header mb-10">
                 <h2 className='text-center text-gray font-bold text-3xl'>Frequently Asked Questions</h2>
             </div>
-            <div className="faqs  ">
+            <div className="faqs">
                 {
                     faqs.map((faq, index) => <div className={`faq ${clickedQuestion === index ? 'open' : ''} mb-4 bg-[#122036] px-4 py-3 rounded-md`} key={index}>
                         <div onClick={() => handleClickedQuestion(index)} className='flex items-center justify-between  cursor-pointer'>

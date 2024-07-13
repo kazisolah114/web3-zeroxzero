@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { createContext } from 'react';
 import useConnectMetamask from '../states/auth/useConnectMetamask';
@@ -35,6 +35,7 @@ export const UserProvider = ({ children }) => {
     };
 
     useInactiveListener(!!activatingConnector);
+
 
     return (
         <UserContext.Provider value={{ wallet, balance, tokenBalance, web3, handleConnectWallet, handleDisconnectWallet: handleDisconnect }}>

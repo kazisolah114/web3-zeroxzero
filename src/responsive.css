@@ -60,32 +60,44 @@
     }
     .header-menu .navbar ul{
         flex-direction: column;
-        gap: 5px!important;
+        gap: 15px!important;
+        
     }
     .header-menu .navbar ul .nav-item {
-        padding: 20px 0;
+        padding: 10px 0;
+        /* border: 1px solid red; */
     }
     .navbar ul li a {
         justify-content: space-between!important;
         font-weight: 500;
+        transition: none!important;
     }
-    .nav-item:hover .dropdown {
+    .nav-item .dropdown {
         position: unset;
+        display: initital!important;
         background: transparent;
         max-width: 100%;
         padding-left: 0 !important;
         padding-right: 0 !important;
+        padding-bottom: 0!important;
     }
-    .nav-item:hover .dropdown li{
-        margin-bottom: 6px;
+    .dropdown li{
     }
-    .nav-item:hover .dropdown li:last-child{
-        margin-bottom: 0;
+    .dropdown li{
+        background: black;
+        margin-top: 10px;
     }
-    .nav-item:hover .dropdown li a {
+    .dropdown li:hover{
+        background: black!important;
+    }
+    .dropdown li:last-child{
+        
+    }
+    .dropdown li a {
         justify-content: unset!important;
+        transition: 0s!important;
     }
-    .nav-item:hover .dropdown li a span{
+    .dropdown li a span{
         color: var(--secondary-color)
     }
     .header-button{
