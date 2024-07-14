@@ -26,7 +26,7 @@ const Blogs = () => {
     return (
         <div className='blogs py-12 container'>
             <BlogHeader blogs={blogs} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}  setFilteredBlogs={setFilteredBlogs}  />
-            <div className="blogs-items">
+            <div className="blogs-items grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-y-20 gap-x-14 ">
                 {
                     selectedBlogs.map(item => <div key={item.id} className='blog-item'>
                         <Link to={`${item.id}`}></Link>
@@ -35,7 +35,7 @@ const Blogs = () => {
                         </div>
                         <div className="blog-brief">
                             <span className='text-white bg-secondary rounded-sm px-3 py-[2px]'>{item.category}</span>
-                            <h2 className='capitalize text-justify font-semibold text-xl text-white hover:text-secondary duration-200 my-5'>{item.title}</h2>
+                            <h2 className='capitalize font-semibold text-xl text-white hover:text-secondary duration-200 my-5'>{item.title}</h2>
                             <div className='blog-brief-bottom flex justify-between items-center text-gray mt-2'>
                                 <p>{item.author}</p>
                                 <p className='text-right'>{item.reading_time}</p>

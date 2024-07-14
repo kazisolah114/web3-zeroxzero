@@ -8,11 +8,9 @@ const Dashboard = () => {
             <Helmet>
                 <meta charSet='utf-8' />
                 <title>Leaderboard | 0x0.com</title>
-                <link rel="canonical" href="https://0x0.com" />
+                <link rel="canonical" href="https://app.0x0.com" />
             </Helmet>
             <Leaderboard />
-            
-            
         </div>
     );
 };

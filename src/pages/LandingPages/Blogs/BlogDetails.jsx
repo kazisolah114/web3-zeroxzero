@@ -18,9 +18,9 @@ const BlogDetails = () => {
 
     return (
         <div className='blog-details py-12 container'>
-            <div className="blog-content ">
+            <div className="blog-content grid grid-cols-[3fr_1fr] max-lg:grid-cols-1 gap-20">
                 <div className="main-blog">
-                    <h2 className='text-white text-4xl font-bold'>{blog?.title}</h2>
+                    <h2 className='text-white text-4xl max-md:text-3xl font-bold'>{blog?.title}</h2>
                     <div className='flex items-center justify-between mt-8'>
                         <span className='text-white bg-secondary rounded-sm px-3 py-[2px]'>{blog?.category}</span>
                         <div className='blog-brief-bottom flex items-center gap-16 text-gray'>
@@ -34,22 +34,22 @@ const BlogDetails = () => {
                             blog?.blog_content.map((content, index) => <div key={index} className='mb-7'>
                                 <h3 className='text-light text-2xl mb-4 font-bold'>{content.section_title}</h3>
                                 <p className='text-gray '>{content.section_details}</p>
-                                <div className="media-content  flex items-center gap-7   ">
+                                <div className="media-content  flex items-center gap-7  max-sm:flex-col">
                                     {
                                         content?.media?.map((item, index) =>
-                                            <img key={index} src={item} className='w-3/6 rounded-md mt-7' />
+                                            <img key={index} src={item} className='w-full  rounded-md mt-7' />
                                         )
                                     }
                                 </div>
                             </div>)
                         }
                     </div>
-                    <div className="blog-bottom flex items-center justify-between mt-20">
-                        <div className='tags flex items-center gap-4'>
+                    <div className="blog-bottom flex  justify-between mt-20 max-md:flex-col max-md:gap-10">
+                        <div className='tags flex  gap-4'>
                             <h4 className='font-semibold text-lg text-white'>Tags:</h4>
-                            <ul className='flex items-center gap-3 text-light '>
+                            <ul className='flex items-center gap-3 text-light flex-wrap'>
                                 {
-                                    blog?.tags.map((item, index) => <li key={index} className='bg-secondary rounded-full px-3 py-[2px]'>{item}</li>)
+                                    blog?.tags.map((item, index) => <li key={index} className='bg-secondary rounded-full px-3 py-[2px]'><Link>{item}</Link></li>)
                                 }
                             </ul>
                         </div>

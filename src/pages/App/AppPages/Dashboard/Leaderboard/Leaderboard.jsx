@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import BackgroundShadow from '../../../../../components/CommonComponents/BackgroundShadow/BackgroundShadow';
-import { HiEye, HiOutlineEye, HiOutlineEyeSlash } from 'react-icons/hi2';
+import React, { useState } from 'react';
+import { HiOutlineEye, HiOutlineEyeSlash } from 'react-icons/hi2';
 import './Leaderboard.css';
 import { Link } from 'react-router-dom';
 import AppSectionHeader from '../../../../../components/CommonComponents/AppSectionHeader/AppSectionHeader';
@@ -32,13 +31,11 @@ const Leaderboard = () => {
     const handleTrackWallet = (wallet) => {
         if (trackingList.includes(wallet)) {
             setTrackingList(trackingList.filter(item => item !== wallet));
-
         } else {
             setTrackingList([...trackingList, wallet]);
             setTracking(!tracking)
             notify();
         }
-
     }
 
     return (

@@ -36,7 +36,8 @@ const StackedCards = () => {
 
 
     return (
-        <div className=' py-24 my-24 bg-[#161c28]'>
+        <div className=' py-24 my-24 bg-[#161c28]' data-aos="fade-up"
+        data-aos-anchor-placement="top-center" data-aos-duration="1000">
             <div className='stacked-cards-container container'>
                 <SectionHeader sectionTitle={"X-Factors Of _0x0COM"} sectionDesc={"Our X-Factors and Articial Intelligence tools developed and being developed"} />
                 <div className="cards flex flex-col items-center">

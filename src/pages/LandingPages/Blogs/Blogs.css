@@ -1,13 +1,13 @@
 .blogs-section .blogs-items{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    gap: 70px;
+    gap: 70px; */
     
 }
 .blogs-items {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 80px 70px;
+    gap: 80px 70px; */
 }
 
 .blogs-items .blog-item {
@@ -90,7 +90,7 @@
 /* Blog Details */
 .blog-details{}
 .blog-details .blog-content{
-    display: grid;
+    /* display: grid;
     grid-template-columns: 3fr 1fr;
-    gap: 100px;
+    gap: 100px; */
 }

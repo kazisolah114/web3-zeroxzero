@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import HeroSection from '../HeroSection/HeroSection';
 import { Helmet } from 'react-helmet';
 import HowItWorks from '../HowItWorks/HowItWorks';
@@ -17,13 +17,12 @@ import FeaturedOn from '../FeaturedOn/FeaturedOn';
 import StackedCards from '../StackedCards/StackedCards';
 
 const Home = () => {
-
     return (
         <div>
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>0x0 - AI Powered Trade Alerts</title>
-                <link rel="canonical" href="http://mysite.com/example" />
+                <link rel="canonical" href="http://www.0x0.com/" />
             </Helmet>
             <HeroSection />
             {/* <FeaturedOn /> */}
