@@ -17,6 +17,12 @@ import BlogDetails from "../pages/LandingPages/Blogs/BlogDetails";
 import UserProfilePr from "../private/UserProfilePr";
 import NewUniswapTokens from "../pages/App/AppPages/NewUniwsapTokens/NewUniswapTokens";
 import CoinDetails from "../pages/App/AppPages/MarketStatistics/CoinDetails";
+import AboutUs from "../pages/LandingPages/Company/AboutUs/AboutUs";
+import OurTeam from "../pages/LandingPages/Company/OurTeam/OurTeam";
+import Careers from "../pages/LandingPages/Company/Careers/Careers";
+import JobDetails from "../pages/LandingPages/Company/Careers/JobDetails";
+import Support from "../pages/LandingPages/Company/Support/Support";
+import Publications from "../pages/LandingPages/Company/Publications/Publications";
 
 
 const router = createBrowserRouter([
@@ -35,6 +41,32 @@ const router = createBrowserRouter([
       {
         path: 'blogs/:id',
         element: <BlogDetails />
+      },
+      {
+        path: '/aboutus',
+        element: <AboutUs />
+      },
+      {
+        path: '/our-team',
+        element: <OurTeam />
+      },
+      {
+        path: '/support',
+        element: <Support />
+      },
+      {
+        path: '/publications',
+        element: <Publications />
+      },
+      {
+        path: '/careers',
+        element: <Careers />,
+        children: [
+          {
+            path: '/careers/:id',
+            element: <JobDetails />
+          }
+        ]
       }
     ]
   },

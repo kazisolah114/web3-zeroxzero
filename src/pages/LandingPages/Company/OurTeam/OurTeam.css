@@ -1,0 +1,16 @@
+.avator-container{
+    position: relative;
+}
+.avator-container::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: -15px;
+    /* background-image: url('https://web.programming-hero.com/static/media/team-bg.3478c063.png'); */
+    width: 180px;
+    height: 238px;
+    z-index: 1;
+}
+.avator-container img{
+    
+}

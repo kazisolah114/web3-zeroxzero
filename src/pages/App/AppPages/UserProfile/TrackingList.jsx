@@ -86,8 +86,8 @@ const TrackingList = () => {
             <div className='mt-5 flex flex-col justify-center '>
                 <div className='search-table-head text-light bg-[#122036] px-[30px] py-5 rounded-md '>
                     <p>#</p>
-                    <p className='mr-12'>Wallet Address</p>
-                    <p>Pair</p>
+                    <p className='mr-12'>Tracking Wallet Address</p>
+                    <p>Wallet Pair</p>
                     <p className='mx-auto'>Untrack Wallet</p>
                 </div>
                 {trackingList.length > 0 ?

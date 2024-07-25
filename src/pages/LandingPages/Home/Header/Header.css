@@ -1,6 +1,8 @@
 .main-header{
     position: sticky;
     z-index: 9;
+    top: 0;
+    backdrop-filter: blur(10px);
 }
 .main-header .header-content {
     display: grid;

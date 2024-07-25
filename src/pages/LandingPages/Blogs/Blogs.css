@@ -1,15 +1,9 @@
 .blogs-section .blogs-items{
-    /* display: flex;
+    display: flex;
     flex-wrap: wrap;
-    gap: 70px; */
+    gap: 70px;
     
 }
-.blogs-items {
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 80px 70px; */
-}
-
 .blogs-items .blog-item {
     display: flex;
     flex-direction: column;

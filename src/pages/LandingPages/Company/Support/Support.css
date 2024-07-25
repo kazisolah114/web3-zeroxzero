@@ -1,0 +1,8 @@
+.support form input, .support form textarea{
+    background: transparent;
+    border: 1px solid #374151;
+    outline: none;
+    color: var(--color-white);
+    padding: 8px;
+    border-radius: 4px;
+}

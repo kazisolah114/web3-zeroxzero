@@ -105,7 +105,7 @@ const Staking = () => {
                                     <h3 className='flex justify-between  text-light'>Stake For <span className=' text-secondary font-semibold text-md'>{item.staking_for}</span></h3>
                                     <h3 className='flex justify-between  text-light'>Staking APR <span className=' text-secondary font-semibold text-md'>{item.apr_percentage}%</span></h3>
                                     <h3 className='flex justify-between  text-light'>Pool Value <span className=' text-secondary font-semibold text-md'>{item.pool_value} {item.staking_with_abr}</span></h3>
-                                    <Link to={`${item.id}`} className='bg-secondary hover:bg-secondaryHover  w-40 p-3 rounded-lg mt-10 font-semibold mx-auto duration-200'>View Details</Link>
+                                    <Link to={`${item.id}`} className='bg-secondary hover:bg-secondaryHover  w-full p-3 rounded-lg mt-10 font-semibold mx-auto duration-200'>View Details</Link>
                                 </div>
                             </div>
                         )

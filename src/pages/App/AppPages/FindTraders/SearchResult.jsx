@@ -7,10 +7,12 @@ import { Bounce } from 'react-toastify';
 import Loader from '../../../../components/CommonComponents/Loader/Loader';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
-const SearchResult = ({ selectedBase, selectedTarget, selectedTime }) => {
-
+const SearchResult = ({ selectedBase, selectedTarget, selectedTime, renderResult }) => {
+    console.log(renderResult);
     const [customResult, setCustomResult] = useState({})
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+    console.log(typeof error);
     useEffect(() => {
         fetch(`https://leaderboard.0x0.com/top?token=${selectedTarget.wallet}&interval=${selectedTime.interval}`)
             .then(res => res.json())
@@ -18,7 +20,11 @@ const SearchResult = ({ selectedBase, selectedTarget, selectedTime }) => {
                 setCustomResult(data);
                 setIsLoading(false);
             })
-    }, [selectedTarget.wallet, selectedTime.interval])
+            .catch(err => {
+                setIsLoading(false);
+                setError(err);
+            })
+    }, [renderResult])
 
     const notify = () => toast.success('Wallet added to the tracking list!', {
         position: "top-right",
@@ -48,8 +54,8 @@ const SearchResult = ({ selectedBase, selectedTarget, selectedTime }) => {
     return (
         <div>
             {isLoading ?
-                <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
-                    <div>
+                <SkeletonTheme baseColor="#202020" highlightColor="#44444430" >
+                    <div className="">
                         <div className='mb-3 mt-8'>
                             <Skeleton height={"40px"} />
                         </div>
@@ -58,6 +64,13 @@ const SearchResult = ({ selectedBase, selectedTarget, selectedTime }) => {
                         </div>
                     </div>
                 </SkeletonTheme>
+                : error
+                ?
+                <div className="error-message flex flex-col gap-3 justify-center items-center mt-10">
+                    <img src="/images/error-robot.png" alt="" className='w-80 mb-5' />
+                    <h3 className='font-semibold text-[#ed615b] text-xl'>An error has occured while fetching data!</h3>
+                    <p className='text-gray'>Pleae refresh the page or try again later</p>
+                </div>
                 :
                 <div className='search-result '>
                     <ToastContainer />
@@ -89,7 +102,7 @@ const SearchResult = ({ selectedBase, selectedTarget, selectedTime }) => {
                         </div>
                         :
                         <div className='text-center mt-10'>
-                            <h4 className=''>No records were found for the given base, target and time period😕</h4>
+                            <h4 className='text-gray'>No records were found for the given base, target and time period😕</h4>
                         </div>
                     }
 

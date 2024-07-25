@@ -18,8 +18,9 @@ const OurVision = () => {
             })
     }, [])
     return (
-        <div className='ourvision-section py-24 container' data-aos="fade-up"
-            data-aos-anchor-placement="top-center" data-aos-duration="1000">
+        <div className='ourvision-section py-24 container' 
+            // data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000"
+            >
             <div className="ourvision-content relative flex flex-row-reverse gap-20 items-center justify-between">
                 <div className="vision-info relative w-[50%]">
                     <span className='text-secondary text-lg font-semibold'>OUR VISION</span>
@@ -27,11 +28,11 @@ const OurVision = () => {
                     <p className='text-gray '>Our mission is to facilitate global connectivity and accessibility, empowering individuals worldwide to engage in seamless and secure cryptocurrency trading experiences.</p>
                     <div className="items flex items-center gap-16 mt-12">
                         <div className='text-center'>
-                            <h2 className='text-light text-4xl font-bold mb-2'>{ZeroxStats.unique_wallets ? ZeroxStats.unique_wallets : 'N/A'}</h2>
+                            <h2 className='text-secondary text-4xl font-bold mb-2'>{ZeroxStats.unique_wallets ? ZeroxStats.unique_wallets : 'N/A'}</h2>
                             <p className='text-gray'>Token Holders</p>
                         </div>
                         <div className='text-center'>
-                            <h2 className='text-light text-4xl font-bold mb-2'>{ZeroxStats.liquid_token ? (function (num) {
+                            <h2 className='text-secondary text-4xl font-bold mb-2'>{ZeroxStats.liquid_token ? (function (num) {
                                 if (num >= 1e9) {
                                     let millionPart = Math.floor((num % 1e9) / 1e6);
                                     return millionPart + 'M';
@@ -43,7 +44,7 @@ const OurVision = () => {
                             <p className='text-gray'>Liquid Tokens</p>
                         </div>
                         <div className='text-center'>
-                            <h2 className='text-light text-4xl font-bold mb-2'>{ZeroxStats.staked_token ? (function (num) {
+                            <h2 className='text-secondary text-4xl font-bold mb-2'>{ZeroxStats.staked_token ? (function (num) {
                                 if (num >= 1e9) {
                                     let millionPart = Math.floor((num % 1e9) / 1e6);
                                     return millionPart + 'M';

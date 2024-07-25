@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { HiOutlineCalendar } from 'react-icons/hi2';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
-import SectionHeader from '../../../../components/CommonComponents/SectionHeader/SectionHeader';
+import { useNavigationType } from 'react-router-dom';
 
 const Publications = () => {
     const [publications, setPublications] = useState([]);
@@ -12,7 +11,7 @@ const Publications = () => {
                 setPublications(data);
             })
     }, [])
-    const navigate = useNavigate();
+    const navigate = useNavigationType();
     const visitPublication = (url) => {
         if (url.startsWith('http://') || url.startsWith('https://')) {
             window.open(url, '_blank')
@@ -21,10 +20,11 @@ const Publications = () => {
         }
     }
     return (
-        <div className='publications-section py-24 my-24 container' 
-            // data-aos="fade-up" data-aos-duration="1000"
-            >
-            <SectionHeader sectionTitle={"Our_ Publications"} sectionDesc={"Have a look at some of our publications posted on different platforms with ethical community"} />
+        <div className='publications-page container py-14'>
+            <div className="publications-page-header mb-14">
+                <h1 className='text-white text-5xl mb-5 font-bold '>0x0 Publications</h1>
+                <p className='text-light text-3xl font-semibold '>Publications about 0x0.com platform</p>
+            </div>
             <div className="publications mt-10 grid lg:grid-cols-2 gap-10">
                 {
                     publications.map((item, index) => (
@@ -46,10 +46,8 @@ const Publications = () => {
                     ))
                 }
             </div>
-            <div className='mt-20 flex justify-center'>
-                <Link to="/publications" className='bg-secondaryHover hover:bg-secondary duration-200  py-3 w-44 text-center text-white font-semibold rounded-md '>View More</Link>
-            </div>
         </div>
     );
-}
+};
+
 export default Publications;

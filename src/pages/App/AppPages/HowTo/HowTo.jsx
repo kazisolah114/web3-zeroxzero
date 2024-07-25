@@ -34,27 +34,27 @@ const HowTo = () => {
                             <p>There are 2 ways to set up a Trade Alerts. On the website https://app.0x0.com , or via the 0x0 Bot on Telegram.</p>
                             <h2 className='sub-title mt-10'>Using Website</h2>
                             <ul className='flex flex-col gap-5'>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>1</span></div>
                                     <div>
                                         <p>Navigate to the leaderboards page:  https://app.0x0.com</p>
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>2</span></div>
                                     <div>
                                         <p>Under one of the 3 leaderboard markets WETH/WBTC, WETH/USDC, APE/USDC, choose a trader (wallet address) to subscribe to:</p>
                                         <img className='mt-2 w-96' src="https://app.0x0.com/static/media/leader-card.510b7072470bd69acf94.png" alt="" />
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>3</span></div>
                                     <div>
                                         <p>You will see a confirmation popup:</p>
                                         <img className='mt-2' src="https://app.0x0.com/static/media/confirmation-popup.de6aaa3610c7bb0f9699.png" alt="" />
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>4</span></div>
                                     <div>
                                         <p>You will now receive Trade Alerts for that wallet and market.</p>
@@ -63,41 +63,41 @@ const HowTo = () => {
                             </ul>
                             <h2 className='sub-title mt-10'>Using Telegram</h2>
                             <ul className='flex flex-col gap-5'>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>1</span></div>
                                     <div>
                                         <p>Navigate to: https://app.0x0.com/#/settings</p>
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>2</span></div>
                                     <div>
                                         <p>Click Link Telegram:</p>
                                         <img className='mt-2 w-96' src="https://app.0x0.com/static/media/leader-card.510b7072470bd69acf94.png" alt="" />
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>3</span></div>
                                     <div>
                                         <p>If on PC, a new tab will open with a invite link to the 0x0 Bot:</p>
                                         <img className='mt-2' src="https://app.0x0.com/static/media/telegram-invite-confirmation.4552d487654f4a9abd69.png" alt="" />
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>4</span></div>
                                     <div>
                                         <p>If on a Phone, it will open the Telegram App, with the same invite. Click the invite, and then click the Start button:</p>
                                         <img className='mt-2' src="https://app.0x0.com/static/media/telegram-start-bot.248f05545ea39a947b4c.png" alt="" />
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>5</span></div>
                                     <div>
                                         <p>You will see a message from the Bot, confirming your address and that the link up was successful:</p>
                                         <img className='mt-2' src="https://app.0x0.com/static/media/telegram-success-start.fa88a3c37a250121259a.png" alt="" />
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>6</span></div>
                                     <div>
                                         <p>Now that the 0x0 Bot is linked up to your account, you can manage and receive your trade alerts here too, from the Menu:</p>
@@ -107,27 +107,27 @@ const HowTo = () => {
                             </ul>
                             <h2 className='sub-title mt-10'>Subscribe To AI Trade Alert</h2>
                             <ul className='flex flex-col gap-5'>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>1</span></div>
                                     <div>
                                         <p>Tap /alerts from Bot menu.</p>
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>2</span></div>
                                     <div>
                                         <p>Tap “Add”:</p>
                                         <img className='mt-2 w-96' src="https://app.0x0.com/static/media/telegram-add-trade-alert.9ac15111861eb6766847.png" alt="" />
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>3</span></div>
                                     <div>
                                         <p>The Bot will prompt you to provide the address of the wallet you want to get alerts for. Paste it into the chat as a single message:</p>
                                         <img className='mt-2' src="https://app.0x0.com/static/media/telegram-add-trade-alert.9ac15111861eb6766847.png" alt="" />
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>4</span></div>
                                     <div>
                                         <p>After it accepts that, a popup keyboard will appear with selections for markets. Tap one:</p>
@@ -135,7 +135,7 @@ const HowTo = () => {
                                         <p className='mt-2'>It has to be one of the listed markets. Soon we will allow you to enter your own custom pair, for any market.</p>
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>5</span></div>
                                     <div>
                                         <p>After choosing a market, the Bot will confirm the Subscription:</p>
@@ -145,35 +145,35 @@ const HowTo = () => {
                             </ul>
                             <h2 className='sub-title mt-10'>Unsubscribe To AI Trade Alert</h2>
                             <ul className='flex flex-col gap-5'>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>1</span></div>
                                     <div>
                                         <p>If on website, visit https://app.0x0.com/#/settings, at the bottom of the page you can view subscriptions and remove individual ones by clicking the unwatch (eye) icon on the right:</p>
                                         <img className='mt-2 w-96' src="https://app.0x0.com/static/media/website-unsubcribe.e889ef8ad4d1ef786704.png" alt="" />
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>2</span></div>
                                     <div>
                                         <p>If on Telegram, visit your chat with the 0x0 Bot, click the Menu, and /alerts option:</p>
                                         <img className='mt-2 w-96' src="https://app.0x0.com/static/media/telegram-unsubscribe-1.e2f8caa28164e38b808d.png" alt="" />
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>3</span></div>
                                     <div>
                                         <p>Then click the Remove Subscription button:</p>
                                         <img className='mt-2' src="https://app.0x0.com/static/media/telegram-unsubscribe-2.cec4559d4712f8d672a9.png" alt="" />
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>4</span></div>
                                     <div>
                                         <p>The Bot will then show you your Subscriptions:</p>
                                         <img className='mt-2' src="https://app.0x0.com/static/media/telegram-unsubscribe-3.ff8404060b346c270dcb.png" alt="" />
                                     </div>
                                 </li>
-                                <li className='flex gap-5'>
+                                <li className='flex gap-4'>
                                     <div><span>5</span></div>
                                     <div>
                                         <p> Click one, and then it will confirm that the Subscription has been removed:</p>

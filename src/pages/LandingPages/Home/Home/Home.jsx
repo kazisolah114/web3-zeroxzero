@@ -25,7 +25,6 @@ const Home = () => {
                 <link rel="canonical" href="http://www.0x0.com/" />
             </Helmet>
             <HeroSection />
-            {/* <FeaturedOn /> */}
             <HowItWorks  />
             <TokenStats />
             <StackedCards />

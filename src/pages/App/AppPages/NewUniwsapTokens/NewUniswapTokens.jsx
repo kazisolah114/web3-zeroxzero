@@ -21,7 +21,6 @@ const NewUniswapTokens = () => {
             } catch (err) {
                 console.error('Error fetching new tokens:', err);
             } finally {
-                setLoading(false);
             }
         };
         fetchingNewTokens();
@@ -45,7 +44,7 @@ const NewUniswapTokens = () => {
         <div className=''>
             <TokenDetail tokenDetail={tokenDetail} setTokenDetail={setTokenDetail} />
             <div className="new-tokens-header market-update-top mb-10 flex items-center justify-between">
-                <h2 className='text-2xl text-white font-bold'>New Uniswap Listings</h2>
+                <h2 className='text-2xl text-light font-bold'>New Uniswap Listings</h2>
                 <div className='flex items-center gap-3 rounded-full text-light py-3 px-4 bg-[#122036]'>
                     <HiOutlineMagnifyingGlass />
                     <input

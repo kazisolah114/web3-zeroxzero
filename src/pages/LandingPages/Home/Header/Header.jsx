@@ -17,7 +17,6 @@ const Header = () => {
             // Remove the class from body when menu is hidden
             document.body.classList.remove('no-scroll');
         }
-
         // Clean up by removing the class when the component unmounts
         return () => {
             document.body.classList.remove('no-scroll');
@@ -41,11 +40,11 @@ const Header = () => {
                         }
                     </button>
                     <div className={`header-menu flex items-center justify-between ${showResponsiveMenu ? 'show' : 'hide'}`}>
-                        <div className=''>
+                        <div>
                             <div className={`menu-logo mb-4 pb-4 border-b border-gray-700 border-opacity-50 ${showResponsiveMenu ? 'show' : 'hide'}`}>
                                 <Link to="/"><img className='w-28' src="https://i.ibb.co/hf991LQ/0x0-logo-2.png" alt="" /></Link>
                             </div>
-                            <Navbar />
+                            <Navbar setShowResponsiveMenu={setShowResponsiveMenu} />
                         </div>
                         <LanguageSelector />
                     </div>

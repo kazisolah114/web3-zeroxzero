@@ -10,7 +10,9 @@ const HowItWorks = () => {
         { image: "/images/btc-mining.png", step: "STEP 4", title: "Earn Money", desc: "Unlock your financial potential with our AI-driven trading platform" }
     ]
     return (
-        <div className='how-it-works py-24 container'  data-aos="fade-up" data-aos-duration="1000">
+        <div className='how-it-works py-24 container relative' 
+        // data-aos="fade-up" data-aos-duration="1000"
+        >
             <SectionHeader sectionTitle={"How We_ Work"} sectionDesc={"We work together effectively, using clear processes to achieve outstanding outcomes"} />
             <div className="howitworks-content grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
                 {

@@ -5,6 +5,7 @@ import { HiOutlinePlayCircle } from 'react-icons/hi2';
 import './AboutUs.css';
 import BackgroundShadow from '../../../../components/CommonComponents/BackgroundShadow/BackgroundShadow';
 import Lottie from 'react-lottie';
+import { Link } from 'react-router-dom';
 
 
 
@@ -34,7 +35,9 @@ const AboutUs = () => {
         speed: 5000,
     };
     return (
-        <div className='aboutus-section py-24 container' data-aos="fade-up" data-aos-duration="1000">
+        <div className='aboutus-section py-24 container'
+        // data-aos="fade-up" data-aos-duration="1000"
+        >
             <SectionHeader sectionTitle={"About Us_"} sectionDesc={"Learn more about who we are, our mission, and how we're making a difference"} />
             <div className="aboutus-content relative  flex items-center gap-10 justify-between" >
                 <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
@@ -48,12 +51,15 @@ const AboutUs = () => {
                         We address a critical issue in copy trading. While copy trading is not a new concept, centralized copy trading platforms pose risks of market manipulation, particularly with low-volume tokens. At 0x0, traders are unaware they're being followed, ensuring trades are solely based on blockchain data, mitigating manipulation risks. 0x0 is a game-changing decentralized trading app that harnesses the power of cutting-edge algorithms to detect profitable trading patterns for you.
                     </p>
                     <div className='flex buttons'>
-                        <button className='primary-button-outline'>More About Us</button>
-                        <button className='text-gray ml-6 text-xl hover:text-light duration-200 flex items-center gap-2'><HiOutlinePlayCircle className='relative top-[2px]' />How we work</button>
+                        <Link to="/aboutus" className='bg-transparent border border-[#12AFAF] hover:bg-secondaryHover duration-200 px-8 py-3 text-white font-semibold rounded-full '>More About Us</Link>
+                        <button className='text-secondary ml-6 text-xl duration-200 flex items-center gap-2'>
+                            <HiOutlinePlayCircle className='relative top-[2px] icon-glow' />
+                            How we work
+                        </button>
                     </div>
                 </div>
                 <div className='w-2/5 aboutus-image  flex justify-end text-right '>
-                    <Lottie options={defaultOptions}  />
+                    <Lottie options={defaultOptions} />
                 </div>
             </div>
         </div>

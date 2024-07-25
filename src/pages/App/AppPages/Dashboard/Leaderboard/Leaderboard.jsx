@@ -25,7 +25,7 @@ const Leaderboard = () => {
 
 
     const leaderboard = useLeaderboard();
-    const { leaderboards, setInterval, isLoading } = leaderboard;
+    const { leaderboards, setInterval, isLoading, error } = leaderboard;
     const [tracking, setTracking] = useState(false);
     const [trackingList, setTrackingList] = useState([]);
     const handleTrackWallet = (wallet) => {
@@ -37,11 +37,11 @@ const Leaderboard = () => {
             notify();
         }
     }
-
+    
     return (
         <div className='leaderboard-main '>
             <ToastContainer />
-            <AppSectionHeader setInterval={setInterval} header={"Some of our top performers"} details={"Find out the top performers at 0x0 from last one month or 15 days and track any desired wallet"} defaultBtn={"Monthly"} secondBtn={"Weekly"} />
+            <AppSectionHeader setInterval={setInterval} details={"Find out the top performers at 0x0 from last one month or 15 days and track any desired wallet"} defaultBtn={"Monthly"} secondBtn={"Weekly"} />
             {isLoading ?
                 <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
                     <div className=" grid md:grid-cols-2 " style={{ gap: "30px" }}>
@@ -69,6 +69,13 @@ const Leaderboard = () => {
                         </div>
                     </div>
                 </SkeletonTheme>
+                : error
+                ?
+                <div className="error-message flex flex-col gap-3 justify-center items-center ">
+                    <img src="/images/error-robot.png" alt="" className='w-80 mb-5' />
+                    <h3 className='font-semibold text-[#ed615b] text-xl'>An error has occured while fetching data!</h3>
+                    <p className='text-gray'>Pleae refresh the page or try again later</p>
+                </div>
                 :
                 <div className="leaderboard relative flex justify-between flex-wrap">
                     {

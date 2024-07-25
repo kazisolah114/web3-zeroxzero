@@ -54,7 +54,7 @@ const UserProfile = () => {
                     <div className='email mt-5 bg-[#122036] p-5 rounded-md'>
                         <h2 className='text-lg text-light font-semibold mb-2'>Email Address <span className='text-sm font-light'>(Enter email to get tracking notifications and so on)</span></h2>
                         <div className='flex items-center gap-3'>
-                            <input type="email" placeholder='Type email address ' className='w-full rounded px-2 py-2 text-dark font-semibold outline-none' />
+                            <input type="email" placeholder='Type email address ' className='w-full rounded px-2 py-2 text-dark  outline-none' />
                             <input type="submit" value="Save" className='cursor-pointer bg-secondaryHover hover:bg-secondary duration-200 font-semibold px-8 py-2 rounded-md' />
                         </div>
                     </div>
@@ -77,7 +77,6 @@ const UserProfile = () => {
                 </div>
             </div>
             <div className="tracking-list rounded-md mt-10">
-                <h2 className='text-lg text-light font-semibold '>Wallet Tracking List</h2>
                 <TrackingList />
             </div>
 

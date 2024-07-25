@@ -5,6 +5,7 @@ const useLeaderboard = () => {
     const [leaderboards, setLeaderboards] = useState([]);
     const [interval, setInterval] = useState('30d');
     const [error, setError] = useState(null);
+
     useEffect(() => {
         const targetWallets = {
             wbtc: "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
@@ -15,17 +16,20 @@ const useLeaderboard = () => {
 
         const fetchLeaderboardSequentially = async () => {
             setIsLoading(true);
-            setError(null);
+            setError(null); // Reset error state
             const combinedData = [];
 
             for (const [token, wallet] of Object.entries(targetWallets)) {
                 try {
                     const response = await fetch(`https://leaderboard.0x0.com/top?token=${wallet}&interval=${interval}`);
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch data for ${token}`);
+                    }
                     const data = await response.json();
                     combinedData.push({ token, wallet, data });
-                } catch (error) {
-                    setError(error);
-                    break;
+                } catch (err) {
+                    console.error(`Error fetching leaderboard for ${token}:`, err);
+                    setError(`Error fetching leaderboard for ${token}: ${err.message}`);
                 }
             }
 

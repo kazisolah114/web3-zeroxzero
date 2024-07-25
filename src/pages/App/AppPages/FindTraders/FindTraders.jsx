@@ -62,10 +62,7 @@ const FindTraders = () => {
 
 
     const [showSearchResult, setShowSearchResult] = useState(false);
-    const handleShowSearchResult = () => {
-        setShowSearchResult(true);
-    }
-
+    const [renderResult, setRenderResult] = useState(false);
 
     return (
         <div className='find-traders'>
@@ -74,7 +71,7 @@ const FindTraders = () => {
                 <title>Find Traders | 0x0.com</title>
                 <link rel="canonical" href="https://0x0.com" />
             </Helmet>
-            <AppSectionHeader header={"Search For Custom Leaders"} details={"Choose your base and target currencies to return a list of the top performers within your selected time period"} />
+            <AppSectionHeader details={"Find top performers by selecting custom base and target currencies within your desired time period"} />
             <SearchDayCount />
             <div className="find-traders-content">
                 <div className="search-content">
@@ -145,7 +142,7 @@ const FindTraders = () => {
                                 </p>
                             </div>
                             {clickedTime &&
-                                <div className='absolute top-full w-full bg-gray-800'>
+                                <div className='absolute top-full w-full bg-gray-800 z-[3]'>
                                     <ul className=''>
                                         {
                                             timePeriod.map((time, index) => <li
@@ -164,12 +161,15 @@ const FindTraders = () => {
                             }
                         </div>
                         <div className="item flex items-end">
-                            <button onClick={handleShowSearchResult} className='bg-secondaryHover hover:bg-secondary duration-200 w-full font-semibold py-[13px] rounded-md'>Search Now</button>
+                            <button onClick={() => (
+                                setShowSearchResult(true),
+                                setRenderResult(!renderResult)
+                            )} className='bg-secondaryHover hover:bg-secondary duration-200 w-full font-semibold py-[13px] rounded-md'>Search Now</button>
                         </div>
                     </div>
                 </div>
                 {showSearchResult &&
-                    <SearchResult selectedBase={selectedBase} selectedTarget={selectedTarget} selectedTime={selectedTime} />
+                    <SearchResult selectedBase={selectedBase} selectedTarget={selectedTarget} selectedTime={selectedTime} renderResult={renderResult} />
                 }
             </div>
         </div>
