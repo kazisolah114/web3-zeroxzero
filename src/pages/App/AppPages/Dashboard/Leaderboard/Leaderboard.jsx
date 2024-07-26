@@ -73,7 +73,7 @@ const Leaderboard = () => {
                 ?
                 <div className="error-message flex flex-col gap-3 justify-center items-center ">
                     <img src="/images/error-robot.png" alt="" className='w-80 mb-5' />
-                    <h3 className='font-semibold text-[#ed615b] text-xl'>An error has occured while fetching data!</h3>
+                    <h3 className='font-semibold text-[#ed615b] text-xl text-center'>An error has occured while fetching data!</h3>
                     <p className='text-gray'>Pleae refresh the page or try again later</p>
                 </div>
                 :

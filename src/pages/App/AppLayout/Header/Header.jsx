@@ -5,11 +5,10 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import { useUserContext } from '../../../../ContextAPI/UserContext';
 
-const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
+const Header = ({ showResponsiveMenu, setShowResponsiveMenu, setOutletHeight }) => {
     const [userProfileClicked, setUserProfileClicked] = useState(false);
 
     const {wallet, balance, handleConnectWallet, handleDisconnectWallet } = useUserContext();
-
     return (
         <div className='app-header w-full py-5 justify-between flex items-center px-5'>
             <div className="menu-vs-socials">
@@ -73,7 +72,7 @@ const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
                 </div>
                 :
                 <div className="connect-metamask ">
-                    <button onClick={handleConnectWallet} className=' bg-secondary hover:bg-[#12AFAF] duration-200 w-44 h-10 rounded-full font-semibold'>Connect MetaMask</button>
+                    <button onClick={handleConnectWallet} className='flex items-center justify-center gap-1 bg-transparent border border-[#12AFAF] text-light hover:bg-[#12AFAF] duration-200 w-44 h-12 rounded-md font-bold'>Connect wallet <img src="/images/metamask-logo.png" alt="" className='w-6' /></button>
                 </div>
             }
 

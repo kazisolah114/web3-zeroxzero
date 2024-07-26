@@ -41,7 +41,7 @@ const TokenConvert = ({ tokenPrice }) => {
                     </p>
                 </div>
                 {clicked &&
-                    <div className='absolute z-10 top-9 w-full bg-gray-800'>
+                    <div className='absolute z-10 top-9 w-full bg-gray-800 shadow-xl shadow-gray-900 '>
                         <ul className=''>
                             {
                                 languages.map((language, index) => <li

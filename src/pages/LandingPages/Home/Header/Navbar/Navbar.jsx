@@ -8,31 +8,31 @@ const Navbar = ({setShowResponsiveMenu}) => {
     const navs = [
         {
             title: "Purpose", items: [
-                { icon: <HiOutlineDatabase />, name: "Trade Masters Table", desc: "Lorem ipsum doler semit", link: "/trade-table" },
-                { icon: <HiOutlineCurrencyDollar />, name: "Quantum Profit Scanner", desc: "Lorem ipsum doler semit", link: "/profit-scanner" },
-                { icon: <HiOutlineChip />, name: "AI Arb Scout", desc: "Lorem ipsum doler semit", link: "/arb-scout" },
-                { icon: <HiOutlineLightBulb />, name: "Chain Trace Pro", desc: "Lorem ipsum doler semit", link: "/chain-trace" },
-                { icon: <HiOutlineCurrencyYen />, name: "Cryptoscore Pro", desc: "Lorem ipsum doler semit", link: "/cryptoscore" }
+                { icon: <HiOutlineDatabase />, name: "Trade Masters Table", desc: "Trade insights and analytics", link: "/trade-table" },
+                { icon: <HiOutlineCurrencyDollar />, name: "Quantum Profit Scanner", desc: "Profit scanning tool", link: "/profit-scanner" },
+                { icon: <HiOutlineChip />, name: "AI Arb Scout", desc: "AI-driven arbitrage scout", link: "/arb-scout" },
+                { icon: <HiOutlineLightBulb />, name: "Chain Trace Pro", desc: "Blockchain tracing tool", link: "/chain-trace" },
+                { icon: <HiOutlineCurrencyYen />, name: "Cryptoscore Pro", desc: "Crypto scoring tool", link: "/cryptoscore" }
             ]
         },
         {
             title: "Hybrid AI Tech", items: [
-                { icon: <HiOutlineCurrencyYen />, name: "Crypto Guardian", desc: "Lorem ipsum doler semit", link: "/trade-table" },
-                { icon: <HiOutlineCalculator />, name: "Sectors Seasons Charge", desc: "Lorem ipsum doler semit", link: "/profit-scanner" },
-                { icon: <HiOutlineLightBulb />, name: "Block Trend Illuminator", desc: "Lorem ipsum doler semit", link: "/arb-scout" },
-                { icon: <HiOutlineScale />, name: "Project Trend Predictor", desc: "Lorem ipsum doler semit", link: "/chain-trace" }
+                { icon: <HiOutlineCurrencyYen />, name: "Crypto Guardian", desc: "Crypto monitoring tool", link: "/trade-table" },
+                { icon: <HiOutlineCalculator />, name: "Sectors Seasons Charge", desc: "Sector analysis tool", link: "/profit-scanner" },
+                { icon: <HiOutlineLightBulb />, name: "Block Trend Illuminator", desc: "Blockchain trend analysis", link: "/arb-scout" },
+                { icon: <HiOutlineScale />, name: "Project Trend Predictor", desc: "Project trend forecasting", link: "/chain-trace" }
             ]
         },
         { title: "Ethical Consideration", link: "/consideration" },
         { title: "Blogs", link: "/blogs" },
         {
             title: "Company", items: [
-                { icon: <HiOutlineOfficeBuilding />, name: "About 0x0", desc: "Lorem ipsum doler semit", link: "/aboutus" },
-                { icon: <HiOutlineUsers />, name: "Our Team", desc: "Lorem ipsum doler semit", link: "/our-team" },
-                { icon: <HiOutlineQuestionMarkCircle />, name: "Support", desc: "Lorem ipsum doler semit", link: "/support" },
-                { icon: <HiOutlineMap />, name: "Roadmap", desc: "Lorem ipsum doler semit", link: "/roadmap" },
-                { icon: <HiOutlineDocumentText />, name: "Publications", desc: "Lorem ipsum doler semit", link: "/publications" },
-                { icon: <HiOutlineBriefcase />, name: "Careers", desc: "Lorem ipsum doler semit", link: "/careers" }
+                { icon: <HiOutlineOfficeBuilding />, name: "About 0x0", desc: "Learn company background", link: "/aboutus" },
+                { icon: <HiOutlineUsers />, name: "Our Team", desc: "Meet the team", link: "/our-team" },
+                { icon: <HiOutlineQuestionMarkCircle />, name: "Support", desc: "Get customer support", link: "/support" },
+                { icon: <HiOutlineMap />, name: "Roadmap", desc: "Our roadmap and future plans", link: "/roadmap" },
+                { icon: <HiOutlineDocumentText />, name: "Publications", desc: "Read some publications", link: "/publications" },
+                { icon: <HiOutlineBriefcase />, name: "Careers", desc: "Join our team", link: "/careers" }
             ]
         }
     ];
