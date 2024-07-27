@@ -7,7 +7,6 @@ import { Helmet } from 'react-helmet';
 
 const AppLayout = () => {
     const [showResponsiveMenu, setShowResponsiveMenu] = useState(false);
-    const [outletHeight, setOutletHeight] = useState(88);
     return (
         <main className=' app-main  '>
             <Helmet>
@@ -19,8 +18,8 @@ const AppLayout = () => {
                 <div className='flex'>
                     <Sidebar showResponsiveMenu={showResponsiveMenu} setShowResponsiveMenu={setShowResponsiveMenu} />
                     <div className='flex flex-col w-full'>
-                        <Header showResponsiveMenu={showResponsiveMenu} setShowResponsiveMenu={setShowResponsiveMenu} setOutletHeight={setOutletHeight} />
-                        <div className={`outlet p-5 h-[calc(100vh-${outletHeight}px)] overflow-auto outlet-scrollbar`}>
+                        <Header showResponsiveMenu={showResponsiveMenu} setShowResponsiveMenu={setShowResponsiveMenu} />
+                        <div className={`outlet p-5 h-[calc(100vh-88px)] overflow-auto outlet-scrollbar`}>
                             <Outlet />
                         </div>
                     </div>

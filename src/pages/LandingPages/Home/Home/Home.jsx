@@ -15,6 +15,7 @@ import BlogsSection from '../BlogsSection/BlogsSection';
 import Publications from '../Publications/Publications';
 import FeaturedOn from '../FeaturedOn/FeaturedOn';
 import StackedCards from '../StackedCards/StackedCards';
+import Faq from '../../Company/Support/Faq';
 
 const Home = () => {
     return (

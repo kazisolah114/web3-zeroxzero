@@ -7,9 +7,6 @@ import BackgroundShadow from '../../../../components/CommonComponents/Background
 import Lottie from 'react-lottie';
 import { Link } from 'react-router-dom';
 
-
-
-
 const AboutUs = () => {
     const animationDataUrl = 'https://lottie.host/f7d73fa5-8827-402e-a710-053cb3873d97/MhjJdXMBat.json';
     const [animationData, setAnimationData] = React.useState(null);

@@ -50,8 +50,9 @@ const Testimonials = () => {
     };
 
     return (
-        <div className='testimonials-section py-24 container' data-aos="fade-up"
-         data-aos-duration="1000">
+        <div className='testimonials-section py-24 container'
+        // data-aos="fade-up" data-aos-duration="1000"
+        >
             <div className="testimonials-content flex gap-20 items-center justify-between">
                 <div className="testimonials-info relative w-[50%]">
                     <BackgroundShadow customShadow="0px 0px 400px  50px #1181E8" />

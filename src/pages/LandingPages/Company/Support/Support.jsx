@@ -2,13 +2,14 @@ import React from 'react';
 import { HiOutlineLocationMarker, HiOutlineMailOpen, HiOutlinePhone } from 'react-icons/hi';
 import './Support.css'
 import SectionHeader from '../SectionHeader/SectionHeader';
+import Faq from './Faq';
 
 const Support = () => {
     return (
         <div className="support-page container  py-24">
             <SectionHeader header={"Got a question?"} brief={"Feel free to contact us, anytime."} />
-            <div className="support grid grid-cols-[2fr_1fr] items-center gap-10">
-                <form action="" className='bg-[#0d10184d] border border-gray-700 border-opacity-80 rounded-md p-10 '>
+            <div className="support grid grid-cols-[2fr_1fr] items-center gap-10 max-lg:grid-cols-1">
+                <form action="" className='bg-[#0d10184d] border border-gray-700 border-opacity-80 rounded-md p-10 max-sm:p-5 '>
                     <div className='grid grid-cols-2 gap-5'>
                         <div className='flex flex-col gap-2'>
                             <label htmlFor="first_name" className='text-light '>First Name</label>
@@ -32,7 +33,7 @@ const Support = () => {
                         <textarea rows={10} name="" id="message" placeholder='Type here' className=' w-full '></textarea>
                     </div>
                     <div>
-                        <button className='w-44 h-12 flex items-center justify-center  bg-secondary hover:bg-secondaryHover duration-200 font-semibold rounded-[4px] mt-10'>Send Message</button>
+                        <button className='w-44 max-sm:w-full h-12 flex items-center justify-center  bg-secondary hover:bg-secondaryHover duration-200 font-semibold rounded-[4px] mt-10'>Send Message</button>
                     </div>
                 </form>
                 <aside className='rounded-md '>
@@ -66,6 +67,9 @@ const Support = () => {
                         </div>
                     </div>
                 </aside>
+            </div>
+            <div className='mt-24'>
+                <Faq />
             </div>
         </div>
     );

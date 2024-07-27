@@ -3,10 +3,12 @@ import Marquee from 'react-fast-marquee';
 
 const FeaturedOn = () => {
     return (
-        <div className='featured-on py-24 ' data-aos="fade-up" data-aos-duration="1000">
-            {/* <div className="featuredon-header text-center mb-20">
-                <h3 className='text-white uppercase text-md font-semibold'>Featured On</h3>
-            </div> */}
+        <div className='featured-on py-14 ' 
+        // data-aos="fade-up" data-aos-duration="1000"
+        >
+            <div className="featuredon-header text-center mb-20">
+                <h3 className='text-white text-2xl font-semibold'>Featured On and Trusted By</h3>
+            </div>
             <Marquee className='gap-20'>
                 <div className='flex gap-20 sm:gap-64 items-center'>
                     <div className='w-32 '><img className='w-full h-10' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf08pZMf956akuJksGlWWeEbTlWkbvniQQXg&s" alt="" /></div>
