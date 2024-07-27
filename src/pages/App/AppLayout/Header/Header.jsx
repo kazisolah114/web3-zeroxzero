@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import { useUserContext } from '../../../../ContextAPI/UserContext';
 
-const Header = ({ showResponsiveMenu, setShowResponsiveMenu, setOutletHeight }) => {
+const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
     const [userProfileClicked, setUserProfileClicked] = useState(false);
-
     const {wallet, balance, handleConnectWallet, handleDisconnectWallet } = useUserContext();
     return (
         <div className='app-header w-full py-5 justify-between flex items-center px-5'>

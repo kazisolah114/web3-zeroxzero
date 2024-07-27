@@ -45,7 +45,7 @@ const Blogs = () => {
                 }
             </div>
             <div className="show-more mt-24 ">
-                <button className='text-dark hover:text-white bg-secondary hover:bg-secondaryHover duration-200 font-semibold px-10 py-3 rounded-sm '>Show More</button>
+                <button className='text-dark  bg-secondary hover:bg-secondaryHover duration-200 font-semibold px-10 py-3 rounded-md '>Show More</button>
             </div>
         </div>
     );

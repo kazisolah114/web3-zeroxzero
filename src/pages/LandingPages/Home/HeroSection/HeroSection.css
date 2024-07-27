@@ -4,6 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 1;
+    
 }
 .hero-section::before {
     content: '';
@@ -29,7 +30,6 @@
 .hero-container{
     height: 90vh;
 }
-.hero-container .hero-texts{}
 .hero-container .hero-texts h1{
     line-height: 48px;
 }
@@ -52,4 +52,141 @@
 }
 
 
-/* Text Animations */
+
+
+
+
+@keyframes move1 {
+    0% { transform: translate(0, 0); opacity: 0.7; }
+    50% { transform: translate(80px, 80px); opacity: 1; }
+    100% { transform: translate(0, 0); opacity: 0.7; }
+}
+
+@keyframes move2 {
+    0% { transform: translate(0, 0); opacity: 0.7; }
+    50% { transform: translate(-80px, 80px); opacity: 1; }
+    100% { transform: translate(0, 0); opacity: 0.7; }
+}
+
+@keyframes move3 {
+    0% { transform: translate(0, 0); opacity: 0.7; }
+    50% { transform: translate(100px, -60px); opacity: 1; }
+    100% { transform: translate(0, 0); opacity: 0.7; }
+}
+
+@keyframes move4 {
+    0% { transform: translate(0, 0); opacity: 0.7; }
+    50% { transform: translate(-100px, -100px); opacity: 1; }
+    100% { transform: translate(0, 0); opacity: 0.7; }
+}
+
+@keyframes move5 {
+    0% { transform: translate(0, 0); opacity: 0.7; }
+    50% { transform: translate(60px, -120px); opacity: 1; }
+    100% { transform: translate(0, 0); opacity: 0.7; }
+}
+
+@keyframes move6 {
+    0% { transform: translate(0, 0); opacity: 0.7; }
+    50% { transform: translate(-120px, 60px); opacity: 1; }
+    100% { transform: translate(0, 0); opacity: 0.7; }
+}
+
+@keyframes move7 {
+    0% { transform: translate(0, 0); opacity: 0.7; }
+    50% { transform: translate(80px, -80px); opacity: 1; }
+    100% { transform: translate(0, 0); opacity: 0.7; }
+}
+
+@keyframes move8 {
+    0% { transform: translate(0, 0); opacity: 0.7; }
+    50% { transform: translate(-60px, 100px); opacity: 1; }
+    100% { transform: translate(0, 0); opacity: 0.7; }
+}
+
+@keyframes move9 {
+    0% { transform: translate(0, 0); opacity: 0.7; }
+    50% { transform: translate(120px, 60px); opacity: 1; }
+    100% { transform: translate(0, 0); opacity: 0.7; }
+}
+
+@keyframes move10 {
+    0% { transform: translate(0, 0); opacity: 0.7; }
+    50% { transform: translate(-80px, -40px); opacity: 1; }
+    100% { transform: translate(0, 0); opacity: 0.7; }
+}
+
+.particle-light {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background:  rgba(0, 255, 255, 0.392);
+    box-shadow: 0 0 9px 3px rgba(0, 255, 255, 0.91);
+    animation: particleMove 15s ease-in-out infinite;
+}
+
+.light-1 {
+    top: 80%;
+    left: 20%;
+    animation: move1 15s ease-in-out infinite;
+}
+
+.light-2 {
+    top: 30%;
+    right: 40%;
+    animation: move2 15s ease-in-out infinite;
+}
+
+.light-3 {
+    top: 50%;
+    left: 60%;
+    animation: move3 15s ease-in-out infinite;
+}
+
+.light-4 {
+    top: 70%;
+    left: 80%;
+    animation: move4 15s ease-in-out infinite;
+}
+
+.light-5 {
+    top: 20%;
+    right: 70%;
+    animation: move5 15s ease-in-out infinite;
+}
+
+.light-6 {
+    top: 60%;
+    left: 20%;
+    animation: move6 15s ease-in-out infinite;
+}
+
+.light-7 {
+    top: 20%;
+    left: 40%;
+    animation: move7 15s ease-in-out infinite;
+}
+
+.light-8 {
+    top: 40%;
+    right: 50%;
+    animation: move8 15s ease-in-out infinite;
+}
+
+.light-9 {
+    top: 10%;
+    left: 30%;
+    animation: move9 15s ease-in-out infinite;
+}
+
+.light-10 {
+    top: 50%;
+    right: 10%;
+    animation: move10 15s ease-in-out infinite;
+}
+
+
+
+
+

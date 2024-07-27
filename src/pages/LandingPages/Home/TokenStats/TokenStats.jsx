@@ -23,14 +23,6 @@ const TokenStats = () => {
         setSelectedButton(button);
         setFlipLogo(!flipLogo);
     }
-    const [tokenData, setTokenData] = useState({});
-    useEffect(() => {
-        fetch('/tokenstats.json')
-            .then(res => res.json())
-            .then(data => {
-                setTokenData(data);
-            })
-    }, [])
 
     const [flip, setFlip] = useState({ x: 0, y: 0 });
     const imageRef = useRef(null);
@@ -54,13 +46,19 @@ const TokenStats = () => {
             }
         };
 
+        const handleMouseLeave = () => {
+            setFlip({ x: 0, y: 0 });
+        };
+
         if (imageRef.current) {
             imageRef.current.addEventListener('mousemove', handleMouseMove);
+            imageRef.current.addEventListener('mouseleave', handleMouseLeave);
         }
 
         return () => {
             if (imageRef.current) {
                 imageRef.current.removeEventListener('mousemove', handleMouseMove);
+                imageRef.current.removeEventListener('mouseleave', handleMouseLeave);
             }
         };
     }, []);

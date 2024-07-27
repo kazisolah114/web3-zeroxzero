@@ -21,12 +21,12 @@ const Jobs = () => {
                 {
                     jobs.map(job => (
                         <li key={job.id} className='mb-5 last:mb-0 cursor-pointer p-4 border border-gray-700 border-opacity-80 hover:shadow-lg hover:shadow-gray-950  duration-200 rounded-md group' onClick={() => handleJobClick(job)}>
-                            <h3 className='text-white font-semibold text-xl group-hover:underline '>{job.title}</h3>
+                            <h3 className='text-secondary font-semibold text-xl group-hover:underline '>{job.title}</h3>
                             <div className='my-2'>
-                                <p className='text-light flex items-center gap-1'><HiOutlineLocationMarker /> {job.address}</p>
-                                <p className='text-light flex items-center gap-1'><HiOutlineCash class /> {job.salary}</p>
+                                <p className='text-slate-300 flex items-center gap-1 '><HiOutlineLocationMarker className='text-secondary' /> {job.address}</p>
+                                <p className='text-slate-300 flex items-center gap-1'><HiOutlineCash  className='text-secondary' /> {job.salary}</p>
                             </div>
-                            <p className='text-light '>{job.job_description.slice(0, 100)}...</p>
+                            <p className='text-gray '>{job.job_description.slice(0, 100)}...</p>
                         </li>
                     ))
                 }

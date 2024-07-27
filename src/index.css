@@ -53,3 +53,11 @@
 }
 
 
+.text-linear{
+    background: -webkit-linear-gradient(60deg, #00C7B7, #BA00B0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.bg-linear{
+    background: -webkit-linear-gradient(290deg, #00C7B7, #ba00b0d1);
+}

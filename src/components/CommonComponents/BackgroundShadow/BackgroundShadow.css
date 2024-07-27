@@ -32,9 +32,7 @@
     position: absolute;
     top: 120px;
     right: 20px;
-    /* From https://css.glass */
     backdrop-filter: blur(20.5px);
     -webkit-backdrop-filter: blur(20.5px);
     animation: moveBackgroundShadow 15s ease-in-out infinite;
-    /* Adjust the duration as needed */
 }

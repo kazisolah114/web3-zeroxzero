@@ -1,14 +1,12 @@
 import React from 'react';
 import { HiOutlineLocationMarker, HiOutlineMailOpen, HiOutlinePhone } from 'react-icons/hi';
 import './Support.css'
+import SectionHeader from '../SectionHeader/SectionHeader';
 
 const Support = () => {
     return (
-        <div className="support-page container  py-14">
-            <div className="support-page-header mb-14">
-                <h1 className='text-white text-5xl mb-5 font-bold '>Got a question?</h1>
-                <p className='text-light text-3xl font-semibold '>Feel free to contact us, anytime.</p>
-            </div>
+        <div className="support-page container  py-24">
+            <SectionHeader header={"Got a question?"} brief={"Feel free to contact us, anytime."} />
             <div className="support grid grid-cols-[2fr_1fr] items-center gap-10">
                 <form action="" className='bg-[#0d10184d] border border-gray-700 border-opacity-80 rounded-md p-10 '>
                     <div className='grid grid-cols-2 gap-5'>

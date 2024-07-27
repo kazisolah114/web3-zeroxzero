@@ -5,15 +5,14 @@ import { HiArrowSmRight, HiOutlineArrowRight } from "react-icons/hi";
 import BackgroundShadow from '../../../../components/CommonComponents/BackgroundShadow/BackgroundShadow';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
+import ParticleLights from './ParticleLights';
 
 const HeroSection = () => {
 
     return (
-        <div className='hero-section'>
-            {/* <video playsInline autoplay="true" muted  loop className="hero-video">
-                <source src="https://tectum.io/wp-content/uploads/2023/10/tectum-site_hero-screen-1.mp4" type="video/mp4" />
-            </video> */}
-            <div className="hero-container container flex items-center justify-between">
+        <div className='hero-section relative'>
+            <ParticleLights />
+            <div className="hero-container container flex items-center justify-between gap-10">
                 <div className="hero-texts  w-[50%]" 
                 // data-aos="flip-left" data-aos-duration="1000"
                 >

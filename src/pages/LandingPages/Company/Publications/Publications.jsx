@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { HiOutlineCalendar } from 'react-icons/hi2';
 import { useNavigationType } from 'react-router-dom';
+import SectionHeader from '../SectionHeader/SectionHeader';
 
 const Publications = () => {
     const [publications, setPublications] = useState([]);
@@ -20,11 +21,8 @@ const Publications = () => {
         }
     }
     return (
-        <div className='publications-page container py-14'>
-            <div className="publications-page-header mb-14">
-                <h1 className='text-white text-5xl mb-5 font-bold '>0x0 Publications</h1>
-                <p className='text-light text-3xl font-semibold '>Publications about 0x0.com platform</p>
-            </div>
+        <div className='publications-page container py-24'>
+            <SectionHeader header={"0x0 Publications"} brief={"Publications about 0x0.com platform"} />
             <div className="publications mt-10 grid lg:grid-cols-2 gap-10">
                 {
                     publications.map((item, index) => (

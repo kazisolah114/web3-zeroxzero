@@ -1,47 +1,5 @@
 [
     {
-        "id": "1",
-        "banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUyBnOnrh04i_5v7pTTqEjY0tOyGPOyN64cff3TI8FUw&s",
-        "category": "News & Events",
-        "title": "Start a new journey with cryptocurency with the help of 0x0 and learn all ",
-        "author": "Team 0X0",
-        "reading_time": "9 Minutes",
-        "blog_content": [
-            {
-                "section_title": "The Evolution of Authentication",
-                "section_details": "The first authentication process involved word of mouth and focused on trust. To access details, people only needed to claim to have the required authority. However, criminals learned about this method and began abusing it. In response, organizations shifted to the use of paperwork. Before one could access privy information, they had to provide documents as proof of authority. As issues with this method arose, databases were introduced, allowing gatekeepers to verify the authenticity of documents against the database. The first authentication process involved word of mouth and focused on trust. To access details, people only needed to claim to have the required authority. However, criminals learned about this method and began abusing it. In response, organizations shifted to the use of paperwork. Before one could access privy information, they had to provide documents as proof of authority. As issues with this method arose, databases were introduced, allowing gatekeepers to verify the authenticity of documents against the database."
-            },
-            {
-                "section_title": "The Evolution of Authentication",
-                "section_details": "The first authentication process involved word of mouth and focused on trust. To access details, people only needed to claim to have the required authority. However, criminals learned about this method and began abusing it. In response, organizations shifted to the use of paperwork. Before one could access privy information, they had to provide documents as proof of authority. As issues with this method arose, databases were introduced, allowing gatekeepers to verify the authenticity of documents against the database. The first authentication."
-            },
-            {
-                "section_title": "Challenges Faced by Traditional Authentication Methods",
-                "section_details": "With the rise of forgery and criminal activity, traditional methods of authentication faced challenges. Criminals exploited the trust-based systems and the paperwork authentication processes. This led to the creation of more robust databases and verification systems. Cryptocurrency emerged as a response to the flaws in traditional financial systems. It offered a decentralized, secure, and transparent method of transaction without the need for intermediaries. This revolutionized the way we perceive and use money in the digital age. Cryptocurrency emerged as a response to the flaws in traditional financial systems. It offered a decentralized, secure, and transparent method of transaction without the need for intermediaries. This revolutionized the way we perceive and use money in the digital age.",
-                "media": [
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUyBnOnrh04i_5v7pTTqEjY0tOyGPOyN64cff3TI8FUw&s",
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWM7uehCaJImbyeKypuOo7tDveMfNdBTfiYS2TUV2kZA&s"
-                ]
-            },
-            {
-                "section_title": "The Birth of Cryptocurrency",
-                "section_details": "Cryptocurrency emerged as a response to the flaws in traditional financial systems. It offered a decentralized, secure, and transparent method of transaction without the need for intermediaries. This revolutionized the way we perceive and use money in the digital age. Cryptocurrency emerged as a response to the flaws in traditional financial systems. It offered a decentralized, secure, and transparent method of transaction without the need for intermediaries. This revolutionized the way we perceive and use money in the digital age."
-            }
-        ],
-        "table_of_contents": [
-            "Introduction",
-            "The Evolution of Authentication",
-            "Challenges Faced by Traditional Authentication Methods",
-            "The Birth of Cryptocurrency",
-            "Conclusion"
-        ],
-        "tags": [
-            "Cryptocurrency",
-            "Authentication",
-            "Digital Currency"
-        ]
-    },
-    {
         "id": "2",
         "banner": "https://t3.ftcdn.net/jpg/04/24/53/50/360_F_424535039_f0HgjloFjZodjP0qDErF6HZrVm7qJ7mo.jpg",
         "category": "Announcements",
@@ -304,48 +262,6 @@
             {
                 "section_title": "The Birth of Cryptocurrency",
                 "section_details": "Cryptocurrency emerged as a response to the flaws in traditional financial systems. It offered a decentralized, secure, and transparent method of transaction without the need for intermediaries. This revolutionized the way we perceive and use money in the digital age."
-            }
-        ],
-        "table_of_contents": [
-            "Introduction",
-            "The Evolution of Authentication",
-            "Challenges Faced by Traditional Authentication Methods",
-            "The Birth of Cryptocurrency",
-            "Conclusion"
-        ],
-        "tags": [
-            "Cryptocurrency",
-            "Authentication",
-            "Digital Currency"
-        ]
-    },
-    {
-        "id": "33",
-        "banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWM7uehCaJImbyeKypuOo7tDveMfNdBTfiYS2TUV2kZA&s",
-        "category": "NFTs",
-        "title": "Dive into the world of cryptocurrency with 0x0 today",
-        "author": "Team 0X0",
-        "reading_time": "6 Minutes",
-        "blog_content": [
-            {
-                "section_title": "The Evolution of Authentication",
-                "section_details": "The first authentication process involved word of mouth and focused on trust. To access details, people only needed to claim to have the required authority. However, criminals learned about this method and began abusing it. In response, organizations shifted to the use of paperwork. Before one could access privy information, they had to provide documents as proof of authority. As issues with this method arose, databases were introduced, allowing gatekeepers to verify the authenticity of documents against the database. Cryptocurrency emerged as a response to the flaws in traditional financial systems. It offered a decentralized, secure, and transparent method of transaction without the need for intermediaries. This revolutionized the way we perceive and use money in the digital age."
-            },
-            {
-                "section_title": "The Evolution of Authentication",
-                "section_details": "The first authentication process involved word of mouth and focused on trust. To access details, people only needed to claim to have the required authority. However, criminals learned about this method and began abusing it. In response, organizations shifted to the use of paperwork. Before one could access privy information, they had to provide documents as proof of authority. As issues with this method arose, databases were introduced, allowing gatekeepers to verify the authenticity of documents against the database. Cryptocurrency emerged as a response to the flaws in traditional financial systems. It offered a decentralized, secure, and transparent method of transaction without the need for intermediaries. This revolutionized the way we perceive and use money in the digital age."
-            },
-            {
-                "section_title": "Challenges Faced by Traditional Authentication Methods",
-                "section_details": "With the rise of forgery and criminal activity, traditional methods of authentication faced challenges. Criminals exploited the trust-based systems and the paperwork authentication processes. This led to the creation of more robust databases and verification systems.",
-                "media": [
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUyBnOnrh04i_5v7pTTqEjY0tOyGPOyN64cff3TI8FUw&s",
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWM7uehCaJImbyeKypuOo7tDveMfNdBTfiYS2TUV2kZA&s"
-                ]
-            },
-            {
-                "section_title": "The Birth of Cryptocurrency",
-                "section_details": "Cryptocurrency emerged as a response to the flaws in traditional financial systems. It offered a decentralized, secure, and transparent method of transaction without the need for intermediaries. This revolutionized the way we perceive and use money in the digital age. Cryptocurrency emerged as a response to the flaws in traditional financial systems. It offered a decentralized, secure, and transparent method of transaction without the need for intermediaries. This revolutionized the way we perceive and use money in the digital age."
             }
         ],
         "table_of_contents": [
