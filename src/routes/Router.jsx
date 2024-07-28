@@ -23,6 +23,7 @@ import Careers from "../pages/LandingPages/Company/Careers/Careers";
 import JobDetails from "../pages/LandingPages/Company/Careers/JobDetails";
 import Support from "../pages/LandingPages/Company/Support/Support";
 import Publications from "../pages/LandingPages/Company/Publications/Publications";
+import Ethical from "../pages/LandingPages/Ethical/Ethical";
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />
+      },
+      {
+        path: "/consideration",
+        element: <Ethical />
       },
       {
         path: '/blogs',

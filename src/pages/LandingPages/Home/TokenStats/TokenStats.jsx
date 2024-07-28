@@ -77,8 +77,8 @@ const TokenStats = () => {
                 {selectedButton == 'coinstats' ?
                     <div className="coins-stats">
                         {isLoading ?
-                            <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
-                                <Skeleton className='py-2 mb-4' count={5} />
+                            <SkeletonTheme baseColor="#191a24" highlightColor="#44444430">
+                                <Skeleton className='py-3 my-2' count={5} />
                             </SkeletonTheme>
                             :
                             <ul>
@@ -113,8 +113,8 @@ const TokenStats = () => {
                             />
                         </div>
                         {isLoading ?
-                            <SkeletonTheme baseColor="#202020" highlightColor="#44444430">
-                                <Skeleton className='py-2 mb-4' count={5} />
+                            <SkeletonTheme baseColor="#191a24" highlightColor="#44444430">
+                                <Skeleton className='py-3 my-2' count={5} />
                             </SkeletonTheme>
                             :
                             <ul>
