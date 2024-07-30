@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const JoinCommunity = () => {
     return (
         <div className='join-community my-16' 
-        // data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000"
+        data-aos="fade-up" data-aos-duration="1000"
         >
             <div className="container">
                 <div className='community-content text-center'>

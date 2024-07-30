@@ -7,7 +7,7 @@ const FeaturedOn = () => {
         // data-aos="fade-up" data-aos-duration="1000"
         >
             <div className="featuredon-header text-center mb-20">
-                <h3 className='text-white text-2xl font-semibold'>Featured On and Trusted By</h3>
+                <h3 className='text-secondary uppercase text-2xl font-semibold'>Featured On and Trusted By</h3>
             </div>
             <Marquee className='gap-20'>
                 <div className='flex gap-20 sm:gap-64 items-center'>

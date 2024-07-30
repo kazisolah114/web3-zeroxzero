@@ -66,7 +66,7 @@ const TokenStats = () => {
 
     return (
         <div className='token-stats py-24 container' 
-        // data-aos="fade-up" data-aos-duration="1000"
+        data-aos="fade-up" data-aos-duration="1000"
         >
             <SectionHeader sectionTitle={"0x0 Token Stats_"} sectionDesc={"Explore the latest 0x0 Token Stats, revealing key metrics and trends to understand the token's performance and community engagement"} />
             <div className="toggler p-[5px] mt-10 mx-auto bg-[#122036] w-[fit-content] rounded-full flex justify-between items-center">

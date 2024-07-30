@@ -8,7 +8,6 @@ export const UserContext = createContext();
 export const useUserContext = () => useContext(UserContext)
 
 export const UserProvider = ({ children }) => {
-    // const { wallet, balance, handleConnectWallet, handleDisconnectWallet, web3, activatingConnector, setActivatingConnector, rpcProvider } = useConnectMetamask();
     const { wallet, balance, tokenBalance, handleConnectWallet, handleDisconnectWallet, web3, activatingConnector, setActivatingConnector } = useConnectMetamask();
     
     // Retrieve wallet from localStorage on component mount
@@ -17,7 +16,7 @@ export const UserProvider = ({ children }) => {
         if (storedWallet) {
             handleConnectWallet(storedWallet);
         }
-    }, [handleConnectWallet]);
+    }, []);
 
     // Save wallet to localStorage when wallet changes
     useEffect(() => {

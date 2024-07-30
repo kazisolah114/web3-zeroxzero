@@ -33,7 +33,7 @@ const AboutUs = () => {
     };
     return (
         <div className='aboutus-section py-24 container'
-        // data-aos="fade-up" data-aos-duration="1000"
+        data-aos="fade-up" data-aos-duration="1000"
         >
             <SectionHeader sectionTitle={"About Us_"} sectionDesc={"Learn more about who we are, our mission, and how we're making a difference"} />
             <div className="aboutus-content relative  flex items-center gap-10 justify-between" >

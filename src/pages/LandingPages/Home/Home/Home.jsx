@@ -13,9 +13,7 @@ import JoinCommunity from '../JoinCommunity/JoinCommunity';
 import TokenStats from '../TokenStats/TokenStats';
 import BlogsSection from '../BlogsSection/BlogsSection';
 import Publications from '../Publications/Publications';
-import FeaturedOn from '../FeaturedOn/FeaturedOn';
 import StackedCards from '../StackedCards/StackedCards';
-import Faq from '../../Company/Support/Faq';
 
 const Home = () => {
     return (

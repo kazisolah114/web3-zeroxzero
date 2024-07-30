@@ -7,10 +7,10 @@ const JobDetails = () => {
     const jobData = location.state?.jobData;
     return (
         <div className="job-details border border-gray-700 border-opacity-80 rounded-md overflow-auto h-[600px] sticky top-[120px] left-0 outlet-scrollbar">
-            <div className="job-details-header flex items-start justify-between p-4 shadow-lg shadow-gray-950">
+            <div className="job-details-header flex justify-between p-4 shadow-lg shadow-gray-950">
                 <div>
                     <h2 className='text-white font-semibold text-2xl mb-3'>{jobData.title}</h2>
-                    <div className='flex gap-5'>
+                    <div className='flex gap-5 flex-start'>
                         <p className='text-slate-300 flex items-center gap-1'><HiOutlineLocationMarker className='text-secondary' /> {jobData.address}</p>
                         <p className='text-slate-300 flex items-center gap-1'><HiOutlineCash className='text-secondary' /> {jobData.salary}</p>
                         <p className='text-slate-300 flex items-center gap-1'><HiOutlineBriefcase className='text-secondary' /> Full-time</p>

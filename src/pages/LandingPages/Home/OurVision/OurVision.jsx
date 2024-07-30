@@ -19,7 +19,7 @@ const OurVision = () => {
     }, [])
     return (
         <div className='ourvision-section py-24 container' 
-            // data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000"
+            data-aos="fade-up" data-aos-duration="1000"
             >
             <div className="ourvision-content relative flex flex-row-reverse gap-20 items-center justify-between">
                 <div className="vision-info relative w-[50%]">

@@ -1,5 +1,4 @@
 import React from 'react';
-import './OurTeam.css'
 import { Link } from 'react-router-dom';
 import SectionHeader from '../SectionHeader/SectionHeader';
 

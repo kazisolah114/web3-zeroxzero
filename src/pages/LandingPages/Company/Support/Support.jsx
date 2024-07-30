@@ -33,7 +33,7 @@ const Support = () => {
                         <textarea rows={10} name="" id="message" placeholder='Type here' className=' w-full '></textarea>
                     </div>
                     <div>
-                        <button className='w-44 max-sm:w-full h-12 flex items-center justify-center  bg-secondary hover:bg-secondaryHover duration-200 font-semibold rounded-[4px] mt-10'>Send Message</button>
+                        <button className='w-44 max-sm:w-full h-12 flex items-center justify-center  bg-secondary bg-linear text-white hover:bg-secondaryHover duration-200 font-semibold rounded-[4px] mt-10'>Send Message</button>
                     </div>
                 </form>
                 <aside className='rounded-md '>

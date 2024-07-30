@@ -52,7 +52,6 @@
     background: transparent;
     border: 1px solid var(--secondary-color);
     padding: 12px 20px;
-    border-radius: 50px;
     font-weight: bold;
     cursor: pointer;
     color: var(--color-white);

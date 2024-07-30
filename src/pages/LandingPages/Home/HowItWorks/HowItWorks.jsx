@@ -11,7 +11,7 @@ const HowItWorks = () => {
     ]
     return (
         <div className='how-it-works py-24 container relative' 
-        // data-aos="fade-up" data-aos-duration="1000"
+        data-aos="fade-up" data-aos-duration="1000"
         >
             <SectionHeader sectionTitle={"How We_ Work"} sectionDesc={"We work together effectively, using clear processes to achieve outstanding outcomes"} />
             <div className="howitworks-content grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">

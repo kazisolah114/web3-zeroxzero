@@ -7,9 +7,9 @@ import Lottie from 'react-lottie';
 
 const Testimonials = () => {
     const testimonials = [
-        { title: "Trading crypto has been so easy", opinion: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Loamet consectetur adipisicingor sit amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.", userData: { image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg", name: "Daniel Dugan", title: "CEO, ABC Inc." } },
-        { title: "Changed my thoughts about crypto", opinion: "amet consectetur adipisicingLorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.", userData: { image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg", name: "David Miller", title: "CTO, Beck IT" } },
-        { title: "Can't thank enough to 0x0", opinion: "Lorem amet consectetur adipisicing adipisicing elit.amet consectetur adipisicing dolor sit amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet.", userData: { image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg", name: "Ritchel Goes", title: "Crypto Trader" } }
+        { title: "Trading crypto has been so easy", opinion: "0x0 has revolutionized my crypto trading experience. The platform is user-friendly and the support team is always ready to help. Highly recommended! I can now trade confidently.", userData: { image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg", name: "Sophia Johnson", title: "Crypto Trader" } },
+        { title: "Changed my thoughts about crypto", opinion: "I was skeptical about crypto trading, but 0x0 made it so accessible and understandable. The resources and tools provided have been invaluable. Now, I can trade with ease.", userData: { image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg", name: "James Thompson", title: "Copy Trader" } },
+        { title: "Can't thank enough to 0x0", opinion: "0x0 has been a game-changer for my trading strategy. The advanced analytics and real-time data have allowed me to make informed decisions and maximize my profits. Truly amazing platform!", userData: { image: "https://upload.wikimedia.org/wikipedia/commons/d/d6/Nophoto.jpg", name: "Emily Pacheco", title: "Crypto Trader" } }
     ];
 
 
@@ -51,7 +51,7 @@ const Testimonials = () => {
 
     return (
         <div className='testimonials-section py-24 container'
-        // data-aos="fade-up" data-aos-duration="1000"
+        data-aos="fade-up" data-aos-duration="1000"
         >
             <div className="testimonials-content flex gap-20 items-center justify-between">
                 <div className="testimonials-info relative w-[50%]">

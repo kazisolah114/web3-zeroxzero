@@ -12,7 +12,7 @@ const Features = () => {
     ]
     return (
         <div className='features-section py-24 container' 
-        // data-aos="fade-up" data-aos-duration="1000"
+        data-aos="fade-up" data-aos-duration="1000"
         >
             <SectionHeader sectionTitle={"Our Amazing Features_"} sectionDesc={"Discover our amazing features designed to simplify your experience and enhance your outcomes"} />
             <div className="features grid grid-cols-4 items-center justify-between gap-6 " >
