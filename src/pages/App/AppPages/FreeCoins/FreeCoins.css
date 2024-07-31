@@ -6,12 +6,12 @@
 
 .free-coins-items .item {
     border-left: 5px solid var(--secondary-color-hover);
-    /* background: rgba(18, 32, 54, 0.241); */
     padding: 20px;
-    transition: .3s;
-    box-shadow: 2px 2px 30px -18px var(--secondary-color-hover);
+    transition: .2s;
+    /* box-shadow: 2px 2px 30px -18px var(--secondary-color-hover); */
+    backdrop-filter: blur(4px);
 }
 
 .free-coins-items .item:hover {
-    box-shadow: 2px 2px 30px -13px var(--secondary-color-hover)
+    box-shadow: 2px 2px 25px -15px var(--secondary-color-hover)
 }

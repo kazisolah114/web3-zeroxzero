@@ -14,11 +14,13 @@ const NewTokens = () => {
                 const data = await response.json();
                 if (data.data.length > 0) {
                     setNewTokens(data.data);
+                    setIsLoading(false);
                 }
             } catch (error) {
                 console.error('Error fetching new tokens:', error);
+                setIsLoading(true);
             } finally {
-                setIsLoading(false);
+                
             }
         };
 

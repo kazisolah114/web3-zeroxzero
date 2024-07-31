@@ -23,7 +23,8 @@
 
 .staking-item.top {
     cursor: auto;
-    border: 1px solid #0fcfcf8b;
+    /* border: 1px solid #0fcfcf8b; */
+    backdrop-filter: blur(4px);
 }
 
 .staking-items .staking-item.top::after {

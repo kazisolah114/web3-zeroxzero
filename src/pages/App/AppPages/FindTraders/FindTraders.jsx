@@ -5,6 +5,7 @@ import './FindTraders.css';
 import SearchDayCount from './SearchDayCount';
 import SearchResult from './SearchResult';
 import { Helmet } from 'react-helmet';
+import LoaderSpinner from '../../../../components/CommonComponents/LoaderSpinner/LoaderSpinner';
 
 
 const FindTraders = () => {
@@ -63,6 +64,9 @@ const FindTraders = () => {
 
     const [showSearchResult, setShowSearchResult] = useState(false);
     const [renderResult, setRenderResult] = useState(false);
+
+    const [isLoading, setIsLoading] = useState(true);
+
 
     return (
         <div className='find-traders'>
@@ -164,12 +168,12 @@ const FindTraders = () => {
                             <button onClick={() => (
                                 setShowSearchResult(true),
                                 setRenderResult(!renderResult)
-                            )} className='bg-secondaryHover hover:bg-secondary duration-200 w-full font-semibold py-[13px] rounded-md'>Search Now</button>
+                            )} className='bg-secondaryHover hover:bg-secondary duration-200 w-full font-semibold py-[13px] rounded-md flex justify-center'>{showSearchResult && isLoading ? <LoaderSpinner /> : 'Search Now'}</button>
                         </div>
                     </div>
                 </div>
                 {showSearchResult &&
-                    <SearchResult selectedBase={selectedBase} selectedTarget={selectedTarget} selectedTime={selectedTime} renderResult={renderResult} />
+                    <SearchResult selectedBase={selectedBase} selectedTarget={selectedTarget} selectedTime={selectedTime} renderResult={renderResult} isLoading={isLoading} setIsLoading={setIsLoading} />
                 }
             </div>
         </div>
