@@ -7,6 +7,9 @@ import { useUserContext } from '../../../../ContextAPI/UserContext';
 
 const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
     const [userProfileClicked, setUserProfileClicked] = useState(false);
+    const handleuserProfileClicked = () => {
+        setUserProfileClicked(!userProfileClicked);
+    }
     const {wallet, balance, handleConnectWallet, handleDisconnectWallet } = useUserContext();
     return (
         <div className='app-header w-full py-5 justify-between flex items-center px-5'>
@@ -36,19 +39,17 @@ const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
                 <div className="user-details flex items-center  gap-4">
                     <div className="balance flex items-center gap-2  py-[6px] px-3 rounded-md border border-[#0fcfcfb7]">
                         <img className='w-5' src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="" />
-                        <h4 className='font-semibold text-light'>{Number(balance).toFixed(3)} ETH</h4>
+                        <h4 className='font-semibold text-secondary'>{Number(balance).toFixed(3)} ETH</h4>
                     </div>
                     <div className="account-info cursor-pointer flex items-center gap-2  py-[6px] px-3 rounded-md border border-[#0fcfcfb7]">
                         <img src="/images/metamask-logo.png" alt="" />
-                        <h4 className='font-semibold text-light'>{`${wallet.substring(0, 5)}....${wallet.substring(wallet.length - 5)}`}</h4>
+                        <h4 className='font-semibold text-secondary'>{`${wallet.substring(0, 5)}....${wallet.substring(wallet.length - 5)}`}</h4>
                     </div>
-                    <div onClick={() => setUserProfileClicked(!userProfileClicked)} className={`user-profile z-10 relative border  border-[#0fcfcfb7] p-2 rounded-full cursor-pointer hover:border-[#0fcfcf] ${userProfileClicked && 'border-[#0fcfcf]'} duration-200`}>
-                        <HiOutlineUser className='text-light text-[22px]' />
+                    <div onClick={handleuserProfileClicked} className={`user-profile z-10 relative border  border-[#0fcfcfb7] p-2 rounded-full cursor-pointer hover:border-[#0fcfcf] ${userProfileClicked && 'border-[#0fcfcf]'} duration-200`}>
+                        <HiOutlineUser className='text-secondary text-[22px]' />
                         {userProfileClicked &&
-                            <div className="user-options absolute w-52 top-[56px] -right-[2px] bg-[#383840]  rounded-md">
-                                <div className="ractangle w-8 h-8  absolute -top-[17px] right-0">
-
-                                </div>
+                            <div className="user-options absolute w-52 top-[56px] -right-[2px] bg-[#263041] shadow-2xl rounded-md">
+                                <div className="ractangle w-8 h-8  absolute -top-[17px] right-0"></div>
                                 <ul>
                                     <li>
                                         <Link to="user-profile" className='group flex items-center gap-3 py-3 px-2 text-[#dfdfdf] hover:text-secondary duration-200 hover:bg-slate-800 rounded-t-md border-b border-gray-500 border-opacity-50'>
@@ -71,7 +72,7 @@ const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
                 </div>
                 :
                 <div className="connect-metamask ">
-                    <button onClick={handleConnectWallet} className='flex items-center justify-center gap-1 bg-transparent border border-[#12AFAF] text-light hover:bg-[#12AFAF] duration-200 w-44 h-12 rounded-md font-bold'>Connect wallet <img src="/images/metamask-logo.png" alt="" className='w-6' /></button>
+                    <button onClick={handleConnectWallet} className='flex items-center justify-center gap-1 bg-transparent border border-[#12AFAF] text-secondary hover:text-white hover:bg-[#12AFAF] duration-200 w-44 h-12 rounded-full font-bold'>Connect wallet <img src="/images/metamask-logo.png" alt="" className='w-6' /></button>
                 </div>
             }
 

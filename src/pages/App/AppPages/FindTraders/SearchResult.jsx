@@ -7,10 +7,9 @@ import { Bounce } from 'react-toastify';
 import Loader from '../../../../components/CommonComponents/Loader/Loader';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
-const SearchResult = ({ selectedBase, selectedTarget, selectedTime, renderResult }) => {
+const SearchResult = ({ selectedBase, selectedTarget, selectedTime, renderResult, isLoading, setIsLoading }) => {
     console.log(renderResult);
     const [customResult, setCustomResult] = useState({})
-    const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     console.log(typeof error);
     useEffect(() => {

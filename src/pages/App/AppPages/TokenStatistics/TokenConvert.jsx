@@ -30,9 +30,8 @@ const TokenConvert = ({ tokenPrice }) => {
     }
 
     return (
-        <div className="compare-currency mb-5 bg-[#122036] rounded-md py-3 px-5">
+        <div className="compare-currency mb-5 bg-[#122036] rounded-md py-3 px-5 blur-content bg-transparent border border-[#0fcfcf4b]">
             <h2 className='font-semibold text-xl mb-7'>Compare 0x0COM</h2>
-
             <div className='relative mb-3'>
                 <div onClick={() => setClicked(!clicked)} className='flex items-center gap-2 cursor-pointer'>
                     Compare with <img className='w-[17px]' src={selectedLanguage.flag} alt="" />
@@ -62,7 +61,7 @@ const TokenConvert = ({ tokenPrice }) => {
             </div>
 
             <div className="compare flex flex-col gap-4">
-                <div className='flex items-center justify-between border p-3'>
+                <div className='flex items-center justify-between border border-gray-500 rounded-md p-3'>
                     <h2>0x0COM</h2>
                     <input
                         type="number"
@@ -73,7 +72,7 @@ const TokenConvert = ({ tokenPrice }) => {
                 <div className='mx-auto cursor-pointer flex justify-center items-center'>
                     <HiArrowsUpDown className='text-2xl' />
                 </div>
-                <div className='flex items-center justify-between border p-3'>
+                <div className='flex items-center justify-between border border-gray-500 rounded-md p-3'>
                     <h2>USD</h2>
                     <input
                         type="number"

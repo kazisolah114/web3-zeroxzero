@@ -24,6 +24,7 @@ import JobDetails from "../pages/LandingPages/Company/Careers/JobDetails";
 import Support from "../pages/LandingPages/Company/Support/Support";
 import Publications from "../pages/LandingPages/Company/Publications/Publications";
 import Ethical from "../pages/LandingPages/Ethical/Ethical";
+import Wallet from "../pages/App/AppPages/Wallet/Wallet";
 
 
 const router = createBrowserRouter([
@@ -115,6 +116,10 @@ const router = createBrowserRouter([
       {
         path: "new-tokens",
         element: <NewUniswapTokens />
+      },
+      {
+        path: "0x0-wallet",
+        element: <Wallet />
       },
       {
         path: "how-to",

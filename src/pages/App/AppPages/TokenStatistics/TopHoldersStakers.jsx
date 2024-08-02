@@ -39,9 +39,9 @@ const TopHoldersStakers = () => {
             });
     }, []);
     return (
-        <div className='flex gap-2 justify-between flex-col md:flex-row'>
+        <div className='flex gap-2 justify-between flex-col md:flex-row '>
             <div className='w-full mt-5'>
-                <div className="top-holders-head grid md:grid-cols-[50px_2fr_1fr_10px] grid-cols-[50px_2fr_1fr] text-light bg-[#122036] rounded-md py-3 px-[30px]">
+                <div className="top-holders-head grid md:grid-cols-[50px_2fr_1fr_10px] grid-cols-[50px_2fr_1fr] text-light bg-[#122036] rounded-md py-3 px-[30px] blur-content bg-transparent border border-[#0fcfcf4b]">
                     <p>#</p>
                     <p>Top Holders</p>
                     <p>Balance</p>
@@ -68,7 +68,7 @@ const TopHoldersStakers = () => {
                 </div>
             </div>
             <div className=' w-full mt-5'>
-                <div className="top-holders-head grid md:grid-cols-[50px_2fr_1fr_10px] grid-cols-[50px_2fr_1fr] text-light bg-[#122036] rounded-md py-3 px-[30px]">
+                <div className="top-holders-head grid md:grid-cols-[50px_2fr_1fr_10px] grid-cols-[50px_2fr_1fr] text-light bg-[#122036] rounded-md py-3 px-[30px] blur-content bg-transparent border border-[#0fcfcf4b]">
                     <p>#</p>
                     <p>Top Stakers</p>
                     <p>Balance</p>
