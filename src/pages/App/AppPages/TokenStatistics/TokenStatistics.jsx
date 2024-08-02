@@ -101,8 +101,8 @@ const TokenStatistics = () => {
                 <div className="token-details ">
                     <div>
                         <ZeroxBalance tokenPrice={tokenPrice} />
-                        <div className=" bg-[#122036] rounded-md py-3 px-5">
-                            <div className="token-details-header flex justify-between items-end">
+                        <div className=" bg-[#122036] rounded-md py-3 px-5 blur-content bg-transparent border border-[#0fcfcf4b]">
+                            <div className="token-details-header flex justify-between items-end ">
                                 <div className='token-main-header'>
                                     <div className='flex items-center gap-2 text-light'>
                                         <h2 className='text-2xl font-bold'>${(tokenPrice?.price?.usdPrice ?? 0).toFixed(5)} USD</h2>
@@ -125,7 +125,7 @@ const TokenStatistics = () => {
                                 <PriceChart selectedDuration={selectedDuration} setSelectedDuration={setSelectedDuration} />
                             </div>
                         </div>
-                        <div className=' mt-5 bg-[#122036] rounded-md py-5 px-5'>
+                        <div className=' mt-5 bg-[#122036] rounded-md py-5 px-5 blur-content bg-transparent border border-[#0fcfcf4b]'>
                             <ul className='sm:flex-nowrap  flex-wrap sm:flex gap-5 justify-between grid grid-cols-2'>
                                 <li>
                                     <span className='text-gray'>24H Volume (USD)</span>
@@ -158,7 +158,7 @@ const TokenStatistics = () => {
                             </ul>
                         </div>
                         <TopHoldersStakers />
-                        <div className="about0x0-token mt-5 bg-[#122036] rounded-md py-5 px-5">
+                        <div className="about0x0-token mt-5 bg-[#122036] rounded-md py-5 px-5 blur-content bg-transparent border border-[#0fcfcf4b]">
                             <h2 className='font-semibold text-xl mb-5'>About 0x0COM Token</h2>
                             <p className='text-gray'>
                                 With the Alpha version of 0X0.com, users have the ability to discover and follow the most profitable Ethereum users. 0X0.com enables its users to identify profit per address over a specific period of time, while trading specific pairs. Additionally, 0X0.com users can purchase customized searches. Whenever 0X0.com identifies an Ethereum address that is generating significant profit, users receive alerts each time this address makes a trade. This provides 0X0.com users with an opportunity to copy trades on the Ethereum blockchain.
@@ -172,7 +172,7 @@ const TokenStatistics = () => {
                     </div>
                     <div className="token-details-sidebar ">
                         <TokenConvert tokenPrice={tokenPrice} />
-                        <div className="informations mb-5 bg-[#122036] rounded-md py-3 px-5">
+                        <div className="informations mb-5 bg-[#122036] rounded-md py-3 px-5 blur-content bg-transparent border border-[#0fcfcf4b]">
                             <div>
                                 <h2 className='font-semibold text-xl mb-7'>0x0COM Informations</h2>
                                 <div className="officials mb-5">
@@ -209,7 +209,7 @@ const TokenStatistics = () => {
                             </div>
                             <ToastContainer />
                         </div>
-                        <div className="statistics bg-[#122036] rounded-md py-3 px-5">
+                        <div className="statistics bg-[#122036] rounded-md py-3 px-5 blur-content bg-transparent border border-[#0fcfcf4b]">
                             <h2 className='font-semibold text-xl mb-7'>0x0COM Price Statistics</h2>
                             <ul>
                                 <li className='flex items-center justify-between text-light mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>0x0.com Price</p><p>${tokenPrice?.price?.usdPrice?.toFixed(5) || ' N/A'}</p></li>

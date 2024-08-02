@@ -28,7 +28,7 @@ const NewTokens = () => {
     }, []);
 
     return (
-        <div className='bg-[#122036] rounded-md py-3 px-5 mt-5'>
+        <div className='bg-[#122036] rounded-md py-3 px-5 mt-5 blur-content bg-transparent border border-[#0fcfcf4b]'>
             <h2 className='font-semibold text-xl mb-7'>New Uniswap Tokens</h2>
             {isLoading ? <LoadingSkeleton /> : <TokenList newTokens={newTokens} />}
         </div>

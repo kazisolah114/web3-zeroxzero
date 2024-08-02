@@ -4,8 +4,23 @@
 }
 .submenu .active, .submenu .active span{
     color: var(--secondary-color);
-    background: #122036;
+    /* background: #43495a; */
 }
 .navs .active{
-    color: white;
+    color: var(--secondary-color);
 }
+
+
+
+/* .submenu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(1);
+    transition: 0.1s;
+  }
+  
+  .submenu.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  } */

@@ -54,7 +54,6 @@
 
 
 .text-linear{
-    /* background: -webkit-linear-gradient(160deg, #00C7B7, #6600CC); */
     background: -webkit-linear-gradient(160deg, #6600CC, #00C7B7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -65,4 +64,7 @@
 .border-linear {
     border: 1px solid transparent;
     border-image: linear-gradient(to top, #00C7B7, #6600CC) 1;
+}
+.blur-content {
+    backdrop-filter: blur(4px);
 }

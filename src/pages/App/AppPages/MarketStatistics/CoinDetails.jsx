@@ -1,8 +1,7 @@
 import React from 'react';
-import { HiArrowUp, HiExternalLink, HiOutlineStar } from 'react-icons/hi';
+import { HiExternalLink, HiOutlineStar } from 'react-icons/hi';
 import { Link, useLocation } from 'react-router-dom';
 import LoaderSpinner from '../../../../components/CommonComponents/LoaderSpinner/LoaderSpinner';
-import { HiChevronUp } from 'react-icons/hi2';
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 
 const CoinDetails = () => {
@@ -14,7 +13,7 @@ const CoinDetails = () => {
     }
     const selectedDuration = '1D';
     return (
-        <div>
+        <div className='blur-content bg-transparent border border-[#0fcfcf4b] rounded-md p-5'>
             <div className="details-header flex  justify-between ">
                 <div className="coin-det flex items-center gap-3">
                     <img className='w-9' src={coinData.image} alt="" />
@@ -24,18 +23,17 @@ const CoinDetails = () => {
                     </div>
                 </div>
                 <div className="coin-info flex items-center gap-4">
-                    <button className='max-md:hidden border border-[#0fcfcfb7] py-2 px-3 rounded-md text-light flex items-center gap-1 hover:bg-[#3f3f3f6f] bg-opacity-5 duration-200'><HiOutlineStar className='text-[22px] cursor-pointer text-gray' /></button>
-                    <Link className='max-md:hidden border border-[#0fcfcfb7]  py-2 px-3 rounded-md text-gray flex items-center gap-1 hover:bg-[#3f3f3f6f] bg-opacity-5 duration-200'>Add to MetaMask <img src="/images/metamask-logo.png" alt="" className='w-5' /></Link>
-                    <Link to={`https://etherscan.io/address/${coinData.id}`} target='_blank' className='border border-[#0fcfcfb7] py-2 px-3 rounded-md text-gray flex items-center gap-1 hover:bg-[#3f3f3f6f] bg-opacity-5 duration-200'>View on block explorer <HiExternalLink /></Link>
+                    <Link className='max-md:hidden py-2 px-3 rounded-md flex items-center gap-1 bg-transparent hover:bg-secondaryHover hover:text-white border border-[#0fcfcf] text-secondary shadow-[1px_1px_10px_#101825] hover:shadow-[1px_1px_20px_#101825] duration-200'>Add to MetaMask <img src="/images/metamask-logo.png" alt="" className='w-5' /></Link>
+                    <Link to={`https://etherscan.io/address/${coinData.id}`} target='_blank' className=' py-2 px-3 rounded-md flex items-center gap-1 bg-transparent hover:bg-secondaryHover hover:text-white border border-[#0fcfcf] text-secondary shadow-[1px_1px_10px_#101825] hover:shadow-[1px_1px_20px_#101825] duration-200'>View on Block Explorer <HiExternalLink /></Link>
                 </div>
             </div>
-            <div className="coin-details-content bg-[#122036] mt-10 p-4 rounded-md ">
+            <div className="coin-details-content mt-10 ">
                 <div className="flex justify-between items-start max-sm:flex-col gap-5">
                     <div>
                         <h2 className='text-white font-bold text-2xl mb-2'>${coinData.current_price.toFixed(2)}</h2>
                         <div className={`flex gap-2 ${coinData.price_change_percentage_24h.toString().startsWith('-') ? 'text-red-400' : 'text-green-400'}`}>
                             <p className='flex items-center '>{coinData.price_change_24h.toString().startsWith('-') ? <FaCaretDown /> : <FaCaretUp  />} ${coinData.price_change_24h.toFixed(4)}</p>
-                            <p className='flex items-center'>({coinData.price_change_percentage_24h.toString().startsWith('-') ? '-' : '+' }{coinData.price_change_percentage_24h.toFixed(3)}%)</p>
+                            <p className='flex items-center'>({coinData.price_change_percentage_24h.toString().startsWith('-') ? '' : '+' }{coinData.price_change_percentage_24h.toFixed(3)}%)</p>
                             <p className='text-gray'>from last 24h</p>
                         </div>
                     </div>
@@ -47,7 +45,7 @@ const CoinDetails = () => {
                         <button onClick={() => handleDuration("All")} className={`${selectedDuration == "All" && 'bg-[#182b47]'} px-4 rounded-md`}>All</button>
                     </div>
                 </div>
-                <div className='text-center flex flex-col items-center my-14 py-10 border-y border-gray-700 border-opacity-50'>
+                <div className='text-center flex flex-col items-center my-14 py-20 border-y border-gray-700 border-opacity-50'>
                     <LoaderSpinner />
                     <b className='text-light mt-5'>Price chart is not available</b>
                     <p className='text-gray'>The price chart for {coinData.name} is not available at the moment</p>

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { FaSort } from "react-icons/fa";
 import './Staking.css';
 import BackgroundShadow from '../../../../components/CommonComponents/BackgroundShadow/BackgroundShadow';
-import { HiArrowNarrowLeft } from "react-icons/hi";
 import { ethers } from 'ethers';
 import asset from './abi.json';
 import { useUserContext } from '../../../../ContextAPI/UserContext';
@@ -13,17 +12,18 @@ import { toSmallUnit } from '../../../../constants';
 import { JsonRpcProvider } from '@ethersproject/providers';
 import { useWeb3React } from '@web3-react/core';
 import { getContract } from '../../../../utils/utils';
+import { HiArrowPath } from 'react-icons/hi2';
 
 const StakingDetails = () => {
     const { library, account, chainId } = useWeb3React()
-    
+
     const { wallet } = useUserContext();
     const [filteredStaking, setFilteredStaking] = useState([]);
     const { id } = useParams();
     const [stakeToggle, setStakeToggle] = useState("stake");
     const [poolIndex, setPoolIndex] = useState();
     // const provider = new JsonRpcProvider(process.env.VITE_APP_RPC_URL);
-    
+
     const [stakingContract, setStakingContract] = useState();
     const [zeroContract, setZeroContract] = useState();
     const [ethbitContract, setEthbitContract] = useState();
@@ -109,10 +109,6 @@ const StakingDetails = () => {
         setStakeToggle(value);
         setError(`Enter the amount you want to ${value}`)
     }
-    const navigate = useNavigate();
-    const handleStakeGoback = () => {
-        navigate("/app/staking")
-    }
 
     const getUserInfo = async () => {
         if (wallet && stakingContract && zeroContract && ethbitContract) {
@@ -178,10 +174,10 @@ const StakingDetails = () => {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getUserInfo();
     }, [wallet, stakingContract, zeroContract, ethbitContract]);
-    
+
     const handleApprove = async () => {
         try {
             const tokenAddress = stakeToken[poolIndex].address;
@@ -193,7 +189,7 @@ const StakingDetails = () => {
             const txAllowance = await tokenContract.allowance(wallet, process.env.VITE_APP_STAKING_ADDRESS);
 
             if (txAllowance.lt(toSmallUnit(amount, stakeToken[poolIndex]))) {
-            //     // updateAsyncStatus(true, 'Awaiting wallet interaction')
+                //     // updateAsyncStatus(true, 'Awaiting wallet interaction')
                 await tokenContract.approve(process.env.VITE_APP_STAKING_ADDRESS, toSmallUnit(amount, stakeToken[poolIndex])).then(approveTx => {
                     // updateAsyncStatus(true, 'Waiting for tx confirmation')
 
@@ -204,7 +200,7 @@ const StakingDetails = () => {
                     console.log(err)
                 })
             }
-        } catch(err) {
+        } catch (err) {
             console.log(err)
         }
     }
@@ -248,7 +244,7 @@ const StakingDetails = () => {
                             tx.wait()
                             setAmount(0)
                         }).catch(err => {
-                          console.error(err)
+                            console.error(err)
                         })
                     } catch (error) {
                         console.error(error.message)
@@ -278,7 +274,7 @@ const StakingDetails = () => {
                     await stakingContract.harvest(poolIndex, account).then(tx => {
                         tx.wait()
                     }).catch(err => {
-                    console.error(err)
+                        console.error(err)
                     })
                 } catch (error) {
                     console.error(error.message)
@@ -294,67 +290,64 @@ const StakingDetails = () => {
     }
 
     return (
-        <div>
-            <div className="staking-details-content ">
-                <div className="stake-goback-btn mb-10">
-                    <button onClick={handleStakeGoback} className='group bg-secondaryHover hover:bg-secondary duration-200 w-28 h-9 rounded-md text-2xl flex justify-center items-center'>
-                        <HiArrowNarrowLeft className='group-hover:mr-10 transition-all duration-200' />
-                    </button>
+
+        <div className="staking-details-content">
+            <div className="staking-details-header text-center mb-10">
+                <h2 className='text-2xl font-semibold flex items-center justify-center gap-2 text-secondary'>{filteredStaking.staking_with_abr} <HiArrowPath /> {filteredStaking.staking_for_abr} Staking Details</h2>
+            </div>
+            <div className="staking-info">
+                <div className="details item relative blur-content bg-transparent border border-[#0fcfcf4b]">
+                    <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
+                    <div className=' pb-5 mb-[60px]'>
+                        <h4 className='text-gray text-lg'>{filteredStaking.staking_with_abr}</h4>
+                        <div className='flex flex-col text-center items-center'>
+                            <img className='w-[80px] h-[80px] mt-2 mb-4 ' src={filteredStaking.staking_with_logo} alt="" />
+                            <h2 className='font-semibold text-light text-xl uppercase'>{stakeData.apr}% APR</h2>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 className='text-lg font-semibold text-light mb-6'>CALCULATE EARNING</h2>
+                        <p className='text-gray flex items-center justify-between mb-4 pb-4 border-b border-gray-700 border-opacity-80' >Daily <span className='text-light'>{stakeData.daily} {filteredStaking.staking_for_abr}</span></p>
+                        <p className='text-gray flex items-center justify-between mb-4 pb-4 border-b border-gray-700 border-opacity-80' >Monthly <span className='text-light'>{stakeData.monthly} {filteredStaking.staking_for_abr}</span></p>
+                        <p className='text-gray flex items-center justify-between ' >Yearly <span className='text-light'>{stakeData.annual} {filteredStaking.staking_for_abr}</span></p>
+                    </div>
                 </div>
-                <div className="staking-info">
-                    <div className="details item relative">
-                        <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
-                        <div className=' pb-5 mb-[60px]'>
-                            <h4 className='text-gray text-lg'>{filteredStaking.staking_with_abr}</h4>
-                            <div className='flex flex-col text-center items-center'>
-                                <img className='w-[80px] h-[80px] mt-2 mb-4 ' src={filteredStaking.staking_with_logo} alt="" />
-                                <h2 className='font-semibold text-light text-xl uppercase'>{stakeData.apr}% APR</h2>
-                            </div>
+                <div className="staking-unstaking item relative blur-content bg-transparent border border-[#0fcfcf4b]">
+                    <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
+                    <div className=' border-b border-gray-700 border-opacity-80 '>
+                        <button onClick={() => handleStakeToggle("stake")} className={`${stakeToggle === "stake" && 'border-b border-[#0FCFCF] text-secondary'}  pb-2 w-3/6 font-semibold uppercase text-lg tracking-[2px] text-text`}>Stake</button>
+                        <button onClick={() => handleStakeToggle("unstake")} className={`${stakeToggle == "unstake" && 'border-b border-[#0FCFCF] text-secondary'} pb-2 w-3/6 font-semibold uppercase text-lg tracking-[2px] text-light`}>UnStake</button>
+                    </div>
+                    <div className='mt-32 '>
+                        <p className='text-gray text-center'>{error}</p>
+                        <div className='mt-10 pb-3 flex items-center justify-between border-b border-gray-700 border-opacity-80'>
+                            <img className='w-6' src={filteredStaking.staking_with_logo} alt="" />
+                            <input className='staking-input  outline-none text-center' type="number" placeholder="0.00" onChange={e => handleSetAmount(e.target.value)} />
+                            <span className='cursor-pointer'><FaSort /></span>
                         </div>
-                        <div>
-                            <h2 className='text-lg font-semibold text-light mb-6'>CALCULATE EARNING</h2>
-                            <p className='text-gray flex items-center justify-between mb-4 pb-4 border-b border-gray-700 border-opacity-80' >Daily <span className='text-light'>{stakeData.daily} {filteredStaking.staking_for_abr}</span></p>
-                            <p className='text-gray flex items-center justify-between mb-4 pb-4 border-b border-gray-700 border-opacity-80' >Monthly <span className='text-light'>{stakeData.monthly} {filteredStaking.staking_for_abr}</span></p>
-                            <p className='text-gray flex items-center justify-between ' >Yearly <span className='text-light'>{stakeData.annual} {filteredStaking.staking_for_abr}</span></p>
+                        <div className='flex items-center justify-between mt-2 text-gray text-sm'>
+                            <p>IN USD: 0.00</p>
+                            {stakeToggle == "stake" ? <p>WALLET BALANCE: {stakeData.wallet_balance}</p> : <p>STAKED BALANCE: {stakeData.staked}</p>}
+
                         </div>
                     </div>
-                    <div className="staking-unstaking item relative">
-                        <BackgroundShadow customShadow="0px 0px 400px 50px #10B8B9" />
-                        <div className=' border-b border-gray-700 border-opacity-80 '>
-                            <button onClick={() => handleStakeToggle("stake")} className={`${stakeToggle === "stake" && 'border-b border-[#0FCFCF] text-secondary'}  pb-2 w-3/6 font-semibold uppercase text-lg tracking-[2px] text-text`}>Stake</button>
-                            <button onClick={() => handleStakeToggle("unstake")} className={`${stakeToggle == "unstake" && 'border-b border-[#0FCFCF] text-secondary'} pb-2 w-3/6 font-semibold uppercase text-lg tracking-[2px] text-light`}>UnStake</button>
-                        </div>
-                        <div className='mt-32 '>
-                            <p className='text-gray text-center'>{error}</p>
-                            <div className='mt-10 pb-3 flex items-center justify-between border-b border-gray-700 border-opacity-80'>
-                                <img className='w-6' src={filteredStaking.staking_with_logo} alt="" />
-                                <input className='staking-input  outline-none text-center' type="number" placeholder="0.00" onChange={e => handleSetAmount(e.target.value)} />
-                                <span className='cursor-pointer'><FaSort /></span>
-                            </div>
-                            <div className='flex items-center justify-between mt-2 text-gray text-sm'>
-                                <p>IN USD: 0.00</p>
-                                {stakeToggle == "stake" ? <p>WALLET BALANCE: {stakeData.wallet_balance}</p> : <p>STAKED BALANCE: {stakeData.staked}</p>}
-
-                            </div>
-                        </div>
-                        <div className='mt-20'>
-                            {stakeToggle == "stake" ?
-                                <buton className="bg-secondaryHover flex justify-center  py-3 rounded-md font-bold cursor-pointer hover:bg-secondary duration-200 " onClick={handleStaking}>Stake Now</buton>
-                                :
-                                <buton className="bg-secondaryHover flex justify-center  py-3 rounded-md font-bold cursor-pointer hover:bg-secondary duration-200 " onClick={handleUnStaking}>Unstake Now</buton>}
-                        </div>
+                    <div className='mt-20'>
+                        {stakeToggle == "stake" ?
+                            <buton className="bg-secondaryHover flex justify-center  py-3 rounded-md font-bold cursor-pointer hover:bg-secondary duration-200 " onClick={handleStaking}>Stake Now</buton>
+                            :
+                            <buton className="bg-secondaryHover flex justify-center  py-3 rounded-md font-bold cursor-pointer hover:bg-secondary duration-200 " onClick={handleUnStaking}>Unstake Now</buton>}
                     </div>
-                    <div className="total item ">
-                        <div className='mb-48'>
-                            <h2 className='text-lg font-semibold text-light mb-6'>YOUR BALANCE</h2>
-                            <p className='text-gray flex items-center justify-between mb-4 pb-4 border-b border-gray-700 border-opacity-80' >Staked Amount <span className='text-light'>{stakeData.staked} {filteredStaking.staking_with_abr}</span></p>
-                            <p className='text-gray flex items-center justify-between mb-4 pb-4 border-b border-gray-700 border-opacity-80' >Earned Rewards <span className='text-light'>{stakeData.pendingReward} {filteredStaking.staking_for_abr}</span></p>
-                            <p className='text-gray flex items-center justify-between ' >Pool Share <span className='text-light'>{stakeData.pool_share} %</span></p>
-                        </div>
-                        <div className=''>
+                </div>
+                <div className="total item blur-content bg-transparent border border-[#0fcfcf4b]">
+                    <div className='mb-48'>
+                        <h2 className='text-lg font-semibold text-light mb-6'>YOUR BALANCE</h2>
+                        <p className='text-gray flex items-center justify-between mb-4 pb-4 border-b border-gray-700 border-opacity-80' >Staked Amount <span className='text-light'>{stakeData.staked} {filteredStaking.staking_with_abr}</span></p>
+                        <p className='text-gray flex items-center justify-between mb-4 pb-4 border-b border-gray-700 border-opacity-80' >Earned Rewards <span className='text-light'>{stakeData.pendingReward} {filteredStaking.staking_for_abr}</span></p>
+                        <p className='text-gray flex items-center justify-between ' >Pool Share <span className='text-light'>{stakeData.pool_share} %</span></p>
+                    </div>
+                    <div className=''>
 
-                            <buton className="bg-[#ddc445] text-dark flex justify-center  py-3 rounded-md font-bold cursor-pointer hover:bg-[#F8D735] duration-200 " onClick={handleClaim}>Claim Now</buton>
-                        </div>
+                        <buton className="bg-[#ddc445] text-dark flex justify-center  py-3 rounded-md font-bold cursor-pointer hover:bg-[#F8D735] duration-200 " onClick={handleClaim}>Claim Now</buton>
                     </div>
                 </div>
             </div>

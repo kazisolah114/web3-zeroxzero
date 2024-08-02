@@ -82,7 +82,7 @@ const FindTraders = () => {
                     <div className="search">
                         <div className='item relative'>
                             <h2 className='font-semibold uppercase text-light mb-3'>Base Currency</h2>
-                            <div onClick={() => setClickedBase(!clickedBase)} className='flex items-center gap-3  cursor-pointer bg-slate-900 px-5 py-3 rounded-t-md '>
+                            <div onClick={() => setClickedBase(!clickedBase)} className={`flex items-center gap-3  cursor-pointer bg-slate-900 px-5 py-3 ${clickedBase ? 'rounded-t-md' : 'rounded-md'} `}>
                                 <img className='w-6' src={selectedBase?.flag} alt="" />
                                 <p className='text-[#e2e2e2] flex items-center justify-between w-full text-lg '>{selectedBase?.abr}
                                     <HiOutlineChevronDown className={`${clickedBase && "rotate-180 duration-200 relative top-[1px]"}`} />
@@ -111,7 +111,7 @@ const FindTraders = () => {
 
                         <div className='item relative z-[2]'>
                             <h2 className='font-semibold uppercase text-light mb-3'>Target Currency</h2>
-                            <div onClick={() => setClickedTarget(!clickedTarget)} className='flex items-center gap-3  cursor-pointer bg-slate-900 px-5 py-3 rounded-t-md '>
+                            <div onClick={() => setClickedTarget(!clickedTarget)} className={`flex items-center gap-3  cursor-pointer bg-slate-900 px-5 py-3 ${clickedTarget ? 'rounded-t-md' : 'rounded-md'} `}>
                                 <img className='w-6' src={selectedTarget?.flag} alt="" />
                                 <p className='text-[#e2e2e2] flex items-center justify-between w-full text-lg '>{selectedTarget?.abr}
                                     <HiOutlineChevronDown className={`${clickedTarget && "rotate-180 duration-200 relative top-[1px]"}`} />
@@ -140,7 +140,7 @@ const FindTraders = () => {
 
                         <div className='item relative'>
                             <h2 className='font-semibold uppercase text-light mb-3'>Time Period</h2>
-                            <div onClick={() => setClickedTime(!clickedTime)} className='flex items-center gap-3  cursor-pointer bg-slate-900 px-5 py-3 rounded-t-md '>
+                            <div onClick={() => setClickedTime(!clickedTime)} className={`flex items-center gap-3  cursor-pointer bg-slate-900 px-5 py-3 ${clickedTime ? 'rounded-t-md' : 'rounded-md'} `}>
                                 <p className='text-[#e2e2e2] flex items-center justify-between w-full text-lg '>{selectedTime?.time}
                                     <HiOutlineChevronDown className={`${clickedTime && "rotate-180 duration-200 relative top-[1px]"}`} />
                                 </p>

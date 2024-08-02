@@ -34,6 +34,8 @@ const UserProfile = () => {
             })
     }, [])
 
+    let status = 'unverified'
+
     return (
         <div className='user-profile'>
             <div className="user-profile-content">
@@ -42,7 +44,7 @@ const UserProfile = () => {
                         <div className='flex items-center gap-2'>
                             <HiBadgeCheck className='text-[#0199E4] text-2xl' />
                             <h2 className='text-light font-semibold'>Profile Status</h2>
-                            <button className={`bg-[#0199E4] rounded-full w-24 py-[2px] border border-gray-200`}>Verified</button>
+                            <button className={`${status == 'verified' ? 'bg-[#0199E4]' : 'bg-[#EF3847]'} rounded-full w-24 py-[2px] border border-gray-200`}>{status == 'verified' ? 'Verified': 'Unverified'}</button>
                         </div>
                         <div className="wallet mt-5">
                             <h2 className=' text-light font-semibold mb-2'>Wallet Address</h2>
@@ -74,13 +76,6 @@ const UserProfile = () => {
                             </div>
                         </div>
                     </div>
-                    {/* <div className='email mt-5 bg-[#122036] p-5 rounded-md'>
-                        <h2 className=' text-light font-semibold mb-2'>Email Address <span className='text-sm font-light'>(Enter email to get tracking notifications and so on)</span></h2>
-                        <div className='flex items-center gap-3'>
-                            <input type="email" placeholder='Type email address ' className='w-full rounded px-2 py-2 text-dark  outline-none' />
-                            <input type="submit" value="Save" className='cursor-pointer bg-secondaryHover hover:bg-secondary duration-200 font-semibold px-8 py-2 rounded-md' />
-                        </div>
-                    </div> */}
                 </div>
                 <div className="socials-and-rewards">
                     <div className="socials bg-[#122036] p-5 rounded-md">

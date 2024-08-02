@@ -16,7 +16,7 @@ const ZeroxBalance = ({tokenPrice}) => {
     }, [tokenBalance, tokenPrice])
     
     return (
-        <div className="token-balance bg-[#122036] rounded-md py-3 px-5 mb-5 flex items-center justify-between">
+        <div className="token-balance bg-[#122036] blur-content bg-transparent border border-[#0fcfcf4b] rounded-md py-3 px-5 mb-5 flex items-center justify-between">
             <div>
                 <p className=' text-gray mb-3 flex items-center gap-2'><HiOutlineChartBar className='text-secondary' /> Total 0x0 balance</p>
                 {wallet ?
@@ -29,7 +29,7 @@ const ZeroxBalance = ({tokenPrice}) => {
                 }
             </div>
             <div>
-                <Link to="https://app.uniswap.org/explore/tokens/ethereum/0xb8fda5aee55120247f16225feff266dfdb381d4c" target='_blank' className='w-40 h-11 flex justify-center items-center font-bold rounded-md  bg-[#233550] text-secondary shadow-[1px_1px_10px_#101825] hover:shadow-[1px_1px_20px_#101825] duration-200'>Buy 0x0 Now <HiOutlineExternalLink className='ml-2' /></Link>
+                <Link to="https://app.uniswap.org/explore/tokens/ethereum/0xb8fda5aee55120247f16225feff266dfdb381d4c" target='_blank' className='w-40 h-11 flex justify-center items-center font-bold rounded-md  bg-transparent hover:bg-secondaryHover hover:text-white border border-[#0fcfcf] text-secondary shadow-[1px_1px_10px_#101825] hover:shadow-[1px_1px_20px_#101825] duration-200'>Buy 0x0 Token <HiOutlineExternalLink className='ml-2' /></Link>
             </div>
         </div>
     );

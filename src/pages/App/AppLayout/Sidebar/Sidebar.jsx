@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import { HiOutlineCog6Tooth, HiOutlineCpuChip } from 'react-icons/hi2';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar.jsx/Navbar';
-import { HiMenu, HiX } from 'react-icons/hi';
 
 const Sidebar = ({showResponsiveMenu, setShowResponsiveMenu}) => {
     
