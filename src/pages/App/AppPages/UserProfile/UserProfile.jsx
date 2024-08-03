@@ -71,7 +71,7 @@ const UserProfile = () => {
                         <div className="balance-usd mt-5">
                             <h2 className=' text-light font-semibold mb-2'>Wallet Balance (USD)</h2>
                             <div className='address flex items-center gap-3 border border-gray-600 p-3 rounded-md'>
-                                <img className='w-6' src="/images/dollar-icon-1.png" alt="" />
+                                <img className='w-6' src="/images/dollar-icon-2.png" alt="" />
                                 <p className='font-semibold'>{(tokenPrice?.price?.usdPrice ?? 0).toFixed(5) || 0.00} USD</p>
                             </div>
                         </div>
