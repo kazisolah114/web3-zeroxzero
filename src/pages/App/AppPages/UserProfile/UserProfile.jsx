@@ -40,7 +40,7 @@ const UserProfile = () => {
         <div className='user-profile'>
             <div className="user-profile-content">
                 <div className="manage-profile ">
-                    <div className='account bg-[#122036] p-5 rounded-md'>
+                    <div className='account bg-[#122036] p-5 rounded-md blur-content bg-transparent border border-[#0fcfcf4b]'>
                         <div className='flex items-center gap-2'>
                             <HiBadgeCheck className='text-[#0199E4] text-2xl' />
                             <h2 className='text-light font-semibold'>Profile Status</h2>
@@ -48,7 +48,7 @@ const UserProfile = () => {
                         </div>
                         <div className="wallet mt-5">
                             <h2 className=' text-light font-semibold mb-2'>Wallet Address</h2>
-                            <div className='address flex items-center  gap-3 bg-slate-800 p-3 rounded-md'>
+                            <div className='address flex items-center  gap-3  p-3 rounded-md border border-gray-600'>
                                 <img src="/images/metamask-logo.png" alt="" />
                                 <p onClick={() => {
                                     handleWalletCopy();
@@ -63,14 +63,14 @@ const UserProfile = () => {
                         </div>
                         <div className="balance mt-5">
                             <h2 className=' text-light font-semibold mb-2'>Wallet Balance (ETH)</h2>
-                            <div className='address flex items-center gap-3 bg-slate-800 p-3 rounded-md'>
+                            <div className='address flex items-center gap-3 border border-gray-600 p-3 rounded-md'>
                                 <img className='w-6' src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="" />
                                 <p className='font-semibold'>{Number(balance).toFixed(5)} ETH</p>
                             </div>
                         </div>
                         <div className="balance-usd mt-5">
                             <h2 className=' text-light font-semibold mb-2'>Wallet Balance (USD)</h2>
-                            <div className='address flex items-center gap-3 bg-slate-800 p-3 rounded-md'>
+                            <div className='address flex items-center gap-3 border border-gray-600 p-3 rounded-md'>
                                 <img className='w-6' src="/images/dollar-icon-1.png" alt="" />
                                 <p className='font-semibold'>{(tokenPrice?.price?.usdPrice ?? 0).toFixed(5) || 0.00} USD</p>
                             </div>
@@ -78,18 +78,18 @@ const UserProfile = () => {
                     </div>
                 </div>
                 <div className="socials-and-rewards">
-                    <div className="socials bg-[#122036] p-5 rounded-md">
-                        <div className="item cursor-pointer flex items-center gap-5 justify-center border border-gray-500 hover:bg-[#0FCFCF] hover:border-transparent duration-200 rounded-full p-3">
+                    <div className="socials bg-[#122036] p-5 rounded-md blur-content bg-transparent border border-[#0fcfcf4b]">
+                        <div className="item cursor-pointer flex items-center gap-5 justify-center border border-gray-600 hover:bg-[#0FCFCF] hover:border-transparent duration-200 rounded-full p-3">
                             <img className='w-10  rounded-md' src="/images/twitter.png" alt="" />
                             <p className='font-bold text-lg'>Authorize X / Twitter</p>
                         </div>
-                        <div className="item cursor-pointer mt-5 flex items-center gap-5 justify-center border border-gray-500 hover:bg-[#0FCFCF] hover:border-transparent duration-200 rounded-full p-3">
+                        <div className="item cursor-pointer mt-5 flex items-center gap-5 justify-center border border-gray-600 hover:bg-[#0FCFCF] hover:border-transparent duration-200 rounded-full p-3">
                             <img className='w-10 rounded-md' src="/images/telegram.png" alt="" />
                             <p className='font-bold text-lg'>Authorize Telegram</p>
                         </div>
                     </div>
-                    <div className="rewards bg-[#122036] p-5 rounded-md mt-5">
-                        <h2 className='text-lg text-light font-semibold mb-5 pb-[7px]  border-b border-gray-500'>Rewards</h2>
+                    <div className="rewards bg-[#122036] p-5 rounded-md mt-5 blur-content bg-transparent border border-[#0fcfcf4b]">
+                        <h2 className='text-lg text-light font-semibold mb-5 pb-[7px]  border-b border-gray-600'>Rewards</h2>
                         <p className='text-center text-gray pb-10'>You have no rewards yet😕. Retweet to earn some, now!</p>
                     </div>
                 </div>

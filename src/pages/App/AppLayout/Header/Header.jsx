@@ -72,7 +72,7 @@ const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
                 </div>
                 :
                 <div className="connect-metamask ">
-                    <button onClick={handleConnectWallet} className='flex items-center justify-center gap-1 bg-transparent border border-[#12AFAF] text-secondary hover:text-white hover:bg-[#12AFAF] duration-200 w-44 h-12 rounded-full font-bold'>Connect wallet <img src="/images/metamask-logo.png" alt="" className='w-6' /></button>
+                    <button onClick={handleConnectWallet} className='flex items-center justify-center gap-1 bg-transparent border border-[#12AFAF] text-secondary hover:text-white hover:bg-[#12AFAF] duration-200 w-44 h-11 rounded-full font-bold'>Connect wallet <img src="/images/metamask-logo.png" alt="" className='w-6' /></button>
                 </div>
             }
 
