@@ -7,7 +7,6 @@ const injected = new InjectedConnector({
     supportedChainIds: [1, 3, 4, 5, 42],
 });
 
-// Replace this with the actual ABI of the 0x0 token
 const tokenAbi = [
     // Minimal ABI to get ERC20 Token balance
     {
@@ -29,7 +28,6 @@ const tokenAbi = [
     }
 ];
 
-// Replace with the actual address of the 0x0 token contract
 const tokenAddress = '0xb8fda5aee55120247f16225feff266dfdb381d4c';
 
 const useConnectMetamask = () => {
