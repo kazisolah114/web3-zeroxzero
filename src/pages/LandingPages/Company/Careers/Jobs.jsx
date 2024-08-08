@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { HiOutlineBriefcase, HiOutlineCash, HiOutlineLocationMarker } from 'react-icons/hi';
-import { Link, useNavigate } from 'react-router-dom';
+import { HiOutlineCash, HiOutlineLocationMarker } from 'react-icons/hi';
+import { useMediaQuery } from 'react-responsive';
+import { useNavigate } from 'react-router-dom';
 
 const Jobs = () => {
+    const forResponsive = useMediaQuery({query: '(max-width: 1023px)'})
     const [jobs, setJobs] = useState([]);
     useEffect(() => {
         fetch('/careers.json')
@@ -13,7 +15,12 @@ const Jobs = () => {
     }, [])
     const navigate = useNavigate();
     const handleJobClick = (job) => {
-        navigate(`${job.id}`, { state: { jobData: job } })
+        if(forResponsive) {
+            navigate(`jobdetailsres/${job.id}`, { state: { jobData: job } })
+        } else {
+            navigate(`jobdetails/${job.id}`, { state: { jobData: job } })
+        }
+        
     }
     return (
         <div className="jobs ">

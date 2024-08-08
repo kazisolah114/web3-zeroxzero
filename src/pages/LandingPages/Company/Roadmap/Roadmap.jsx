@@ -1,10 +1,8 @@
 import React from 'react';
-import SectionHeader from '../../../../components/CommonComponents/SectionHeader/SectionHeader';
-import './Roadmap.css';
 import { HiOutlineBellAlert, HiOutlineChartBar, HiOutlineCheckBadge, HiOutlineCheckCircle, HiOutlineCpuChip, HiOutlineCurrencyDollar, HiOutlineGiftTop, HiOutlineRocketLaunch, HiOutlineShieldCheck, HiOutlineSquaresPlus, HiOutlineTrophy, HiOutlineViewColumns, HiOutlineWallet } from 'react-icons/hi2';
 import BackgroundShadow from '../../../../components/CommonComponents/BackgroundShadow/BackgroundShadow';
 
-const RoadmapSection = () => {
+const Roadmap = () => {
     const roadmapItems = [
         { year: "2021", period: "Q1/Q2", achivements: "Sandbox Land Purchased", status: "done", icon: <HiOutlineCheckBadge /> },
         { year: "2022", period: "Q3", achivements: "Otherdeeds Land Purchased", status: "done", icon: <HiOutlineCheckCircle /> },
@@ -21,30 +19,30 @@ const RoadmapSection = () => {
         { year: "2025", period: "Q1", achivements: "Decentralised Copy Trading (only the transactions need to be granted by the copier and all the positions tracked and can be closed at anytime)", status: "next", icon: <HiOutlineCurrencyDollar /> },
     ]
     return (
-        <div className='roadmap-section py-24 container'>
+        <div className='roadmap roadmap-section py-24 container'>
             <div className="roadmap-content">
-                <div className="text-element relative" 
+                <div className="text-element relative"
                     data-aos="fade-right" data-aos-duration="1000"
-                    >
+                >
                     <h1 className='text-3xl text-light font-bold mb-3'>0x0 Roadmap_ & Future Prospects</h1>
                     <p className='text-gray '>Have a look at some of the exciting milestones that we have planned to reach in the near future</p>
                     <button className='mt-10 bg-secondaryHover hover:bg-secondary duration-200 w-36 h-11 rounded '>Learn More</button>
                     <BackgroundShadow customShadow="0px 0px 150px 50px #0FCFCF" />
                 </div>
-                <ul className="roadmap" 
+                <ul className="roadmap"
                     data-aos="fade-up" data-aos-duration="1000"
-                    >
+                >
                     {roadmapItems.map((item, index) => (
                         <li key={index} className="flex gap-6 mb-10 items-start">
                             <div className="z-10">
                                 <span
                                     className={`${item.status === "done"
-                                            ? "bg-green-500"
-                                            : item.status === "progressing"
-                                                ? "bg-secondaryHover"
-                                                : item.status === "next"
-                                                    ? "border bg-[#16161F]"
-                                                    : ""
+                                        ? "bg-green-500"
+                                        : item.status === "progressing"
+                                            ? "bg-secondaryHover"
+                                            : item.status === "next"
+                                                ? "border bg-[#16161F]"
+                                                : ""
                                         } text-slate-100 text-xl w-8 h-8 flex items-center justify-center rounded-md`}
                                 >
                                     {item.icon}
@@ -65,4 +63,4 @@ const RoadmapSection = () => {
     );
 };
 
-export default RoadmapSection;
+export default Roadmap;

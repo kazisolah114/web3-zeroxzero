@@ -33,7 +33,7 @@ const AboutUs = () => {
                                     <HiUserGroup className='text-secondary text-7xl ' />
                                 </div>
                                 <div>
-                                    <h1 className='text-white text-4xl font-extrabold mb-1 '>3520</h1>
+                                    <h1 className='text-white text-4xl font-extrabold mb-1 '>688</h1>
                                     <p className='text-light text-xl'>Token holders</p>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@ const AboutUs = () => {
                                     <HiLockClosed className='text-secondary text-7xl ' />
                                 </div>
                                 <div>
-                                    <h1 className='text-white text-4xl font-extrabold mb-1 '>10,3800</h1>
+                                    <h1 className='text-white text-4xl font-extrabold mb-1 '>130,3802</h1>
                                     <p className='text-light text-xl'>Staked tokens</p>
                                 </div>
                             </div>
@@ -60,8 +60,8 @@ const AboutUs = () => {
                                     <HiGlobeAlt className='text-secondary text-7xl ' />
                                 </div>
                                 <div>
-                                    <h1 className='text-white text-4xl font-extrabold mb-1 '>07</h1>
-                                    <p className='text-light text-xl'>Worldwide events</p>
+                                    <h1 className='text-white text-4xl font-extrabold mb-1 '>27.8M</h1>
+                                    <p className='text-light text-xl'>Circulating Supply</p>
                                 </div>
                             </div>
                         </div>

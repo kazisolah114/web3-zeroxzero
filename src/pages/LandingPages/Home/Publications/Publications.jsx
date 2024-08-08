@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { HiOutlineCalendar } from 'react-icons/hi2';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import SectionHeader from '../../../../components/CommonComponents/SectionHeader/SectionHeader';
+import BackgroundShadow from '../../../../components/CommonComponents/BackgroundShadow/BackgroundShadow';
 
 const Publications = () => {
     const [publications, setPublications] = useState([]);
@@ -21,9 +22,10 @@ const Publications = () => {
         }
     }
     return (
-        <div className='publications-section py-24 my-24 container' 
+        <div className='publications-section py-24 my-24 container relative' 
             data-aos="fade-up" data-aos-duration="1000"
             >
+            <BackgroundShadow customShadow="0px 0px 300px 50px #0FCFCF" />
             <SectionHeader sectionTitle={"Our_ Publications"} sectionDesc={"Have a look at some of our publications posted on different platforms with ethical community"} />
             <div className="publications mt-10 grid lg:grid-cols-2 gap-10">
                 {

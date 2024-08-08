@@ -7,12 +7,14 @@ import './WhyUs.css'
 
 const WhyUs = () => {
     return (
-        <div className='whyus-section py-24 container'
+        <div className='whyus-section py-24 container relative'
         data-aos="fade-up" data-aos-duration="1000"
         >
+            <BackgroundShadow customShadow="0px 0px 150px 50px #0FCFCF" />
             <SectionHeader sectionTitle={"Why_ Us"} sectionDesc={"Choose us for our unparalleled expertise, dedication to quality, and commitment to exceeding your expectations"} />
             <div className="whyus-content gap-10 flex justify-between">
-                <div className="info-cont w-full">
+                <div className="info-cont w-full relative">
+                    <BackgroundShadow customShadow="0px 0px 150px 50px #0FCFCF" />
                     <h2 className='text-light text-5xl font-bold mb-6 leading-[60px] sm:h-auto h-32'>
                         <TypeAnimation
                             sequence={[

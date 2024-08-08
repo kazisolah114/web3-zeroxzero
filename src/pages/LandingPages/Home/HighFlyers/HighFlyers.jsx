@@ -33,6 +33,7 @@ const HighFlyers = () => {
         >
             <div className="flyers-content relative flex  gap-5 items-center justify-between">
                 <div className="flyers-info relative w-3/5">
+                    <BackgroundShadow customShadow="0px 0px 150px 50px #0FCFCF" />
                     <span className='text-secondary text-lg font-semibold'>YOU WILL GET</span>
                     <h2 className='text-white text-4xl mt-3 mb-5 font-bold'>HIGH_ FLYERS NFTs</h2>
                     <p className='text-gray text-justify'>Embark on an exhilarating journey with the 0x0 Reveal, where 10,000 unique High Flyers NFTs await collectors. Each High Flyer boasts distinct traits, and upon minting, you acquire a pilot in training, unveiling their character upon completion.
