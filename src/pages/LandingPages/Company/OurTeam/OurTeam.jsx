@@ -4,12 +4,12 @@ import SectionHeader from '../SectionHeader/SectionHeader';
 
 const OurTeam = () => {
     const team = [
-        { name: "Matthew R.", avator: "/images/american_apes.png", title: "Founder and CM", email: "mr@0x0.com", socials: { linkedin: "martlinkedin", twitter: "marttwitter", facebook: "martfacebook" } },
-        { name: "Kazi Solayman", avator: "/images/american_apes.png", title: "Front-end Developer", email: "ks@0x0.com", socials: { linkedin: "kazilinkedin", twitter: "kazitwitter", facebook: "kazifacebook" } },
-        { name: "Alex Solo", avator: "/images/american_apes.png", title: "Marketing Manager", email: "marketing@0x0.com", socials: { linkedin: "kazilinkedin", twitter: "kazitwitter", facebook: "kazifacebook" } },
-        { name: "Roy Arata", avator: "/images/american_apes.png", title: "Web3 Developer", email: "cok@0x0.com", socials: { linkedin: "kazilinkedin", twitter: "kazitwitter", facebook: "kazifacebook" } },
-        { name: "Jenna Jenna", avator: "/images/american_apes.png", title: "HR Manager", email: "info@0x0.com", socials: { linkedin: "kazilinkedin", twitter: "kazitwitter", facebook: "kazifacebook" } },
-        { name: "Andy Andres", avator: "/images/american_apes.png", title: "Solidity Developer", email: "andy@0x0.com", socials: { linkedin: "kazilinkedin", twitter: "kazitwitter", facebook: "kazifacebook" } },
+        { name: "Mart", avator: "/images/american_apes.png", title: "Founder and CM", email: "mr@0x0.com", socials: { linkedin: "martlinkedin", twitter: "marttwitter", facebook: "martfacebook" } },
+        { name: "Kazi", avator: "/images/american_apes.png", title: "Front-end Developer", email: "ks@0x0.com", socials: { linkedin: "kazilinkedin", twitter: "kazitwitter", facebook: "kazifacebook" } },
+        { name: "Alex", avator: "/images/american_apes.png", title: "Marketing Manager", email: "marketing@0x0.com", socials: { linkedin: "kazilinkedin", twitter: "kazitwitter", facebook: "kazifacebook" } },
+        { name: "Cok", avator: "/images/american_apes.png", title: "Web3 Developer", email: "email not available", socials: { linkedin: "kazilinkedin", twitter: "kazitwitter", facebook: "kazifacebook" } },
+        { name: "Jube", avator: "/images/american_apes.png", title: "HR Manager", email: "info@0x0.com", socials: { linkedin: "kazilinkedin", twitter: "kazitwitter", facebook: "kazifacebook" } },
+        { name: "Andy", avator: "/images/american_apes.png", title: "Solidity Developer", email: "email not available", socials: { linkedin: "kazilinkedin", twitter: "kazitwitter", facebook: "kazifacebook" } },
     ]
 
 

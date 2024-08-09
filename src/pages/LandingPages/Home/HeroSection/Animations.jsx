@@ -37,6 +37,7 @@ const Animations = () => {
             <BackgroundShadow customShadow="0px 0px 150px 40px #10B8B9" />
             <div className='w-full h-full'>
                 <Lottie options={defaultOptions3} />
+                {/* <video controls src="/public/videos/hero-anim.mp4"></video> */}
             </div>
         </div>
     );

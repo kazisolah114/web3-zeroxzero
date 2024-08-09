@@ -1,12 +1,12 @@
 import React from 'react';
-import { HiBriefcase, HiOutlineBriefcase, HiOutlineCash, HiOutlineExternalLink, HiOutlineLocationMarker, HiOutlineMail, HiOutlinePhoneOutgoing } from 'react-icons/hi';
+import { HiOutlineBriefcase, HiOutlineCash, HiOutlineExternalLink, HiOutlineLocationMarker, HiOutlineMail, HiOutlinePhoneOutgoing } from 'react-icons/hi';
 import { useLocation } from 'react-router-dom';
 
 const JobDetails = () => {
     let location = useLocation();
     const jobData = location.state?.jobData;
     return (
-        <div className="job-details border border-gray-700 border-opacity-80 rounded-md overflow-auto h-[600px] sticky top-[120px] left-0 outlet-scrollbar">
+        <div className="job-details max-lg:my-14 border border-gray-700 border-opacity-80 rounded-md lg:overflow-auto lg:h-[600px] lg:sticky lg:top-[115px] lg:left-0 outlet-scrollbar">
             <div className="job-details-header flex justify-between p-4 shadow-lg shadow-gray-950">
                 <div>
                     <h2 className='text-white font-semibold text-2xl mb-3'>{jobData.title}</h2>
@@ -16,11 +16,11 @@ const JobDetails = () => {
                         <p className='text-slate-300 flex items-center gap-1'><HiOutlineBriefcase className='text-secondary' /> Full-time</p>
                     </div>
                 </div>
-                <div>
+                <div className='max-sm:hidden'>
                     <button className='flex items-center gap-1 font-bold text-white py-3 px-7 bg-secondaryHover hover:bg-secondary duration-200 rounded-md '>Apply Now <HiOutlineExternalLink className='text-lg font-bold' /></button>
                 </div>
             </div>
-            <div className="job-details-main p-4 mt-5">
+            <div className="job-details-main p-4 my-5">
                 <p className='text-gray  mb-5'>{jobData.job_description}</p>
                 <p className='text-gray font-semibold'>Number of vacancy: {jobData.num_vacancy}</p>
                 <div className="contacts mt-5">
@@ -29,6 +29,9 @@ const JobDetails = () => {
                         <li className='text-gray flex items-center gap-1'><HiOutlinePhoneOutgoing className='text-secondary' /> {jobData.contact.phone}</li>
                         <li className='text-gray flex items-center gap-1'><HiOutlineMail className='text-secondary' /> {jobData.contact.email}</li>
                     </ul>
+                </div>
+                <div className='sm:hidden flex justify-center mt-10'>
+                    <button className='flex items-center justify-center gap-1 font-bold text-white w-full  py-3 px-7 bg-secondaryHover hover:bg-secondary duration-200 rounded-md '>Apply Now <HiOutlineExternalLink className='text-lg font-bold' /></button>
                 </div>
             </div>
         </div>

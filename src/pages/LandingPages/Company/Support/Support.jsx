@@ -43,7 +43,7 @@ const Support = () => {
                         </div>
                         <div>
                             <h3 className='text-white text-xl mb-3'>Address</h3>
-                            <p className='text-light '>82 York Dr, 24802, Black Creek <br /> Maryland, USA</p>
+                            <p className='text-light '>Firecracker Finance LLC, First St Vincent Bank Ltd Builfing Kingstown St. Vincent and the Grenadines</p>
                         </div>
                     </div>
                     <div className='flex gap-4 rounded-md shadow-xl shadow-gray-950 px-5 py-10 mb-5'>

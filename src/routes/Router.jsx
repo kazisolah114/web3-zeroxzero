@@ -25,6 +25,7 @@ import Support from "../pages/LandingPages/Company/Support/Support";
 import Publications from "../pages/LandingPages/Company/Publications/Publications";
 import Ethical from "../pages/LandingPages/Ethical/Ethical";
 import Wallet from "../pages/App/AppPages/Wallet/Wallet";
+import Roadmap from "../pages/LandingPages/Company/Roadmap/Roadmap";
 
 
 const router = createBrowserRouter([
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
         element: <Support />
       },
       {
+        path: '/roadmap',
+        element: <Roadmap />
+      },
+      {
         path: '/publications',
         element: <Publications />
       },
@@ -69,10 +74,14 @@ const router = createBrowserRouter([
         element: <Careers />,
         children: [
           {
-            path: '/careers/:id',
+            path: 'jobdetails/:id',
             element: <JobDetails />
           }
         ]
+      },
+      {
+        path: 'careers/jobdetailsres/:id',
+        element: <div className="container"><JobDetails /></div>
       }
     ]
   },

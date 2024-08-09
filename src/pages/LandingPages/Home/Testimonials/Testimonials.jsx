@@ -107,7 +107,6 @@ const Testimonials = () => {
                 <div className="testimonials-image relative">
                     <BackgroundShadow customShadow="0px 0px 300px 50px #fff" />
                     <img className='' src="https://i.ibb.co/jGLJq0C/testi-flat-map.png" alt="" />
-                    {/* <Lottie options={defaultOptions} /> */}
                 </div>
             </div>
         </div>
