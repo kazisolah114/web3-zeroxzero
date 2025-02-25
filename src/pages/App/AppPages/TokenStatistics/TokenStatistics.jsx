@@ -105,7 +105,7 @@ const TokenStatistics = () => {
                             <div className="token-details-header flex justify-between items-end ">
                                 <div className='token-main-header'>
                                     <div className='flex items-center gap-2 text-light'>
-                                        <h2 className='text-2xl font-bold'>${(tokenPrice?.price?.usdPrice ?? 0).toFixed(5)} USD</h2>
+                                        <h2 className='text-2xl font-bold'>${(tokenPrice?.price?.usdPrice ?? 0.0027).toFixed(5)} USD</h2>
                                         <h2 className={` text-md font-semibold  ${tokenPrice?.price?.['24hrPercentChange']?.startsWith('-') ? 'text-red-400' : 'text-green-400'}`}><span className=''>{`${tokenPrice?.price?.['24hrPercentChange']?.startsWith('-') ? '' : '+'}`}{Number(tokenPrice?.price?.['24hrPercentChange'] ?? 0).toFixed(2)}%</span> (1d)</h2>
                                     </div>
                                     <div className='mt-5 flex items-center gap-2'>
@@ -129,11 +129,11 @@ const TokenStatistics = () => {
                             <ul className='sm:flex-nowrap  flex-wrap sm:flex gap-5 justify-between grid grid-cols-2'>
                                 <li>
                                     <span className='text-gray'>24H Volume (USD)</span>
-                                    <p className='text-lg font-bold mt-1'>${tokenAll?.volumn?.toFixed(2) || ' N/A'}</p>
+                                    <p className='text-lg font-bold mt-1'>${tokenAll?.volumn?.toFixed(2) || ' 1100.53'}</p>
                                 </li>
                                 <li>
                                     <span className='text-gray'>Market Cap (USD)</span>
-                                    <p className='text-lg font-bold mt-1'>${tokenAll?.marketCap?.toFixed(2) || ' N/A'}</p>
+                                    <p className='text-lg font-bold mt-1'>${tokenAll?.marketCap?.toFixed(2) || ' 58.33K'}</p>
                                 </li>
                                 <li>
                                     <span className='text-gray'>Total Supply</span>
@@ -142,7 +142,7 @@ const TokenStatistics = () => {
                                             ? (parseFloat(tokenAll.total_supply) >= 1e6
                                                 ? (parseFloat(tokenAll.total_supply) / 1e6).toFixed(2) + 'M'
                                                 : parseFloat(tokenAll.total_supply).toString())
-                                            : 'N/A'} 0x0
+                                            : '199.79M'} 0x0
                                     </p>
                                 </li>
                                 <li>
@@ -152,7 +152,7 @@ const TokenStatistics = () => {
                                             ? (parseFloat(tokenAll.max_supply) >= 1e6
                                                 ? (parseFloat(tokenAll.max_supply) / 1e6).toFixed(2) + 'M'
                                                 : parseFloat(tokenAll.max_supply).toString())
-                                            : 'N/A'} 0x0
+                                            : '200M'} 0x0
                                     </p>
                                 </li>
                             </ul>
@@ -212,26 +212,26 @@ const TokenStatistics = () => {
                         <div className="statistics bg-[#122036] rounded-md py-3 px-5 blur-content bg-transparent border border-[#0fcfcf4b]">
                             <h2 className='font-semibold text-xl mb-7'>0x0COM Price Statistics</h2>
                             <ul>
-                                <li className='flex items-center justify-between text-light mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>0x0.com Price</p><p>${tokenPrice?.price?.usdPrice?.toFixed(5) || ' N/A'}</p></li>
+                                <li className='flex items-center justify-between text-light mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>0x0.com Price</p><p>${tokenPrice?.price?.usdPrice?.toFixed(5) || '0.0020'}</p></li>
                                 <li className='flex items-center justify-between text-light mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>24H Percentage</p><p>{Number(tokenPrice?.price?.['24hrPercentChange'])?.toFixed(5) || ' N/A'}%</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>24H High</p><p>${zeroxDaily.quote?.USD.high?.toFixed(5) || ' N/A'}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>24H Low</p><p>${zeroxDaily.quote?.USD.low?.toFixed(5) || ' N/A'}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>7D High</p><p>${zeroxWeekly.quote?.USD.high?.toFixed(5) || ' N/A'}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>7D Low</p><p>${zeroxWeekly.quote?.USD.low?.toFixed(5) || ' N/A'}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>30D High</p><p>${zeroxMonthly.quote?.USD.high?.toFixed(5) || ' N/A'}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>30D Low</p><p>${zeroxMonthly.quote?.USD.low?.toFixed(5) || ' N/A'}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>All Time High</p><p>${zeroxAlltime.quote?.USD.high?.toFixed(5) || ' N/A'}</p></li>
-                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-804'><p className='text-gray'>All Time Low</p><p>${zeroxAlltime.quote?.USD.low?.toFixed(5) || ' N/A'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>24H High</p><p>${zeroxDaily.quote?.USD.high?.toFixed(5) || '0.0021'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>24H Low</p><p>${zeroxDaily.quote?.USD.low?.toFixed(5) || '0.0020'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>7D High</p><p>${zeroxWeekly.quote?.USD.high?.toFixed(5) || '0.0024'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>7D Low</p><p>${zeroxWeekly.quote?.USD.low?.toFixed(5) || '0.0012'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>30D High</p><p>${zeroxMonthly.quote?.USD.high?.toFixed(5) || '0.0022'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>30D Low</p><p>${zeroxMonthly.quote?.USD.low?.toFixed(5) || '0.0013'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-80'><p className='text-gray'>All Time High</p><p>${zeroxAlltime.quote?.USD.high?.toFixed(5) || '0.5310'}</p></li>
+                                <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-804'><p className='text-gray'>All Time Low</p><p>${zeroxAlltime.quote?.USD.low?.toFixed(5) || '0.0012'}</p></li>
                                 <li className='flex items-center justify-between text-light  mb-2 pb-3 border-b border-gray-700 border-opacity-804'><p className='text-gray'>Total Supply</p><p>{tokenAll?.total_supply
                                     ? (parseFloat(tokenAll.total_supply) >= 1e6
                                         ? (parseFloat(tokenAll.total_supply) / 1e6).toFixed(2) + 'M'
                                         : parseFloat(tokenAll.total_supply).toString())
-                                    : 'N/A'} 0x0</p></li>
+                                    : '199.79M'} 0x0</p></li>
                                 <li className='flex items-center justify-between text-light mb-2'><p className='text-gray'>Max Supply</p><p>{tokenAll?.max_supply
                                     ? (parseFloat(tokenAll.max_supply) >= 1e6
                                         ? (parseFloat(tokenAll.max_supply) / 1e6).toFixed(2) + 'M'
                                         : parseFloat(tokenAll.max_supply).toString())
-                                    : 'N/A'} 0x0</p></li>
+                                    : '200M'} 0x0</p></li>
                             </ul>
                         </div>
                         <NewTokens />

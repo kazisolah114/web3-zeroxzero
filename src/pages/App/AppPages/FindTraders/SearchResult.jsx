@@ -8,12 +8,11 @@ import Loader from '../../../../components/CommonComponents/Loader/Loader';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const SearchResult = ({ selectedBase, selectedTarget, selectedTime, renderResult, isLoading, setIsLoading }) => {
-    console.log(renderResult);
-    const [customResult, setCustomResult] = useState({})
+    const [customResult, setCustomResult] = useState({});
     const [error, setError] = useState(null);
-    console.log(typeof error);
+
     useEffect(() => {
-        fetch(`https://leaderboard.0x0.com/top?token=${selectedTarget.wallet}&interval=${selectedTime.interval}`)
+        fetch(`/leaderboard.json`)
             .then(res => res.json())
             .then(data => {
                 setCustomResult(data);
@@ -22,8 +21,8 @@ const SearchResult = ({ selectedBase, selectedTarget, selectedTime, renderResult
             .catch(err => {
                 setIsLoading(false);
                 setError(err);
-            })
-    }, [renderResult])
+            });
+    }, [renderResult]);
 
     const notify = () => toast.success('Wallet added to the tracking list!', {
         position: "top-right",
@@ -42,14 +41,13 @@ const SearchResult = ({ selectedBase, selectedTarget, selectedTime, renderResult
     const handleTrackWallet = (wallet) => {
         if (trackingList.includes(wallet)) {
             setTrackingList(trackingList.filter(item => item !== wallet));
-
         } else {
             setTrackingList([...trackingList, wallet]);
-            setTracking(!tracking)
+            setTracking(!tracking);
             notify();
         }
+    };
 
-    }
     return (
         <div>
             {isLoading ?
@@ -64,48 +62,63 @@ const SearchResult = ({ selectedBase, selectedTarget, selectedTime, renderResult
                     </div>
                 </SkeletonTheme>
                 : error
-                ?
-                <div className="error-message flex flex-col gap-3 justify-center items-center mt-10">
-                    <img src="/images/error-robot.png" alt="" className='w-80 mb-5' />
-                    <h3 className='font-semibold text-[#ed615b] text-xl text-center'>An error has occured while fetching data!</h3>
-                    <p className='text-gray'>Pleae refresh the page or try again later</p>
-                </div>
-                :
-                <div className='search-result '>
-                    <ToastContainer />
-                    {customResult?.leaderboard && customResult?.leaderboard.length > 0 ?
-                        <div className='mt-5 flex flex-col justify-center '>
-                            <div className='search-table-head text-light bg-[#122036] px-[30px] py-5 rounded-md '>
-                                <p>#</p>
-                                <p className='mr-12'>Wallet Address</p>
-                                <p>Profit Percentage</p>
-                                <p>Coin Volume</p>
-                                <p className='mx-auto text-center'>Track Wallet</p>
+                    ?
+                    <div className="error-message flex flex-col gap-3 justify-center items-center mt-10">
+                        <img src="/images/error-robot.png" alt="" className='w-80 mb-5' />
+                        <h3 className='font-semibold text-[#ed615b] text-xl text-center'>An error has occured while fetching data!</h3>
+                        <p className='text-gray'>Please refresh the page or try again later</p>
+                    </div>
+                    :
+                    <div className='search-result '>
+                        <ToastContainer />
+                        {customResult?.leaderboards?.length > 0 ?
+                            <div className='mt-5 flex flex-col justify-center '>
+                                <div className='search-table-head text-light bg-[#122036] px-[30px] py-5 rounded-md '>
+                                    <p>#</p>
+                                    <p className='mr-12'>Wallet Address</p>
+                                    <p>Profit Percentage</p>
+                                    <p>Coin Volume</p>
+                                    <p className='mx-auto text-center'>Track Wallet</p>
+                                </div>
+                                {
+                                    customResult?.leaderboards?.slice(0, 1).map((tokenItem, tokenIndex) => (
+                                        <div key={tokenIndex} className='mb-8'>
+
+                                            {/* Leaderboard items */}
+                                            {tokenItem?.leaderboard?.map((leader, index) => (
+                                                <div key={index} className='search-table-content border-b border-slate-800 text-light px-[30px] py-5'>
+                                                    <p>{index + 1}</p>
+                                                    <Link
+                                                        to={`https://etherscan.io/address/${leader.wallet}`}
+                                                        target="_blank"
+                                                        className='mr-12 text-white hover:underline'
+                                                    >
+                                                        {leader.wallet.substring(0, 6)}...{leader.wallet.substring(leader.wallet.length - 6)}
+                                                    </Link>
+                                                    <p className={`${leader.profitPercent.startsWith('-') ? 'text-red-400' : 'text-green-400'}`}>
+                                                        {leader.profitPercent}
+                                                    </p>
+                                                    <p>N/A</p>
+                                                    <p onClick={() => handleTrackWallet(leader.wallet)} className='mx-auto cursor-pointer'>
+                                                        {trackingList.includes(leader.wallet) ? (
+                                                            <HiOutlineEyeSlash className='text-2xl text-secondary' />
+                                                        ) : (
+                                                            <HiOutlineEye className='text-2xl' />
+                                                        )}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ))
+                                }
+
                             </div>
-                            {
-                                customResult?.leaderboard?.map((item, index) => <div className='search-table-content  border-b border-slate-800   text-light  px-[30px] py-5'>
-                                    <p>{index + 1}</p>
-                                    <Link to={`https://etherscan.io/address/${item.wallet}`} target="_blank" className=''>{item.wallet.substring(0, 6)}...{item.wallet.substring(item.wallet.length - 6)}</Link>
-                                    <p className={`${item.profitPercent.startsWith("-") ? 'text-red-400' : 'text-green-400'}`}>{item.profitPercent}</p>
-                                    <p>N/A</p>
-                                    <p onClick={() => handleTrackWallet(item.wallet)} className='mx-auto cursor-pointer'>
-                                        {trackingList.includes(item.wallet) ?
-                                            <HiOutlineEyeSlash className='text-2xl text-secondary' />
-                                            :
-                                            <HiOutlineEye className='text-2xl' />
-                                        }
-                                    </p>
-
-                                </div>)
-                            }
-                        </div>
-                        :
-                        <div className='text-center mt-10'>
-                            <h4 className='text-gray'>No records were found for the given base, target and time period😕</h4>
-                        </div>
-                    }
-
-                </div>
+                            :
+                            <div className='text-center mt-10'>
+                                <h4 className='text-gray'>No records were found for the given base, target and time period😕</h4>
+                            </div>
+                        }
+                    </div>
             }
         </div>
     );

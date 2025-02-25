@@ -1,226 +1,65 @@
-[
-    {
-        "exchange_with": "WETH",
-        "exchange_against": "WCD",
-        "data": [
-            {
-                "id": 143753,
-                "address": "0xJBCD174564924234",
-                "profit_percentage": "+658.22"
-            },
-            {
-                "id": 29574634,
-                "address": "0xABCD456717444234",
-                "profit_percentage": "+828.22"
-            },
-            {
-                "id": 354064,
-                "address": "0xEFGH84455684378",
-                "profit_percentage": "+162.39"
-            },
-            {
-                "id": 4346653,
-                "address": "0xJBCD9239264454",
-                "profit_percentage": "+4.55"
-            },
-            {
-                "id": 5060434,
-                "address": "0xABCD15534563234",
-                "profit_percentage": "-8.22"
-            },
-            {
-                "id": 60454064,
-                "address": "0xEFGH67F45845678",
-                "profit_percentage": "+162.39"
-            },
-            {
-                "id": 754064,
-                "address": "0xEFGH524556236278",
-                "profit_percentage": "+192.39"
-            },
-            {
-                "id": 8060434,
-                "address": "0xABCD15423456234",
-                "profit_percentage": "-0.22"
-            },
-            {
-                "id": 90454064,
-                "address": "0xEFGH34566784178",
-                "profit_percentage": "+162.39"
-            },
-            {
-                "id": 1054064,
-                "address": "0xEFGH84455486SS8",
-                "profit_percentage": "-2.39"
-            }
+{
+    "leaderboards": [
+      {
+        "token": "WBTC",
+        "leaderboard": [
+          { "wallet": "0xabc1234567abcdef", "profitPercent": "25.34%" },
+          { "wallet": "0xdef456789abcdef123", "profitPercent": "-10.55%" },
+          { "wallet": "0xabc123452789abcdef", "profitPercent": "25.53%" },
+          { "wallet": "0xdef45678s9abcdef123", "profitPercent": "-10.55%" },
+          { "wallet": "0xabc123456789abcdef", "profitPercent": "25.43%" },
+          { "wallet": "0xdef456789abfcdef123", "profitPercent": "-10.45%" },
+          { "wallet": "0xdef456789abcdef123", "profitPercent": "-10.54%" },
+          { "wallet": "0xabc123456789ebcdef", "profitPercent": "25.43%" },
+          { "wallet": "0xdef456789aadef123", "profitPercent": "-10.55%" },
+          { "wallet": "0xghi789abcdef123456", "profitPercent": "5.75%" }
         ]
-    },
-    {
-        "exchange_with": "WETH",
-        "exchange_against": "SPYRO",
-        "data": [
-            {
-                "id": 140453,
-                "address": "0xJBCD235431753234",
-                "profit_percentage": "+268.22"
-            },
-            {
-                "id": 295746344,
-                "address": "0xABCS454445678234",
-                "profit_percentage": "+68.22"
-            },
-            {
-                "id": 354066784,
-                "address": "0xEFGH844554659348",
-                "profit_percentage": "+162.39"
-            },
-            {
-                "id": 43434676653,
-                "address": "0xJBCD99354334244",
-                "profit_percentage": "-68.22"
-            },
-            {
-                "id": 506045434,
-                "address": "0xABCD12345534",
-                "profit_percentage": "+368.22"
-            },
-            {
-                "id": 604540664,
-                "address": "0xEFGH67F43545548",
-                "profit_percentage": "+62.39"
-            },
-            {
-                "id": 75400064,
-                "address": "0xEFG234552455678",
-                "profit_percentage": "+162.39"
-            },
-            {
-                "id": 806230434,
-                "address": "0xAD54675654234",
-                "profit_percentage": "+68.22"
-            },
-            {
-                "id": 9045074064,
-                "address": "0xEFGH675671278",
-                "profit_percentage": "+162.39"
-            },
-            {
-                "id": 10543064,
-                "address": "0xEFGH84FR354SS8",
-                "profit_percentage": "-62.39"
-            }
+      },
+      {
+        "token": "LINK",
+        "leaderboard": [
+          { "wallet": "0xjkl123456782abcdef", "profitPercent": "12.8%" },
+          { "wallet": "0xmn123456289abcdef45", "profitPercent": "7.4%" },
+          { "wallet": "0xjkl1234567895bcdef", "profitPercent": "12.8%" },
+          { "wallet": "0xmn123456789abcdef45", "profitPercent": "7.4%" },
+          { "wallet": "0xjkl123456789ab5def", "profitPercent": "12.8%" },
+          { "wallet": "0xmn123456789ab2def45", "profitPercent": "7.4%" },
+          { "wallet": "0xjkl123456781abcdef", "profitPercent": "12.8%" },
+          { "wallet": "0xmn123456789ab4def45", "profitPercent": "7.4%" },
+          { "wallet": "0xmn123456789abc1ef45", "profitPercent": "7.4%" },
+          { "wallet": "0xop123456789abcdef67", "profitPercent": "-4.3%" }
         ]
-    },
-    {
-        "exchange_with": "WETH",
-        "exchange_against": "SORA",
-        "data": [
-            {
-                "id": 143753,
-                "address": "0xJBCD174564924234",
-                "profit_percentage": "+658.22"
-            },
-            {
-                "id": 29574634,
-                "address": "0xABCD456717444234",
-                "profit_percentage": "+828.22"
-            },
-            {
-                "id": 354064,
-                "address": "0xEFGH84455684378",
-                "profit_percentage": "+162.39"
-            },
-            {
-                "id": 4346653,
-                "address": "0xJBCD9239264454",
-                "profit_percentage": "+4.55"
-            },
-            {
-                "id": 5060434,
-                "address": "0xABCD15534563234",
-                "profit_percentage": "-8.22"
-            },
-            {
-                "id": 60454064,
-                "address": "0xEFGH67F45845678",
-                "profit_percentage": "+162.39"
-            },
-            {
-                "id": 754064,
-                "address": "0xEFGH524556236278",
-                "profit_percentage": "+192.39"
-            },
-            {
-                "id": 8060434,
-                "address": "0xABCD15423456234",
-                "profit_percentage": "-0.22"
-            },
-            {
-                "id": 90454064,
-                "address": "0xEFGH34566784178",
-                "profit_percentage": "+162.39"
-            },
-            {
-                "id": 1054064,
-                "address": "0xEFGH84455486SS8",
-                "profit_percentage": "-2.39"
-            }
+      },
+      {
+        "token": "DOGE",
+        "leaderboard": [
+          { "wallet": "0xabc123456789abcdef", "profitPercent": "25.3%" },
+          { "wallet": "0xdef456789abc3ef123", "profitPercent": "-10.5%" },
+          { "wallet": "0xabc123456719abcdef", "profitPercent": "25.3%" },
+          { "wallet": "0xdef456789abc4ef123", "profitPercent": "-10.5%" },
+          { "wallet": "0xabc123456789abcdef", "profitPercent": "25.3%" },
+          { "wallet": "0xdef456789abcdef123", "profitPercent": "-10.5%" },
+          { "wallet": "0xabc123456789abcdef", "profitPercent": "25.3%" },
+          { "wallet": "0xdef456789abcdef123", "profitPercent": "-10.5%" },
+          { "wallet": "0xabc123456789abcdef", "profitPercent": "25.3%" },
+          { "wallet": "0xdef456789abcdef123", "profitPercent": "-10.5%" }
         ]
-    },
-    {
-        "exchange_with": "WETH",
-        "exchange_against": "PDX",
-        "data": [
-            {
-                "id": 140453,
-                "address": "0xJBCD235431753234",
-                "profit_percentage": "+268.22"
-            },
-            {
-                "id": 295746344,
-                "address": "0xABCS454445678234",
-                "profit_percentage": "+68.22"
-            },
-            {
-                "id": 354066784,
-                "address": "0xEFGH844554659348",
-                "profit_percentage": "+162.39"
-            },
-            {
-                "id": 43434676653,
-                "address": "0xJBCD99354334244",
-                "profit_percentage": "-68.22"
-            },
-            {
-                "id": 506045434,
-                "address": "0xABCD12345534",
-                "profit_percentage": "+368.22"
-            },
-            {
-                "id": 604540664,
-                "address": "0xEFGH67F43545548",
-                "profit_percentage": "+62.39"
-            },
-            {
-                "id": 75400064,
-                "address": "0xEFG234552455678",
-                "profit_percentage": "+162.39"
-            },
-            {
-                "id": 806230434,
-                "address": "0xAD54675654234",
-                "profit_percentage": "+68.22"
-            },
-            {
-                "id": 9045074064,
-                "address": "0xEFGH675671278",
-                "profit_percentage": "+162.39"
-            },
-            {
-                "id": 10543064,
-                "address": "0xEFGH84FR354SS8",
-                "profit_percentage": "-62.39"
-            }
+      },
+      {
+        "token": "SHIB",
+        "leaderboard": [
+          { "wallet": "0xjkl123456789abcdef", "profitPercent": "12.8%" },
+          { "wallet": "0xmn123456789abcdef45", "profitPercent": "7.4%" },
+          { "wallet": "0xjkl123456789abcdef", "profitPercent": "12.8%" },
+          { "wallet": "0xmn123456789abcdef45", "profitPercent": "7.4%" },
+          { "wallet": "0xjkl123456789abcdef", "profitPercent": "12.8%" },
+          { "wallet": "0xmn123456789abcdef45", "profitPercent": "7.4%" },
+          { "wallet": "0xjkl123456789abcdef", "profitPercent": "12.8%" },
+          { "wallet": "0xmn123456789abcdef45", "profitPercent": "7.4%" },
+          { "wallet": "0xjkl123456789abcdef", "profitPercent": "12.8%" },
+          { "wallet": "0xmn123456789abcdef45", "profitPercent": "7.4%" }
         ]
-    }
-]
+      }
+    ]
+  }
+  

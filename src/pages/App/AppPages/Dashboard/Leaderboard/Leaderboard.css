@@ -1,11 +1,11 @@
 .leaderboard-table-head {
     display: grid;
-    grid-template-columns: 50px 175px 150px 85px;
+    grid-template-columns: 50px 195px 160px 60px;
     gap: 5px;
 }
 .leaderboard-table-content{
     display: grid;
-    grid-template-columns: 50px 175px 150px 85px;
+    grid-template-columns: 50px 195px 160px 60px;
     gap: 5px;
 }
 .leaderboard-table-content:last-child{

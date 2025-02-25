@@ -5,11 +5,11 @@ import { HiOutlineChevronDown } from 'react-icons/hi';
 
 const TokenConvert = ({ tokenPrice }) => {
     const [numberOfTokens, setNumberOfTokens] = useState(1);
-    const [usdPrice, setUsdPrice] = useState(tokenPrice?.price?.usdPrice);
-
-    useEffect(() => {
-        setUsdPrice(tokenPrice?.price?.usdPrice);
-    }, [tokenPrice]);
+    // const [usdPrice, setUsdPrice] = useState(tokenPrice?.price?.usdPrice);
+    // useEffect(() => {
+    //     setUsdPrice(tokenPrice?.price?.usdPrice);
+    // }, [tokenPrice]);
+    const usdPrice = 0.0020;
 
     const handleTokenChange = (value) => {
         setNumberOfTokens(value);
