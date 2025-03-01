@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { HiMenu, HiMenuAlt1, HiMenuAlt2, HiMenuAlt3, HiOutlineCode, HiOutlineLogout, HiX } from 'react-icons/hi';
-import { HiOutlineBugAnt, HiOutlineCodeBracket, HiOutlineCog6Tooth, HiOutlineUser } from 'react-icons/hi2';
+import React, { useState } from 'react';
+import { HiMenuAlt1, HiOutlineLogout, HiX, HiOutlinePaperAirplane } from 'react-icons/hi';
+import { HiOutlineCodeBracket, HiOutlineUser } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { useUserContext } from '../../../../ContextAPI/UserContext';
+import { FaDiscord, FaFacebook, FaGlobe, FaInstagram, FaTwitter } from 'react-icons/fa6';
 
 const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
     const [userProfileClicked, setUserProfileClicked] = useState(false);
     const handleuserProfileClicked = () => {
         setUserProfileClicked(!userProfileClicked);
     }
-    const {wallet, balance, handleConnectWallet, handleDisconnectWallet } = useUserContext();
+    const { wallet, balance, handleConnectWallet, handleDisconnectWallet } = useUserContext();
     return (
         <div className='app-header w-full py-5 justify-between flex items-center px-5'>
             <div className="menu-vs-socials">
@@ -24,13 +25,33 @@ const Header = ({ showResponsiveMenu, setShowResponsiveMenu }) => {
                     }
                 </div>
                 <div className="socials">
-                    <ul className='flex items-center gap-4'>
-                        <h2 className='text-[20px] font-semibold text-light'>Follow us at</h2>
-                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://twitter.com/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/twitter.svg" alt="" /></Link></li>
-                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://www.facebook.com/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/facebook.svg" alt="" /></Link></li>
-                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://www.instagram.com/0x0_official/?hl=en" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/instagram.svg" alt="" /></Link></li>
-                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://www.facebook.com/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/discord.svg" alt="" /></Link></li>
-                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9  inline-block rounded-full'><Link to="https://t.me/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/telegram.svg" alt="" /></Link></li>
+                    <ul className="flex items-center gap-4">
+                        <h2 className="text-[20px] font-semibold text-light">Follow us at</h2>
+                        <li className="border border-gray-600 hover:border-gray-200 duration-160 w-8 h-8 flex items-center justify-center rounded-full">
+                            <Link to="https://twitter.com/www0x0com" target="_blank">
+                                <FaTwitter size={16} />
+                            </Link>
+                        </li>
+                        <li className="border border-gray-600 hover:border-gray-200 duration-160 w-8 h-8 flex items-center justify-center rounded-full">
+                            <Link to="https://www.facebook.com/www0x0com" target="_blank">
+                                <FaFacebook size={16} />
+                            </Link>
+                        </li>
+                        <li className="border border-gray-600 hover:border-gray-200 duration-160 w-8 h-8 flex items-center justify-center rounded-full">
+                            <Link to="https://www.instagram.com/0x0_official/?hl=en" target="_blank">
+                                <FaInstagram size={16} />
+                            </Link>
+                        </li>
+                        <li className="border border-gray-600 hover:border-gray-200 duration-160 w-8 h-8 flex items-center justify-center rounded-full">
+                            <Link to="https://discord.com" target="_blank">
+                                <FaDiscord size={16} />
+                            </Link>
+                        </li>
+                        <li className="border border-gray-600 hover:border-gray-200 duration-160 w-8 h-8 flex items-center justify-center rounded-full">
+                            <Link to="https://t.me/www0x0com" target="_blank">
+                                <FaGlobe size={16} />
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>

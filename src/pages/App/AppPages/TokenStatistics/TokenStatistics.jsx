@@ -15,6 +15,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import NewTokens from './NewTokens';
 import TopHoldersStakers from './TopHoldersStakers';
 import ZeroxBalance from './ZeroxBalance';
+import { FaDiscord, FaFacebook, FaGlobe, FaInstagram, FaTwitter } from 'react-icons/fa6';
 
 const TokenStatistics = () => {
     const [tokenPrice, setTokenPrice] = useState(null);
@@ -183,13 +184,32 @@ const TokenStatistics = () => {
                                     </ul>
                                 </div>
                                 <div className="socials">
-                                    <ul className='flex items-center gap-4'>
-                                        <h2 className='text-md font-semibold text-gray '>Socials</h2>
-                                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://twitter.com/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/twitter.svg" alt="" /></Link></li>
-                                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://www.facebook.com/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/facebook.svg" alt="" /></Link></li>
-                                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://www.instagram.com/0x0_official/?hl=en" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/instagram.svg" alt="" /></Link></li>
-                                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9 inline-block rounded-full'><Link to="https://www.facebook.com/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/discord.svg" alt="" /></Link></li>
-                                        <li className='border border-gray-600 hover:border-gray-200 duration-150 w-9  inline-block rounded-full'><Link to="https://t.me/www0x0com" target='_blank'><img src="https://crypto.com/__assets/mkt-nav-footer/images/icons/socials/telegram.svg" alt="" /></Link></li>
+                                    <ul className="flex items-center gap-4">
+                                        <li className="border border-gray-600 hover:border-gray-200 duration-160 w-8 h-8 flex items-center justify-center rounded-full">
+                                            <Link to="https://twitter.com/www0x0com" target="_blank">
+                                                <FaTwitter size={16} />
+                                            </Link>
+                                        </li>
+                                        <li className="border border-gray-600 hover:border-gray-200 duration-160 w-8 h-8 flex items-center justify-center rounded-full">
+                                            <Link to="https://www.facebook.com/www0x0com" target="_blank">
+                                                <FaFacebook size={16} />
+                                            </Link>
+                                        </li>
+                                        <li className="border border-gray-600 hover:border-gray-200 duration-160 w-8 h-8 flex items-center justify-center rounded-full">
+                                            <Link to="https://www.instagram.com/0x0_official/?hl=en" target="_blank">
+                                                <FaInstagram size={16} />
+                                            </Link>
+                                        </li>
+                                        <li className="border border-gray-600 hover:border-gray-200 duration-160 w-8 h-8 flex items-center justify-center rounded-full">
+                                            <Link to="https://discord.com" target="_blank">
+                                                <FaDiscord size={16} />
+                                            </Link>
+                                        </li>
+                                        <li className="border border-gray-600 hover:border-gray-200 duration-160 w-8 h-8 flex items-center justify-center rounded-full">
+                                            <Link to="https://t.me/www0x0com" target="_blank">
+                                                <FaGlobe size={16} />
+                                            </Link>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

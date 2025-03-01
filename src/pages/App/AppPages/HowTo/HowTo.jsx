@@ -18,10 +18,10 @@ const HowTo = () => {
             </Helmet>
             <div className="howto-content">
                 <Tabs>
-                    <TabList className="tablist flex items-center gap-5 mb-7 border-b border-slate-700 border-opacity-70">
-                        <Tab onClick={() => handleActiveTab("trade")} className={`w-36 text-center font-bold pb-2 cursor-pointer ${activeTab == 'trade' && 'border-b-2 border-[#0FCFCF] text-secondary'}`}>AI Trade Alerts</Tab>
-                        <Tab onClick={() => handleActiveTab("custom")} className={`w-36 text-center font-bold pb-2 cursor-pointer ${activeTab == 'custom' && 'border-b-2 border-[#0FCFCF] text-secondary'}`}>Custom Search</Tab>
-                        <Tab onClick={() => handleActiveTab("faq")} className={`w-36 text-center font-bold pb-2 cursor-pointer ${activeTab == 'faq' && 'border-b-2 border-[#0FCFCF] text-secondary'}`}>FAQ</Tab>
+                    <TabList className="tablist flex items-center gap-2 mb-7 border-b border-slate-700 border-opacity-70">
+                        <Tab onClick={() => handleActiveTab("trade")} className={`text-sm w-28 text-center font-bold pb-2 cursor-pointer border-b-2 border-transparent ${activeTab == 'trade' && ' border-b-[#0FCFCF] text-secondary'}`}>AI Trade Alerts</Tab>
+                        <Tab onClick={() => handleActiveTab("custom")} className={`text-sm w-28 text-center font-bold pb-2 cursor-pointer  border-b-2 border-transparent ${activeTab == 'custom' && ' border-b-[#0FCFCF] text-secondary'}`}>Custom Search</Tab>
+                        <Tab onClick={() => handleActiveTab("faq")} className={`text-sm w-28 text-center font-bold pb-2 cursor-pointer  border-b-2 border-transparent ${activeTab == 'faq' && ' border-b-[#0FCFCF] text-secondary'}`}>FAQ</Tab>
                     </TabList>
 
                     <TabPanel>

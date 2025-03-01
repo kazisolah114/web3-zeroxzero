@@ -86,7 +86,7 @@ const Leaderboard = () => {
                     <div className="leaderboard  relative flex justify-between flex-wrap">
                         {
                             leaderboards.map((leaderboard, index) => (
-                                <div key={index} className='item border border-[#0fcfcfb7] py-4 px-4 rounded-md max-md:w-full'>
+                                <div key={index} className='item backdrop-blur-md border border-[#0fcfcf3d] py-4 px-4 rounded-md max-md:w-full'>
                                     <h4 className='bg-[#122036] text-light font-bold p-3 w-40 text-center rounded-md'>
                                         <button>{leaderboard.token.toUpperCase()}</button> / <button>WETH</button>
                                     </h4>
