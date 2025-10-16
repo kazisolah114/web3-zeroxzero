@@ -59,19 +59,6 @@ On-chain reads/writes are handled via a dedicated service / hook layer. The UI i
 
 ---
 
-## 📸 Screenshots / Demo
-
-> _Replace these with your actual UI captures or a short GIF showing the staking flow._
-
-| Page | Screenshot |
-|------|------------|
-| Landing / Hero section | `![Landing](/screenshots/landing.png)` |
-| Leaderboard / Trader Discovery | `![Leaderboard](/screenshots/leaderboard.png)` |
-| Staking UI (connect, approve, stake) | `![Staking Flow](/screenshots/staking.gif)` |
-| Token / Market Dashboard | `![Token Stats](/screenshots/token_stats.png)` |
-
----
-
 ## 🛠 Setup & Local Development
 
 ```bash
